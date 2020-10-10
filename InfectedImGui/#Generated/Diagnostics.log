@@ -1,0 +1,20 @@
+==============================================================================
+Parsing Diagnostics
+==============================================================================
+==============================================================================
+Translation Diagnostics
+==============================================================================
+--------------- TranslatedParameter <>UnnamedTranslatedParameter_0 ---------------
+Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_0'
+--------------- TranslatedParameter <>UnnamedTranslatedParameter_1 ---------------
+Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_1'
+--------------- TranslatedParameter <>UnnamedTranslatedParameter_0 ---------------
+Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_0'
+--------------- TranslatedParameter <>UnnamedTranslatedParameter_1 ---------------
+Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_1'
+--------------- TranslatedParameter <>UnnamedTranslatedParameter_2 ---------------
+Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_2'
+==============================================================================
+Generation Diagnostics
+==============================================================================
+Generation completed successfully.
