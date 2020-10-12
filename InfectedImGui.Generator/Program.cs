@@ -45,6 +45,7 @@ if (!File.Exists(imGuiConfigFilePath))
 TranslatedLibraryBuilder libraryBuilder = new();
 libraryBuilder.AddCommandLineArgument("--language=c++");
 libraryBuilder.AddCommandLineArgument($"-I{imGuiSourceDirectoryPath}");
+libraryBuilder.AddCommandLineArgument($"-DIMGUI_USER_CONFIG=\"{imGuiConfigFilePath}\"");
 libraryBuilder.AddFile(imGuiHeaderFilePath);
 
 TranslatedLibrary library = libraryBuilder.Create();

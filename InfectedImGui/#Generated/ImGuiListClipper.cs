@@ -60,13 +60,4 @@ public unsafe partial struct ImGuiListClipper
         fixed (ImGuiListClipper* @this = &this)
         { return Step_PInvoke(@this); }
     }
-
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiListClipper@@QEAA@HM@Z", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImGuiListClipper* @this, int items_count, float items_height);
-
-    public unsafe void Constructor(int items_count, float items_height)
-    {
-        fixed (ImGuiListClipper* @this = &this)
-        { Constructor_PInvoke(@this, items_count, items_height); }
-    }
 }

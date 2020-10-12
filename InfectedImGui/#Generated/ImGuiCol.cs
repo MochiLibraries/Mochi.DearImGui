@@ -51,6 +51,5 @@ public enum ImGuiCol
     NavWindowingHighlight,
     NavWindowingDimBg,
     ModalWindowDimBg,
-    COUNT,
-    ModalWindowDarkening = 49
+    COUNT
 }

@@ -11,6 +11,5 @@ public enum ImGuiMouseCursor
     ResizeNWSE,
     Hand,
     NotAllowed,
-    COUNT,
-    Count_ = 9
+    COUNT
 }

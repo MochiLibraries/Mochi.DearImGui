@@ -86,7 +86,7 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(272)] public void* ClipboardUserData;
 
-    [FieldOffset(280)] public delegate* unmanaged[Cdecl]<ImDrawData*, void>* RenderDrawListsFn;
+    [FieldOffset(280)] public void* RenderDrawListsFnUnused;
 
     [FieldOffset(288)] public ImVec2 MousePos;
 

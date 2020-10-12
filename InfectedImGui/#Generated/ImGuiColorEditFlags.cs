@@ -32,8 +32,5 @@ public enum ImGuiColorEditFlags
     _DisplayMask = 7340032,
     _DataTypeMask = 25165824,
     _PickerMask = 100663296,
-    _InputMask = 402653184,
-    RGB = 1048576,
-    HSV = 2097152,
-    HEX = 4194304
+    _InputMask = 402653184
 }

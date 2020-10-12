@@ -9,6 +9,5 @@ public enum ImGuiSliderFlags
     Logarithmic = 32,
     NoRoundToFormat = 64,
     NoInput = 128,
-    InvalidMask_ = 0x7000000F,
-    ClampOnInput = 16
+    InvalidMask_ = 0x7000000F
 }

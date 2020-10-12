@@ -24,6 +24,5 @@ public enum ImGuiStyleVar
     TabRounding,
     ButtonTextAlign,
     SelectableTextAlign,
-    COUNT,
-    Count_ = 23
+    COUNT
 }
