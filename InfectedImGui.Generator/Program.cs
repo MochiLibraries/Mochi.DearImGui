@@ -70,7 +70,7 @@ library = brokenDeclarationExtractor.Transform(library);
 library = new RemoveExplicitBitFieldPaddingFieldsTransformation().Transform(library);
 library = new AddBaseVTableAliasTransformation().Transform(library);
 library = new ConstOverloadRenameTransformation().Transform(library);
-library = new MakeEvereythingPublicTransformation().Transform(library);
+library = new MakeEverythingPublicTransformation().Transform(library);
 library = new RemoveRemainingTypedefsTransformation().Transform(library);
 
 ImGuiCSharpTypeReductionTransformation typeReductionTransformation = new();
