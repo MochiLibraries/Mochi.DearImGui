@@ -10,7 +10,7 @@ public unsafe partial struct ImDrawList
 
     [FieldOffset(32)] public ImVector<ImDrawVert> VtxBuffer;
 
-    [FieldOffset(48)] public int Flags;
+    [FieldOffset(48)] public ImDrawListFlags Flags;
 
     [FieldOffset(56)] public ImDrawListSharedData* _Data;
 
@@ -123,18 +123,18 @@ public unsafe partial struct ImDrawList
     }
 
     [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRect@ImDrawList@@QEAAXAEBUImVec2@@0IMHM@Z", ExactSpelling = true)]
-    private static extern void AddRect_PInvoke(ImDrawList* @this, ImVec2* p_min, ImVec2* p_max, uint col, float rounding, int rounding_corners, float thickness);
+    private static extern void AddRect_PInvoke(ImDrawList* @this, ImVec2* p_min, ImVec2* p_max, uint col, float rounding, ImDrawCornerFlags rounding_corners, float thickness);
 
-    public unsafe void AddRect(ImVec2* p_min, ImVec2* p_max, uint col, float rounding, int rounding_corners, float thickness)
+    public unsafe void AddRect(ImVec2* p_min, ImVec2* p_max, uint col, float rounding, ImDrawCornerFlags rounding_corners, float thickness)
     {
         fixed (ImDrawList* @this = &this)
         { AddRect_PInvoke(@this, p_min, p_max, col, rounding, rounding_corners, thickness); }
     }
 
     [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRectFilled@ImDrawList@@QEAAXAEBUImVec2@@0IMH@Z", ExactSpelling = true)]
-    private static extern void AddRectFilled_PInvoke(ImDrawList* @this, ImVec2* p_min, ImVec2* p_max, uint col, float rounding, int rounding_corners);
+    private static extern void AddRectFilled_PInvoke(ImDrawList* @this, ImVec2* p_min, ImVec2* p_max, uint col, float rounding, ImDrawCornerFlags rounding_corners);
 
-    public unsafe void AddRectFilled(ImVec2* p_min, ImVec2* p_max, uint col, float rounding, int rounding_corners)
+    public unsafe void AddRectFilled(ImVec2* p_min, ImVec2* p_max, uint col, float rounding, ImDrawCornerFlags rounding_corners)
     {
         fixed (ImDrawList* @this = &this)
         { AddRectFilled_PInvoke(@this, p_min, p_max, col, rounding, rounding_corners); }
@@ -285,9 +285,9 @@ public unsafe partial struct ImDrawList
     }
 
     [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddImageRounded@ImDrawList@@QEAAXPEAXAEBUImVec2@@111IMH@Z", ExactSpelling = true)]
-    private static extern void AddImageRounded_PInvoke(ImDrawList* @this, void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col, float rounding, int rounding_corners);
+    private static extern void AddImageRounded_PInvoke(ImDrawList* @this, void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col, float rounding, ImDrawCornerFlags rounding_corners);
 
-    public unsafe void AddImageRounded(void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col, float rounding, int rounding_corners)
+    public unsafe void AddImageRounded(void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col, float rounding, ImDrawCornerFlags rounding_corners)
     {
         fixed (ImDrawList* @this = &this)
         { AddImageRounded_PInvoke(@this, user_texture_id, p_min, p_max, uv_min, uv_max, col, rounding, rounding_corners); }
@@ -366,9 +366,9 @@ public unsafe partial struct ImDrawList
     }
 
     [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathRect@ImDrawList@@QEAAXAEBUImVec2@@0MH@Z", ExactSpelling = true)]
-    private static extern void PathRect_PInvoke(ImDrawList* @this, ImVec2* rect_min, ImVec2* rect_max, float rounding, int rounding_corners);
+    private static extern void PathRect_PInvoke(ImDrawList* @this, ImVec2* rect_min, ImVec2* rect_max, float rounding, ImDrawCornerFlags rounding_corners);
 
-    public unsafe void PathRect(ImVec2* rect_min, ImVec2* rect_max, float rounding, int rounding_corners)
+    public unsafe void PathRect(ImVec2* rect_min, ImVec2* rect_max, float rounding, ImDrawCornerFlags rounding_corners)
     {
         fixed (ImDrawList* @this = &this)
         { PathRect_PInvoke(@this, rect_min, rect_max, rounding, rounding_corners); }

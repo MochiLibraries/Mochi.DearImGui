@@ -8,13 +8,13 @@ public unsafe partial struct ImGuiWindowClass
 
     [FieldOffset(4)] public uint ParentViewportId;
 
-    [FieldOffset(8)] public int ViewportFlagsOverrideSet;
+    [FieldOffset(8)] public ImGuiViewportFlags ViewportFlagsOverrideSet;
 
-    [FieldOffset(12)] public int ViewportFlagsOverrideClear;
+    [FieldOffset(12)] public ImGuiViewportFlags ViewportFlagsOverrideClear;
 
-    [FieldOffset(16)] public int DockNodeFlagsOverrideSet;
+    [FieldOffset(16)] public ImGuiDockNodeFlags DockNodeFlagsOverrideSet;
 
-    [FieldOffset(20)] public int DockNodeFlagsOverrideClear;
+    [FieldOffset(20)] public ImGuiDockNodeFlags DockNodeFlagsOverrideClear;
 
     [FieldOffset(24)] public bool DockingAlwaysTabBar;
 

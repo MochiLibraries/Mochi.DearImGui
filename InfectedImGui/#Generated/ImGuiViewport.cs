@@ -6,7 +6,7 @@ public unsafe partial struct ImGuiViewport
 {
     [FieldOffset(0)] public uint ID;
 
-    [FieldOffset(4)] public int Flags;
+    [FieldOffset(4)] public ImGuiViewportFlags Flags;
 
     [FieldOffset(8)] public ImVec2 Pos;
 

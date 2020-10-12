@@ -16,7 +16,7 @@ public unsafe partial struct ImGuiStyle
 
     [FieldOffset(28)] public ImVec2 WindowTitleAlign;
 
-    [FieldOffset(36)] public int WindowMenuButtonPosition;
+    [FieldOffset(36)] public ImGuiDir WindowMenuButtonPosition;
 
     [FieldOffset(40)] public float ChildRounding;
 
@@ -58,7 +58,7 @@ public unsafe partial struct ImGuiStyle
 
     [FieldOffset(132)] public float TabMinWidthForCloseButton;
 
-    [FieldOffset(136)] public int ColorButtonPosition;
+    [FieldOffset(136)] public ImGuiDir ColorButtonPosition;
 
     [FieldOffset(140)] public ImVec2 ButtonTextAlign;
 

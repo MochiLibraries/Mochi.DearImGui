@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 [StructLayout(LayoutKind.Explicit, Size = 5464)]
 public unsafe partial struct ImGuiIO
 {
-    [FieldOffset(0)] public int ConfigFlags;
+    [FieldOffset(0)] public ImGuiConfigFlags ConfigFlags;
 
-    [FieldOffset(4)] public int BackendFlags;
+    [FieldOffset(4)] public ImGuiBackendFlags BackendFlags;
 
     [FieldOffset(8)] public ImVec2 DisplaySize;
 
@@ -174,7 +174,7 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(948)] public ImVec2 MouseDelta;
 
-    [FieldOffset(956)] public int KeyMods;
+    [FieldOffset(956)] public ImGuiKeyModFlags KeyMods;
 
     [FieldOffset(960)] public ImVec2 MousePosPrev;
 

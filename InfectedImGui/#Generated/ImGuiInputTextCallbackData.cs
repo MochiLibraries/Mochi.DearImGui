@@ -4,15 +4,15 @@ using System.Runtime.InteropServices;
 [StructLayout(LayoutKind.Explicit, Size = 56)]
 public unsafe partial struct ImGuiInputTextCallbackData
 {
-    [FieldOffset(0)] public int EventFlag;
+    [FieldOffset(0)] public ImGuiInputTextFlags EventFlag;
 
-    [FieldOffset(4)] public int Flags;
+    [FieldOffset(4)] public ImGuiInputTextFlags Flags;
 
     [FieldOffset(8)] public void* UserData;
 
     [FieldOffset(16)] public ushort EventChar;
 
-    [FieldOffset(20)] public int EventKey;
+    [FieldOffset(20)] public ImGuiKey EventKey;
 
     [FieldOffset(24)] public byte* Buf;
 

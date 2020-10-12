@@ -266,9 +266,9 @@ public unsafe partial struct ImFontAtlas
     }
 
     [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetMouseCursorTexData@ImFontAtlas@@QEAA_NHPEAUImVec2@@0QEAU2@1@Z", ExactSpelling = true)]
-    private static extern bool GetMouseCursorTexData_PInvoke(ImFontAtlas* @this, int cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill);
+    private static extern bool GetMouseCursorTexData_PInvoke(ImFontAtlas* @this, ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill);
 
-    public unsafe bool GetMouseCursorTexData(int cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill)
+    public unsafe bool GetMouseCursorTexData(ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill)
     {
         fixed (ImFontAtlas* @this = &this)
         { return GetMouseCursorTexData_PInvoke(@this, cursor, out_offset, out_size, out_uv_border, out_uv_fill); }
@@ -276,7 +276,7 @@ public unsafe partial struct ImFontAtlas
 
     [FieldOffset(0)] public bool Locked;
 
-    [FieldOffset(4)] public int Flags;
+    [FieldOffset(4)] public ImFontAtlasFlags Flags;
 
     [FieldOffset(8)] public void* TexID;
 
