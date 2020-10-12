@@ -20,7 +20,7 @@ public unsafe partial struct ImFontAtlasCustomRect
 
     [FieldOffset(24)] public ImFont* Font;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFontAtlasCustomRect@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFontAtlasCustomRect@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImFontAtlasCustomRect* @this);
 
     public unsafe void Constructor()
@@ -29,7 +29,7 @@ public unsafe partial struct ImFontAtlasCustomRect
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ", ExactSpelling = true)]
     private static extern bool IsPacked_PInvoke(ImFontAtlasCustomRect* @this);
 
     public unsafe bool IsPacked()

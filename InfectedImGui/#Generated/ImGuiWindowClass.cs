@@ -20,7 +20,7 @@ public unsafe partial struct ImGuiWindowClass
 
     [FieldOffset(25)] public bool DockingAllowUnclassed;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiWindowClass@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiWindowClass@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiWindowClass* @this);
 
     public unsafe void Constructor()

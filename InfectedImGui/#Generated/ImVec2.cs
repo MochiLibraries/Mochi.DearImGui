@@ -9,7 +9,7 @@ public unsafe partial struct ImVec2
 
     [FieldOffset(4)] public float y;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImVec2@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImVec2@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImVec2* @this);
 
     public unsafe void Constructor()
@@ -18,7 +18,7 @@ public unsafe partial struct ImVec2
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImVec2@@QEAA@MM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImVec2@@QEAA@MM@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImVec2* @this, float _x, float _y);
 
     public unsafe void Constructor(float _x, float _y)
@@ -27,7 +27,7 @@ public unsafe partial struct ImVec2
         { Constructor_PInvoke(@this, _x, _y); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImVec2@@QEBAM_K@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImVec2@@QEBAM_K@Z", ExactSpelling = true)]
     private static extern float operator_Subscript_Const_PInvoke(ImVec2* @this, ulong idx);
 
     [EditorBrowsable(EditorBrowsableState.Never)]
@@ -37,7 +37,7 @@ public unsafe partial struct ImVec2
         { return operator_Subscript_Const_PInvoke(@this, idx); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImVec2@@QEAAAEAM_K@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImVec2@@QEAAAEAM_K@Z", ExactSpelling = true)]
     private static extern float* operator_Subscript_PInvoke(ImVec2* @this, ulong idx);
 
     public unsafe float* operator_Subscript(ulong idx)

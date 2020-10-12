@@ -36,7 +36,7 @@ public unsafe partial struct ImGuiViewport
 
     [FieldOffset(98)] public bool PlatformRequestClose;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiViewport@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiViewport@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiViewport* @this);
 
     public unsafe void Constructor()
@@ -45,7 +45,7 @@ public unsafe partial struct ImGuiViewport
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImGuiViewport@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImGuiViewport@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Destructor_PInvoke(ImGuiViewport* @this);
 
     public unsafe void Destructor()
@@ -54,7 +54,7 @@ public unsafe partial struct ImGuiViewport
         { Destructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCenter@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCenter@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
     private static extern ImVec2 GetCenter_PInvoke(ImGuiViewport* @this);
 
     public unsafe ImVec2 GetCenter()
@@ -63,7 +63,7 @@ public unsafe partial struct ImGuiViewport
         { return GetCenter_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkPos@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkPos@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
     private static extern ImVec2 GetWorkPos_PInvoke(ImGuiViewport* @this);
 
     public unsafe ImVec2 GetWorkPos()
@@ -72,7 +72,7 @@ public unsafe partial struct ImGuiViewport
         { return GetWorkPos_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkSize@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkSize@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
     private static extern ImVec2 GetWorkSize_PInvoke(ImGuiViewport* @this);
 
     public unsafe ImVec2 GetWorkSize()

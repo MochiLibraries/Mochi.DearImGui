@@ -20,7 +20,7 @@ public unsafe partial struct ImGuiPayload
 
     [FieldOffset(58)] public bool Delivery;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiPayload@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiPayload@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiPayload* @this);
 
     public unsafe void Constructor()
@@ -29,7 +29,7 @@ public unsafe partial struct ImGuiPayload
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImGuiPayload@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImGuiPayload@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Clear_PInvoke(ImGuiPayload* @this);
 
     public unsafe void Clear()
@@ -38,7 +38,7 @@ public unsafe partial struct ImGuiPayload
         { Clear_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDataType@ImGuiPayload@@QEBA_NPEBD@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDataType@ImGuiPayload@@QEBA_NPEBD@Z", ExactSpelling = true)]
     private static extern bool IsDataType_PInvoke(ImGuiPayload* @this, byte* type);
 
     public unsafe bool IsDataType(byte* type)
@@ -47,7 +47,7 @@ public unsafe partial struct ImGuiPayload
         { return IsDataType_PInvoke(@this, type); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPreview@ImGuiPayload@@QEBA_NXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPreview@ImGuiPayload@@QEBA_NXZ", ExactSpelling = true)]
     private static extern bool IsPreview_PInvoke(ImGuiPayload* @this);
 
     public unsafe bool IsPreview()
@@ -56,7 +56,7 @@ public unsafe partial struct ImGuiPayload
         { return IsPreview_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDelivery@ImGuiPayload@@QEBA_NXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDelivery@ImGuiPayload@@QEBA_NXZ", ExactSpelling = true)]
     private static extern bool IsDelivery_PInvoke(ImGuiPayload* @this);
 
     public unsafe bool IsDelivery()

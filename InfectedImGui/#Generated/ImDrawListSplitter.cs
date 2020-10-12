@@ -10,7 +10,7 @@ public unsafe partial struct ImDrawListSplitter
 
     [FieldOffset(8)] public ImVector<ImDrawChannel> _Channels;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawListSplitter@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawListSplitter@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImDrawListSplitter* @this);
 
     public unsafe void Constructor()
@@ -19,7 +19,7 @@ public unsafe partial struct ImDrawListSplitter
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Destructor_PInvoke(ImDrawListSplitter* @this);
 
     public unsafe void Destructor()
@@ -28,7 +28,7 @@ public unsafe partial struct ImDrawListSplitter
         { Destructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Clear_PInvoke(ImDrawListSplitter* @this);
 
     public unsafe void Clear()
@@ -37,7 +37,7 @@ public unsafe partial struct ImDrawListSplitter
         { Clear_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFreeMemory@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFreeMemory@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
     private static extern void ClearFreeMemory_PInvoke(ImDrawListSplitter* @this);
 
     public unsafe void ClearFreeMemory()
@@ -46,7 +46,7 @@ public unsafe partial struct ImDrawListSplitter
         { ClearFreeMemory_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Split@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Split@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", ExactSpelling = true)]
     private static extern void Split_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list, int count);
 
     public unsafe void Split(ImDrawList* draw_list, int count)
@@ -55,7 +55,7 @@ public unsafe partial struct ImDrawListSplitter
         { Split_PInvoke(@this, draw_list, count); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Merge@ImDrawListSplitter@@QEAAXPEAUImDrawList@@@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Merge@ImDrawListSplitter@@QEAAXPEAUImDrawList@@@Z", ExactSpelling = true)]
     private static extern void Merge_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list);
 
     public unsafe void Merge(ImDrawList* draw_list)
@@ -64,7 +64,7 @@ public unsafe partial struct ImDrawListSplitter
         { Merge_PInvoke(@this, draw_list); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetCurrentChannel@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetCurrentChannel@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", ExactSpelling = true)]
     private static extern void SetCurrentChannel_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list, int channel_idx);
 
     public unsafe void SetCurrentChannel(ImDrawList* draw_list, int channel_idx)

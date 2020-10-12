@@ -14,7 +14,7 @@ public unsafe partial struct ImGuiPlatformMonitor
 
     [FieldOffset(32)] public float DpiScale;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiPlatformMonitor@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiPlatformMonitor@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiPlatformMonitor* @this);
 
     public unsafe void Constructor()

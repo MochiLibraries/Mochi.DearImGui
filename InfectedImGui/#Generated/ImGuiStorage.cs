@@ -15,7 +15,7 @@ public unsafe partial struct ImGuiStorage
 
         [FieldOffset(8)] public void* val_p;
 
-        [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IH@Z", ExactSpelling = true)]
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IH@Z", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, int _val_i);
 
         public unsafe void Constructor(uint _key, int _val_i)
@@ -24,7 +24,7 @@ public unsafe partial struct ImGuiStorage
             { Constructor_PInvoke(@this, _key, _val_i); }
         }
 
-        [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IM@Z", ExactSpelling = true)]
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IM@Z", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, float _val_f);
 
         public unsafe void Constructor(uint _key, float _val_f)
@@ -33,7 +33,7 @@ public unsafe partial struct ImGuiStorage
             { Constructor_PInvoke(@this, _key, _val_f); }
         }
 
-        [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IPEAX@Z", ExactSpelling = true)]
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IPEAX@Z", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, void* _val_p);
 
         public unsafe void Constructor(uint _key, void* _val_p)
@@ -45,7 +45,7 @@ public unsafe partial struct ImGuiStorage
 
     [FieldOffset(0)] public ImVector<ImGuiStoragePair> Data;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImGuiStorage@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImGuiStorage@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Clear_PInvoke(ImGuiStorage* @this);
 
     public unsafe void Clear()
@@ -54,7 +54,7 @@ public unsafe partial struct ImGuiStorage
         { Clear_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetInt@ImGuiStorage@@QEBAHIH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetInt@ImGuiStorage@@QEBAHIH@Z", ExactSpelling = true)]
     private static extern int GetInt_PInvoke(ImGuiStorage* @this, uint key, int default_val);
 
     public unsafe int GetInt(uint key, int default_val)
@@ -63,7 +63,7 @@ public unsafe partial struct ImGuiStorage
         { return GetInt_PInvoke(@this, key, default_val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetInt@ImGuiStorage@@QEAAXIH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetInt@ImGuiStorage@@QEAAXIH@Z", ExactSpelling = true)]
     private static extern void SetInt_PInvoke(ImGuiStorage* @this, uint key, int val);
 
     public unsafe void SetInt(uint key, int val)
@@ -72,7 +72,7 @@ public unsafe partial struct ImGuiStorage
         { SetInt_PInvoke(@this, key, val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBool@ImGuiStorage@@QEBA_NI_N@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBool@ImGuiStorage@@QEBA_NI_N@Z", ExactSpelling = true)]
     private static extern bool GetBool_PInvoke(ImGuiStorage* @this, uint key, bool default_val);
 
     public unsafe bool GetBool(uint key, bool default_val)
@@ -81,7 +81,7 @@ public unsafe partial struct ImGuiStorage
         { return GetBool_PInvoke(@this, key, default_val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBool@ImGuiStorage@@QEAAXI_N@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBool@ImGuiStorage@@QEAAXI_N@Z", ExactSpelling = true)]
     private static extern void SetBool_PInvoke(ImGuiStorage* @this, uint key, bool val);
 
     public unsafe void SetBool(uint key, bool val)
@@ -90,7 +90,7 @@ public unsafe partial struct ImGuiStorage
         { SetBool_PInvoke(@this, key, val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloat@ImGuiStorage@@QEBAMIM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloat@ImGuiStorage@@QEBAMIM@Z", ExactSpelling = true)]
     private static extern float GetFloat_PInvoke(ImGuiStorage* @this, uint key, float default_val);
 
     public unsafe float GetFloat(uint key, float default_val)
@@ -99,7 +99,7 @@ public unsafe partial struct ImGuiStorage
         { return GetFloat_PInvoke(@this, key, default_val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetFloat@ImGuiStorage@@QEAAXIM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetFloat@ImGuiStorage@@QEAAXIM@Z", ExactSpelling = true)]
     private static extern void SetFloat_PInvoke(ImGuiStorage* @this, uint key, float val);
 
     public unsafe void SetFloat(uint key, float val)
@@ -108,7 +108,7 @@ public unsafe partial struct ImGuiStorage
         { SetFloat_PInvoke(@this, key, val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtr@ImGuiStorage@@QEBAPEAXI@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtr@ImGuiStorage@@QEBAPEAXI@Z", ExactSpelling = true)]
     private static extern void* GetVoidPtr_PInvoke(ImGuiStorage* @this, uint key);
 
     public unsafe void* GetVoidPtr(uint key)
@@ -117,7 +117,7 @@ public unsafe partial struct ImGuiStorage
         { return GetVoidPtr_PInvoke(@this, key); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetVoidPtr@ImGuiStorage@@QEAAXIPEAX@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetVoidPtr@ImGuiStorage@@QEAAXIPEAX@Z", ExactSpelling = true)]
     private static extern void SetVoidPtr_PInvoke(ImGuiStorage* @this, uint key, void* val);
 
     public unsafe void SetVoidPtr(uint key, void* val)
@@ -126,7 +126,7 @@ public unsafe partial struct ImGuiStorage
         { SetVoidPtr_PInvoke(@this, key, val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIntRef@ImGuiStorage@@QEAAPEAHIH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIntRef@ImGuiStorage@@QEAAPEAHIH@Z", ExactSpelling = true)]
     private static extern int* GetIntRef_PInvoke(ImGuiStorage* @this, uint key, int default_val);
 
     public unsafe int* GetIntRef(uint key, int default_val)
@@ -135,7 +135,7 @@ public unsafe partial struct ImGuiStorage
         { return GetIntRef_PInvoke(@this, key, default_val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z", ExactSpelling = true)]
     private static extern bool* GetBoolRef_PInvoke(ImGuiStorage* @this, uint key, bool default_val);
 
     public unsafe bool* GetBoolRef(uint key, bool default_val)
@@ -144,7 +144,7 @@ public unsafe partial struct ImGuiStorage
         { return GetBoolRef_PInvoke(@this, key, default_val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloatRef@ImGuiStorage@@QEAAPEAMIM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloatRef@ImGuiStorage@@QEAAPEAMIM@Z", ExactSpelling = true)]
     private static extern float* GetFloatRef_PInvoke(ImGuiStorage* @this, uint key, float default_val);
 
     public unsafe float* GetFloatRef(uint key, float default_val)
@@ -153,7 +153,7 @@ public unsafe partial struct ImGuiStorage
         { return GetFloatRef_PInvoke(@this, key, default_val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtrRef@ImGuiStorage@@QEAAPEAPEAXIPEAX@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtrRef@ImGuiStorage@@QEAAPEAPEAXIPEAX@Z", ExactSpelling = true)]
     private static extern void** GetVoidPtrRef_PInvoke(ImGuiStorage* @this, uint key, void* default_val);
 
     public unsafe void** GetVoidPtrRef(uint key, void* default_val)
@@ -162,7 +162,7 @@ public unsafe partial struct ImGuiStorage
         { return GetVoidPtrRef_PInvoke(@this, key, default_val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetAllInt@ImGuiStorage@@QEAAXH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetAllInt@ImGuiStorage@@QEAAXH@Z", ExactSpelling = true)]
     private static extern void SetAllInt_PInvoke(ImGuiStorage* @this, int val);
 
     public unsafe void SetAllInt(int val)
@@ -171,7 +171,7 @@ public unsafe partial struct ImGuiStorage
         { SetAllInt_PInvoke(@this, val); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BuildSortByKey@ImGuiStorage@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BuildSortByKey@ImGuiStorage@@QEAAXXZ", ExactSpelling = true)]
     private static extern void BuildSortByKey_PInvoke(ImGuiStorage* @this);
 
     public unsafe void BuildSortByKey()

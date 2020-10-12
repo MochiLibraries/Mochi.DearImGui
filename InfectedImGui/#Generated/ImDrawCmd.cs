@@ -18,7 +18,7 @@ public unsafe partial struct ImDrawCmd
 
     [FieldOffset(48)] public void* UserCallbackData;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawCmd@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawCmd@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImDrawCmd* @this);
 
     public unsafe void Constructor()

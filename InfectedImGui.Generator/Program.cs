@@ -64,6 +64,7 @@ Console.WriteLine("=============================================================
 
 library = new RemoveUnneededDeclarationsTransformation().Transform(library);
 library = new ImGuiEnumTransformation().Transform(library);
+library = new ImGuiDllNameTransformation().Transform(library);
 
 BrokenDeclarationExtractor brokenDeclarationExtractor = new();
 library = brokenDeclarationExtractor.Transform(library);

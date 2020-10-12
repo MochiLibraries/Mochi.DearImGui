@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 [StructLayout(LayoutKind.Explicit, Size = 4)]
 public unsafe partial struct ImGuiOnceUponAFrame
 {
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiOnceUponAFrame@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiOnceUponAFrame@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiOnceUponAFrame* @this);
 
     public unsafe void Constructor()
@@ -15,7 +15,7 @@ public unsafe partial struct ImGuiOnceUponAFrame
 
     [FieldOffset(0)] public int RefFrame;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??BImGuiOnceUponAFrame@@QEBA_NXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??BImGuiOnceUponAFrame@@QEBA_NXZ", ExactSpelling = true)]
     private static extern bool ____ConversionOperator_bool_PInvoke(ImGuiOnceUponAFrame* @this);
 
     public unsafe bool ____ConversionOperator_bool()

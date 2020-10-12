@@ -28,7 +28,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
 
     [FieldOffset(52)] public int SelectionEnd;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiInputTextCallbackData@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiInputTextCallbackData@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiInputTextCallbackData* @this);
 
     public unsafe void Constructor()
@@ -37,7 +37,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeleteChars@ImGuiInputTextCallbackData@@QEAAXHH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeleteChars@ImGuiInputTextCallbackData@@QEAAXHH@Z", ExactSpelling = true)]
     private static extern void DeleteChars_PInvoke(ImGuiInputTextCallbackData* @this, int pos, int bytes_count);
 
     public unsafe void DeleteChars(int pos, int bytes_count)
@@ -46,7 +46,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
         { DeleteChars_PInvoke(@this, pos, bytes_count); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InsertChars@ImGuiInputTextCallbackData@@QEAAXHPEBD0@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InsertChars@ImGuiInputTextCallbackData@@QEAAXHPEBD0@Z", ExactSpelling = true)]
     private static extern void InsertChars_PInvoke(ImGuiInputTextCallbackData* @this, int pos, byte* text, byte* text_end);
 
     public unsafe void InsertChars(int pos, byte* text, byte* text_end)
@@ -55,7 +55,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
         { InsertChars_PInvoke(@this, pos, text, text_end); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SelectAll@ImGuiInputTextCallbackData@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SelectAll@ImGuiInputTextCallbackData@@QEAAXXZ", ExactSpelling = true)]
     private static extern void SelectAll_PInvoke(ImGuiInputTextCallbackData* @this);
 
     public unsafe void SelectAll()
@@ -64,7 +64,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
         { SelectAll_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearSelection@ImGuiInputTextCallbackData@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearSelection@ImGuiInputTextCallbackData@@QEAAXXZ", ExactSpelling = true)]
     private static extern void ClearSelection_PInvoke(ImGuiInputTextCallbackData* @this);
 
     public unsafe void ClearSelection()
@@ -73,7 +73,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
         { ClearSelection_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HasSelection@ImGuiInputTextCallbackData@@QEBA_NXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HasSelection@ImGuiInputTextCallbackData@@QEBA_NXZ", ExactSpelling = true)]
     private static extern bool HasSelection_PInvoke(ImGuiInputTextCallbackData* @this);
 
     public unsafe bool HasSelection()

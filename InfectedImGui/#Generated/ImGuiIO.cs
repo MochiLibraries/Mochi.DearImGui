@@ -110,7 +110,7 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(832)] public ConstantArray_float_21 NavInputs;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharacter@ImGuiIO@@QEAAXI@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharacter@ImGuiIO@@QEAAXI@Z", ExactSpelling = true)]
     private static extern void AddInputCharacter_PInvoke(ImGuiIO* @this, uint c);
 
     public unsafe void AddInputCharacter(uint c)
@@ -119,7 +119,7 @@ public unsafe partial struct ImGuiIO
         { AddInputCharacter_PInvoke(@this, c); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharacterUTF16@ImGuiIO@@QEAAXG@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharacterUTF16@ImGuiIO@@QEAAXG@Z", ExactSpelling = true)]
     private static extern void AddInputCharacterUTF16_PInvoke(ImGuiIO* @this, ushort c);
 
     public unsafe void AddInputCharacterUTF16(ushort c)
@@ -128,7 +128,7 @@ public unsafe partial struct ImGuiIO
         { AddInputCharacterUTF16_PInvoke(@this, c); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharactersUTF8@ImGuiIO@@QEAAXPEBD@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharactersUTF8@ImGuiIO@@QEAAXPEBD@Z", ExactSpelling = true)]
     private static extern void AddInputCharactersUTF8_PInvoke(ImGuiIO* @this, byte* str);
 
     public unsafe void AddInputCharactersUTF8(byte* str)
@@ -137,7 +137,7 @@ public unsafe partial struct ImGuiIO
         { AddInputCharactersUTF8_PInvoke(@this, str); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearInputCharacters@ImGuiIO@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearInputCharacters@ImGuiIO@@QEAAXXZ", ExactSpelling = true)]
     private static extern void ClearInputCharacters_PInvoke(ImGuiIO* @this);
 
     public unsafe void ClearInputCharacters()
@@ -214,7 +214,7 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(5448)] public ImVector<ushort> InputQueueCharacters;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiIO@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiIO@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiIO* @this);
 
     public unsafe void Constructor()

@@ -6,7 +6,7 @@ public unsafe partial struct ImColor
 {
     [FieldOffset(0)] public ImVec4 Value;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImColor* @this);
 
     public unsafe void Constructor()
@@ -15,7 +15,7 @@ public unsafe partial struct ImColor
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@HHHH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@HHHH@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImColor* @this, int r, int g, int b, int a);
 
     public unsafe void Constructor(int r, int g, int b, int a)
@@ -24,7 +24,7 @@ public unsafe partial struct ImColor
         { Constructor_PInvoke(@this, r, g, b, a); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@I@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@I@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImColor* @this, uint rgba);
 
     public unsafe void Constructor(uint rgba)
@@ -33,7 +33,7 @@ public unsafe partial struct ImColor
         { Constructor_PInvoke(@this, rgba); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@MMMM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@MMMM@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImColor* @this, float r, float g, float b, float a);
 
     public unsafe void Constructor(float r, float g, float b, float a)
@@ -42,7 +42,7 @@ public unsafe partial struct ImColor
         { Constructor_PInvoke(@this, r, g, b, a); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@AEBUImVec4@@@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@AEBUImVec4@@@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImColor* @this, ImVec4* col);
 
     public unsafe void Constructor(ImVec4* col)
@@ -51,7 +51,7 @@ public unsafe partial struct ImColor
         { Constructor_PInvoke(@this, col); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??BImColor@@QEBAIXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??BImColor@@QEBAIXZ", ExactSpelling = true)]
     private static extern uint ____ConversionOperator_ImU32_PInvoke(ImColor* @this);
 
     public unsafe uint ____ConversionOperator_ImU32()
@@ -60,7 +60,7 @@ public unsafe partial struct ImColor
         { return ____ConversionOperator_ImU32_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??BImColor@@QEBA?AUImVec4@@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??BImColor@@QEBA?AUImVec4@@XZ", ExactSpelling = true)]
     private static extern void ____ConversionOperator_ImVec4_PInvoke(ImColor* @this, out ImVec4 __returnBuffer);
 
     public unsafe ImVec4 ____ConversionOperator_ImVec4()
@@ -73,7 +73,7 @@ public unsafe partial struct ImColor
         }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetHSV@ImColor@@QEAAXMMMM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetHSV@ImColor@@QEAAXMMMM@Z", ExactSpelling = true)]
     private static extern void SetHSV_PInvoke(ImColor* @this, float h, float s, float v, float a);
 
     public unsafe void SetHSV(float h, float s, float v, float a)
@@ -82,6 +82,6 @@ public unsafe partial struct ImColor
         { SetHSV_PInvoke(@this, h, s, v, a); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HSV@ImColor@@SA?AU1@MMMM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HSV@ImColor@@SA?AU1@MMMM@Z", ExactSpelling = true)]
     public static extern void HSV(out ImColor __returnBuffer, float h, float s, float v, float a);
 }

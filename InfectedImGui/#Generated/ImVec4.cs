@@ -12,7 +12,7 @@ public unsafe partial struct ImVec4
 
     [FieldOffset(12)] public float w;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImVec4@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImVec4@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImVec4* @this);
 
     public unsafe void Constructor()
@@ -21,7 +21,7 @@ public unsafe partial struct ImVec4
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImVec4@@QEAA@MMMM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImVec4@@QEAA@MMMM@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImVec4* @this, float _x, float _y, float _z, float _w);
 
     public unsafe void Constructor(float _x, float _y, float _z, float _w)

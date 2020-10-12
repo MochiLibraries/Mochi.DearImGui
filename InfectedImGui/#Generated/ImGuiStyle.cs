@@ -82,7 +82,7 @@ public unsafe partial struct ImGuiStyle
 
     [FieldOffset(188)] public ConstantArray_ImVec4_50 Colors;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStyle@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStyle@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiStyle* @this);
 
     public unsafe void Constructor()
@@ -91,7 +91,7 @@ public unsafe partial struct ImGuiStyle
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleAllSizes@ImGuiStyle@@QEAAXM@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleAllSizes@ImGuiStyle@@QEAAXM@Z", ExactSpelling = true)]
     private static extern void ScaleAllSizes_PInvoke(ImGuiStyle* @this, float scale_factor);
 
     public unsafe void ScaleAllSizes(float scale_factor)

@@ -6,7 +6,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
 {
     [FieldOffset(0)] public ImVector<uint> UsedChars;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFontGlyphRangesBuilder@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFontGlyphRangesBuilder@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImFontGlyphRangesBuilder* @this);
 
     public unsafe void Constructor()
@@ -15,7 +15,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImFontGlyphRangesBuilder@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImFontGlyphRangesBuilder@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Clear_PInvoke(ImFontGlyphRangesBuilder* @this);
 
     public unsafe void Clear()
@@ -24,7 +24,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
         { Clear_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBit@ImFontGlyphRangesBuilder@@QEBA_N_K@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBit@ImFontGlyphRangesBuilder@@QEBA_N_K@Z", ExactSpelling = true)]
     private static extern bool GetBit_PInvoke(ImFontGlyphRangesBuilder* @this, ulong n);
 
     public unsafe bool GetBit(ulong n)
@@ -33,7 +33,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
         { return GetBit_PInvoke(@this, n); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBit@ImFontGlyphRangesBuilder@@QEAAX_K@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBit@ImFontGlyphRangesBuilder@@QEAAX_K@Z", ExactSpelling = true)]
     private static extern void SetBit_PInvoke(ImFontGlyphRangesBuilder* @this, ulong n);
 
     public unsafe void SetBit(ulong n)
@@ -42,7 +42,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
         { SetBit_PInvoke(@this, n); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddChar@ImFontGlyphRangesBuilder@@QEAAXG@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddChar@ImFontGlyphRangesBuilder@@QEAAXG@Z", ExactSpelling = true)]
     private static extern void AddChar_PInvoke(ImFontGlyphRangesBuilder* @this, ushort c);
 
     public unsafe void AddChar(ushort c)
@@ -51,7 +51,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
         { AddChar_PInvoke(@this, c); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddText@ImFontGlyphRangesBuilder@@QEAAXPEBD0@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddText@ImFontGlyphRangesBuilder@@QEAAXPEBD0@Z", ExactSpelling = true)]
     private static extern void AddText_PInvoke(ImFontGlyphRangesBuilder* @this, byte* text, byte* text_end);
 
     public unsafe void AddText(byte* text, byte* text_end)
@@ -60,7 +60,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
         { AddText_PInvoke(@this, text, text_end); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRanges@ImFontGlyphRangesBuilder@@QEAAXPEBG@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRanges@ImFontGlyphRangesBuilder@@QEAAXPEBG@Z", ExactSpelling = true)]
     private static extern void AddRanges_PInvoke(ImFontGlyphRangesBuilder* @this, ushort* ranges);
 
     public unsafe void AddRanges(ushort* ranges)
@@ -69,7 +69,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
         { AddRanges_PInvoke(@this, ranges); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BuildRanges@ImFontGlyphRangesBuilder@@QEAAXPEAU?$ImVector@G@@@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BuildRanges@ImFontGlyphRangesBuilder@@QEAAXPEAU?$ImVector@G@@@Z", ExactSpelling = true)]
     private static extern void BuildRanges_PInvoke(ImFontGlyphRangesBuilder* @this, ImVector<ushort>* out_ranges);
 
     public unsafe void BuildRanges(ImVector<ushort>* out_ranges)

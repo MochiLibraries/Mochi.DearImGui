@@ -58,7 +58,7 @@ public unsafe partial struct ImGuiPlatformIO
 
     [FieldOffset(216)] public ImVector<Pointer<ImGuiViewport>> Viewports;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiPlatformIO@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiPlatformIO@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiPlatformIO* @this);
 
     public unsafe void Constructor()

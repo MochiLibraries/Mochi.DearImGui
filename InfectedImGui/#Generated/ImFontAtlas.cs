@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 [StructLayout(LayoutKind.Explicit, Size = 1144)]
 public unsafe partial struct ImFontAtlas
 {
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFontAtlas@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFontAtlas@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImFontAtlas* @this);
 
     public unsafe void Constructor()
@@ -13,7 +13,7 @@ public unsafe partial struct ImFontAtlas
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Destructor_PInvoke(ImFontAtlas* @this);
 
     public unsafe void Destructor()
@@ -22,7 +22,7 @@ public unsafe partial struct ImFontAtlas
         { Destructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFont@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFont@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", ExactSpelling = true)]
     private static extern ImFont* AddFont_PInvoke(ImFontAtlas* @this, ImFontConfig* font_cfg);
 
     public unsafe ImFont* AddFont(ImFontConfig* font_cfg)
@@ -31,7 +31,7 @@ public unsafe partial struct ImFontAtlas
         { return AddFont_PInvoke(@this, font_cfg); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontDefault@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontDefault@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontDefault_PInvoke(ImFontAtlas* @this, ImFontConfig* font_cfg);
 
     public unsafe ImFont* AddFontDefault(ImFontConfig* font_cfg)
@@ -40,7 +40,7 @@ public unsafe partial struct ImFontAtlas
         { return AddFontDefault_PInvoke(@this, font_cfg); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromFileTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromFileTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontFromFileTTF_PInvoke(ImFontAtlas* @this, byte* filename, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
     public unsafe ImFont* AddFontFromFileTTF(byte* filename, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges)
@@ -49,7 +49,7 @@ public unsafe partial struct ImFontAtlas
         { return AddFontFromFileTTF_PInvoke(@this, filename, size_pixels, font_cfg, glyph_ranges); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryTTF@ImFontAtlas@@QEAAPEAUImFont@@PEAXHMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryTTF@ImFontAtlas@@QEAAPEAUImFont@@PEAXHMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontFromMemoryTTF_PInvoke(ImFontAtlas* @this, void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
     public unsafe ImFont* AddFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges)
@@ -58,7 +58,7 @@ public unsafe partial struct ImFontAtlas
         { return AddFontFromMemoryTTF_PInvoke(@this, font_data, font_size, size_pixels, font_cfg, glyph_ranges); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryCompressedTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBXHMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryCompressedTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBXHMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontFromMemoryCompressedTTF_PInvoke(ImFontAtlas* @this, void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
     public unsafe ImFont* AddFontFromMemoryCompressedTTF(void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges)
@@ -67,7 +67,7 @@ public unsafe partial struct ImFontAtlas
         { return AddFontFromMemoryCompressedTTF_PInvoke(@this, compressed_font_data, compressed_font_size, size_pixels, font_cfg, glyph_ranges); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryCompressedBase85TTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryCompressedBase85TTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontFromMemoryCompressedBase85TTF_PInvoke(ImFontAtlas* @this, byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
     public unsafe ImFont* AddFontFromMemoryCompressedBase85TTF(byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges)
@@ -76,7 +76,7 @@ public unsafe partial struct ImFontAtlas
         { return AddFontFromMemoryCompressedBase85TTF_PInvoke(@this, compressed_font_data_base85, size_pixels, font_cfg, glyph_ranges); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearInputData@ImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearInputData@ImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
     private static extern void ClearInputData_PInvoke(ImFontAtlas* @this);
 
     public unsafe void ClearInputData()
@@ -85,7 +85,7 @@ public unsafe partial struct ImFontAtlas
         { ClearInputData_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearTexData@ImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearTexData@ImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
     private static extern void ClearTexData_PInvoke(ImFontAtlas* @this);
 
     public unsafe void ClearTexData()
@@ -94,7 +94,7 @@ public unsafe partial struct ImFontAtlas
         { ClearTexData_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFonts@ImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFonts@ImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
     private static extern void ClearFonts_PInvoke(ImFontAtlas* @this);
 
     public unsafe void ClearFonts()
@@ -103,7 +103,7 @@ public unsafe partial struct ImFontAtlas
         { ClearFonts_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Clear_PInvoke(ImFontAtlas* @this);
 
     public unsafe void Clear()
@@ -112,7 +112,7 @@ public unsafe partial struct ImFontAtlas
         { Clear_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Build@ImFontAtlas@@QEAA_NXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Build@ImFontAtlas@@QEAA_NXZ", ExactSpelling = true)]
     private static extern bool Build_PInvoke(ImFontAtlas* @this);
 
     public unsafe bool Build()
@@ -121,7 +121,7 @@ public unsafe partial struct ImFontAtlas
         { return Build_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTexDataAsAlpha8@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTexDataAsAlpha8@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", ExactSpelling = true)]
     private static extern void GetTexDataAsAlpha8_PInvoke(ImFontAtlas* @this, byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel);
 
     public unsafe void GetTexDataAsAlpha8(byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel)
@@ -130,7 +130,7 @@ public unsafe partial struct ImFontAtlas
         { GetTexDataAsAlpha8_PInvoke(@this, out_pixels, out_width, out_height, out_bytes_per_pixel); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTexDataAsRGBA32@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTexDataAsRGBA32@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", ExactSpelling = true)]
     private static extern void GetTexDataAsRGBA32_PInvoke(ImFontAtlas* @this, byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel);
 
     public unsafe void GetTexDataAsRGBA32(byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel)
@@ -139,7 +139,7 @@ public unsafe partial struct ImFontAtlas
         { GetTexDataAsRGBA32_PInvoke(@this, out_pixels, out_width, out_height, out_bytes_per_pixel); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsBuilt@ImFontAtlas@@QEBA_NXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsBuilt@ImFontAtlas@@QEBA_NXZ", ExactSpelling = true)]
     private static extern bool IsBuilt_PInvoke(ImFontAtlas* @this);
 
     public unsafe bool IsBuilt()
@@ -148,7 +148,7 @@ public unsafe partial struct ImFontAtlas
         { return IsBuilt_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetTexID@ImFontAtlas@@QEAAXPEAX@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetTexID@ImFontAtlas@@QEAAXPEAX@Z", ExactSpelling = true)]
     private static extern void SetTexID_PInvoke(ImFontAtlas* @this, void* id);
 
     public unsafe void SetTexID(void* id)
@@ -157,7 +157,7 @@ public unsafe partial struct ImFontAtlas
         { SetTexID_PInvoke(@this, id); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesDefault@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesDefault@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesDefault_PInvoke(ImFontAtlas* @this);
 
     public unsafe ushort* GetGlyphRangesDefault()
@@ -166,7 +166,7 @@ public unsafe partial struct ImFontAtlas
         { return GetGlyphRangesDefault_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesKorean@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesKorean@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesKorean_PInvoke(ImFontAtlas* @this);
 
     public unsafe ushort* GetGlyphRangesKorean()
@@ -175,7 +175,7 @@ public unsafe partial struct ImFontAtlas
         { return GetGlyphRangesKorean_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesJapanese@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesJapanese@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesJapanese_PInvoke(ImFontAtlas* @this);
 
     public unsafe ushort* GetGlyphRangesJapanese()
@@ -184,7 +184,7 @@ public unsafe partial struct ImFontAtlas
         { return GetGlyphRangesJapanese_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesChineseFull@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesChineseFull@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesChineseFull_PInvoke(ImFontAtlas* @this);
 
     public unsafe ushort* GetGlyphRangesChineseFull()
@@ -193,7 +193,7 @@ public unsafe partial struct ImFontAtlas
         { return GetGlyphRangesChineseFull_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesChineseSimplifiedCommon@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesChineseSimplifiedCommon@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesChineseSimplifiedCommon_PInvoke(ImFontAtlas* @this);
 
     public unsafe ushort* GetGlyphRangesChineseSimplifiedCommon()
@@ -202,7 +202,7 @@ public unsafe partial struct ImFontAtlas
         { return GetGlyphRangesChineseSimplifiedCommon_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesCyrillic@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesCyrillic@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesCyrillic_PInvoke(ImFontAtlas* @this);
 
     public unsafe ushort* GetGlyphRangesCyrillic()
@@ -211,7 +211,7 @@ public unsafe partial struct ImFontAtlas
         { return GetGlyphRangesCyrillic_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesThai@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesThai@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesThai_PInvoke(ImFontAtlas* @this);
 
     public unsafe ushort* GetGlyphRangesThai()
@@ -220,7 +220,7 @@ public unsafe partial struct ImFontAtlas
         { return GetGlyphRangesThai_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesVietnamese@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesVietnamese@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesVietnamese_PInvoke(ImFontAtlas* @this);
 
     public unsafe ushort* GetGlyphRangesVietnamese()
@@ -229,7 +229,7 @@ public unsafe partial struct ImFontAtlas
         { return GetGlyphRangesVietnamese_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddCustomRectRegular@ImFontAtlas@@QEAAHHH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddCustomRectRegular@ImFontAtlas@@QEAAHHH@Z", ExactSpelling = true)]
     private static extern int AddCustomRectRegular_PInvoke(ImFontAtlas* @this, int width, int height);
 
     public unsafe int AddCustomRectRegular(int width, int height)
@@ -238,7 +238,7 @@ public unsafe partial struct ImFontAtlas
         { return AddCustomRectRegular_PInvoke(@this, width, height); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddCustomRectFontGlyph@ImFontAtlas@@QEAAHPEAUImFont@@GHHMAEBUImVec2@@@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddCustomRectFontGlyph@ImFontAtlas@@QEAAHPEAUImFont@@GHHMAEBUImVec2@@@Z", ExactSpelling = true)]
     private static extern int AddCustomRectFontGlyph_PInvoke(ImFontAtlas* @this, ImFont* font, ushort id, int width, int height, float advance_x, ImVec2* offset);
 
     public unsafe int AddCustomRectFontGlyph(ImFont* font, ushort id, int width, int height, float advance_x, ImVec2* offset)
@@ -247,7 +247,7 @@ public unsafe partial struct ImFontAtlas
         { return AddCustomRectFontGlyph_PInvoke(@this, font, id, width, height, advance_x, offset); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCustomRectByIndex@ImFontAtlas@@QEAAPEAUImFontAtlasCustomRect@@H@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCustomRectByIndex@ImFontAtlas@@QEAAPEAUImFontAtlasCustomRect@@H@Z", ExactSpelling = true)]
     private static extern ImFontAtlasCustomRect* GetCustomRectByIndex_PInvoke(ImFontAtlas* @this, int index);
 
     public unsafe ImFontAtlasCustomRect* GetCustomRectByIndex(int index)
@@ -256,7 +256,7 @@ public unsafe partial struct ImFontAtlas
         { return GetCustomRectByIndex_PInvoke(@this, index); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcCustomRectUV@ImFontAtlas@@QEBAXPEBUImFontAtlasCustomRect@@PEAUImVec2@@1@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcCustomRectUV@ImFontAtlas@@QEBAXPEBUImFontAtlasCustomRect@@PEAUImVec2@@1@Z", ExactSpelling = true)]
     private static extern void CalcCustomRectUV_PInvoke(ImFontAtlas* @this, ImFontAtlasCustomRect* rect, ImVec2* out_uv_min, ImVec2* out_uv_max);
 
     public unsafe void CalcCustomRectUV(ImFontAtlasCustomRect* rect, ImVec2* out_uv_min, ImVec2* out_uv_max)
@@ -265,7 +265,7 @@ public unsafe partial struct ImFontAtlas
         { CalcCustomRectUV_PInvoke(@this, rect, out_uv_min, out_uv_max); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetMouseCursorTexData@ImFontAtlas@@QEAA_NHPEAUImVec2@@0QEAU2@1@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetMouseCursorTexData@ImFontAtlas@@QEAA_NHPEAUImVec2@@0QEAU2@1@Z", ExactSpelling = true)]
     private static extern bool GetMouseCursorTexData_PInvoke(ImFontAtlas* @this, ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill);
 
     public unsafe bool GetMouseCursorTexData(ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill)

@@ -22,7 +22,7 @@ public unsafe partial struct ImDrawData
 
     [FieldOffset(56)] public ImGuiViewport* OwnerViewport;
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawData@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawData@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImDrawData* @this);
 
     public unsafe void Constructor()
@@ -31,7 +31,7 @@ public unsafe partial struct ImDrawData
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImDrawData@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImDrawData@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Destructor_PInvoke(ImDrawData* @this);
 
     public unsafe void Destructor()
@@ -40,7 +40,7 @@ public unsafe partial struct ImDrawData
         { Destructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
     private static extern void Clear_PInvoke(ImDrawData* @this);
 
     public unsafe void Clear()
@@ -49,7 +49,7 @@ public unsafe partial struct ImDrawData
         { Clear_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
     private static extern void DeIndexAllBuffers_PInvoke(ImDrawData* @this);
 
     public unsafe void DeIndexAllBuffers()
@@ -58,7 +58,7 @@ public unsafe partial struct ImDrawData
         { DeIndexAllBuffers_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleClipRects@ImDrawData@@QEAAXAEBUImVec2@@@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleClipRects@ImDrawData@@QEAAXAEBUImVec2@@@Z", ExactSpelling = true)]
     private static extern void ScaleClipRects_PInvoke(ImDrawData* @this, ImVec2* fb_scale);
 
     public unsafe void ScaleClipRects(ImVec2* fb_scale)

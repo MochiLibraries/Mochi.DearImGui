@@ -7,7 +7,7 @@ public unsafe partial struct ImGuiTextBuffer
     [FieldOffset(0)] public ImVector<byte> Buf;
 
     public static readonly ConstantArray_char_1* EmptyString = (ConstantArray_char_1*)NativeLibrary.GetExport(NativeLibrary.Load("TODO.dll"), "?EmptyString@ImGuiTextBuffer@@2PADA");
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiTextBuffer@@QEAA@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiTextBuffer@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiTextBuffer* @this);
 
     public unsafe void Constructor()
@@ -16,7 +16,7 @@ public unsafe partial struct ImGuiTextBuffer
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImGuiTextBuffer@@QEBADH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImGuiTextBuffer@@QEBADH@Z", ExactSpelling = true)]
     private static extern byte operator_Subscript_PInvoke(ImGuiTextBuffer* @this, int i);
 
     public unsafe byte operator_Subscript(int i)
@@ -25,7 +25,7 @@ public unsafe partial struct ImGuiTextBuffer
         { return operator_Subscript_PInvoke(@this, i); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?begin@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?begin@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
     private static extern byte* begin_PInvoke(ImGuiTextBuffer* @this);
 
     public unsafe byte* begin()
@@ -34,7 +34,7 @@ public unsafe partial struct ImGuiTextBuffer
         { return begin_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?end@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?end@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
     private static extern byte* end_PInvoke(ImGuiTextBuffer* @this);
 
     public unsafe byte* end()
@@ -43,7 +43,7 @@ public unsafe partial struct ImGuiTextBuffer
         { return end_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?size@ImGuiTextBuffer@@QEBAHXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?size@ImGuiTextBuffer@@QEBAHXZ", ExactSpelling = true)]
     private static extern int size_PInvoke(ImGuiTextBuffer* @this);
 
     public unsafe int size()
@@ -52,7 +52,7 @@ public unsafe partial struct ImGuiTextBuffer
         { return size_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?empty@ImGuiTextBuffer@@QEBA_NXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?empty@ImGuiTextBuffer@@QEBA_NXZ", ExactSpelling = true)]
     private static extern bool empty_PInvoke(ImGuiTextBuffer* @this);
 
     public unsafe bool empty()
@@ -61,7 +61,7 @@ public unsafe partial struct ImGuiTextBuffer
         { return empty_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?clear@ImGuiTextBuffer@@QEAAXXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?clear@ImGuiTextBuffer@@QEAAXXZ", ExactSpelling = true)]
     private static extern void clear_PInvoke(ImGuiTextBuffer* @this);
 
     public unsafe void clear()
@@ -70,7 +70,7 @@ public unsafe partial struct ImGuiTextBuffer
         { clear_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?reserve@ImGuiTextBuffer@@QEAAXH@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?reserve@ImGuiTextBuffer@@QEAAXH@Z", ExactSpelling = true)]
     private static extern void reserve_PInvoke(ImGuiTextBuffer* @this, int capacity);
 
     public unsafe void reserve(int capacity)
@@ -79,7 +79,7 @@ public unsafe partial struct ImGuiTextBuffer
         { reserve_PInvoke(@this, capacity); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?c_str@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?c_str@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
     private static extern byte* c_str_PInvoke(ImGuiTextBuffer* @this);
 
     public unsafe byte* c_str()
@@ -88,7 +88,7 @@ public unsafe partial struct ImGuiTextBuffer
         { return c_str_PInvoke(@this); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?append@ImGuiTextBuffer@@QEAAXPEBD0@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?append@ImGuiTextBuffer@@QEAAXPEBD0@Z", ExactSpelling = true)]
     private static extern void append_PInvoke(ImGuiTextBuffer* @this, byte* str, byte* str_end);
 
     public unsafe void append(byte* str, byte* str_end)
@@ -97,7 +97,7 @@ public unsafe partial struct ImGuiTextBuffer
         { append_PInvoke(@this, str, str_end); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?appendf@ImGuiTextBuffer@@QEAAXPEBDZZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?appendf@ImGuiTextBuffer@@QEAAXPEBDZZ", ExactSpelling = true)]
     private static extern void appendf_PInvoke(ImGuiTextBuffer* @this, byte* fmt);
 
     public unsafe void appendf(byte* fmt)
@@ -106,7 +106,7 @@ public unsafe partial struct ImGuiTextBuffer
         { appendf_PInvoke(@this, fmt); }
     }
 
-    [DllImport("TODO.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?appendfv@ImGuiTextBuffer@@QEAAXPEBDPEAD@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?appendfv@ImGuiTextBuffer@@QEAAXPEBDPEAD@Z", ExactSpelling = true)]
     private static extern void appendfv_PInvoke(ImGuiTextBuffer* @this, byte* fmt, byte* args);
 
     public unsafe void appendfv(byte* fmt, byte* args)
