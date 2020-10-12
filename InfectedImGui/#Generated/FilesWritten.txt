@@ -1,4 +1,6 @@
 Diagnostics.log
+ID3D11Device.cs
+ID3D11DeviceContext.cs
 ImColor.cs
 ImDrawChannel.cs
 ImDrawCmd.cs
@@ -16,6 +18,8 @@ ImFontAtlasFlags.cs
 ImFontConfig.cs
 ImFontGlyph.cs
 ImFontGlyphRangesBuilder.cs
+imgui_impl_dx11.cs
+imgui_impl_win32.cs
 imgui.cs
 ImGuiBackendFlags.cs
 ImGuiButtonFlags.cs

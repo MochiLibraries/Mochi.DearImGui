@@ -19,6 +19,8 @@ string imGuiHeaderFilePath = Path.Combine(imGuiSourceDirectoryPath, "imgui.h");
 
 string outputDirectoryPath = Path.GetFullPath(args[1]);
 
+bool includeExampleImplementations = true;
+
 if (!Directory.Exists(imGuiSourceDirectoryPath))
 {
     Console.Error.WriteLine($"Dear ImGui directory '{imGuiSourceDirectoryPath}' not found.");
@@ -47,6 +49,13 @@ libraryBuilder.AddCommandLineArgument("--language=c++");
 libraryBuilder.AddCommandLineArgument($"-I{imGuiSourceDirectoryPath}");
 libraryBuilder.AddCommandLineArgument($"-DIMGUI_USER_CONFIG=\"{imGuiConfigFilePath}\"");
 libraryBuilder.AddFile(imGuiHeaderFilePath);
+
+if (includeExampleImplementations)
+{
+    string examplesPath = Path.Combine(imGuiSourceDirectoryPath, "examples");
+    libraryBuilder.AddFile(Path.Combine(examplesPath, "imgui_impl_win32.h"));
+    libraryBuilder.AddFile(Path.Combine(examplesPath, "imgui_impl_dx11.h"));
+}
 
 TranslatedLibrary library = libraryBuilder.Create();
 
