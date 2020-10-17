@@ -54,7 +54,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddText@ImFontGlyphRangesBuilder@@QEAAXPEBD0@Z", ExactSpelling = true)]
     private static extern void AddText_PInvoke(ImFontGlyphRangesBuilder* @this, byte* text, byte* text_end);
 
-    public unsafe void AddText(byte* text, byte* text_end)
+    public unsafe void AddText(byte* text, byte* text_end/* = <null> */)
     {
         fixed (ImFontGlyphRangesBuilder* @this = &this)
         { AddText_PInvoke(@this, text, text_end); }

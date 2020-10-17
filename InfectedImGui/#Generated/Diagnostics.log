@@ -4,6 +4,66 @@ Parsing Diagnostics
 ==============================================================================
 Translation Diagnostics
 ==============================================================================
+--------------- TranslatedParameter uv_min ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv_max ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv1 ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv2 ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv3 ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv4 ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter offset ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter pivot ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv0 ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv1 ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter tint_col ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter border_col ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv0 ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter uv1 ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter bg_col ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter tint_col ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size_arg ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter graph_size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter graph_size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter graph_size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter graph_size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter <>UnnamedTranslatedParameter_0 ---------------
 Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_0'
 --------------- TranslatedParameter <>UnnamedTranslatedParameter_1 ---------------
