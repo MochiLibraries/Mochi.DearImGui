@@ -4,6 +4,10 @@ Parsing Diagnostics
 ==============================================================================
 Translation Diagnostics
 ==============================================================================
+--------------- TranslatedParameter default_filter ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter label ---------------
+Warning: String constants are not supported as default parameter values.
 --------------- TranslatedParameter uv_min ---------------
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter uv_max ---------------
@@ -22,6 +26,8 @@ Warning: Non-constant default parameter values are not supported.
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter size ---------------
 Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter cond ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'pivot'.
 --------------- TranslatedParameter pivot ---------------
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter size ---------------
@@ -38,28 +44,194 @@ Warning: Non-constant default parameter values are not supported.
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter uv1 ---------------
 Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter frame_padding ---------------
+Warning: Dropped default parameter value '-1' because parameter comes before non-defaulted parameter 'tint_col'.
 --------------- TranslatedParameter bg_col ---------------
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter tint_col ---------------
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter size_arg ---------------
 Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_speed ---------------
+Warning: Dropped default parameter value '1' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_min ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_max ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter v_degrees_min ---------------
+Warning: Dropped default parameter value '-360' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter v_degrees_max ---------------
+Warning: Dropped default parameter value '360' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter step ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter step_fast ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter step ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter step_fast ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'format'.
+--------------- TranslatedParameter format ---------------
+Warning: String constants are not supported as default parameter values.
+--------------- TranslatedParameter flags ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'size'.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter selected ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'size'.
+--------------- TranslatedParameter flags ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'size'.
+--------------- TranslatedParameter size ---------------
+Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter flags ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'size'.
 --------------- TranslatedParameter size ---------------
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter size ---------------
 Warning: Non-constant default parameter values are not supported.
---------------- TranslatedParameter size ---------------
-Warning: Non-constant default parameter values are not supported.
---------------- TranslatedParameter size ---------------
-Warning: Non-constant default parameter values are not supported.
---------------- TranslatedParameter size ---------------
-Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter values_offset ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter overlay_text ---------------
+Warning: Dropped default parameter value '<null>' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter scale_min ---------------
+Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter scale_max ---------------
+Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
 --------------- TranslatedParameter graph_size ---------------
 Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter values_offset ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter overlay_text ---------------
+Warning: Dropped default parameter value '<null>' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter scale_min ---------------
+Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter scale_max ---------------
+Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
 --------------- TranslatedParameter graph_size ---------------
 Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter values_offset ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter overlay_text ---------------
+Warning: Dropped default parameter value '<null>' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter scale_min ---------------
+Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter scale_max ---------------
+Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
 --------------- TranslatedParameter graph_size ---------------
 Warning: Non-constant default parameter values are not supported.
+--------------- TranslatedParameter values_offset ---------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter overlay_text ---------------
+Warning: Dropped default parameter value '<null>' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter scale_min ---------------
+Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
+--------------- TranslatedParameter scale_max ---------------
+Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
 --------------- TranslatedParameter graph_size ---------------
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter size ---------------

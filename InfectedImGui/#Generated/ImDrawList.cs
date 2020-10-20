@@ -53,7 +53,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushClipRect@ImDrawList@@QEAAXUImVec2@@0_N@Z", ExactSpelling = true)]
     private static extern void PushClipRect_PInvoke(ImDrawList* @this, ImVec2 clip_rect_min, ImVec2 clip_rect_max, bool intersect_with_current_clip_rect);
 
-    public unsafe void PushClipRect(ImVec2 clip_rect_min, ImVec2 clip_rect_max, bool intersect_with_current_clip_rect/* = 0 */)
+    public unsafe void PushClipRect(ImVec2 clip_rect_min, ImVec2 clip_rect_max, bool intersect_with_current_clip_rect = false)
     {
         fixed (ImDrawList* @this = &this)
         { PushClipRect_PInvoke(@this, clip_rect_min, clip_rect_max, intersect_with_current_clip_rect); }
@@ -116,7 +116,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddLine@ImDrawList@@QEAAXAEBUImVec2@@0IM@Z", ExactSpelling = true)]
     private static extern void AddLine_PInvoke(ImDrawList* @this, ImVec2* p1, ImVec2* p2, uint col, float thickness);
 
-    public unsafe void AddLine(ImVec2* p1, ImVec2* p2, uint col, float thickness/* = 1 */)
+    public unsafe void AddLine(ImVec2* p1, ImVec2* p2, uint col, float thickness = 1f)
     {
         fixed (ImDrawList* @this = &this)
         { AddLine_PInvoke(@this, p1, p2, col, thickness); }
@@ -125,7 +125,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRect@ImDrawList@@QEAAXAEBUImVec2@@0IMHM@Z", ExactSpelling = true)]
     private static extern void AddRect_PInvoke(ImDrawList* @this, ImVec2* p_min, ImVec2* p_max, uint col, float rounding, ImDrawCornerFlags rounding_corners, float thickness);
 
-    public unsafe void AddRect(ImVec2* p_min, ImVec2* p_max, uint col, float rounding/* = 0 */, ImDrawCornerFlags rounding_corners/* = 15 */, float thickness/* = 1 */)
+    public unsafe void AddRect(ImVec2* p_min, ImVec2* p_max, uint col, float rounding = 0f, ImDrawCornerFlags rounding_corners = ImDrawCornerFlags.All, float thickness = 1f)
     {
         fixed (ImDrawList* @this = &this)
         { AddRect_PInvoke(@this, p_min, p_max, col, rounding, rounding_corners, thickness); }
@@ -134,7 +134,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRectFilled@ImDrawList@@QEAAXAEBUImVec2@@0IMH@Z", ExactSpelling = true)]
     private static extern void AddRectFilled_PInvoke(ImDrawList* @this, ImVec2* p_min, ImVec2* p_max, uint col, float rounding, ImDrawCornerFlags rounding_corners);
 
-    public unsafe void AddRectFilled(ImVec2* p_min, ImVec2* p_max, uint col, float rounding/* = 0 */, ImDrawCornerFlags rounding_corners/* = 15 */)
+    public unsafe void AddRectFilled(ImVec2* p_min, ImVec2* p_max, uint col, float rounding = 0f, ImDrawCornerFlags rounding_corners = ImDrawCornerFlags.All)
     {
         fixed (ImDrawList* @this = &this)
         { AddRectFilled_PInvoke(@this, p_min, p_max, col, rounding, rounding_corners); }
@@ -152,7 +152,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddQuad@ImDrawList@@QEAAXAEBUImVec2@@000IM@Z", ExactSpelling = true)]
     private static extern void AddQuad_PInvoke(ImDrawList* @this, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness);
 
-    public unsafe void AddQuad(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness/* = 1 */)
+    public unsafe void AddQuad(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness = 1f)
     {
         fixed (ImDrawList* @this = &this)
         { AddQuad_PInvoke(@this, p1, p2, p3, p4, col, thickness); }
@@ -170,7 +170,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddTriangle@ImDrawList@@QEAAXAEBUImVec2@@00IM@Z", ExactSpelling = true)]
     private static extern void AddTriangle_PInvoke(ImDrawList* @this, ImVec2* p1, ImVec2* p2, ImVec2* p3, uint col, float thickness);
 
-    public unsafe void AddTriangle(ImVec2* p1, ImVec2* p2, ImVec2* p3, uint col, float thickness/* = 1 */)
+    public unsafe void AddTriangle(ImVec2* p1, ImVec2* p2, ImVec2* p3, uint col, float thickness = 1f)
     {
         fixed (ImDrawList* @this = &this)
         { AddTriangle_PInvoke(@this, p1, p2, p3, col, thickness); }
@@ -188,7 +188,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddCircle@ImDrawList@@QEAAXAEBUImVec2@@MIHM@Z", ExactSpelling = true)]
     private static extern void AddCircle_PInvoke(ImDrawList* @this, ImVec2* center, float radius, uint col, int num_segments, float thickness);
 
-    public unsafe void AddCircle(ImVec2* center, float radius, uint col, int num_segments/* = 0 */, float thickness/* = 1 */)
+    public unsafe void AddCircle(ImVec2* center, float radius, uint col, int num_segments = 0, float thickness = 1f)
     {
         fixed (ImDrawList* @this = &this)
         { AddCircle_PInvoke(@this, center, radius, col, num_segments, thickness); }
@@ -197,7 +197,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddCircleFilled@ImDrawList@@QEAAXAEBUImVec2@@MIH@Z", ExactSpelling = true)]
     private static extern void AddCircleFilled_PInvoke(ImDrawList* @this, ImVec2* center, float radius, uint col, int num_segments);
 
-    public unsafe void AddCircleFilled(ImVec2* center, float radius, uint col, int num_segments/* = 0 */)
+    public unsafe void AddCircleFilled(ImVec2* center, float radius, uint col, int num_segments = 0)
     {
         fixed (ImDrawList* @this = &this)
         { AddCircleFilled_PInvoke(@this, center, radius, col, num_segments); }
@@ -206,7 +206,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddNgon@ImDrawList@@QEAAXAEBUImVec2@@MIHM@Z", ExactSpelling = true)]
     private static extern void AddNgon_PInvoke(ImDrawList* @this, ImVec2* center, float radius, uint col, int num_segments, float thickness);
 
-    public unsafe void AddNgon(ImVec2* center, float radius, uint col, int num_segments, float thickness/* = 1 */)
+    public unsafe void AddNgon(ImVec2* center, float radius, uint col, int num_segments, float thickness = 1f)
     {
         fixed (ImDrawList* @this = &this)
         { AddNgon_PInvoke(@this, center, radius, col, num_segments, thickness); }
@@ -224,7 +224,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddText@ImDrawList@@QEAAXAEBUImVec2@@IPEBD1@Z", ExactSpelling = true)]
     private static extern void AddText_PInvoke(ImDrawList* @this, ImVec2* pos, uint col, byte* text_begin, byte* text_end);
 
-    public unsafe void AddText(ImVec2* pos, uint col, byte* text_begin, byte* text_end/* = <null> */)
+    public unsafe void AddText(ImVec2* pos, uint col, byte* text_begin, byte* text_end = null)
     {
         fixed (ImDrawList* @this = &this)
         { AddText_PInvoke(@this, pos, col, text_begin, text_end); }
@@ -233,7 +233,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddText@ImDrawList@@QEAAXPEBUImFont@@MAEBUImVec2@@IPEBD2MPEBUImVec4@@@Z", ExactSpelling = true)]
     private static extern void AddText_PInvoke(ImDrawList* @this, ImFont* font, float font_size, ImVec2* pos, uint col, byte* text_begin, byte* text_end, float wrap_width, ImVec4* cpu_fine_clip_rect);
 
-    public unsafe void AddText(ImFont* font, float font_size, ImVec2* pos, uint col, byte* text_begin, byte* text_end/* = <null> */, float wrap_width/* = 0 */, ImVec4* cpu_fine_clip_rect/* = <null> */)
+    public unsafe void AddText(ImFont* font, float font_size, ImVec2* pos, uint col, byte* text_begin, byte* text_end = null, float wrap_width = 0f, ImVec4* cpu_fine_clip_rect = null)
     {
         fixed (ImDrawList* @this = &this)
         { AddText_PInvoke(@this, font, font_size, pos, col, text_begin, text_end, wrap_width, cpu_fine_clip_rect); }
@@ -260,7 +260,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddBezierCurve@ImDrawList@@QEAAXAEBUImVec2@@000IMH@Z", ExactSpelling = true)]
     private static extern void AddBezierCurve_PInvoke(ImDrawList* @this, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness, int num_segments);
 
-    public unsafe void AddBezierCurve(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness, int num_segments/* = 0 */)
+    public unsafe void AddBezierCurve(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness, int num_segments = 0)
     {
         fixed (ImDrawList* @this = &this)
         { AddBezierCurve_PInvoke(@this, p1, p2, p3, p4, col, thickness, num_segments); }
@@ -269,7 +269,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddImage@ImDrawList@@QEAAXPEAXAEBUImVec2@@111I@Z", ExactSpelling = true)]
     private static extern void AddImage_PInvoke(ImDrawList* @this, void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col);
 
-    public unsafe void AddImage(void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col/* = 4294967295 */)
+    public unsafe void AddImage(void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col = 4294967295)
     {
         fixed (ImDrawList* @this = &this)
         { AddImage_PInvoke(@this, user_texture_id, p_min, p_max, uv_min, uv_max, col); }
@@ -278,7 +278,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddImageQuad@ImDrawList@@QEAAXPEAXAEBUImVec2@@1111111I@Z", ExactSpelling = true)]
     private static extern void AddImageQuad_PInvoke(ImDrawList* @this, void* user_texture_id, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* uv1, ImVec2* uv2, ImVec2* uv3, ImVec2* uv4, uint col);
 
-    public unsafe void AddImageQuad(void* user_texture_id, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* uv1, ImVec2* uv2, ImVec2* uv3, ImVec2* uv4, uint col/* = 4294967295 */)
+    public unsafe void AddImageQuad(void* user_texture_id, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* uv1, ImVec2* uv2, ImVec2* uv3, ImVec2* uv4, uint col = 4294967295)
     {
         fixed (ImDrawList* @this = &this)
         { AddImageQuad_PInvoke(@this, user_texture_id, p1, p2, p3, p4, uv1, uv2, uv3, uv4, col); }
@@ -287,7 +287,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddImageRounded@ImDrawList@@QEAAXPEAXAEBUImVec2@@111IMH@Z", ExactSpelling = true)]
     private static extern void AddImageRounded_PInvoke(ImDrawList* @this, void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col, float rounding, ImDrawCornerFlags rounding_corners);
 
-    public unsafe void AddImageRounded(void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col, float rounding, ImDrawCornerFlags rounding_corners/* = 15 */)
+    public unsafe void AddImageRounded(void* user_texture_id, ImVec2* p_min, ImVec2* p_max, ImVec2* uv_min, ImVec2* uv_max, uint col, float rounding, ImDrawCornerFlags rounding_corners = ImDrawCornerFlags.All)
     {
         fixed (ImDrawList* @this = &this)
         { AddImageRounded_PInvoke(@this, user_texture_id, p_min, p_max, uv_min, uv_max, col, rounding, rounding_corners); }
@@ -332,7 +332,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathStroke@ImDrawList@@QEAAXI_NM@Z", ExactSpelling = true)]
     private static extern void PathStroke_PInvoke(ImDrawList* @this, uint col, bool closed, float thickness);
 
-    public unsafe void PathStroke(uint col, bool closed, float thickness/* = 1 */)
+    public unsafe void PathStroke(uint col, bool closed, float thickness = 1f)
     {
         fixed (ImDrawList* @this = &this)
         { PathStroke_PInvoke(@this, col, closed, thickness); }
@@ -341,7 +341,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathArcTo@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z", ExactSpelling = true)]
     private static extern void PathArcTo_PInvoke(ImDrawList* @this, ImVec2* center, float radius, float a_min, float a_max, int num_segments);
 
-    public unsafe void PathArcTo(ImVec2* center, float radius, float a_min, float a_max, int num_segments/* = 10 */)
+    public unsafe void PathArcTo(ImVec2* center, float radius, float a_min, float a_max, int num_segments = 10)
     {
         fixed (ImDrawList* @this = &this)
         { PathArcTo_PInvoke(@this, center, radius, a_min, a_max, num_segments); }
@@ -359,7 +359,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathBezierCurveTo@ImDrawList@@QEAAXAEBUImVec2@@00H@Z", ExactSpelling = true)]
     private static extern void PathBezierCurveTo_PInvoke(ImDrawList* @this, ImVec2* p2, ImVec2* p3, ImVec2* p4, int num_segments);
 
-    public unsafe void PathBezierCurveTo(ImVec2* p2, ImVec2* p3, ImVec2* p4, int num_segments/* = 0 */)
+    public unsafe void PathBezierCurveTo(ImVec2* p2, ImVec2* p3, ImVec2* p4, int num_segments = 0)
     {
         fixed (ImDrawList* @this = &this)
         { PathBezierCurveTo_PInvoke(@this, p2, p3, p4, num_segments); }
@@ -368,7 +368,7 @@ public unsafe partial struct ImDrawList
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathRect@ImDrawList@@QEAAXAEBUImVec2@@0MH@Z", ExactSpelling = true)]
     private static extern void PathRect_PInvoke(ImDrawList* @this, ImVec2* rect_min, ImVec2* rect_max, float rounding, ImDrawCornerFlags rounding_corners);
 
-    public unsafe void PathRect(ImVec2* rect_min, ImVec2* rect_max, float rounding/* = 0 */, ImDrawCornerFlags rounding_corners/* = 15 */)
+    public unsafe void PathRect(ImVec2* rect_min, ImVec2* rect_max, float rounding = 0f, ImDrawCornerFlags rounding_corners = ImDrawCornerFlags.All)
     {
         fixed (ImDrawList* @this = &this)
         { PathRect_PInvoke(@this, rect_min, rect_max, rounding, rounding_corners); }

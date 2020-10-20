@@ -104,7 +104,7 @@ public unsafe partial struct ImFont
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcTextSizeA@ImFont@@QEBA?AUImVec2@@MMMPEBD0PEAPEBD@Z", ExactSpelling = true)]
     private static extern ImVec2 CalcTextSizeA_PInvoke(ImFont* @this, float size, float max_width, float wrap_width, byte* text_begin, byte* text_end, byte** remaining);
 
-    public unsafe ImVec2 CalcTextSizeA(float size, float max_width, float wrap_width, byte* text_begin, byte* text_end/* = <null> */, byte** remaining/* = <null> */)
+    public unsafe ImVec2 CalcTextSizeA(float size, float max_width, float wrap_width, byte* text_begin, byte* text_end = null, byte** remaining = null)
     {
         fixed (ImFont* @this = &this)
         { return CalcTextSizeA_PInvoke(@this, size, max_width, wrap_width, text_begin, text_end, remaining); }
@@ -131,7 +131,7 @@ public unsafe partial struct ImFont
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderText@ImFont@@QEBAXPEAUImDrawList@@MUImVec2@@IAEBUImVec4@@PEBD3M_N@Z", ExactSpelling = true)]
     private static extern void RenderText_PInvoke(ImFont* @this, ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width, bool cpu_fine_clip);
 
-    public unsafe void RenderText(ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width/* = 0 */, bool cpu_fine_clip/* = 0 */)
+    public unsafe void RenderText(ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width = 0f, bool cpu_fine_clip = false)
     {
         fixed (ImFont* @this = &this)
         { RenderText_PInvoke(@this, draw_list, size, pos, col, clip_rect, text_begin, text_end, wrap_width, cpu_fine_clip); }
@@ -176,7 +176,7 @@ public unsafe partial struct ImFont
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRemapChar@ImFont@@QEAAXGG_N@Z", ExactSpelling = true)]
     private static extern void AddRemapChar_PInvoke(ImFont* @this, ushort dst, ushort src, bool overwrite_dst);
 
-    public unsafe void AddRemapChar(ushort dst, ushort src, bool overwrite_dst/* = 1 */)
+    public unsafe void AddRemapChar(ushort dst, ushort src, bool overwrite_dst = true)
     {
         fixed (ImFont* @this = &this)
         { AddRemapChar_PInvoke(@this, dst, src, overwrite_dst); }

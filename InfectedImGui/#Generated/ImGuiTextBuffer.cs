@@ -91,7 +91,7 @@ public unsafe partial struct ImGuiTextBuffer
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?append@ImGuiTextBuffer@@QEAAXPEBD0@Z", ExactSpelling = true)]
     private static extern void append_PInvoke(ImGuiTextBuffer* @this, byte* str, byte* str_end);
 
-    public unsafe void append(byte* str, byte* str_end/* = <null> */)
+    public unsafe void append(byte* str, byte* str_end = null)
     {
         fixed (ImGuiTextBuffer* @this = &this)
         { append_PInvoke(@this, str, str_end); }

@@ -37,7 +37,7 @@ public unsafe partial struct ImGuiListClipper
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Begin@ImGuiListClipper@@QEAAXHM@Z", ExactSpelling = true)]
     private static extern void Begin_PInvoke(ImGuiListClipper* @this, int items_count, float items_height);
 
-    public unsafe void Begin(int items_count, float items_height/* = -1 */)
+    public unsafe void Begin(int items_count, float items_height = -1f)
     {
         fixed (ImGuiListClipper* @this = &this)
         { Begin_PInvoke(@this, items_count, items_height); }

@@ -34,7 +34,7 @@ public unsafe partial struct ImFontAtlas
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontDefault@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontDefault_PInvoke(ImFontAtlas* @this, ImFontConfig* font_cfg);
 
-    public unsafe ImFont* AddFontDefault(ImFontConfig* font_cfg/* = <null> */)
+    public unsafe ImFont* AddFontDefault(ImFontConfig* font_cfg = null)
     {
         fixed (ImFontAtlas* @this = &this)
         { return AddFontDefault_PInvoke(@this, font_cfg); }
@@ -43,7 +43,7 @@ public unsafe partial struct ImFontAtlas
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromFileTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontFromFileTTF_PInvoke(ImFontAtlas* @this, byte* filename, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
-    public unsafe ImFont* AddFontFromFileTTF(byte* filename, float size_pixels, ImFontConfig* font_cfg/* = <null> */, ushort* glyph_ranges/* = <null> */)
+    public unsafe ImFont* AddFontFromFileTTF(byte* filename, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
     {
         fixed (ImFontAtlas* @this = &this)
         { return AddFontFromFileTTF_PInvoke(@this, filename, size_pixels, font_cfg, glyph_ranges); }
@@ -52,7 +52,7 @@ public unsafe partial struct ImFontAtlas
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryTTF@ImFontAtlas@@QEAAPEAUImFont@@PEAXHMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontFromMemoryTTF_PInvoke(ImFontAtlas* @this, void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
-    public unsafe ImFont* AddFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg/* = <null> */, ushort* glyph_ranges/* = <null> */)
+    public unsafe ImFont* AddFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
     {
         fixed (ImFontAtlas* @this = &this)
         { return AddFontFromMemoryTTF_PInvoke(@this, font_data, font_size, size_pixels, font_cfg, glyph_ranges); }
@@ -61,7 +61,7 @@ public unsafe partial struct ImFontAtlas
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryCompressedTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBXHMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontFromMemoryCompressedTTF_PInvoke(ImFontAtlas* @this, void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
-    public unsafe ImFont* AddFontFromMemoryCompressedTTF(void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg/* = <null> */, ushort* glyph_ranges/* = <null> */)
+    public unsafe ImFont* AddFontFromMemoryCompressedTTF(void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
     {
         fixed (ImFontAtlas* @this = &this)
         { return AddFontFromMemoryCompressedTTF_PInvoke(@this, compressed_font_data, compressed_font_size, size_pixels, font_cfg, glyph_ranges); }
@@ -70,7 +70,7 @@ public unsafe partial struct ImFontAtlas
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryCompressedBase85TTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
     private static extern ImFont* AddFontFromMemoryCompressedBase85TTF_PInvoke(ImFontAtlas* @this, byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
-    public unsafe ImFont* AddFontFromMemoryCompressedBase85TTF(byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg/* = <null> */, ushort* glyph_ranges/* = <null> */)
+    public unsafe ImFont* AddFontFromMemoryCompressedBase85TTF(byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
     {
         fixed (ImFontAtlas* @this = &this)
         { return AddFontFromMemoryCompressedBase85TTF_PInvoke(@this, compressed_font_data_base85, size_pixels, font_cfg, glyph_ranges); }
@@ -124,7 +124,7 @@ public unsafe partial struct ImFontAtlas
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTexDataAsAlpha8@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", ExactSpelling = true)]
     private static extern void GetTexDataAsAlpha8_PInvoke(ImFontAtlas* @this, byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel);
 
-    public unsafe void GetTexDataAsAlpha8(byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel/* = <null> */)
+    public unsafe void GetTexDataAsAlpha8(byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel = null)
     {
         fixed (ImFontAtlas* @this = &this)
         { GetTexDataAsAlpha8_PInvoke(@this, out_pixels, out_width, out_height, out_bytes_per_pixel); }
@@ -133,7 +133,7 @@ public unsafe partial struct ImFontAtlas
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTexDataAsRGBA32@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", ExactSpelling = true)]
     private static extern void GetTexDataAsRGBA32_PInvoke(ImFontAtlas* @this, byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel);
 
-    public unsafe void GetTexDataAsRGBA32(byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel/* = <null> */)
+    public unsafe void GetTexDataAsRGBA32(byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel = null)
     {
         fixed (ImFontAtlas* @this = &this)
         { GetTexDataAsRGBA32_PInvoke(@this, out_pixels, out_width, out_height, out_bytes_per_pixel); }

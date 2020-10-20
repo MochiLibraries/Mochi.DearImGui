@@ -49,7 +49,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InsertChars@ImGuiInputTextCallbackData@@QEAAXHPEBD0@Z", ExactSpelling = true)]
     private static extern void InsertChars_PInvoke(ImGuiInputTextCallbackData* @this, int pos, byte* text, byte* text_end);
 
-    public unsafe void InsertChars(int pos, byte* text, byte* text_end/* = <null> */)
+    public unsafe void InsertChars(int pos, byte* text, byte* text_end = null)
     {
         fixed (ImGuiInputTextCallbackData* @this = &this)
         { InsertChars_PInvoke(@this, pos, text, text_end); }
