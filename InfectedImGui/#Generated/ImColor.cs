@@ -18,7 +18,7 @@ public unsafe partial struct ImColor
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@HHHH@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImColor* @this, int r, int g, int b, int a);
 
-    public unsafe void Constructor(int r, int g, int b, int a)
+    public unsafe void Constructor(int r, int g, int b, int a = 255)
     {
         fixed (ImColor* @this = &this)
         { Constructor_PInvoke(@this, r, g, b, a); }
@@ -36,7 +36,7 @@ public unsafe partial struct ImColor
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImColor@@QEAA@MMMM@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImColor* @this, float r, float g, float b, float a);
 
-    public unsafe void Constructor(float r, float g, float b, float a)
+    public unsafe void Constructor(float r, float g, float b, float a = 1f)
     {
         fixed (ImColor* @this = &this)
         { Constructor_PInvoke(@this, r, g, b, a); }
@@ -76,12 +76,12 @@ public unsafe partial struct ImColor
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetHSV@ImColor@@QEAAXMMMM@Z", ExactSpelling = true)]
     private static extern void SetHSV_PInvoke(ImColor* @this, float h, float s, float v, float a);
 
-    public unsafe void SetHSV(float h, float s, float v, float a)
+    public unsafe void SetHSV(float h, float s, float v, float a = 1f)
     {
         fixed (ImColor* @this = &this)
         { SetHSV_PInvoke(@this, h, s, v, a); }
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HSV@ImColor@@SA?AU1@MMMM@Z", ExactSpelling = true)]
-    public static extern void HSV(out ImColor __returnBuffer, float h, float s, float v, float a);
+    public static extern void HSV(out ImColor __returnBuffer, float h, float s, float v, float a = 1f);
 }

@@ -16,7 +16,7 @@ public unsafe partial struct ImGuiTextFilter
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Draw@ImGuiTextFilter@@QEAA_NPEBDM@Z", ExactSpelling = true)]
     private static extern bool Draw_PInvoke(ImGuiTextFilter* @this, byte* label, float width);
 
-    public unsafe bool Draw(byte* label, float width)
+    public unsafe bool Draw(byte* label, float width = 0f)
     {
         fixed (ImGuiTextFilter* @this = &this)
         { return Draw_PInvoke(@this, label, width); }
@@ -25,7 +25,7 @@ public unsafe partial struct ImGuiTextFilter
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PassFilter@ImGuiTextFilter@@QEBA_NPEBD0@Z", ExactSpelling = true)]
     private static extern bool PassFilter_PInvoke(ImGuiTextFilter* @this, byte* text, byte* text_end);
 
-    public unsafe bool PassFilter(byte* text, byte* text_end)
+    public unsafe bool PassFilter(byte* text, byte* text_end = null)
     {
         fixed (ImGuiTextFilter* @this = &this)
         { return PassFilter_PInvoke(@this, text, text_end); }

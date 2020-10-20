@@ -57,7 +57,7 @@ public unsafe partial struct ImGuiStorage
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetInt@ImGuiStorage@@QEBAHIH@Z", ExactSpelling = true)]
     private static extern int GetInt_PInvoke(ImGuiStorage* @this, uint key, int default_val);
 
-    public unsafe int GetInt(uint key, int default_val)
+    public unsafe int GetInt(uint key, int default_val = 0)
     {
         fixed (ImGuiStorage* @this = &this)
         { return GetInt_PInvoke(@this, key, default_val); }
@@ -75,7 +75,7 @@ public unsafe partial struct ImGuiStorage
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBool@ImGuiStorage@@QEBA_NI_N@Z", ExactSpelling = true)]
     private static extern bool GetBool_PInvoke(ImGuiStorage* @this, uint key, bool default_val);
 
-    public unsafe bool GetBool(uint key, bool default_val)
+    public unsafe bool GetBool(uint key, bool default_val = false)
     {
         fixed (ImGuiStorage* @this = &this)
         { return GetBool_PInvoke(@this, key, default_val); }
@@ -93,7 +93,7 @@ public unsafe partial struct ImGuiStorage
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloat@ImGuiStorage@@QEBAMIM@Z", ExactSpelling = true)]
     private static extern float GetFloat_PInvoke(ImGuiStorage* @this, uint key, float default_val);
 
-    public unsafe float GetFloat(uint key, float default_val)
+    public unsafe float GetFloat(uint key, float default_val = 0f)
     {
         fixed (ImGuiStorage* @this = &this)
         { return GetFloat_PInvoke(@this, key, default_val); }
@@ -129,7 +129,7 @@ public unsafe partial struct ImGuiStorage
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIntRef@ImGuiStorage@@QEAAPEAHIH@Z", ExactSpelling = true)]
     private static extern int* GetIntRef_PInvoke(ImGuiStorage* @this, uint key, int default_val);
 
-    public unsafe int* GetIntRef(uint key, int default_val)
+    public unsafe int* GetIntRef(uint key, int default_val = 0)
     {
         fixed (ImGuiStorage* @this = &this)
         { return GetIntRef_PInvoke(@this, key, default_val); }
@@ -138,7 +138,7 @@ public unsafe partial struct ImGuiStorage
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z", ExactSpelling = true)]
     private static extern bool* GetBoolRef_PInvoke(ImGuiStorage* @this, uint key, bool default_val);
 
-    public unsafe bool* GetBoolRef(uint key, bool default_val)
+    public unsafe bool* GetBoolRef(uint key, bool default_val = false)
     {
         fixed (ImGuiStorage* @this = &this)
         { return GetBoolRef_PInvoke(@this, key, default_val); }
@@ -147,7 +147,7 @@ public unsafe partial struct ImGuiStorage
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloatRef@ImGuiStorage@@QEAAPEAMIM@Z", ExactSpelling = true)]
     private static extern float* GetFloatRef_PInvoke(ImGuiStorage* @this, uint key, float default_val);
 
-    public unsafe float* GetFloatRef(uint key, float default_val)
+    public unsafe float* GetFloatRef(uint key, float default_val = 0f)
     {
         fixed (ImGuiStorage* @this = &this)
         { return GetFloatRef_PInvoke(@this, key, default_val); }
@@ -156,7 +156,7 @@ public unsafe partial struct ImGuiStorage
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtrRef@ImGuiStorage@@QEAAPEAPEAXIPEAX@Z", ExactSpelling = true)]
     private static extern void** GetVoidPtrRef_PInvoke(ImGuiStorage* @this, uint key, void* default_val);
 
-    public unsafe void** GetVoidPtrRef(uint key, void* default_val)
+    public unsafe void** GetVoidPtrRef(uint key, void* default_val = null)
     {
         fixed (ImGuiStorage* @this = &this)
         { return GetVoidPtrRef_PInvoke(@this, key, default_val); }
