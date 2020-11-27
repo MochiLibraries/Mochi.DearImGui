@@ -237,15 +237,15 @@ Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter size ---------------
 Warning: Non-constant default parameter values are not supported.
 --------------- TranslatedParameter <>UnnamedTranslatedParameter_0 ---------------
-Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_0'
+Warning: Renamed duplicate Biohazrd.TranslatedParameter declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_0'
 --------------- TranslatedParameter <>UnnamedTranslatedParameter_1 ---------------
-Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_1'
+Warning: Renamed duplicate Biohazrd.TranslatedParameter declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_1'
 --------------- TranslatedParameter <>UnnamedTranslatedParameter_0 ---------------
-Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_0'
+Warning: Renamed duplicate Biohazrd.TranslatedParameter declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_0'
 --------------- TranslatedParameter <>UnnamedTranslatedParameter_1 ---------------
-Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_1'
+Warning: Renamed duplicate Biohazrd.TranslatedParameter declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_1'
 --------------- TranslatedParameter <>UnnamedTranslatedParameter_2 ---------------
-Warning: Renamed duplicate declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_2'
+Warning: Renamed duplicate Biohazrd.TranslatedParameter declaration '<>UnnamedTranslatedParameter' -> '<>UnnamedTranslatedParameter_2'
 ==============================================================================
 Generation Diagnostics
 ==============================================================================

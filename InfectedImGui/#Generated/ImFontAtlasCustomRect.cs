@@ -30,6 +30,7 @@ public unsafe partial struct ImFontAtlasCustomRect
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool IsPacked_PInvoke(ImFontAtlasCustomRect* @this);
 
     public unsafe bool IsPacked()

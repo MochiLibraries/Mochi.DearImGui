@@ -20,9 +20,9 @@ public unsafe partial struct ImGuiPlatformIO
 
     [FieldOffset(56)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Platform_SetWindowFocus;
 
-    [FieldOffset(64)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, bool>* Platform_GetWindowFocus;
+    [FieldOffset(64)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, NativeBoolean>* Platform_GetWindowFocus;
 
-    [FieldOffset(72)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, bool>* Platform_GetWindowMinimized;
+    [FieldOffset(72)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, NativeBoolean>* Platform_GetWindowMinimized;
 
     [FieldOffset(80)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, byte*, void>* Platform_SetWindowTitle;
 

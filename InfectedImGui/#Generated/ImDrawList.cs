@@ -51,7 +51,7 @@ public unsafe partial struct ImDrawList
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushClipRect@ImDrawList@@QEAAXUImVec2@@0_N@Z", ExactSpelling = true)]
-    private static extern void PushClipRect_PInvoke(ImDrawList* @this, ImVec2 clip_rect_min, ImVec2 clip_rect_max, bool intersect_with_current_clip_rect);
+    private static extern void PushClipRect_PInvoke(ImDrawList* @this, ImVec2 clip_rect_min, ImVec2 clip_rect_max, [MarshalAs(UnmanagedType.I1)] bool intersect_with_current_clip_rect);
 
     public unsafe void PushClipRect(ImVec2 clip_rect_min, ImVec2 clip_rect_max, bool intersect_with_current_clip_rect = false)
     {
@@ -240,7 +240,7 @@ public unsafe partial struct ImDrawList
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddPolyline@ImDrawList@@QEAAXPEBUImVec2@@HI_NM@Z", ExactSpelling = true)]
-    private static extern void AddPolyline_PInvoke(ImDrawList* @this, ImVec2* points, int num_points, uint col, bool closed, float thickness);
+    private static extern void AddPolyline_PInvoke(ImDrawList* @this, ImVec2* points, int num_points, uint col, [MarshalAs(UnmanagedType.I1)] bool closed, float thickness);
 
     public unsafe void AddPolyline(ImVec2* points, int num_points, uint col, bool closed, float thickness)
     {
@@ -330,7 +330,7 @@ public unsafe partial struct ImDrawList
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathStroke@ImDrawList@@QEAAXI_NM@Z", ExactSpelling = true)]
-    private static extern void PathStroke_PInvoke(ImDrawList* @this, uint col, bool closed, float thickness);
+    private static extern void PathStroke_PInvoke(ImDrawList* @this, uint col, [MarshalAs(UnmanagedType.I1)] bool closed, float thickness);
 
     public unsafe void PathStroke(uint col, bool closed, float thickness = 1f)
     {

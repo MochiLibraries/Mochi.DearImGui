@@ -14,6 +14,7 @@ public unsafe partial struct ImGuiTextFilter
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Draw@ImGuiTextFilter@@QEAA_NPEBDM@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool Draw_PInvoke(ImGuiTextFilter* @this, byte* label, float width);
 
     public unsafe bool Draw(byte* label, float width = 0f)
@@ -23,6 +24,7 @@ public unsafe partial struct ImGuiTextFilter
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PassFilter@ImGuiTextFilter@@QEBA_NPEBD0@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool PassFilter_PInvoke(ImGuiTextFilter* @this, byte* text, byte* text_end);
 
     public unsafe bool PassFilter(byte* text, byte* text_end = null)
@@ -50,6 +52,7 @@ public unsafe partial struct ImGuiTextFilter
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsActive@ImGuiTextFilter@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool IsActive_PInvoke(ImGuiTextFilter* @this);
 
     public unsafe bool IsActive()
@@ -84,6 +87,7 @@ public unsafe partial struct ImGuiTextFilter
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?empty@ImGuiTextRange@ImGuiTextFilter@@QEBA_NXZ", ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool empty_PInvoke(ImGuiTextRange* @this);
 
         public unsafe bool empty()

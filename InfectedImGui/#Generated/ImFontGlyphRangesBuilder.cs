@@ -25,6 +25,7 @@ public unsafe partial struct ImFontGlyphRangesBuilder
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBit@ImFontGlyphRangesBuilder@@QEBA_N_K@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool GetBit_PInvoke(ImFontGlyphRangesBuilder* @this, ulong n);
 
     public unsafe bool GetBit(ulong n)

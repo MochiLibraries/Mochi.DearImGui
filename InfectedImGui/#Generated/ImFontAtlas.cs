@@ -113,6 +113,7 @@ public unsafe partial struct ImFontAtlas
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Build@ImFontAtlas@@QEAA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool Build_PInvoke(ImFontAtlas* @this);
 
     public unsafe bool Build()
@@ -140,6 +141,7 @@ public unsafe partial struct ImFontAtlas
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsBuilt@ImFontAtlas@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool IsBuilt_PInvoke(ImFontAtlas* @this);
 
     public unsafe bool IsBuilt()
@@ -266,6 +268,7 @@ public unsafe partial struct ImFontAtlas
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetMouseCursorTexData@ImFontAtlas@@QEAA_NHPEAUImVec2@@0QEAU2@1@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool GetMouseCursorTexData_PInvoke(ImFontAtlas* @this, ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill);
 
     public unsafe bool GetMouseCursorTexData(ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill)
@@ -274,7 +277,7 @@ public unsafe partial struct ImFontAtlas
         { return GetMouseCursorTexData_PInvoke(@this, cursor, out_offset, out_size, out_uv_border, out_uv_fill); }
     }
 
-    [FieldOffset(0)] public bool Locked;
+    [FieldOffset(0)] [MarshalAs(UnmanagedType.I1)] public bool Locked;
 
     [FieldOffset(4)] public ImFontAtlasFlags Flags;
 

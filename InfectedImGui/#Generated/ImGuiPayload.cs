@@ -16,9 +16,9 @@ public unsafe partial struct ImGuiPayload
 
     [FieldOffset(24)] public ConstantArray_char_33 DataType;
 
-    [FieldOffset(57)] public bool Preview;
+    [FieldOffset(57)] [MarshalAs(UnmanagedType.I1)] public bool Preview;
 
-    [FieldOffset(58)] public bool Delivery;
+    [FieldOffset(58)] [MarshalAs(UnmanagedType.I1)] public bool Delivery;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiPayload@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiPayload* @this);
@@ -39,6 +39,7 @@ public unsafe partial struct ImGuiPayload
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDataType@ImGuiPayload@@QEBA_NPEBD@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool IsDataType_PInvoke(ImGuiPayload* @this, byte* type);
 
     public unsafe bool IsDataType(byte* type)
@@ -48,6 +49,7 @@ public unsafe partial struct ImGuiPayload
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPreview@ImGuiPayload@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool IsPreview_PInvoke(ImGuiPayload* @this);
 
     public unsafe bool IsPreview()
@@ -57,6 +59,7 @@ public unsafe partial struct ImGuiPayload
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDelivery@ImGuiPayload@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool IsDelivery_PInvoke(ImGuiPayload* @this);
 
     public unsafe bool IsDelivery()

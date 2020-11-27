@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 [StructLayout(LayoutKind.Explicit, Size = 64)]
 public unsafe partial struct ImDrawData
 {
-    [FieldOffset(0)] public bool Valid;
+    [FieldOffset(0)] [MarshalAs(UnmanagedType.I1)] public bool Valid;
 
     [FieldOffset(8)] public ImDrawList** CmdLists;
 

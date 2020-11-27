@@ -70,11 +70,11 @@ public unsafe partial struct ImGuiStyle
 
     [FieldOffset(172)] public float MouseCursorScale;
 
-    [FieldOffset(176)] public bool AntiAliasedLines;
+    [FieldOffset(176)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedLines;
 
-    [FieldOffset(177)] public bool AntiAliasedLinesUseTex;
+    [FieldOffset(177)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedLinesUseTex;
 
-    [FieldOffset(178)] public bool AntiAliasedFill;
+    [FieldOffset(178)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedFill;
 
     [FieldOffset(180)] public float CurveTessellationTol;
 

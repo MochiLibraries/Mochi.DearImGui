@@ -73,7 +73,8 @@ public unsafe partial struct ImGuiStorage
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBool@ImGuiStorage@@QEBA_NI_N@Z", ExactSpelling = true)]
-    private static extern bool GetBool_PInvoke(ImGuiStorage* @this, uint key, bool default_val);
+    [return: MarshalAs(UnmanagedType.I1)]
+    private static extern bool GetBool_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool default_val);
 
     public unsafe bool GetBool(uint key, bool default_val = false)
     {
@@ -82,7 +83,7 @@ public unsafe partial struct ImGuiStorage
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBool@ImGuiStorage@@QEAAXI_N@Z", ExactSpelling = true)]
-    private static extern void SetBool_PInvoke(ImGuiStorage* @this, uint key, bool val);
+    private static extern void SetBool_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool val);
 
     public unsafe void SetBool(uint key, bool val)
     {
@@ -136,7 +137,7 @@ public unsafe partial struct ImGuiStorage
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z", ExactSpelling = true)]
-    private static extern bool* GetBoolRef_PInvoke(ImGuiStorage* @this, uint key, bool default_val);
+    private static extern bool* GetBoolRef_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool default_val);
 
     public unsafe bool* GetBoolRef(uint key, bool default_val = false)
     {

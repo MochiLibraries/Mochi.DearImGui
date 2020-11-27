@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 public unsafe static partial class imgui_impl_win32
 {
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool ImGui_ImplWin32_Init(void* hwnd);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]

@@ -20,7 +20,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
 
     [FieldOffset(36)] public int BufSize;
 
-    [FieldOffset(40)] public bool BufDirty;
+    [FieldOffset(40)] [MarshalAs(UnmanagedType.I1)] public bool BufDirty;
 
     [FieldOffset(44)] public int CursorPos;
 
@@ -74,6 +74,7 @@ public unsafe partial struct ImGuiInputTextCallbackData
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HasSelection@ImGuiInputTextCallbackData@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool HasSelection_PInvoke(ImGuiInputTextCallbackData* @this);
 
     public unsafe bool HasSelection()

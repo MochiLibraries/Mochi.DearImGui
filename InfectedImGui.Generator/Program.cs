@@ -60,7 +60,7 @@ if (includeExampleImplementations)
 TranslatedLibrary library = libraryBuilder.Create();
 
 // Start output session
-using OutputSession outputSession = new OutputSession()
+using OutputSession outputSession = new()
 {
     AutoRenameConflictingFiles = true,
     BaseOutputDirectory = outputDirectoryPath
@@ -96,6 +96,7 @@ Console.WriteLine($"Finished reducing types in {iterations} iterations.");
 library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
 library = new CSharpBuiltinTypeTransformation().Transform(library);
 library = new KludgeUnknownClangTypesIntoBuiltinTypesTransformation(emitErrorOnFail: true).Transform(library);
+library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
 library = new MoveLooseDeclarationsIntoTypesTransformation().Transform(library);
 

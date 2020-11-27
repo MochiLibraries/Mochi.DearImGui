@@ -30,11 +30,11 @@ public unsafe partial struct ImGuiViewport
 
     [FieldOffset(88)] public void* PlatformHandleRaw;
 
-    [FieldOffset(96)] public bool PlatformRequestMove;
+    [FieldOffset(96)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestMove;
 
-    [FieldOffset(97)] public bool PlatformRequestResize;
+    [FieldOffset(97)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestResize;
 
-    [FieldOffset(98)] public bool PlatformRequestClose;
+    [FieldOffset(98)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestClose;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiViewport@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiViewport* @this);

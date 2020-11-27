@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 public unsafe static partial class imgui_impl_dx11
 {
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool ImGui_ImplDX11_Init(ID3D11Device* device, ID3D11DeviceContext* device_context);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -19,5 +20,6 @@ public unsafe static partial class imgui_impl_dx11
     public static extern void ImGui_ImplDX11_InvalidateDeviceObjects();
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool ImGui_ImplDX11_CreateDeviceObjects();
 }

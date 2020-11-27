@@ -26,7 +26,7 @@ public unsafe partial struct ImFont
 
     [FieldOffset(84)] public ushort EllipsisChar;
 
-    [FieldOffset(86)] public bool DirtyLookupTables;
+    [FieldOffset(86)] [MarshalAs(UnmanagedType.I1)] public bool DirtyLookupTables;
 
     [FieldOffset(88)] public float Scale;
 
@@ -84,6 +84,7 @@ public unsafe partial struct ImFont
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsLoaded@ImFont@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool IsLoaded_PInvoke(ImFont* @this);
 
     public unsafe bool IsLoaded()
@@ -129,7 +130,7 @@ public unsafe partial struct ImFont
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderText@ImFont@@QEBAXPEAUImDrawList@@MUImVec2@@IAEBUImVec4@@PEBD3M_N@Z", ExactSpelling = true)]
-    private static extern void RenderText_PInvoke(ImFont* @this, ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width, bool cpu_fine_clip);
+    private static extern void RenderText_PInvoke(ImFont* @this, ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width, [MarshalAs(UnmanagedType.I1)] bool cpu_fine_clip);
 
     public unsafe void RenderText(ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width = 0f, bool cpu_fine_clip = false)
     {
@@ -174,7 +175,7 @@ public unsafe partial struct ImFont
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRemapChar@ImFont@@QEAAXGG_N@Z", ExactSpelling = true)]
-    private static extern void AddRemapChar_PInvoke(ImFont* @this, ushort dst, ushort src, bool overwrite_dst);
+    private static extern void AddRemapChar_PInvoke(ImFont* @this, ushort dst, ushort src, [MarshalAs(UnmanagedType.I1)] bool overwrite_dst);
 
     public unsafe void AddRemapChar(ushort dst, ushort src, bool overwrite_dst = true)
     {
@@ -183,7 +184,7 @@ public unsafe partial struct ImFont
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetGlyphVisible@ImFont@@QEAAXG_N@Z", ExactSpelling = true)]
-    private static extern void SetGlyphVisible_PInvoke(ImFont* @this, ushort c, bool visible);
+    private static extern void SetGlyphVisible_PInvoke(ImFont* @this, ushort c, [MarshalAs(UnmanagedType.I1)] bool visible);
 
     public unsafe void SetGlyphVisible(ushort c, bool visible)
     {
@@ -201,6 +202,7 @@ public unsafe partial struct ImFont
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsGlyphRangeUnused@ImFont@@QEAA_NII@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool IsGlyphRangeUnused_PInvoke(ImFont* @this, uint c_begin, uint c_last);
 
     public unsafe bool IsGlyphRangeUnused(uint c_begin, uint c_last)

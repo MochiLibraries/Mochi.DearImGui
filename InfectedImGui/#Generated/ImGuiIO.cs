@@ -36,37 +36,37 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(168)] public float FontGlobalScale;
 
-    [FieldOffset(172)] public bool FontAllowUserScaling;
+    [FieldOffset(172)] [MarshalAs(UnmanagedType.I1)] public bool FontAllowUserScaling;
 
     [FieldOffset(176)] public ImFont* FontDefault;
 
     [FieldOffset(184)] public ImVec2 DisplayFramebufferScale;
 
-    [FieldOffset(192)] public bool ConfigDockingNoSplit;
+    [FieldOffset(192)] [MarshalAs(UnmanagedType.I1)] public bool ConfigDockingNoSplit;
 
-    [FieldOffset(193)] public bool ConfigDockingWithShift;
+    [FieldOffset(193)] [MarshalAs(UnmanagedType.I1)] public bool ConfigDockingWithShift;
 
-    [FieldOffset(194)] public bool ConfigDockingAlwaysTabBar;
+    [FieldOffset(194)] [MarshalAs(UnmanagedType.I1)] public bool ConfigDockingAlwaysTabBar;
 
-    [FieldOffset(195)] public bool ConfigDockingTransparentPayload;
+    [FieldOffset(195)] [MarshalAs(UnmanagedType.I1)] public bool ConfigDockingTransparentPayload;
 
-    [FieldOffset(196)] public bool ConfigViewportsNoAutoMerge;
+    [FieldOffset(196)] [MarshalAs(UnmanagedType.I1)] public bool ConfigViewportsNoAutoMerge;
 
-    [FieldOffset(197)] public bool ConfigViewportsNoTaskBarIcon;
+    [FieldOffset(197)] [MarshalAs(UnmanagedType.I1)] public bool ConfigViewportsNoTaskBarIcon;
 
-    [FieldOffset(198)] public bool ConfigViewportsNoDecoration;
+    [FieldOffset(198)] [MarshalAs(UnmanagedType.I1)] public bool ConfigViewportsNoDecoration;
 
-    [FieldOffset(199)] public bool ConfigViewportsNoDefaultParent;
+    [FieldOffset(199)] [MarshalAs(UnmanagedType.I1)] public bool ConfigViewportsNoDefaultParent;
 
-    [FieldOffset(200)] public bool MouseDrawCursor;
+    [FieldOffset(200)] [MarshalAs(UnmanagedType.I1)] public bool MouseDrawCursor;
 
-    [FieldOffset(201)] public bool ConfigMacOSXBehaviors;
+    [FieldOffset(201)] [MarshalAs(UnmanagedType.I1)] public bool ConfigMacOSXBehaviors;
 
-    [FieldOffset(202)] public bool ConfigInputTextCursorBlink;
+    [FieldOffset(202)] [MarshalAs(UnmanagedType.I1)] public bool ConfigInputTextCursorBlink;
 
-    [FieldOffset(203)] public bool ConfigWindowsResizeFromEdges;
+    [FieldOffset(203)] [MarshalAs(UnmanagedType.I1)] public bool ConfigWindowsResizeFromEdges;
 
-    [FieldOffset(204)] public bool ConfigWindowsMoveFromTitleBarOnly;
+    [FieldOffset(204)] [MarshalAs(UnmanagedType.I1)] public bool ConfigWindowsMoveFromTitleBarOnly;
 
     [FieldOffset(208)] public float ConfigWindowsMemoryCompactTimer;
 
@@ -98,13 +98,13 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(312)] public uint MouseHoveredViewport;
 
-    [FieldOffset(316)] public bool KeyCtrl;
+    [FieldOffset(316)] [MarshalAs(UnmanagedType.I1)] public bool KeyCtrl;
 
-    [FieldOffset(317)] public bool KeyShift;
+    [FieldOffset(317)] [MarshalAs(UnmanagedType.I1)] public bool KeyShift;
 
-    [FieldOffset(318)] public bool KeyAlt;
+    [FieldOffset(318)] [MarshalAs(UnmanagedType.I1)] public bool KeyAlt;
 
-    [FieldOffset(319)] public bool KeySuper;
+    [FieldOffset(319)] [MarshalAs(UnmanagedType.I1)] public bool KeySuper;
 
     [FieldOffset(320)] public ConstantArray_bool_512 KeysDown;
 
@@ -146,19 +146,19 @@ public unsafe partial struct ImGuiIO
         { ClearInputCharacters_PInvoke(@this); }
     }
 
-    [FieldOffset(916)] public bool WantCaptureMouse;
+    [FieldOffset(916)] [MarshalAs(UnmanagedType.I1)] public bool WantCaptureMouse;
 
-    [FieldOffset(917)] public bool WantCaptureKeyboard;
+    [FieldOffset(917)] [MarshalAs(UnmanagedType.I1)] public bool WantCaptureKeyboard;
 
-    [FieldOffset(918)] public bool WantTextInput;
+    [FieldOffset(918)] [MarshalAs(UnmanagedType.I1)] public bool WantTextInput;
 
-    [FieldOffset(919)] public bool WantSetMousePos;
+    [FieldOffset(919)] [MarshalAs(UnmanagedType.I1)] public bool WantSetMousePos;
 
-    [FieldOffset(920)] public bool WantSaveIniSettings;
+    [FieldOffset(920)] [MarshalAs(UnmanagedType.I1)] public bool WantSaveIniSettings;
 
-    [FieldOffset(921)] public bool NavActive;
+    [FieldOffset(921)] [MarshalAs(UnmanagedType.I1)] public bool NavActive;
 
-    [FieldOffset(922)] public bool NavVisible;
+    [FieldOffset(922)] [MarshalAs(UnmanagedType.I1)] public bool NavVisible;
 
     [FieldOffset(924)] public float Framerate;
 

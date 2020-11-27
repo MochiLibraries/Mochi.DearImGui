@@ -16,9 +16,9 @@ public unsafe partial struct ImGuiWindowClass
 
     [FieldOffset(20)] public ImGuiDockNodeFlags DockNodeFlagsOverrideClear;
 
-    [FieldOffset(24)] public bool DockingAlwaysTabBar;
+    [FieldOffset(24)] [MarshalAs(UnmanagedType.I1)] public bool DockingAlwaysTabBar;
 
-    [FieldOffset(25)] public bool DockingAllowUnclassed;
+    [FieldOffset(25)] [MarshalAs(UnmanagedType.I1)] public bool DockingAllowUnclassed;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiWindowClass@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiWindowClass* @this);

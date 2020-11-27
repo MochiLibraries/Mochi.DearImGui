@@ -53,6 +53,7 @@ public unsafe partial struct ImGuiTextBuffer
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?empty@ImGuiTextBuffer@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool empty_PInvoke(ImGuiTextBuffer* @this);
 
     public unsafe bool empty()

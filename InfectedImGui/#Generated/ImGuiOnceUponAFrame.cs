@@ -16,6 +16,7 @@ public unsafe partial struct ImGuiOnceUponAFrame
     [FieldOffset(0)] public int RefFrame;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??BImGuiOnceUponAFrame@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool ____ConversionOperator_bool_PInvoke(ImGuiOnceUponAFrame* @this);
 
     public unsafe bool ____ConversionOperator_bool()

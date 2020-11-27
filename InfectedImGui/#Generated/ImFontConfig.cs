@@ -8,7 +8,7 @@ public unsafe partial struct ImFontConfig
 
     [FieldOffset(8)] public int FontDataSize;
 
-    [FieldOffset(12)] public bool FontDataOwnedByAtlas;
+    [FieldOffset(12)] [MarshalAs(UnmanagedType.I1)] public bool FontDataOwnedByAtlas;
 
     [FieldOffset(16)] public int FontNo;
 
@@ -18,7 +18,7 @@ public unsafe partial struct ImFontConfig
 
     [FieldOffset(28)] public int OversampleV;
 
-    [FieldOffset(32)] public bool PixelSnapH;
+    [FieldOffset(32)] [MarshalAs(UnmanagedType.I1)] public bool PixelSnapH;
 
     [FieldOffset(36)] public ImVec2 GlyphExtraSpacing;
 
@@ -30,7 +30,7 @@ public unsafe partial struct ImFontConfig
 
     [FieldOffset(68)] public float GlyphMaxAdvanceX;
 
-    [FieldOffset(72)] public bool MergeMode;
+    [FieldOffset(72)] [MarshalAs(UnmanagedType.I1)] public bool MergeMode;
 
     [FieldOffset(76)] public uint RasterizerFlags;
 

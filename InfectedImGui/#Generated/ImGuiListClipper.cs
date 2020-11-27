@@ -53,6 +53,7 @@ public unsafe partial struct ImGuiListClipper
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Step@ImGuiListClipper@@QEAA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
     private static extern bool Step_PInvoke(ImGuiListClipper* @this);
 
     public unsafe bool Step()
