@@ -9,6 +9,7 @@
     <ProjectReference Include="..\external\Biohazrd\Biohazrd.CSharp\Biohazrd.CSharp.csproj" />
     <ProjectReference Include="..\external\Biohazrd\Biohazrd.OutputGeneration\Biohazrd.OutputGeneration.csproj" />
     <ProjectReference Include="..\external\Biohazrd\Biohazrd.Transformation\Biohazrd.Transformation.csproj" />
+    <ProjectReference Include="..\external\Biohazrd\Biohazrd.Utilities\Biohazrd.Utilities.csproj" />
     <ProjectReference Include="..\external\Biohazrd\Biohazrd\Biohazrd.csproj" />
   </ItemGroup>
 
