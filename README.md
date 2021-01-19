@@ -5,7 +5,7 @@
 
 This repo contains C# bindings for [Dear ImGui](https://github.com/ocornut/imgui/) as well as a [Biohazrd](https://github.com/InfectedLibraries/Biohazrd)-powered generator for generating them.
 
-This project is not ready to be used, if you're looking for an ImGui binding for C# I'd suggest watching releases on this repository and using the excellent [ImGui.NET](https://github.com/mellinoe/ImGui.NET) for the time being. (The bingins work, but it has some very rough edges and not everything works.)
+This project is not ready to be used, if you're looking for an ImGui binding for C# I'd suggest watching releases on this repository and using the excellent [ImGui.NET](https://github.com/mellinoe/ImGui.NET) for the time being. (The bindings work, but it has some very rough edges and not everything works.)
 
 This repository primarily exists to serve as an example what using Biohazrd looks like today with a C++ library that has a relatively simple API. For the sake of demonstration, the output of the generator for Windows x64 is committed under [InfectedImGui/#Generated](InfectedImGui/#Generated).
 
