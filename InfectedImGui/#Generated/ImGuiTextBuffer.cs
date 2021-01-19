@@ -7,6 +7,7 @@ public unsafe partial struct ImGuiTextBuffer
     [FieldOffset(0)] public ImVector<byte> Buf;
 
     public static readonly ConstantArray_char_1* EmptyString = (ConstantArray_char_1*)NativeLibrary.GetExport(NativeLibrary.Load("TODO.dll"), "?EmptyString@ImGuiTextBuffer@@2PADA");
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiTextBuffer@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiTextBuffer* @this);
 

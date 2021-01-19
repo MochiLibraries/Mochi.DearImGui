@@ -375,9 +375,9 @@ public unsafe partial struct ImDrawList
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddCallback@ImDrawList@@QEAAXP6AXPEBU1@PEBUImDrawCmd@@@ZPEAX@Z", ExactSpelling = true)]
-    private static extern void AddCallback_PInvoke(ImDrawList* @this, delegate* unmanaged[Cdecl]<ImDrawList*, ImDrawCmd*, void>* callback, void* callback_data);
+    private static extern void AddCallback_PInvoke(ImDrawList* @this, delegate* unmanaged[Cdecl]<ImDrawList*, ImDrawCmd*, void> callback, void* callback_data);
 
-    public unsafe void AddCallback(delegate* unmanaged[Cdecl]<ImDrawList*, ImDrawCmd*, void>* callback, void* callback_data)
+    public unsafe void AddCallback(delegate* unmanaged[Cdecl]<ImDrawList*, ImDrawCmd*, void> callback, void* callback_data)
     {
         fixed (ImDrawList* @this = &this)
         { AddCallback_PInvoke(@this, callback, callback_data); }

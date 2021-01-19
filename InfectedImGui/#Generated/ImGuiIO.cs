@@ -80,9 +80,9 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(248)] public void* BackendLanguageUserData;
 
-    [FieldOffset(256)] public delegate* unmanaged[Cdecl]<void*, byte*>* GetClipboardTextFn;
+    [FieldOffset(256)] public delegate* unmanaged[Cdecl]<void*, byte*> GetClipboardTextFn;
 
-    [FieldOffset(264)] public delegate* unmanaged[Cdecl]<void*, byte*, void>* SetClipboardTextFn;
+    [FieldOffset(264)] public delegate* unmanaged[Cdecl]<void*, byte*, void> SetClipboardTextFn;
 
     [FieldOffset(272)] public void* ClipboardUserData;
 

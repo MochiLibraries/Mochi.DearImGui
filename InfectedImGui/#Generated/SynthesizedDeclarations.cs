@@ -1096,7 +1096,7 @@ public unsafe partial struct ConstantArray_int_4
 }
 
 [StructLayout(LayoutKind.Sequential)]
-public readonly struct NativeBoolean : IComparable, IComparable<bool>, IEquatable<bool>, IComparable<NativeBoolean>, IEquatable<NativeBoolean>
+public readonly partial struct NativeBoolean : IComparable, IComparable<bool>, IEquatable<bool>, IComparable<NativeBoolean>, IEquatable<NativeBoolean>
 {
     private readonly byte Value;
 

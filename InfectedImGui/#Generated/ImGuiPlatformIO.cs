@@ -4,53 +4,53 @@ using System.Runtime.InteropServices;
 [StructLayout(LayoutKind.Explicit, Size = 232)]
 public unsafe partial struct ImGuiPlatformIO
 {
-    [FieldOffset(0)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Platform_CreateWindow;
+    [FieldOffset(0)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_CreateWindow;
 
-    [FieldOffset(8)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Platform_DestroyWindow;
+    [FieldOffset(8)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_DestroyWindow;
 
-    [FieldOffset(16)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Platform_ShowWindow;
+    [FieldOffset(16)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_ShowWindow;
 
-    [FieldOffset(24)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void>* Platform_SetWindowPos;
+    [FieldOffset(24)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void> Platform_SetWindowPos;
 
-    [FieldOffset(32)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2>* Platform_GetWindowPos;
+    [FieldOffset(32)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2> Platform_GetWindowPos;
 
-    [FieldOffset(40)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void>* Platform_SetWindowSize;
+    [FieldOffset(40)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void> Platform_SetWindowSize;
 
-    [FieldOffset(48)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2>* Platform_GetWindowSize;
+    [FieldOffset(48)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2> Platform_GetWindowSize;
 
-    [FieldOffset(56)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Platform_SetWindowFocus;
+    [FieldOffset(56)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_SetWindowFocus;
 
-    [FieldOffset(64)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, NativeBoolean>* Platform_GetWindowFocus;
+    [FieldOffset(64)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, NativeBoolean> Platform_GetWindowFocus;
 
-    [FieldOffset(72)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, NativeBoolean>* Platform_GetWindowMinimized;
+    [FieldOffset(72)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, NativeBoolean> Platform_GetWindowMinimized;
 
-    [FieldOffset(80)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, byte*, void>* Platform_SetWindowTitle;
+    [FieldOffset(80)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, byte*, void> Platform_SetWindowTitle;
 
-    [FieldOffset(88)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, float, void>* Platform_SetWindowAlpha;
+    [FieldOffset(88)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, float, void> Platform_SetWindowAlpha;
 
-    [FieldOffset(96)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Platform_UpdateWindow;
+    [FieldOffset(96)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_UpdateWindow;
 
-    [FieldOffset(104)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void*, void>* Platform_RenderWindow;
+    [FieldOffset(104)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void*, void> Platform_RenderWindow;
 
-    [FieldOffset(112)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void*, void>* Platform_SwapBuffers;
+    [FieldOffset(112)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void*, void> Platform_SwapBuffers;
 
-    [FieldOffset(120)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, float>* Platform_GetWindowDpiScale;
+    [FieldOffset(120)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, float> Platform_GetWindowDpiScale;
 
-    [FieldOffset(128)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Platform_OnChangedViewport;
+    [FieldOffset(128)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_OnChangedViewport;
 
-    [FieldOffset(136)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void>* Platform_SetImeInputPos;
+    [FieldOffset(136)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void> Platform_SetImeInputPos;
 
-    [FieldOffset(144)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ulong, void*, ulong*, int>* Platform_CreateVkSurface;
+    [FieldOffset(144)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ulong, void*, ulong*, int> Platform_CreateVkSurface;
 
-    [FieldOffset(152)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Renderer_CreateWindow;
+    [FieldOffset(152)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Renderer_CreateWindow;
 
-    [FieldOffset(160)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void>* Renderer_DestroyWindow;
+    [FieldOffset(160)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Renderer_DestroyWindow;
 
-    [FieldOffset(168)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void>* Renderer_SetWindowSize;
+    [FieldOffset(168)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void> Renderer_SetWindowSize;
 
-    [FieldOffset(176)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void*, void>* Renderer_RenderWindow;
+    [FieldOffset(176)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void*, void> Renderer_RenderWindow;
 
-    [FieldOffset(184)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void*, void>* Renderer_SwapBuffers;
+    [FieldOffset(184)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void*, void> Renderer_SwapBuffers;
 
     [FieldOffset(192)] public ImVector<ImGuiPlatformMonitor> Monitors;
 

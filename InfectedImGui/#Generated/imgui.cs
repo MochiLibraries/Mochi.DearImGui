@@ -129,7 +129,7 @@ public unsafe static partial class imgui
     public static extern void SetNextWindowSize(ImVec2* size, ImGuiCond cond = ImGuiCond.None);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetNextWindowSizeConstraints@ImGui@@YAXAEBUImVec2@@0P6AXPEAUImGuiSizeCallbackData@@@ZPEAX@Z", ExactSpelling = true)]
-    public static extern void SetNextWindowSizeConstraints(ImVec2* size_min, ImVec2* size_max, delegate* unmanaged[Cdecl]<ImGuiSizeCallbackData*, void>* custom_callback = null, void* custom_callback_data = null);
+    public static extern void SetNextWindowSizeConstraints(ImVec2* size_min, ImVec2* size_max, delegate* unmanaged[Cdecl]<ImGuiSizeCallbackData*, void> custom_callback = null, void* custom_callback_data = null);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetNextWindowContentSize@ImGui@@YAXAEBUImVec2@@@Z", ExactSpelling = true)]
     public static extern void SetNextWindowContentSize(ImVec2* size);
@@ -487,7 +487,7 @@ public unsafe static partial class imgui
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Combo@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static extern bool Combo(byte* label, int* current_item, delegate* unmanaged[Cdecl]<void*, int, byte**, NativeBoolean>* items_getter, void* data, int items_count, int popup_max_height_in_items = -1);
+    public static extern bool Combo(byte* label, int* current_item, delegate* unmanaged[Cdecl]<void*, int, byte**, NativeBoolean> items_getter, void* data, int items_count, int popup_max_height_in_items = -1);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DragFloat@ImGui@@YA_NPEBDPEAMMMM0H@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
@@ -595,15 +595,15 @@ public unsafe static partial class imgui
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InputText@ImGui@@YA_NPEBDPEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static extern bool InputText(byte* label, byte* buf, ulong buf_size, ImGuiInputTextFlags flags = ImGuiInputTextFlags.None, delegate* unmanaged[Cdecl]<ImGuiInputTextCallbackData*, int>* callback = null, void* user_data = null);
+    public static extern bool InputText(byte* label, byte* buf, ulong buf_size, ImGuiInputTextFlags flags = ImGuiInputTextFlags.None, delegate* unmanaged[Cdecl]<ImGuiInputTextCallbackData*, int> callback = null, void* user_data = null);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InputTextMultiline@ImGui@@YA_NPEBDPEAD_KAEBUImVec2@@HP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static extern bool InputTextMultiline(byte* label, byte* buf, ulong buf_size, ImVec2* size, ImGuiInputTextFlags flags = ImGuiInputTextFlags.None, delegate* unmanaged[Cdecl]<ImGuiInputTextCallbackData*, int>* callback = null, void* user_data = null);
+    public static extern bool InputTextMultiline(byte* label, byte* buf, ulong buf_size, ImVec2* size, ImGuiInputTextFlags flags = ImGuiInputTextFlags.None, delegate* unmanaged[Cdecl]<ImGuiInputTextCallbackData*, int> callback = null, void* user_data = null);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InputTextWithHint@ImGui@@YA_NPEBD0PEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static extern bool InputTextWithHint(byte* label, byte* hint, byte* buf, ulong buf_size, ImGuiInputTextFlags flags = ImGuiInputTextFlags.None, delegate* unmanaged[Cdecl]<ImGuiInputTextCallbackData*, int>* callback = null, void* user_data = null);
+    public static extern bool InputTextWithHint(byte* label, byte* hint, byte* buf, ulong buf_size, ImGuiInputTextFlags flags = ImGuiInputTextFlags.None, delegate* unmanaged[Cdecl]<ImGuiInputTextCallbackData*, int> callback = null, void* user_data = null);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InputFloat@ImGui@@YA_NPEBDPEAMMM0H@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
@@ -749,7 +749,7 @@ public unsafe static partial class imgui
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ListBox@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static extern bool ListBox(byte* label, int* current_item, delegate* unmanaged[Cdecl]<void*, int, byte**, NativeBoolean>* items_getter, void* data, int items_count, int height_in_items = -1);
+    public static extern bool ListBox(byte* label, int* current_item, delegate* unmanaged[Cdecl]<void*, int, byte**, NativeBoolean> items_getter, void* data, int items_count, int height_in_items = -1);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ListBoxHeader@ImGui@@YA_NPEBDAEBUImVec2@@@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
@@ -766,13 +766,13 @@ public unsafe static partial class imgui
     public static extern void PlotLines(byte* label, float* values, int values_count, int values_offset, byte* overlay_text, float scale_min, float scale_max, ImVec2 graph_size, int stride = 4);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PlotLines@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z", ExactSpelling = true)]
-    public static extern void PlotLines(byte* label, delegate* unmanaged[Cdecl]<void*, int, float>* values_getter, void* data, int values_count, int values_offset, byte* overlay_text, float scale_min, float scale_max, ImVec2 graph_size);
+    public static extern void PlotLines(byte* label, delegate* unmanaged[Cdecl]<void*, int, float> values_getter, void* data, int values_count, int values_offset, byte* overlay_text, float scale_min, float scale_max, ImVec2 graph_size);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PlotHistogram@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z", ExactSpelling = true)]
     public static extern void PlotHistogram(byte* label, float* values, int values_count, int values_offset, byte* overlay_text, float scale_min, float scale_max, ImVec2 graph_size, int stride = 4);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PlotHistogram@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z", ExactSpelling = true)]
-    public static extern void PlotHistogram(byte* label, delegate* unmanaged[Cdecl]<void*, int, float>* values_getter, void* data, int values_count, int values_offset, byte* overlay_text, float scale_min, float scale_max, ImVec2 graph_size);
+    public static extern void PlotHistogram(byte* label, delegate* unmanaged[Cdecl]<void*, int, float> values_getter, void* data, int values_count, int values_offset, byte* overlay_text, float scale_min, float scale_max, ImVec2 graph_size);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Value@ImGui@@YAXPEBD_N@Z", ExactSpelling = true)]
     public static extern void Value(byte* prefix, [MarshalAs(UnmanagedType.I1)] bool b);
@@ -1205,7 +1205,7 @@ public unsafe static partial class imgui
     public static extern bool DebugCheckVersionAndDataLayout(byte* version_str, ulong sz_io, ulong sz_style, ulong sz_vec2, ulong sz_vec4, ulong sz_drawvert, ulong sz_drawidx);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetAllocatorFunctions@ImGui@@YAXP6APEAX_KPEAX@ZP6AX11@Z1@Z", ExactSpelling = true)]
-    public static extern void SetAllocatorFunctions(delegate* unmanaged[Cdecl]<ulong, void*, void*>* alloc_func, delegate* unmanaged[Cdecl]<void*, void*, void>* free_func, void* user_data = null);
+    public static extern void SetAllocatorFunctions(delegate* unmanaged[Cdecl]<ulong, void*, void*> alloc_func, delegate* unmanaged[Cdecl]<void*, void*, void> free_func, void* user_data = null);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?MemAlloc@ImGui@@YAPEAX_K@Z", ExactSpelling = true)]
     public static extern void* MemAlloc(ulong size);

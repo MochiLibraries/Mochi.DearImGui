@@ -14,7 +14,7 @@ public unsafe partial struct ImDrawCmd
 
     [FieldOffset(32)] public uint ElemCount;
 
-    [FieldOffset(40)] public delegate* unmanaged[Cdecl]<ImDrawList*, ImDrawCmd*, void>* UserCallback;
+    [FieldOffset(40)] public delegate* unmanaged[Cdecl]<ImDrawList*, ImDrawCmd*, void> UserCallback;
 
     [FieldOffset(48)] public void* UserCallbackData;
 
