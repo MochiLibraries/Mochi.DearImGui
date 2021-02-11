@@ -86,16 +86,7 @@ library = new AddBaseVTableAliasTransformation().Transform(library);
 library = new ConstOverloadRenameTransformation().Transform(library);
 library = new MakeEverythingPublicTransformation().Transform(library);
 library = new RemoveRemainingTypedefsTransformation().Transform(library);
-
-ImGuiCSharpTypeReductionTransformation typeReductionTransformation = new();
-int iterations = 0;
-do
-{
-    library = typeReductionTransformation.Transform(library);
-    iterations++;
-} while (typeReductionTransformation.ConstantArrayTypesCreated > 0);
-Console.WriteLine($"Finished reducing types in {iterations} iterations.");
-
+library = new ImGuiCSharpTypeReductionTransformation().Transform(library);
 library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
 library = new CSharpBuiltinTypeTransformation().Transform(library);
 library = new KludgeUnknownClangTypesIntoBuiltinTypesTransformation(emitErrorOnFail: true).Transform(library);
