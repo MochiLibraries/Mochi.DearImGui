@@ -82,7 +82,7 @@ namespace InfectedImGui.Generator
                     // By convention, ImGui flags enums end with "Flags_"
                     IsFlags = name.EndsWith("Flags_"),
                     UnderlyingType = typedef.UnderlyingType,
-                    SecondaryDeclarations = declaration.SecondaryDeclarations.AddIfNotNull(typedef.Declaration)
+                    ReplacedDeclarations = ImmutableArray.Create<TranslatedDeclaration>(typedef)
                 };
             }
 
