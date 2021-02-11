@@ -13,12 +13,4 @@
     <PlatformTarget>x64</PlatformTarget>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
-  <ItemGroup>
-    <!-- Using nighly compiler since the one in the current .NET Preview has outdated codegen for records
-    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.9.0-1.20512.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-    -->
-  </ItemGroup>
 </Project>
