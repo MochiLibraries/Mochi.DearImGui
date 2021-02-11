@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 24)]
@@ -14,40 +15,11 @@ public unsafe partial struct ImDrawListSplitter
 
     [FieldOffset(8)] public ImVector<ImDrawChannel> _Channels;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawListSplitter@@QEAA@XZ", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImDrawListSplitter* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Constructor()
-    {
-        fixed (ImDrawListSplitter* @this = &this)
-        { Constructor_PInvoke(@this); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Destructor_PInvoke(ImDrawListSplitter* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Destructor()
-    {
-        fixed (ImDrawListSplitter* @this = &this)
-        { Destructor_PInvoke(@this); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Clear_PInvoke(ImDrawListSplitter* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Clear()
-    {
-        fixed (ImDrawListSplitter* @this = &this)
-        { Clear_PInvoke(@this); }
-    }
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFreeMemory@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
     private static extern void ClearFreeMemory_PInvoke(ImDrawListSplitter* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void ClearFreeMemory()
     {
         fixed (ImDrawListSplitter* @this = &this)
@@ -58,6 +30,7 @@ public unsafe partial struct ImDrawListSplitter
     private static extern void Split_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list, int count);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Split(ImDrawList* draw_list, int count)
     {
         fixed (ImDrawListSplitter* @this = &this)
@@ -68,6 +41,7 @@ public unsafe partial struct ImDrawListSplitter
     private static extern void Merge_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Merge(ImDrawList* draw_list)
     {
         fixed (ImDrawListSplitter* @this = &this)
@@ -78,6 +52,7 @@ public unsafe partial struct ImDrawListSplitter
     private static extern void SetCurrentChannel_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list, int channel_idx);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void SetCurrentChannel(ImDrawList* draw_list, int channel_idx)
     {
         fixed (ImDrawListSplitter* @this = &this)

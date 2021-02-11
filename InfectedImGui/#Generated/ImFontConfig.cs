@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 136)]
@@ -50,6 +51,7 @@ public unsafe partial struct ImFontConfig
     private static extern void Constructor_PInvoke(ImFontConfig* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Constructor()
     {
         fixed (ImFontConfig* @this = &this)

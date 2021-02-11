@@ -7,18 +7,21 @@ using InfectedImGui.Generator;
 using System;
 using System.Collections.Immutable;
 using System.IO;
+using System.Runtime.CompilerServices;
 
-if (args.Length != 2)
+if (args.Length != 3)
 {
     Console.Error.WriteLine("Usage:");
-    Console.Error.WriteLine("    InfectedImGui.Generator <path-to-dear-imgui-source> <path-to-output>");
+    Console.Error.WriteLine("    InfectedImGui.Generator <path-to-dear-imgui-source> <path-to-imgui-lib-file> <path-to-output>");
     return;
 }
 
 string imGuiSourceDirectoryPath = Path.GetFullPath(args[0]);
 string imGuiHeaderFilePath = Path.Combine(imGuiSourceDirectoryPath, "imgui.h");
 
-string outputDirectoryPath = Path.GetFullPath(args[1]);
+string imguiLibFilePath = Path.GetFullPath(args[1]);
+
+string outputDirectoryPath = Path.GetFullPath(args[2]);
 
 bool includeExampleImplementations = true;
 
@@ -74,7 +77,6 @@ Console.WriteLine("=============================================================
 
 library = new RemoveUnneededDeclarationsTransformation().Transform(library);
 library = new ImGuiEnumTransformation().Transform(library);
-library = new ImGuiDllNameTransformation().Transform(library);
 
 BrokenDeclarationExtractor brokenDeclarationExtractor = new();
 library = brokenDeclarationExtractor.Transform(library);
@@ -98,8 +100,19 @@ library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
 library = new CSharpBuiltinTypeTransformation().Transform(library);
 library = new KludgeUnknownClangTypesIntoBuiltinTypesTransformation(emitErrorOnFail: true).Transform(library);
 library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
+library = new AddTrampolineMethodOptionsTransformation(MethodImplOptions.AggressiveInlining).Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
 library = new MoveLooseDeclarationsIntoTypesTransformation().Transform(library);
+
+// Use librarian to identifiy DLL exports
+LinkImportsTransformation linkImports = new()
+{
+    ErrorOnMissing = true,
+    TrackVerboseImportInformation = true,
+    WarnOnAmbiguousSymbols = true
+};
+linkImports.AddLibrary(imguiLibFilePath);
+library = linkImports.Transform(library);
 
 // Perform validation
 Console.WriteLine("==============================================================================");

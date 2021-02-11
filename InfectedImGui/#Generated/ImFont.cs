@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 112)]
@@ -46,26 +47,18 @@ public unsafe partial struct ImFont
     private static extern void Constructor_PInvoke(ImFont* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Constructor()
     {
         fixed (ImFont* @this = &this)
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImFont@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Destructor_PInvoke(ImFont* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Destructor()
-    {
-        fixed (ImFont* @this = &this)
-        { Destructor_PInvoke(@this); }
-    }
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindGlyph@ImFont@@QEBAPEBUImFontGlyph@@G@Z", ExactSpelling = true)]
     private static extern ImFontGlyph* FindGlyph_PInvoke(ImFont* @this, ushort c);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImFontGlyph* FindGlyph(ushort c)
     {
         fixed (ImFont* @this = &this)
@@ -76,47 +69,18 @@ public unsafe partial struct ImFont
     private static extern ImFontGlyph* FindGlyphNoFallback_PInvoke(ImFont* @this, ushort c);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImFontGlyph* FindGlyphNoFallback(ushort c)
     {
         fixed (ImFont* @this = &this)
         { return FindGlyphNoFallback_PInvoke(@this, c); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCharAdvance@ImFont@@QEBAMG@Z", ExactSpelling = true)]
-    private static extern float GetCharAdvance_PInvoke(ImFont* @this, ushort c);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe float GetCharAdvance(ushort c)
-    {
-        fixed (ImFont* @this = &this)
-        { return GetCharAdvance_PInvoke(@this, c); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsLoaded@ImFont@@QEBA_NXZ", ExactSpelling = true)]
-    [return: MarshalAs(UnmanagedType.I1)]
-    private static extern bool IsLoaded_PInvoke(ImFont* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe bool IsLoaded()
-    {
-        fixed (ImFont* @this = &this)
-        { return IsLoaded_PInvoke(@this); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetDebugName@ImFont@@QEBAPEBDXZ", ExactSpelling = true)]
-    private static extern byte* GetDebugName_PInvoke(ImFont* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe byte* GetDebugName()
-    {
-        fixed (ImFont* @this = &this)
-        { return GetDebugName_PInvoke(@this); }
-    }
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcTextSizeA@ImFont@@QEBA?AUImVec2@@MMMPEBD0PEAPEBD@Z", ExactSpelling = true)]
     private static extern ImVec2* CalcTextSizeA_PInvoke(ImFont* @this, out ImVec2 __returnBuffer, float size, float max_width, float wrap_width, byte* text_begin, byte* text_end, byte** remaining);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImVec2 CalcTextSizeA(float size, float max_width, float wrap_width, byte* text_begin, byte* text_end = null, byte** remaining = null)
     {
         fixed (ImFont* @this = &this)
@@ -131,6 +95,7 @@ public unsafe partial struct ImFont
     private static extern byte* CalcWordWrapPositionA_PInvoke(ImFont* @this, float scale, byte* text, byte* text_end, float wrap_width);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe byte* CalcWordWrapPositionA(float scale, byte* text, byte* text_end, float wrap_width)
     {
         fixed (ImFont* @this = &this)
@@ -141,6 +106,7 @@ public unsafe partial struct ImFont
     private static extern void RenderChar_PInvoke(ImFont* @this, ImDrawList* draw_list, float size, ImVec2 pos, uint col, ushort c);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void RenderChar(ImDrawList* draw_list, float size, ImVec2 pos, uint col, ushort c)
     {
         fixed (ImFont* @this = &this)
@@ -151,6 +117,7 @@ public unsafe partial struct ImFont
     private static extern void RenderText_PInvoke(ImFont* @this, ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width, [MarshalAs(UnmanagedType.I1)] bool cpu_fine_clip);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void RenderText(ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width = 0f, bool cpu_fine_clip = false)
     {
         fixed (ImFont* @this = &this)
@@ -161,6 +128,7 @@ public unsafe partial struct ImFont
     private static extern void BuildLookupTable_PInvoke(ImFont* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void BuildLookupTable()
     {
         fixed (ImFont* @this = &this)
@@ -171,6 +139,7 @@ public unsafe partial struct ImFont
     private static extern void ClearOutputData_PInvoke(ImFont* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void ClearOutputData()
     {
         fixed (ImFont* @this = &this)
@@ -181,6 +150,7 @@ public unsafe partial struct ImFont
     private static extern void GrowIndex_PInvoke(ImFont* @this, int new_size);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void GrowIndex(int new_size)
     {
         fixed (ImFont* @this = &this)
@@ -191,6 +161,7 @@ public unsafe partial struct ImFont
     private static extern void AddGlyph_PInvoke(ImFont* @this, ImFontConfig* src_cfg, ushort c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void AddGlyph(ImFontConfig* src_cfg, ushort c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x)
     {
         fixed (ImFont* @this = &this)
@@ -201,6 +172,7 @@ public unsafe partial struct ImFont
     private static extern void AddRemapChar_PInvoke(ImFont* @this, ushort dst, ushort src, [MarshalAs(UnmanagedType.I1)] bool overwrite_dst);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void AddRemapChar(ushort dst, ushort src, bool overwrite_dst = true)
     {
         fixed (ImFont* @this = &this)
@@ -211,6 +183,7 @@ public unsafe partial struct ImFont
     private static extern void SetGlyphVisible_PInvoke(ImFont* @this, ushort c, [MarshalAs(UnmanagedType.I1)] bool visible);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void SetGlyphVisible(ushort c, bool visible)
     {
         fixed (ImFont* @this = &this)
@@ -221,6 +194,7 @@ public unsafe partial struct ImFont
     private static extern void SetFallbackChar_PInvoke(ImFont* @this, ushort c);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void SetFallbackChar(ushort c)
     {
         fixed (ImFont* @this = &this)
@@ -232,6 +206,7 @@ public unsafe partial struct ImFont
     private static extern bool IsGlyphRangeUnused_PInvoke(ImFont* @this, uint c_begin, uint c_last);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe bool IsGlyphRangeUnused(uint c_begin, uint c_last)
     {
         fixed (ImFont* @this = &this)

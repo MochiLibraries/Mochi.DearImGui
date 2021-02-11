@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 5456)]
@@ -118,6 +119,7 @@ public unsafe partial struct ImGuiIO
     private static extern void AddInputCharacter_PInvoke(ImGuiIO* @this, uint c);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void AddInputCharacter(uint c)
     {
         fixed (ImGuiIO* @this = &this)
@@ -128,6 +130,7 @@ public unsafe partial struct ImGuiIO
     private static extern void AddInputCharacterUTF16_PInvoke(ImGuiIO* @this, ushort c);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void AddInputCharacterUTF16(ushort c)
     {
         fixed (ImGuiIO* @this = &this)
@@ -138,6 +141,7 @@ public unsafe partial struct ImGuiIO
     private static extern void AddInputCharactersUTF8_PInvoke(ImGuiIO* @this, byte* str);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void AddInputCharactersUTF8(byte* str)
     {
         fixed (ImGuiIO* @this = &this)
@@ -148,6 +152,7 @@ public unsafe partial struct ImGuiIO
     private static extern void ClearInputCharacters_PInvoke(ImGuiIO* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void ClearInputCharacters()
     {
         fixed (ImGuiIO* @this = &this)
@@ -226,6 +231,7 @@ public unsafe partial struct ImGuiIO
     private static extern void Constructor_PInvoke(ImGuiIO* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Constructor()
     {
         fixed (ImGuiIO* @this = &this)

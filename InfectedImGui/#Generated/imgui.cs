@@ -1287,10 +1287,4 @@ public unsafe static partial class imgui
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindViewportByPlatformHandle@ImGui@@YAPEAUImGuiViewport@@PEAX@Z", ExactSpelling = true)]
     public static extern ImGuiViewport* FindViewportByPlatformHandle(void* platform_handle);
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??2@YAPEAX_KUImNewWrapper@@PEAX@Z", ExactSpelling = true)]
-    public static extern void* operator_New(ulong __UNICODE_003C____UNICODE_003E__UnnamedTranslatedParameter_0, ImNewWrapper __UNICODE_003C____UNICODE_003E__UnnamedTranslatedParameter_1, void* ptr);
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??3@YAXPEAXUImNewWrapper@@0@Z", ExactSpelling = true)]
-    public static extern void operator_Delete(void* __UNICODE_003C____UNICODE_003E__UnnamedTranslatedParameter_0, ImNewWrapper __UNICODE_003C____UNICODE_003E__UnnamedTranslatedParameter_1, void* __UNICODE_003C____UNICODE_003E__UnnamedTranslatedParameter_2);
 }

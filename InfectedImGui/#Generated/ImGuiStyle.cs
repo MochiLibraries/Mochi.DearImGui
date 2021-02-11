@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 1076)]
@@ -92,6 +93,7 @@ public unsafe partial struct ImGuiStyle
     private static extern void Constructor_PInvoke(ImGuiStyle* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Constructor()
     {
         fixed (ImGuiStyle* @this = &this)
@@ -102,6 +104,7 @@ public unsafe partial struct ImGuiStyle
     private static extern void ScaleAllSizes_PInvoke(ImGuiStyle* @this, float scale_factor);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void ScaleAllSizes(float scale_factor)
     {
         fixed (ImGuiStyle* @this = &this)

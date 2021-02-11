@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 28)]
@@ -26,26 +27,18 @@ public unsafe partial struct ImGuiListClipper
     private static extern void Constructor_PInvoke(ImGuiListClipper* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Constructor()
     {
         fixed (ImGuiListClipper* @this = &this)
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImGuiListClipper@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Destructor_PInvoke(ImGuiListClipper* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Destructor()
-    {
-        fixed (ImGuiListClipper* @this = &this)
-        { Destructor_PInvoke(@this); }
-    }
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Begin@ImGuiListClipper@@QEAAXHM@Z", ExactSpelling = true)]
     private static extern void Begin_PInvoke(ImGuiListClipper* @this, int items_count, float items_height);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Begin(int items_count, float items_height = -1f)
     {
         fixed (ImGuiListClipper* @this = &this)
@@ -56,6 +49,7 @@ public unsafe partial struct ImGuiListClipper
     private static extern void End_PInvoke(ImGuiListClipper* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void End()
     {
         fixed (ImGuiListClipper* @this = &this)
@@ -67,6 +61,7 @@ public unsafe partial struct ImGuiListClipper
     private static extern bool Step_PInvoke(ImGuiListClipper* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe bool Step()
     {
         fixed (ImGuiListClipper* @this = &this)

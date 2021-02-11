@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 1160)]
@@ -12,26 +13,18 @@ public unsafe partial struct ImFontAtlas
     private static extern void Constructor_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Constructor()
     {
         fixed (ImFontAtlas* @this = &this)
         { Constructor_PInvoke(@this); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImFontAtlas@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Destructor_PInvoke(ImFontAtlas* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Destructor()
-    {
-        fixed (ImFontAtlas* @this = &this)
-        { Destructor_PInvoke(@this); }
-    }
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFont@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", ExactSpelling = true)]
     private static extern ImFont* AddFont_PInvoke(ImFontAtlas* @this, ImFontConfig* font_cfg);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImFont* AddFont(ImFontConfig* font_cfg)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -42,6 +35,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ImFont* AddFontDefault_PInvoke(ImFontAtlas* @this, ImFontConfig* font_cfg);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImFont* AddFontDefault(ImFontConfig* font_cfg = null)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -52,6 +46,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ImFont* AddFontFromFileTTF_PInvoke(ImFontAtlas* @this, byte* filename, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImFont* AddFontFromFileTTF(byte* filename, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -62,6 +57,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ImFont* AddFontFromMemoryTTF_PInvoke(ImFontAtlas* @this, void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImFont* AddFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -72,6 +68,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ImFont* AddFontFromMemoryCompressedTTF_PInvoke(ImFontAtlas* @this, void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImFont* AddFontFromMemoryCompressedTTF(void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -82,6 +79,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ImFont* AddFontFromMemoryCompressedBase85TTF_PInvoke(ImFontAtlas* @this, byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ImFont* AddFontFromMemoryCompressedBase85TTF(byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -92,6 +90,7 @@ public unsafe partial struct ImFontAtlas
     private static extern void ClearInputData_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void ClearInputData()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -102,6 +101,7 @@ public unsafe partial struct ImFontAtlas
     private static extern void ClearTexData_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void ClearTexData()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -112,6 +112,7 @@ public unsafe partial struct ImFontAtlas
     private static extern void ClearFonts_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void ClearFonts()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -122,6 +123,7 @@ public unsafe partial struct ImFontAtlas
     private static extern void Clear_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Clear()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -133,6 +135,7 @@ public unsafe partial struct ImFontAtlas
     private static extern bool Build_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe bool Build()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -143,6 +146,7 @@ public unsafe partial struct ImFontAtlas
     private static extern void GetTexDataAsAlpha8_PInvoke(ImFontAtlas* @this, byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void GetTexDataAsAlpha8(byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel = null)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -153,37 +157,18 @@ public unsafe partial struct ImFontAtlas
     private static extern void GetTexDataAsRGBA32_PInvoke(ImFontAtlas* @this, byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void GetTexDataAsRGBA32(byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel = null)
     {
         fixed (ImFontAtlas* @this = &this)
         { GetTexDataAsRGBA32_PInvoke(@this, out_pixels, out_width, out_height, out_bytes_per_pixel); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsBuilt@ImFontAtlas@@QEBA_NXZ", ExactSpelling = true)]
-    [return: MarshalAs(UnmanagedType.I1)]
-    private static extern bool IsBuilt_PInvoke(ImFontAtlas* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe bool IsBuilt()
-    {
-        fixed (ImFontAtlas* @this = &this)
-        { return IsBuilt_PInvoke(@this); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetTexID@ImFontAtlas@@QEAAXPEAX@Z", ExactSpelling = true)]
-    private static extern void SetTexID_PInvoke(ImFontAtlas* @this, void* id);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void SetTexID(void* id)
-    {
-        fixed (ImFontAtlas* @this = &this)
-        { SetTexID_PInvoke(@this, id); }
-    }
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesDefault@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesDefault_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ushort* GetGlyphRangesDefault()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -194,6 +179,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ushort* GetGlyphRangesKorean_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ushort* GetGlyphRangesKorean()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -204,6 +190,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ushort* GetGlyphRangesJapanese_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ushort* GetGlyphRangesJapanese()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -214,6 +201,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ushort* GetGlyphRangesChineseFull_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ushort* GetGlyphRangesChineseFull()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -224,6 +212,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ushort* GetGlyphRangesChineseSimplifiedCommon_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ushort* GetGlyphRangesChineseSimplifiedCommon()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -234,6 +223,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ushort* GetGlyphRangesCyrillic_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ushort* GetGlyphRangesCyrillic()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -244,6 +234,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ushort* GetGlyphRangesThai_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ushort* GetGlyphRangesThai()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -254,6 +245,7 @@ public unsafe partial struct ImFontAtlas
     private static extern ushort* GetGlyphRangesVietnamese_PInvoke(ImFontAtlas* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe ushort* GetGlyphRangesVietnamese()
     {
         fixed (ImFontAtlas* @this = &this)
@@ -264,6 +256,7 @@ public unsafe partial struct ImFontAtlas
     private static extern int AddCustomRectRegular_PInvoke(ImFontAtlas* @this, int width, int height);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe int AddCustomRectRegular(int width, int height)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -274,26 +267,18 @@ public unsafe partial struct ImFontAtlas
     private static extern int AddCustomRectFontGlyph_PInvoke(ImFontAtlas* @this, ImFont* font, ushort id, int width, int height, float advance_x, ImVec2* offset);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe int AddCustomRectFontGlyph(ImFont* font, ushort id, int width, int height, float advance_x, ImVec2* offset)
     {
         fixed (ImFontAtlas* @this = &this)
         { return AddCustomRectFontGlyph_PInvoke(@this, font, id, width, height, advance_x, offset); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCustomRectByIndex@ImFontAtlas@@QEAAPEAUImFontAtlasCustomRect@@H@Z", ExactSpelling = true)]
-    private static extern ImFontAtlasCustomRect* GetCustomRectByIndex_PInvoke(ImFontAtlas* @this, int index);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe ImFontAtlasCustomRect* GetCustomRectByIndex(int index)
-    {
-        fixed (ImFontAtlas* @this = &this)
-        { return GetCustomRectByIndex_PInvoke(@this, index); }
-    }
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcCustomRectUV@ImFontAtlas@@QEBAXPEBUImFontAtlasCustomRect@@PEAUImVec2@@1@Z", ExactSpelling = true)]
     private static extern void CalcCustomRectUV_PInvoke(ImFontAtlas* @this, ImFontAtlasCustomRect* rect, ImVec2* out_uv_min, ImVec2* out_uv_max);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void CalcCustomRectUV(ImFontAtlasCustomRect* rect, ImVec2* out_uv_min, ImVec2* out_uv_max)
     {
         fixed (ImFontAtlas* @this = &this)
@@ -305,6 +290,7 @@ public unsafe partial struct ImFontAtlas
     private static extern bool GetMouseCursorTexData_PInvoke(ImFontAtlas* @this, ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe bool GetMouseCursorTexData(ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ConstantArray_ImVec2_2 out_uv_border, ConstantArray_ImVec2_2 out_uv_fill)
     {
         fixed (ImFontAtlas* @this = &this)

@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 56)]
@@ -26,30 +27,11 @@ public unsafe partial struct ImDrawData
 
     [FieldOffset(48)] public ImGuiViewport* OwnerViewport;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawData@@QEAA@XZ", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImDrawData* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Constructor()
-    {
-        fixed (ImDrawData* @this = &this)
-        { Constructor_PInvoke(@this); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Clear_PInvoke(ImDrawData* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Clear()
-    {
-        fixed (ImDrawData* @this = &this)
-        { Clear_PInvoke(@this); }
-    }
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
     private static extern void DeIndexAllBuffers_PInvoke(ImDrawData* @this);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void DeIndexAllBuffers()
     {
         fixed (ImDrawData* @this = &this)
@@ -60,6 +42,7 @@ public unsafe partial struct ImDrawData
     private static extern void ScaleClipRects_PInvoke(ImDrawData* @this, ImVec2* fb_scale);
 
     [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void ScaleClipRects(ImVec2* fb_scale)
     {
         fixed (ImDrawData* @this = &this)

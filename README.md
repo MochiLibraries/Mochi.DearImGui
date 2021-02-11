@@ -5,7 +5,7 @@
 
 This repo contains C# bindings for [Dear ImGui](https://github.com/ocornut/imgui/) as well as a [Biohazrd](https://github.com/InfectedLibraries/Biohazrd)-powered generator for generating them.
 
-This project is not ready to be used, if you're looking for an ImGui binding for C# I'd suggest watching releases on this repository and using the excellent [ImGui.NET](https://github.com/mellinoe/ImGui.NET) for the time being. (The bindings work, but it has some very rough edges and not everything works.)
+This project is not ready to be used, if you're looking for an ImGui binding for C# I'd suggest watching releases on this repository and using the excellent [ImGui.NET](https://github.com/mellinoe/ImGui.NET) for the time being. (These bindings work, but they have some very rough edges and not everything works.)
 
 This repository primarily exists to serve as an example what using Biohazrd looks like today with a C++ library that has a relatively simple API. For the sake of demonstration, the output of the generator for Windows x64 is committed under [InfectedImGui/#Generated](InfectedImGui/#Generated).
 
@@ -15,28 +15,31 @@ This project is licensed under the MIT License. [See the license file for detail
 
 Additionally, this project has some third-party dependencies. [See the third-party notice listing for details](THIRD-PARTY-NOTICES.md).
 
-## Generating the bindings
+## Building
 
-1. Ensure Git submodules are up-to-date with `git submodule update --init --recursive`
-2. Build and run `InfectedImGui.Generator`
-
-## Building the sample
-
-Building/running is currently only supported on Windows x64 with Visual Studio 2019.
+Building and running is currently only supported on Windows x64 with Visual Studio 2019.
 
 ### Prerequisites
 
 Tool | Recommended Version
 -----|--------------------
 [CMake](https://cmake.org/) | 3.18.4
-[Visual Studio 2019](https://visualstudio.microsoft.com/vs/) | 16.8.0 Preview 3.2
-[.NET Core SDK](http://dot.net/) | 5.0 RC1
+[Visual Studio 2019](https://visualstudio.microsoft.com/vs/) | 16.8.4
+[.NET Core SDK](http://dot.net/) | 5.0
 
 Visual Studio requires the "Desktop development with C++" and  ".NET desktop development" workloads to be installed.
 
 (Note: I am unsure how whether CMake prefers preview or non-preview Visual Studio. You might need non-preview 2019 installed too.)
 
-### Build Steps
+### Generating the bindings
+
+1. Ensure Git submodules are up-to-date with `git submodule update --init --recursive`
+2. Run `InfectedImGui.Native/Build.cmd`
+3. Build and run `InfectedImGui.Generator`
+
+Note: The generator will complain about missing exports due to inline methods, which are currently not properly handled by this generator.
+
+### Building the sample
 
 1. Ensure Git submodules are up-to-date with `git submodule update --init --recursive`
 2. Run `InfectedImGui.Native/Build.cmd`
