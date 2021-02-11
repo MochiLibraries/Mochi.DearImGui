@@ -5,7 +5,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 224)]
+[StructLayout(LayoutKind.Explicit, Size = 200)]
 public unsafe partial struct ImDrawList
 {
     [FieldOffset(0)] public ImVector<ImDrawCmd> CmdBuffer;
@@ -16,25 +16,27 @@ public unsafe partial struct ImDrawList
 
     [FieldOffset(48)] public ImDrawListFlags Flags;
 
+    [FieldOffset(52)] public uint _VtxCurrentIdx;
+
     [FieldOffset(56)] public ImDrawListSharedData* _Data;
 
     [FieldOffset(64)] public byte* _OwnerName;
 
-    [FieldOffset(72)] public uint _VtxCurrentIdx;
+    [FieldOffset(72)] public ImDrawVert* _VtxWritePtr;
 
-    [FieldOffset(80)] public ImDrawVert* _VtxWritePtr;
+    [FieldOffset(80)] public ushort* _IdxWritePtr;
 
-    [FieldOffset(88)] public ushort* _IdxWritePtr;
+    [FieldOffset(88)] public ImVector<ImVec4> _ClipRectStack;
 
-    [FieldOffset(96)] public ImVector<ImVec4> _ClipRectStack;
+    [FieldOffset(104)] public ImVector<nint> _TextureIdStack;
 
-    [FieldOffset(112)] public ImVector<nint> _TextureIdStack;
+    [FieldOffset(120)] public ImVector<ImVec2> _Path;
 
-    [FieldOffset(128)] public ImVector<ImVec2> _Path;
+    [FieldOffset(136)] public ImDrawCmdHeader _CmdHeader;
 
-    [FieldOffset(144)] public ImDrawCmd _CmdHeader;
+    [FieldOffset(168)] public ImDrawListSplitter _Splitter;
 
-    [FieldOffset(200)] public ImDrawListSplitter _Splitter;
+    [FieldOffset(192)] public float _FringeScale;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawList@@QEAA@PEBUImDrawListSharedData@@@Z", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImDrawList* @this, ImDrawListSharedData* shared_data);
@@ -294,14 +296,24 @@ public unsafe partial struct ImDrawList
         { AddConvexPolyFilled_PInvoke(@this, points, num_points, col); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddBezierCurve@ImDrawList@@QEAAXAEBUImVec2@@000IMH@Z", ExactSpelling = true)]
-    private static extern void AddBezierCurve_PInvoke(ImDrawList* @this, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness, int num_segments);
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddBezierCubic@ImDrawList@@QEAAXAEBUImVec2@@000IMH@Z", ExactSpelling = true)]
+    private static extern void AddBezierCubic_PInvoke(ImDrawList* @this, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness, int num_segments);
 
     [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void AddBezierCurve(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness, int num_segments = 0)
+    public unsafe void AddBezierCubic(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, uint col, float thickness, int num_segments = 0)
     {
         fixed (ImDrawList* @this = &this)
-        { AddBezierCurve_PInvoke(@this, p1, p2, p3, p4, col, thickness, num_segments); }
+        { AddBezierCubic_PInvoke(@this, p1, p2, p3, p4, col, thickness, num_segments); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddBezierQuadratic@ImDrawList@@QEAAXAEBUImVec2@@00IMH@Z", ExactSpelling = true)]
+    private static extern void AddBezierQuadratic_PInvoke(ImDrawList* @this, ImVec2* p1, ImVec2* p2, ImVec2* p3, uint col, float thickness, int num_segments);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    public unsafe void AddBezierQuadratic(ImVec2* p1, ImVec2* p2, ImVec2* p3, uint col, float thickness, int num_segments = 0)
+    {
+        fixed (ImDrawList* @this = &this)
+        { AddBezierQuadratic_PInvoke(@this, p1, p2, p3, col, thickness, num_segments); }
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddImage@ImDrawList@@QEAAXPEAXAEBUImVec2@@111I@Z", ExactSpelling = true)]
@@ -404,14 +416,24 @@ public unsafe partial struct ImDrawList
         { PathArcToFast_PInvoke(@this, center, radius, a_min_of_12, a_max_of_12); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathBezierCurveTo@ImDrawList@@QEAAXAEBUImVec2@@00H@Z", ExactSpelling = true)]
-    private static extern void PathBezierCurveTo_PInvoke(ImDrawList* @this, ImVec2* p2, ImVec2* p3, ImVec2* p4, int num_segments);
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathBezierCubicCurveTo@ImDrawList@@QEAAXAEBUImVec2@@00H@Z", ExactSpelling = true)]
+    private static extern void PathBezierCubicCurveTo_PInvoke(ImDrawList* @this, ImVec2* p2, ImVec2* p3, ImVec2* p4, int num_segments);
 
     [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void PathBezierCurveTo(ImVec2* p2, ImVec2* p3, ImVec2* p4, int num_segments = 0)
+    public unsafe void PathBezierCubicCurveTo(ImVec2* p2, ImVec2* p3, ImVec2* p4, int num_segments = 0)
     {
         fixed (ImDrawList* @this = &this)
-        { PathBezierCurveTo_PInvoke(@this, p2, p3, p4, num_segments); }
+        { PathBezierCubicCurveTo_PInvoke(@this, p2, p3, p4, num_segments); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathBezierQuadraticCurveTo@ImDrawList@@QEAAXAEBUImVec2@@0H@Z", ExactSpelling = true)]
+    private static extern void PathBezierQuadraticCurveTo_PInvoke(ImDrawList* @this, ImVec2* p2, ImVec2* p3, int num_segments);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    public unsafe void PathBezierQuadraticCurveTo(ImVec2* p2, ImVec2* p3, int num_segments = 0)
+    {
+        fixed (ImDrawList* @this = &this)
+        { PathBezierQuadraticCurveTo_PInvoke(@this, p2, p3, num_segments); }
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathRect@ImDrawList@@QEAAXAEBUImVec2@@0MH@Z", ExactSpelling = true)]

@@ -74,7 +74,7 @@ public unsafe static class Program
 
         // Setup Dear ImGui context
         // IMGUI_CHECKVERSION() //BIOQUIRK: No macro translation
-        imgui.DebugCheckVersionAndDataLayout(PinnedUtf8("1.79"), (ulong)sizeof(ImGuiIO), (ulong)sizeof(ImGuiStyle), (ulong)sizeof(ImVec2), (ulong)sizeof(ImVec4), (ulong)sizeof(ImDrawVert), sizeof(ushort));
+        imgui.DebugCheckVersionAndDataLayout(PinnedUtf8("1.81"), (ulong)sizeof(ImGuiIO), (ulong)sizeof(ImGuiStyle), (ulong)sizeof(ImVec2), (ulong)sizeof(ImVec4), (ulong)sizeof(ImDrawVert), sizeof(ushort));
         imgui.CreateContext();
         ImGuiIO* io = imgui.GetIO();
         io->ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;

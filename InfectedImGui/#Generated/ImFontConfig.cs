@@ -36,7 +36,7 @@ public unsafe partial struct ImFontConfig
 
     [FieldOffset(72)] [MarshalAs(UnmanagedType.I1)] public bool MergeMode;
 
-    [FieldOffset(76)] public uint RasterizerFlags;
+    [FieldOffset(76)] public uint FontBuilderFlags;
 
     [FieldOffset(80)] public float RasterizerMultiply;
 

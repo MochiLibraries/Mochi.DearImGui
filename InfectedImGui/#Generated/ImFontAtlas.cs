@@ -5,7 +5,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 1144)]
+[StructLayout(LayoutKind.Explicit, Size = 1160)]
 public unsafe partial struct ImFontAtlas
 {
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFontAtlas@@QEAA@XZ", ExactSpelling = true)]
@@ -341,7 +341,11 @@ public unsafe partial struct ImFontAtlas
 
     [FieldOffset(112)] public ConstantArray_ImVec4_64 TexUvLines;
 
-    [FieldOffset(1136)] public int PackIdMouseCursors;
+    [FieldOffset(1136)] public ImFontBuilderIO* FontBuilderIO;
 
-    [FieldOffset(1140)] public int PackIdLines;
+    [FieldOffset(1144)] public uint FontBuilderFlags;
+
+    [FieldOffset(1148)] public int PackIdMouseCursors;
+
+    [FieldOffset(1152)] public int PackIdLines;
 }

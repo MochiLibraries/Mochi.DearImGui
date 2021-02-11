@@ -5,7 +5,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 232)]
+[StructLayout(LayoutKind.Explicit, Size = 224)]
 public unsafe partial struct ImGuiPlatformIO
 {
     [FieldOffset(0)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_CreateWindow;
@@ -58,9 +58,7 @@ public unsafe partial struct ImGuiPlatformIO
 
     [FieldOffset(192)] public ImVector<ImGuiPlatformMonitor> Monitors;
 
-    [FieldOffset(208)] public ImGuiViewport* MainViewport;
-
-    [FieldOffset(216)] public ImVector<Pointer<ImGuiViewport>> Viewports;
+    [FieldOffset(208)] public ImVector<Pointer<ImGuiViewport>> Viewports;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiPlatformIO@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiPlatformIO* @this);

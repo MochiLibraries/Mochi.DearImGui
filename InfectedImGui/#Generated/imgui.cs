@@ -39,11 +39,11 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShowDemoWindow@ImGui@@YAXPEA_N@Z", ExactSpelling = true)]
     public static extern void ShowDemoWindow(bool* p_open = null);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShowAboutWindow@ImGui@@YAXPEA_N@Z", ExactSpelling = true)]
-    public static extern void ShowAboutWindow(bool* p_open = null);
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShowMetricsWindow@ImGui@@YAXPEA_N@Z", ExactSpelling = true)]
     public static extern void ShowMetricsWindow(bool* p_open = null);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShowAboutWindow@ImGui@@YAXPEA_N@Z", ExactSpelling = true)]
+    public static extern void ShowAboutWindow(bool* p_open = null);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShowStyleEditor@ImGui@@YAXPEAUImGuiStyle@@@Z", ExactSpelling = true)]
     public static extern void ShowStyleEditor(ImGuiStyle* @ref = null);
@@ -64,11 +64,11 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?StyleColorsDark@ImGui@@YAXPEAUImGuiStyle@@@Z", ExactSpelling = true)]
     public static extern void StyleColorsDark(ImGuiStyle* dst = null);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?StyleColorsClassic@ImGui@@YAXPEAUImGuiStyle@@@Z", ExactSpelling = true)]
-    public static extern void StyleColorsClassic(ImGuiStyle* dst = null);
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?StyleColorsLight@ImGui@@YAXPEAUImGuiStyle@@@Z", ExactSpelling = true)]
     public static extern void StyleColorsLight(ImGuiStyle* dst = null);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?StyleColorsClassic@ImGui@@YAXPEAUImGuiStyle@@@Z", ExactSpelling = true)]
+    public static extern void StyleColorsClassic(ImGuiStyle* dst = null);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Begin@ImGui@@YA_NPEBDPEA_NH@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
@@ -110,9 +110,6 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowDpiScale@ImGui@@YAMXZ", ExactSpelling = true)]
     public static extern float GetWindowDpiScale();
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowViewport@ImGui@@YAPEAUImGuiViewport@@XZ", ExactSpelling = true)]
-    public static extern ImGuiViewport* GetWindowViewport();
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowPos@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
     public static extern ImVec2 GetWindowPos();
 
@@ -124,6 +121,9 @@ public unsafe static partial class imgui
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowHeight@ImGui@@YAMXZ", ExactSpelling = true)]
     public static extern float GetWindowHeight();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowViewport@ImGui@@YAPEAUImGuiViewport@@XZ", ExactSpelling = true)]
+    public static extern ImGuiViewport* GetWindowViewport();
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetNextWindowPos@ImGui@@YAXAEBUImVec2@@H0@Z", ExactSpelling = true)]
     public static extern void SetNextWindowPos(ImVec2* pos, ImGuiCond cond, ImVec2* pivot);
@@ -176,11 +176,11 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetWindowFocus@ImGui@@YAXPEBD@Z", ExactSpelling = true)]
     public static extern void SetWindowFocus(byte* name);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetContentRegionMax@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
-    public static extern ImVec2 GetContentRegionMax();
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetContentRegionAvail@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
     public static extern ImVec2 GetContentRegionAvail();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetContentRegionMax@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
+    public static extern ImVec2 GetContentRegionMax();
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowContentRegionMin@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
     public static extern ImVec2 GetWindowContentRegionMin();
@@ -197,17 +197,17 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetScrollY@ImGui@@YAMXZ", ExactSpelling = true)]
     public static extern float GetScrollY();
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetScrollMaxX@ImGui@@YAMXZ", ExactSpelling = true)]
-    public static extern float GetScrollMaxX();
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetScrollMaxY@ImGui@@YAMXZ", ExactSpelling = true)]
-    public static extern float GetScrollMaxY();
-
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetScrollX@ImGui@@YAXM@Z", ExactSpelling = true)]
     public static extern void SetScrollX(float scroll_x);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetScrollY@ImGui@@YAXM@Z", ExactSpelling = true)]
     public static extern void SetScrollY(float scroll_y);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetScrollMaxX@ImGui@@YAMXZ", ExactSpelling = true)]
+    public static extern float GetScrollMaxX();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetScrollMaxY@ImGui@@YAMXZ", ExactSpelling = true)]
+    public static extern float GetScrollMaxY();
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetScrollHereX@ImGui@@YAXM@Z", ExactSpelling = true)]
     public static extern void SetScrollHereX(float center_x_ratio = 0.5f);
@@ -245,26 +245,17 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopStyleVar@ImGui@@YAXH@Z", ExactSpelling = true)]
     public static extern void PopStyleVar(int count = 1);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetStyleColorVec4@ImGui@@YAAEBUImVec4@@H@Z", ExactSpelling = true)]
-    public static extern ImVec4* GetStyleColorVec4(ImGuiCol idx);
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushAllowKeyboardFocus@ImGui@@YAX_N@Z", ExactSpelling = true)]
+    public static extern void PushAllowKeyboardFocus([MarshalAs(UnmanagedType.I1)] bool allow_keyboard_focus);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFont@ImGui@@YAPEAUImFont@@XZ", ExactSpelling = true)]
-    public static extern ImFont* GetFont();
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopAllowKeyboardFocus@ImGui@@YAXXZ", ExactSpelling = true)]
+    public static extern void PopAllowKeyboardFocus();
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFontSize@ImGui@@YAMXZ", ExactSpelling = true)]
-    public static extern float GetFontSize();
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushButtonRepeat@ImGui@@YAX_N@Z", ExactSpelling = true)]
+    public static extern void PushButtonRepeat([MarshalAs(UnmanagedType.I1)] bool repeat);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFontTexUvWhitePixel@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
-    public static extern ImVec2 GetFontTexUvWhitePixel();
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColorU32@ImGui@@YAIHM@Z", ExactSpelling = true)]
-    public static extern uint GetColorU32(ImGuiCol idx, float alpha_mul = 1f);
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColorU32@ImGui@@YAIAEBUImVec4@@@Z", ExactSpelling = true)]
-    public static extern uint GetColorU32(ImVec4* col);
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColorU32@ImGui@@YAII@Z", ExactSpelling = true)]
-    public static extern uint GetColorU32(uint col);
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopButtonRepeat@ImGui@@YAXXZ", ExactSpelling = true)]
+    public static extern void PopButtonRepeat();
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushItemWidth@ImGui@@YAXM@Z", ExactSpelling = true)]
     public static extern void PushItemWidth(float item_width);
@@ -284,17 +275,26 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopTextWrapPos@ImGui@@YAXXZ", ExactSpelling = true)]
     public static extern void PopTextWrapPos();
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushAllowKeyboardFocus@ImGui@@YAX_N@Z", ExactSpelling = true)]
-    public static extern void PushAllowKeyboardFocus([MarshalAs(UnmanagedType.I1)] bool allow_keyboard_focus);
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFont@ImGui@@YAPEAUImFont@@XZ", ExactSpelling = true)]
+    public static extern ImFont* GetFont();
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopAllowKeyboardFocus@ImGui@@YAXXZ", ExactSpelling = true)]
-    public static extern void PopAllowKeyboardFocus();
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFontSize@ImGui@@YAMXZ", ExactSpelling = true)]
+    public static extern float GetFontSize();
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushButtonRepeat@ImGui@@YAX_N@Z", ExactSpelling = true)]
-    public static extern void PushButtonRepeat([MarshalAs(UnmanagedType.I1)] bool repeat);
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFontTexUvWhitePixel@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
+    public static extern ImVec2 GetFontTexUvWhitePixel();
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopButtonRepeat@ImGui@@YAXXZ", ExactSpelling = true)]
-    public static extern void PopButtonRepeat();
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColorU32@ImGui@@YAIHM@Z", ExactSpelling = true)]
+    public static extern uint GetColorU32(ImGuiCol idx, float alpha_mul = 1f);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColorU32@ImGui@@YAIAEBUImVec4@@@Z", ExactSpelling = true)]
+    public static extern uint GetColorU32(ImVec4* col);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColorU32@ImGui@@YAII@Z", ExactSpelling = true)]
+    public static extern uint GetColorU32(uint col);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetStyleColorVec4@ImGui@@YAAEBUImVec4@@H@Z", ExactSpelling = true)]
+    public static extern ImVec4* GetStyleColorVec4(ImGuiCol idx);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Separator@ImGui@@YAXXZ", ExactSpelling = true)]
     public static extern void Separator();
@@ -454,6 +454,10 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Checkbox@ImGui@@YA_NPEBDPEA_N@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool Checkbox(byte* label, bool* v);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CheckboxFlags@ImGui@@YA_NPEBDPEAHH@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    public static extern bool CheckboxFlags(byte* label, int* flags, int flags_value);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CheckboxFlags@ImGui@@YA_NPEBDPEAII@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
@@ -733,7 +737,7 @@ public unsafe static partial class imgui
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CollapsingHeader@ImGui@@YA_NPEBDPEA_NH@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static extern bool CollapsingHeader(byte* label, bool* p_open, ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None);
+    public static extern bool CollapsingHeader(byte* label, bool* p_visible, ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetNextItemOpen@ImGui@@YAX_NH@Z", ExactSpelling = true)]
     public static extern void SetNextItemOpen([MarshalAs(UnmanagedType.I1)] bool is_open, ImGuiCond cond = ImGuiCond.None);
@@ -746,6 +750,13 @@ public unsafe static partial class imgui
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool Selectable(byte* label, bool* p_selected, ImGuiSelectableFlags flags, ImVec2* size);
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginListBox@ImGui@@YA_NPEBDAEBUImVec2@@@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    public static extern bool BeginListBox(byte* label, ImVec2* size);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?EndListBox@ImGui@@YAXXZ", ExactSpelling = true)]
+    public static extern void EndListBox();
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ListBox@ImGui@@YA_NPEBDPEAHQEBQEBDHH@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool ListBox(byte* label, int* current_item, byte** items, int items_count, int height_in_items = -1);
@@ -753,17 +764,6 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ListBox@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool ListBox(byte* label, int* current_item, delegate* unmanaged[Cdecl]<void*, int, byte**, NativeBoolean> items_getter, void* data, int items_count, int height_in_items = -1);
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ListBoxHeader@ImGui@@YA_NPEBDAEBUImVec2@@@Z", ExactSpelling = true)]
-    [return: MarshalAs(UnmanagedType.I1)]
-    public static extern bool ListBoxHeader(byte* label, ImVec2* size);
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ListBoxHeader@ImGui@@YA_NPEBDHH@Z", ExactSpelling = true)]
-    [return: MarshalAs(UnmanagedType.I1)]
-    public static extern bool ListBoxHeader(byte* label, int items_count, int height_in_items = -1);
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ListBoxFooter@ImGui@@YAXXZ", ExactSpelling = true)]
-    public static extern void ListBoxFooter();
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PlotLines@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z", ExactSpelling = true)]
     public static extern void PlotLines(byte* label, float* values, int values_count, int values_offset, byte* overlay_text, float scale_min, float scale_max, ImVec2 graph_size, int stride = 4);
@@ -866,6 +866,57 @@ public unsafe static partial class imgui
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool IsPopupOpen(byte* str_id, ImGuiPopupFlags flags = ImGuiPopupFlags.None);
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginTable@ImGui@@YA_NPEBDHHAEBUImVec2@@M@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    public static extern bool BeginTable(byte* str_id, int column, ImGuiTableFlags flags, ImVec2* outer_size, float inner_width = 0f);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?EndTable@ImGui@@YAXXZ", ExactSpelling = true)]
+    public static extern void EndTable();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableNextRow@ImGui@@YAXHM@Z", ExactSpelling = true)]
+    public static extern void TableNextRow(ImGuiTableRowFlags row_flags = ImGuiTableRowFlags.None, float min_row_height = 0f);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableNextColumn@ImGui@@YA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    public static extern bool TableNextColumn();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetColumnIndex@ImGui@@YA_NH@Z", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    public static extern bool TableSetColumnIndex(int column_n);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetupColumn@ImGui@@YAXPEBDHMI@Z", ExactSpelling = true)]
+    public static extern void TableSetupColumn(byte* label, ImGuiTableColumnFlags flags = ImGuiTableColumnFlags.None, float init_width_or_weight = 0f, uint user_id = 0);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetupScrollFreeze@ImGui@@YAXHH@Z", ExactSpelling = true)]
+    public static extern void TableSetupScrollFreeze(int cols, int rows);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableHeadersRow@ImGui@@YAXXZ", ExactSpelling = true)]
+    public static extern void TableHeadersRow();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableHeader@ImGui@@YAXPEBD@Z", ExactSpelling = true)]
+    public static extern void TableHeader(byte* label);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetSortSpecs@ImGui@@YAPEAUImGuiTableSortSpecs@@XZ", ExactSpelling = true)]
+    public static extern ImGuiTableSortSpecs* TableGetSortSpecs();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnCount@ImGui@@YAHXZ", ExactSpelling = true)]
+    public static extern int TableGetColumnCount();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnIndex@ImGui@@YAHXZ", ExactSpelling = true)]
+    public static extern int TableGetColumnIndex();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetRowIndex@ImGui@@YAHXZ", ExactSpelling = true)]
+    public static extern int TableGetRowIndex();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnName@ImGui@@YAPEBDH@Z", ExactSpelling = true)]
+    public static extern byte* TableGetColumnName(int column_n = -1);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnFlags@ImGui@@YAHH@Z", ExactSpelling = true)]
+    public static extern ImGuiTableColumnFlags TableGetColumnFlags(int column_n = -1);
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetBgColor@ImGui@@YAXHIH@Z", ExactSpelling = true)]
+    public static extern void TableSetBgColor(ImGuiTableBgTarget target, uint color, int column_n = -1);
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Columns@ImGui@@YAXHPEBD_N@Z", ExactSpelling = true)]
     public static extern void Columns(int count = 1, byte* id = null, [MarshalAs(UnmanagedType.I1)] bool border = true);
 
@@ -914,7 +965,7 @@ public unsafe static partial class imgui
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockSpace@ImGui@@YAXIAEBUImVec2@@HPEBUImGuiWindowClass@@@Z", ExactSpelling = true)]
     public static extern void DockSpace(uint id, ImVec2* size, ImGuiDockNodeFlags flags = ImGuiDockNodeFlags.None, ImGuiWindowClass* window_class = null);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockSpaceOverViewport@ImGui@@YAIPEAUImGuiViewport@@HPEBUImGuiWindowClass@@@Z", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockSpaceOverViewport@ImGui@@YAIPEBUImGuiViewport@@HPEBUImGuiWindowClass@@@Z", ExactSpelling = true)]
     public static extern uint DockSpaceOverViewport(ImGuiViewport* viewport = null, ImGuiDockNodeFlags flags = ImGuiDockNodeFlags.None, ImGuiWindowClass* window_class = null);
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetNextWindowDockID@ImGui@@YAXIH@Z", ExactSpelling = true)]
@@ -1047,6 +1098,9 @@ public unsafe static partial class imgui
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetItemAllowOverlap@ImGui@@YAXXZ", ExactSpelling = true)]
     public static extern void SetItemAllowOverlap();
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetMainViewport@ImGui@@YAPEAUImGuiViewport@@XZ", ExactSpelling = true)]
+    public static extern ImGuiViewport* GetMainViewport();
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsRectVisible@ImGui@@YA_NAEBUImVec2@@@Z", ExactSpelling = true)]
     [return: MarshalAs(UnmanagedType.I1)]
@@ -1218,9 +1272,6 @@ public unsafe static partial class imgui
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetPlatformIO@ImGui@@YAAEAUImGuiPlatformIO@@XZ", ExactSpelling = true)]
     public static extern ImGuiPlatformIO* GetPlatformIO();
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetMainViewport@ImGui@@YAPEAUImGuiViewport@@XZ", ExactSpelling = true)]
-    public static extern ImGuiViewport* GetMainViewport();
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?UpdatePlatformWindows@ImGui@@YAXXZ", ExactSpelling = true)]
     public static extern void UpdatePlatformWindows();

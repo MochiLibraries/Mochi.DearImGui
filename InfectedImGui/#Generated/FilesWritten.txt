@@ -4,6 +4,7 @@ ID3D11DeviceContext.cs
 ImColor.cs
 ImDrawChannel.cs
 ImDrawCmd.cs
+ImDrawCmdHeader.cs
 ImDrawCornerFlags.cs
 ImDrawData.cs
 ImDrawList.cs
@@ -15,6 +16,7 @@ ImFont.cs
 ImFontAtlas.cs
 ImFontAtlasCustomRect.cs
 ImFontAtlasFlags.cs
+ImFontBuilderIO.cs
 ImFontConfig.cs
 ImFontGlyph.cs
 ImFontGlyphRangesBuilder.cs
@@ -52,11 +54,18 @@ ImGuiPopupFlags.cs
 ImGuiSelectableFlags.cs
 ImGuiSizeCallbackData.cs
 ImGuiSliderFlags.cs
+ImGuiSortDirection.cs
 ImGuiStorage.cs
 ImGuiStyle.cs
 ImGuiStyleVar.cs
 ImGuiTabBarFlags.cs
 ImGuiTabItemFlags.cs
+ImGuiTableBgTarget.cs
+ImGuiTableColumnFlags.cs
+ImGuiTableColumnSortSpecs.cs
+ImGuiTableFlags.cs
+ImGuiTableRowFlags.cs
+ImGuiTableSortSpecs.cs
 ImGuiTextBuffer.cs
 ImGuiTextFilter.cs
 ImGuiTreeNodeFlags.cs

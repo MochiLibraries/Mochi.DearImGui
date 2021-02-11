@@ -5,7 +5,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 24)]
+[StructLayout(LayoutKind.Explicit, Size = 28)]
 public unsafe partial struct ImGuiListClipper
 {
     [FieldOffset(0)] public int DisplayStart;
@@ -16,9 +16,11 @@ public unsafe partial struct ImGuiListClipper
 
     [FieldOffset(12)] public int StepNo;
 
-    [FieldOffset(16)] public float ItemsHeight;
+    [FieldOffset(16)] public int ItemsFrozen;
 
-    [FieldOffset(20)] public float StartPosY;
+    [FieldOffset(20)] public float ItemsHeight;
+
+    [FieldOffset(24)] public float StartPosY;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiListClipper@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiListClipper* @this);

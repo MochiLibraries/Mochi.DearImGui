@@ -5,7 +5,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 5464)]
+[StructLayout(LayoutKind.Explicit, Size = 5456)]
 public unsafe partial struct ImGuiIO
 {
     [FieldOffset(0)] public ImGuiConfigFlags ConfigFlags;
@@ -68,11 +68,13 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(202)] [MarshalAs(UnmanagedType.I1)] public bool ConfigInputTextCursorBlink;
 
-    [FieldOffset(203)] [MarshalAs(UnmanagedType.I1)] public bool ConfigWindowsResizeFromEdges;
+    [FieldOffset(203)] [MarshalAs(UnmanagedType.I1)] public bool ConfigDragClickToInputText;
 
-    [FieldOffset(204)] [MarshalAs(UnmanagedType.I1)] public bool ConfigWindowsMoveFromTitleBarOnly;
+    [FieldOffset(204)] [MarshalAs(UnmanagedType.I1)] public bool ConfigWindowsResizeFromEdges;
 
-    [FieldOffset(208)] public float ConfigWindowsMemoryCompactTimer;
+    [FieldOffset(205)] [MarshalAs(UnmanagedType.I1)] public bool ConfigWindowsMoveFromTitleBarOnly;
+
+    [FieldOffset(208)] public float ConfigMemoryCompactTimer;
 
     [FieldOffset(216)] public byte* BackendPlatformName;
 
@@ -90,29 +92,27 @@ public unsafe partial struct ImGuiIO
 
     [FieldOffset(272)] public void* ClipboardUserData;
 
-    [FieldOffset(280)] public void* RenderDrawListsFnUnused;
+    [FieldOffset(280)] public ImVec2 MousePos;
 
-    [FieldOffset(288)] public ImVec2 MousePos;
+    [FieldOffset(288)] public ConstantArray_bool_5 MouseDown;
 
-    [FieldOffset(296)] public ConstantArray_bool_5 MouseDown;
+    [FieldOffset(296)] public float MouseWheel;
 
-    [FieldOffset(304)] public float MouseWheel;
+    [FieldOffset(300)] public float MouseWheelH;
 
-    [FieldOffset(308)] public float MouseWheelH;
+    [FieldOffset(304)] public uint MouseHoveredViewport;
 
-    [FieldOffset(312)] public uint MouseHoveredViewport;
+    [FieldOffset(308)] [MarshalAs(UnmanagedType.I1)] public bool KeyCtrl;
 
-    [FieldOffset(316)] [MarshalAs(UnmanagedType.I1)] public bool KeyCtrl;
+    [FieldOffset(309)] [MarshalAs(UnmanagedType.I1)] public bool KeyShift;
 
-    [FieldOffset(317)] [MarshalAs(UnmanagedType.I1)] public bool KeyShift;
+    [FieldOffset(310)] [MarshalAs(UnmanagedType.I1)] public bool KeyAlt;
 
-    [FieldOffset(318)] [MarshalAs(UnmanagedType.I1)] public bool KeyAlt;
+    [FieldOffset(311)] [MarshalAs(UnmanagedType.I1)] public bool KeySuper;
 
-    [FieldOffset(319)] [MarshalAs(UnmanagedType.I1)] public bool KeySuper;
+    [FieldOffset(312)] public ConstantArray_bool_512 KeysDown;
 
-    [FieldOffset(320)] public ConstantArray_bool_512 KeysDown;
-
-    [FieldOffset(832)] public ConstantArray_float_21 NavInputs;
+    [FieldOffset(824)] public ConstantArray_float_21 NavInputs;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharacter@ImGuiIO@@QEAAXI@Z", ExactSpelling = true)]
     private static extern void AddInputCharacter_PInvoke(ImGuiIO* @this, uint c);
@@ -154,73 +154,73 @@ public unsafe partial struct ImGuiIO
         { ClearInputCharacters_PInvoke(@this); }
     }
 
-    [FieldOffset(916)] [MarshalAs(UnmanagedType.I1)] public bool WantCaptureMouse;
+    [FieldOffset(908)] [MarshalAs(UnmanagedType.I1)] public bool WantCaptureMouse;
 
-    [FieldOffset(917)] [MarshalAs(UnmanagedType.I1)] public bool WantCaptureKeyboard;
+    [FieldOffset(909)] [MarshalAs(UnmanagedType.I1)] public bool WantCaptureKeyboard;
 
-    [FieldOffset(918)] [MarshalAs(UnmanagedType.I1)] public bool WantTextInput;
+    [FieldOffset(910)] [MarshalAs(UnmanagedType.I1)] public bool WantTextInput;
 
-    [FieldOffset(919)] [MarshalAs(UnmanagedType.I1)] public bool WantSetMousePos;
+    [FieldOffset(911)] [MarshalAs(UnmanagedType.I1)] public bool WantSetMousePos;
 
-    [FieldOffset(920)] [MarshalAs(UnmanagedType.I1)] public bool WantSaveIniSettings;
+    [FieldOffset(912)] [MarshalAs(UnmanagedType.I1)] public bool WantSaveIniSettings;
 
-    [FieldOffset(921)] [MarshalAs(UnmanagedType.I1)] public bool NavActive;
+    [FieldOffset(913)] [MarshalAs(UnmanagedType.I1)] public bool NavActive;
 
-    [FieldOffset(922)] [MarshalAs(UnmanagedType.I1)] public bool NavVisible;
+    [FieldOffset(914)] [MarshalAs(UnmanagedType.I1)] public bool NavVisible;
 
-    [FieldOffset(924)] public float Framerate;
+    [FieldOffset(916)] public float Framerate;
 
-    [FieldOffset(928)] public int MetricsRenderVertices;
+    [FieldOffset(920)] public int MetricsRenderVertices;
 
-    [FieldOffset(932)] public int MetricsRenderIndices;
+    [FieldOffset(924)] public int MetricsRenderIndices;
 
-    [FieldOffset(936)] public int MetricsRenderWindows;
+    [FieldOffset(928)] public int MetricsRenderWindows;
 
-    [FieldOffset(940)] public int MetricsActiveWindows;
+    [FieldOffset(932)] public int MetricsActiveWindows;
 
-    [FieldOffset(944)] public int MetricsActiveAllocations;
+    [FieldOffset(936)] public int MetricsActiveAllocations;
 
-    [FieldOffset(948)] public ImVec2 MouseDelta;
+    [FieldOffset(940)] public ImVec2 MouseDelta;
 
-    [FieldOffset(956)] public ImGuiKeyModFlags KeyMods;
+    [FieldOffset(948)] public ImGuiKeyModFlags KeyMods;
 
-    [FieldOffset(960)] public ImVec2 MousePosPrev;
+    [FieldOffset(952)] public ImVec2 MousePosPrev;
 
-    [FieldOffset(968)] public ConstantArray_ImVec2_5 MouseClickedPos;
+    [FieldOffset(960)] public ConstantArray_ImVec2_5 MouseClickedPos;
 
-    [FieldOffset(1008)] public ConstantArray_double_5 MouseClickedTime;
+    [FieldOffset(1000)] public ConstantArray_double_5 MouseClickedTime;
 
-    [FieldOffset(1048)] public ConstantArray_bool_5 MouseClicked;
+    [FieldOffset(1040)] public ConstantArray_bool_5 MouseClicked;
 
-    [FieldOffset(1053)] public ConstantArray_bool_5 MouseDoubleClicked;
+    [FieldOffset(1045)] public ConstantArray_bool_5 MouseDoubleClicked;
 
-    [FieldOffset(1058)] public ConstantArray_bool_5 MouseReleased;
+    [FieldOffset(1050)] public ConstantArray_bool_5 MouseReleased;
 
-    [FieldOffset(1063)] public ConstantArray_bool_5 MouseDownOwned;
+    [FieldOffset(1055)] public ConstantArray_bool_5 MouseDownOwned;
 
-    [FieldOffset(1068)] public ConstantArray_bool_5 MouseDownWasDoubleClick;
+    [FieldOffset(1060)] public ConstantArray_bool_5 MouseDownWasDoubleClick;
 
-    [FieldOffset(1076)] public ConstantArray_float_5 MouseDownDuration;
+    [FieldOffset(1068)] public ConstantArray_float_5 MouseDownDuration;
 
-    [FieldOffset(1096)] public ConstantArray_float_5 MouseDownDurationPrev;
+    [FieldOffset(1088)] public ConstantArray_float_5 MouseDownDurationPrev;
 
-    [FieldOffset(1116)] public ConstantArray_ImVec2_5 MouseDragMaxDistanceAbs;
+    [FieldOffset(1108)] public ConstantArray_ImVec2_5 MouseDragMaxDistanceAbs;
 
-    [FieldOffset(1156)] public ConstantArray_float_5 MouseDragMaxDistanceSqr;
+    [FieldOffset(1148)] public ConstantArray_float_5 MouseDragMaxDistanceSqr;
 
-    [FieldOffset(1176)] public ConstantArray_float_512 KeysDownDuration;
+    [FieldOffset(1168)] public ConstantArray_float_512 KeysDownDuration;
 
-    [FieldOffset(3224)] public ConstantArray_float_512 KeysDownDurationPrev;
+    [FieldOffset(3216)] public ConstantArray_float_512 KeysDownDurationPrev;
 
-    [FieldOffset(5272)] public ConstantArray_float_21 NavInputsDownDuration;
+    [FieldOffset(5264)] public ConstantArray_float_21 NavInputsDownDuration;
 
-    [FieldOffset(5356)] public ConstantArray_float_21 NavInputsDownDurationPrev;
+    [FieldOffset(5348)] public ConstantArray_float_21 NavInputsDownDurationPrev;
 
-    [FieldOffset(5440)] public float PenPressure;
+    [FieldOffset(5432)] public float PenPressure;
 
-    [FieldOffset(5444)] public ushort InputQueueSurrogate;
+    [FieldOffset(5436)] public ushort InputQueueSurrogate;
 
-    [FieldOffset(5448)] public ImVector<ushort> InputQueueCharacters;
+    [FieldOffset(5440)] public ImVector<ushort> InputQueueCharacters;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiIO@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiIO* @this);

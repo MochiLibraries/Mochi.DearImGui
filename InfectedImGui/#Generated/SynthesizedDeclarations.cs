@@ -816,8 +816,8 @@ public unsafe partial struct ConstantArray_ImVec2_5
         => new ConstantArrayEnumerator<ImVec2>(Element0Pointer, 5);
 }
 
-[StructLayout(LayoutKind.Explicit, Size = 800)]
-public unsafe partial struct ConstantArray_ImVec4_50
+[StructLayout(LayoutKind.Explicit, Size = 880)]
+public unsafe partial struct ConstantArray_ImVec4_55
 {
     [FieldOffset(0)] private ImVec4 Element0;
 
@@ -834,33 +834,33 @@ public unsafe partial struct ConstantArray_ImVec4_50
     {
         get
         {
-            if ((uint)index < 50)
+            if ((uint)index < 55)
             { return ref Element0Pointer[index]; }
             else
             { throw new IndexOutOfRangeException(); }
         }
     }
 
-    public const int Length = 50;
+    public const int Length = 55;
 
     public override string ToString()
-        => $"{typeof(ImVec4)}[50]";
+        => $"{typeof(ImVec4)}[55]";
 
     public ImVec4[] ToArray()
     {
-        ImVec4[] result = new ImVec4[50];
+        ImVec4[] result = new ImVec4[55];
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 55; i++)
         { result[i] = this[i]; }
 
         return result;
     }
 
     public Span<ImVec4> AsSpan()
-        => new Span<ImVec4>(Element0Pointer, 50);
+        => new Span<ImVec4>(Element0Pointer, 55);
 
     public ConstantArrayEnumerator<ImVec4> GetEnumerator()
-        => new ConstantArrayEnumerator<ImVec4>(Element0Pointer, 50);
+        => new ConstantArrayEnumerator<ImVec4>(Element0Pointer, 55);
 }
 
 [StructLayout(LayoutKind.Explicit, Size = 1024)]

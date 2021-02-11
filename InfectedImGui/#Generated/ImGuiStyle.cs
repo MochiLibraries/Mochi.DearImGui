@@ -5,7 +5,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 988)]
+[StructLayout(LayoutKind.Explicit, Size = 1076)]
 public unsafe partial struct ImGuiStyle
 {
     [FieldOffset(0)] public float Alpha;
@@ -40,51 +40,53 @@ public unsafe partial struct ImGuiStyle
 
     [FieldOffset(80)] public ImVec2 ItemInnerSpacing;
 
-    [FieldOffset(88)] public ImVec2 TouchExtraPadding;
+    [FieldOffset(88)] public ImVec2 CellPadding;
 
-    [FieldOffset(96)] public float IndentSpacing;
+    [FieldOffset(96)] public ImVec2 TouchExtraPadding;
 
-    [FieldOffset(100)] public float ColumnsMinSpacing;
+    [FieldOffset(104)] public float IndentSpacing;
 
-    [FieldOffset(104)] public float ScrollbarSize;
+    [FieldOffset(108)] public float ColumnsMinSpacing;
 
-    [FieldOffset(108)] public float ScrollbarRounding;
+    [FieldOffset(112)] public float ScrollbarSize;
 
-    [FieldOffset(112)] public float GrabMinSize;
+    [FieldOffset(116)] public float ScrollbarRounding;
 
-    [FieldOffset(116)] public float GrabRounding;
+    [FieldOffset(120)] public float GrabMinSize;
 
-    [FieldOffset(120)] public float LogSliderDeadzone;
+    [FieldOffset(124)] public float GrabRounding;
 
-    [FieldOffset(124)] public float TabRounding;
+    [FieldOffset(128)] public float LogSliderDeadzone;
 
-    [FieldOffset(128)] public float TabBorderSize;
+    [FieldOffset(132)] public float TabRounding;
 
-    [FieldOffset(132)] public float TabMinWidthForCloseButton;
+    [FieldOffset(136)] public float TabBorderSize;
 
-    [FieldOffset(136)] public ImGuiDir ColorButtonPosition;
+    [FieldOffset(140)] public float TabMinWidthForCloseButton;
 
-    [FieldOffset(140)] public ImVec2 ButtonTextAlign;
+    [FieldOffset(144)] public ImGuiDir ColorButtonPosition;
 
-    [FieldOffset(148)] public ImVec2 SelectableTextAlign;
+    [FieldOffset(148)] public ImVec2 ButtonTextAlign;
 
-    [FieldOffset(156)] public ImVec2 DisplayWindowPadding;
+    [FieldOffset(156)] public ImVec2 SelectableTextAlign;
 
-    [FieldOffset(164)] public ImVec2 DisplaySafeAreaPadding;
+    [FieldOffset(164)] public ImVec2 DisplayWindowPadding;
 
-    [FieldOffset(172)] public float MouseCursorScale;
+    [FieldOffset(172)] public ImVec2 DisplaySafeAreaPadding;
 
-    [FieldOffset(176)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedLines;
+    [FieldOffset(180)] public float MouseCursorScale;
 
-    [FieldOffset(177)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedLinesUseTex;
+    [FieldOffset(184)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedLines;
 
-    [FieldOffset(178)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedFill;
+    [FieldOffset(185)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedLinesUseTex;
 
-    [FieldOffset(180)] public float CurveTessellationTol;
+    [FieldOffset(186)] [MarshalAs(UnmanagedType.I1)] public bool AntiAliasedFill;
 
-    [FieldOffset(184)] public float CircleSegmentMaxError;
+    [FieldOffset(188)] public float CurveTessellationTol;
 
-    [FieldOffset(188)] public ConstantArray_ImVec4_50 Colors;
+    [FieldOffset(192)] public float CircleSegmentMaxError;
+
+    [FieldOffset(196)] public ConstantArray_ImVec4_55 Colors;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStyle@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiStyle* @this);

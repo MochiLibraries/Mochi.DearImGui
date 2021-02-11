@@ -7,27 +7,39 @@ using System.Runtime.InteropServices;
 [StructLayout(LayoutKind.Explicit, Size = 40)]
 public unsafe partial struct ImFontGlyph
 {
-    [FieldOffset(0)] private uint __Codepoint__backingField;
-    public uint Codepoint
+    [FieldOffset(0)] private uint __Colored__backingField;
+    public uint Colored
     {
-        get => (__Codepoint__backingField >> 0) & 0x7FFFFFFFU;
+        get => (__Colored__backingField >> 0) & 0x1U;
         set
         {
-            uint shiftedValue = (value & 0x7FFFFFFFU) << 0;
-            uint otherBits = __Codepoint__backingField & 0x80000000U;
-            __Codepoint__backingField = otherBits | shiftedValue;
+            uint shiftedValue = (value & 0x1U) << 0;
+            uint otherBits = __Colored__backingField & 0xFFFFFFFEU;
+            __Colored__backingField = otherBits | shiftedValue;
         }
     }
 
     [FieldOffset(0)] private uint __Visible__backingField;
     public uint Visible
     {
-        get => (__Visible__backingField >> 31) & 0x1U;
+        get => (__Visible__backingField >> 1) & 0x1U;
         set
         {
-            uint shiftedValue = (value & 0x1U) << 31;
-            uint otherBits = __Visible__backingField & 0x7FFFFFFFU;
+            uint shiftedValue = (value & 0x1U) << 1;
+            uint otherBits = __Visible__backingField & 0xFFFFFFFDU;
             __Visible__backingField = otherBits | shiftedValue;
+        }
+    }
+
+    [FieldOffset(0)] private uint __Codepoint__backingField;
+    public uint Codepoint
+    {
+        get => (__Codepoint__backingField >> 2) & 0x3FFFFFFFU;
+        set
+        {
+            uint shiftedValue = (value & 0x3FFFFFFFU) << 2;
+            uint otherBits = __Codepoint__backingField & 0x3U;
+            __Codepoint__backingField = otherBits | shiftedValue;
         }
     }
 

@@ -8,14 +8,17 @@ using System;
 public enum ImGuiViewportFlags
 {
     None = 0,
-    NoDecoration = 1,
-    NoTaskBarIcon = 2,
-    NoFocusOnAppearing = 4,
-    NoFocusOnClick = 8,
-    NoInputs = 16,
-    NoRendererClear = 32,
-    TopMost = 64,
-    Minimized = 128,
-    NoAutoMerge = 256,
-    CanHostOtherWindows = 512
+    IsPlatformWindow = 1,
+    IsPlatformMonitor = 2,
+    OwnedByApp = 4,
+    NoDecoration = 8,
+    NoTaskBarIcon = 16,
+    NoFocusOnAppearing = 32,
+    NoFocusOnClick = 64,
+    NoInputs = 128,
+    NoRendererClear = 256,
+    TopMost = 512,
+    Minimized = 1024,
+    NoAutoMerge = 2048,
+    CanHostOtherWindows = 4096
 }

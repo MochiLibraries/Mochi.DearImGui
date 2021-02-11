@@ -20,6 +20,7 @@ public enum ImGuiStyleVar
     ItemSpacing,
     ItemInnerSpacing,
     IndentSpacing,
+    CellPadding,
     ScrollbarSize,
     ScrollbarRounding,
     GrabMinSize,

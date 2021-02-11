@@ -231,6 +231,10 @@ Warning: Dropped default parameter value '3.40282347E+38' because parameter come
 Warning: Dropped default parameter value '3.40282347E+38' because parameter comes before non-defaulted parameter 'graph_size'.
 ----------------------- TranslatedParameter graph_size -----------------------
 Warning: Non-constant default parameter values are not supported.
+------------------------- TranslatedParameter flags --------------------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'outer_size'.
+----------------------- TranslatedParameter outer_size -----------------------
+Warning: Non-constant default parameter values are not supported.
 -------------------------- TranslatedParameter size --------------------------
 Warning: Non-constant default parameter values are not supported.
 ------------- TranslatedParameter <>UnnamedTranslatedParameter_0 -------------

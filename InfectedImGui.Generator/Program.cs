@@ -53,9 +53,9 @@ libraryBuilder.AddFile(imGuiHeaderFilePath);
 
 if (includeExampleImplementations)
 {
-    string examplesPath = Path.Combine(imGuiSourceDirectoryPath, "examples");
-    libraryBuilder.AddFile(Path.Combine(examplesPath, "imgui_impl_win32.h"));
-    libraryBuilder.AddFile(Path.Combine(examplesPath, "imgui_impl_dx11.h"));
+    string backendsPath = Path.Combine(imGuiSourceDirectoryPath, "backends");
+    libraryBuilder.AddFile(Path.Combine(backendsPath, "imgui_impl_win32.h"));
+    libraryBuilder.AddFile(Path.Combine(backendsPath, "imgui_impl_dx11.h"));
 }
 
 TranslatedLibrary library = libraryBuilder.Create();

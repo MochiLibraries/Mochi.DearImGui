@@ -5,26 +5,26 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 64)]
+[StructLayout(LayoutKind.Explicit, Size = 56)]
 public unsafe partial struct ImDrawData
 {
     [FieldOffset(0)] [MarshalAs(UnmanagedType.I1)] public bool Valid;
 
-    [FieldOffset(8)] public ImDrawList** CmdLists;
+    [FieldOffset(4)] public int CmdListsCount;
 
-    [FieldOffset(16)] public int CmdListsCount;
+    [FieldOffset(8)] public int TotalIdxCount;
 
-    [FieldOffset(20)] public int TotalIdxCount;
+    [FieldOffset(12)] public int TotalVtxCount;
 
-    [FieldOffset(24)] public int TotalVtxCount;
+    [FieldOffset(16)] public ImDrawList** CmdLists;
 
-    [FieldOffset(28)] public ImVec2 DisplayPos;
+    [FieldOffset(24)] public ImVec2 DisplayPos;
 
-    [FieldOffset(36)] public ImVec2 DisplaySize;
+    [FieldOffset(32)] public ImVec2 DisplaySize;
 
-    [FieldOffset(44)] public ImVec2 FramebufferScale;
+    [FieldOffset(40)] public ImVec2 FramebufferScale;
 
-    [FieldOffset(56)] public ImGuiViewport* OwnerViewport;
+    [FieldOffset(48)] public ImGuiViewport* OwnerViewport;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawData@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImDrawData* @this);
@@ -34,16 +34,6 @@ public unsafe partial struct ImDrawData
     {
         fixed (ImDrawData* @this = &this)
         { Constructor_PInvoke(@this); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??_DImDrawData@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Destructor_PInvoke(ImDrawData* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe void Destructor()
-    {
-        fixed (ImDrawData* @this = &this)
-        { Destructor_PInvoke(@this); }
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", ExactSpelling = true)]

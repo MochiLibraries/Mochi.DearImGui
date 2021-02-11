@@ -5,7 +5,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 104)]
+[StructLayout(LayoutKind.Explicit, Size = 96)]
 public unsafe partial struct ImGuiViewport
 {
     [FieldOffset(0)] public uint ID;
@@ -16,29 +16,29 @@ public unsafe partial struct ImGuiViewport
 
     [FieldOffset(16)] public ImVec2 Size;
 
-    [FieldOffset(24)] public ImVec2 WorkOffsetMin;
+    [FieldOffset(24)] public ImVec2 WorkPos;
 
-    [FieldOffset(32)] public ImVec2 WorkOffsetMax;
+    [FieldOffset(32)] public ImVec2 WorkSize;
 
     [FieldOffset(40)] public float DpiScale;
 
+    [FieldOffset(44)] public uint ParentViewportId;
+
     [FieldOffset(48)] public ImDrawData* DrawData;
 
-    [FieldOffset(56)] public uint ParentViewportId;
+    [FieldOffset(56)] public void* RendererUserData;
 
-    [FieldOffset(64)] public void* RendererUserData;
+    [FieldOffset(64)] public void* PlatformUserData;
 
-    [FieldOffset(72)] public void* PlatformUserData;
+    [FieldOffset(72)] public void* PlatformHandle;
 
-    [FieldOffset(80)] public void* PlatformHandle;
+    [FieldOffset(80)] public void* PlatformHandleRaw;
 
-    [FieldOffset(88)] public void* PlatformHandleRaw;
+    [FieldOffset(88)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestMove;
 
-    [FieldOffset(96)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestMove;
+    [FieldOffset(89)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestResize;
 
-    [FieldOffset(97)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestResize;
-
-    [FieldOffset(98)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestClose;
+    [FieldOffset(90)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestClose;
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiViewport@@QEAA@XZ", ExactSpelling = true)]
     private static extern void Constructor_PInvoke(ImGuiViewport* @this);
@@ -60,7 +60,7 @@ public unsafe partial struct ImGuiViewport
         { Destructor_PInvoke(@this); }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCenter@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
     private static extern ImVec2* GetCenter_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
 
     [DebuggerStepThrough, DebuggerHidden]
@@ -74,30 +74,16 @@ public unsafe partial struct ImGuiViewport
         }
     }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkPos@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
-    private static extern ImVec2* GetWorkPos_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
+    private static extern ImVec2* GetWorkCenter_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
 
     [DebuggerStepThrough, DebuggerHidden]
-    public unsafe ImVec2 GetWorkPos()
+    public unsafe ImVec2 GetWorkCenter()
     {
         fixed (ImGuiViewport* @this = &this)
         {
             ImVec2 __returnBuffer;
-            GetWorkPos_PInvoke(@this, out __returnBuffer);
-            return __returnBuffer;
-        }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkSize@ImGuiViewport@@QEAA?AUImVec2@@XZ", ExactSpelling = true)]
-    private static extern ImVec2* GetWorkSize_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    public unsafe ImVec2 GetWorkSize()
-    {
-        fixed (ImGuiViewport* @this = &this)
-        {
-            ImVec2 __returnBuffer;
-            GetWorkSize_PInvoke(@this, out __returnBuffer);
+            GetWorkCenter_PInvoke(@this, out __returnBuffer);
             return __returnBuffer;
         }
     }
