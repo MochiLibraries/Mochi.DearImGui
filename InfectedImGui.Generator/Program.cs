@@ -87,13 +87,13 @@ library = new ConstOverloadRenameTransformation().Transform(library);
 library = new MakeEverythingPublicTransformation().Transform(library);
 library = new RemoveRemainingTypedefsTransformation().Transform(library);
 library = new ImGuiCSharpTypeReductionTransformation().Transform(library);
-library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
 library = new CSharpBuiltinTypeTransformation().Transform(library);
+library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
 library = new KludgeUnknownClangTypesIntoBuiltinTypesTransformation(emitErrorOnFail: true).Transform(library);
 library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
 library = new AddTrampolineMethodOptionsTransformation(MethodImplOptions.AggressiveInlining).Transform(library);
-library = new DeduplicateNamesTransformation().Transform(library);
 library = new MoveLooseDeclarationsIntoTypesTransformation().Transform(library);
+library = new DeduplicateNamesTransformation().Transform(library);
 
 // Use librarian to identifiy DLL exports
 LinkImportsTransformation linkImports = new()
