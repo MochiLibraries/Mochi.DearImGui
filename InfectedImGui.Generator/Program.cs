@@ -1,4 +1,5 @@
-﻿using Biohazrd;
+﻿#define USE_TOP_LEVEL_STATEMENTS // Workaround for https://github.com/dotnet/roslyn/issues/50591
+using Biohazrd;
 using Biohazrd.CSharp;
 using Biohazrd.OutputGeneration;
 using Biohazrd.Transformation.Common;
@@ -8,6 +9,10 @@ using System;
 using System.Collections.Immutable;
 using System.IO;
 using System.Runtime.CompilerServices;
+
+#if !USE_TOP_LEVEL_STATEMENTS
+static class Program { static void Main(string[] args) {
+#endif
 
 if (args.Length != 3)
 {
@@ -137,3 +142,7 @@ using StreamWriter diagnosticsOutput = outputSession.Open<StreamWriter>("Diagnos
 diagnostics.WriteOutDiagnostics(diagnosticsOutput, writeToConsole: true);
 
 outputSession.Dispose();
+
+#if !USE_TOP_LEVEL_STATEMENTS
+}}
+#endif
