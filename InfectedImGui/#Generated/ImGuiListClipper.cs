@@ -34,6 +34,17 @@ public unsafe partial struct ImGuiListClipper
         { Constructor_PInvoke(@this); }
     }
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImGuiListClipper@@QEAA@XZ", ExactSpelling = true)]
+    private static extern void Destructor_PInvoke(ImGuiListClipper* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Destructor()
+    {
+        fixed (ImGuiListClipper* @this = &this)
+        { Destructor_PInvoke(@this); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Begin@ImGuiListClipper@@QEAAXHM@Z", ExactSpelling = true)]
     private static extern void Begin_PInvoke(ImGuiListClipper* @this, int items_count, float items_height);
 

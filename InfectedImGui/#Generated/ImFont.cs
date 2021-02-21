@@ -54,6 +54,17 @@ public unsafe partial struct ImFont
         { Constructor_PInvoke(@this); }
     }
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImFont@@QEAA@XZ", ExactSpelling = true)]
+    private static extern void Destructor_PInvoke(ImFont* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Destructor()
+    {
+        fixed (ImFont* @this = &this)
+        { Destructor_PInvoke(@this); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindGlyph@ImFont@@QEBAPEBUImFontGlyph@@G@Z", ExactSpelling = true)]
     private static extern ImFontGlyph* FindGlyph_PInvoke(ImFont* @this, ushort c);
 

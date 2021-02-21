@@ -254,7 +254,7 @@ Error: Could not resolve symbol '?GetWorkCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ
 ------------------------ TranslatedFunction GetCenter ------------------------
 Error: Could not resolve symbol '?GetCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ'
 ----------------------- TranslatedFunction Destructor ------------------------
-Error: Could not resolve symbol '??_DImGuiViewport@@QEAAXXZ'
+Error: Could not resolve symbol '??1ImGuiViewport@@QEAA@XZ'
 ----------------------- TranslatedFunction Constructor -----------------------
 Error: Could not resolve symbol '??0ImGuiViewport@@QEAA@XZ'
 ---------------------- TranslatedFunction GetDebugName -----------------------
@@ -263,16 +263,12 @@ Error: Could not resolve symbol '?GetDebugName@ImFont@@QEBAPEBDXZ'
 Error: Could not resolve symbol '?IsLoaded@ImFont@@QEBA_NXZ'
 --------------------- TranslatedFunction GetCharAdvance ----------------------
 Error: Could not resolve symbol '?GetCharAdvance@ImFont@@QEBAMG@Z'
------------------------ TranslatedFunction Destructor ------------------------
-Error: Could not resolve symbol '??_DImFont@@QEAAXXZ'
 ------------------ TranslatedFunction GetCustomRectByIndex -------------------
 Error: Could not resolve symbol '?GetCustomRectByIndex@ImFontAtlas@@QEAAPEAUImFontAtlasCustomRect@@H@Z'
 ------------------------ TranslatedFunction SetTexID -------------------------
 Error: Could not resolve symbol '?SetTexID@ImFontAtlas@@QEAAXPEAX@Z'
 ------------------------- TranslatedFunction IsBuilt -------------------------
 Error: Could not resolve symbol '?IsBuilt@ImFontAtlas@@QEBA_NXZ'
------------------------ TranslatedFunction Destructor ------------------------
-Error: Could not resolve symbol '??_DImFontAtlas@@QEAAXXZ'
 ------------------------ TranslatedFunction IsPacked -------------------------
 Error: Could not resolve symbol '?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ'
 ----------------------- TranslatedFunction Constructor -----------------------
@@ -318,13 +314,13 @@ Error: Could not resolve symbol '?GetClipRectMax@ImDrawList@@QEBA?AUImVec2@@XZ'
 --------------------- TranslatedFunction GetClipRectMin ----------------------
 Error: Could not resolve symbol '?GetClipRectMin@ImDrawList@@QEBA?AUImVec2@@XZ'
 ----------------------- TranslatedFunction Destructor ------------------------
-Error: Could not resolve symbol '??_DImDrawList@@QEAAXXZ'
+Error: Could not resolve symbol '??1ImDrawList@@QEAA@XZ'
 ----------------------- TranslatedFunction Constructor -----------------------
 Error: Could not resolve symbol '??0ImDrawList@@QEAA@PEBUImDrawListSharedData@@@Z'
 -------------------------- TranslatedFunction Clear --------------------------
 Error: Could not resolve symbol '?Clear@ImDrawListSplitter@@QEAAXXZ'
 ----------------------- TranslatedFunction Destructor ------------------------
-Error: Could not resolve symbol '??_DImDrawListSplitter@@QEAAXXZ'
+Error: Could not resolve symbol '??1ImDrawListSplitter@@QEAA@XZ'
 ----------------------- TranslatedFunction Constructor -----------------------
 Error: Could not resolve symbol '??0ImDrawListSplitter@@QEAA@XZ'
 ----------------------- TranslatedFunction Constructor -----------------------
@@ -347,8 +343,6 @@ Error: Could not resolve symbol '??0ImColor@@QEAA@I@Z'
 Error: Could not resolve symbol '??0ImColor@@QEAA@HHHH@Z'
 ----------------------- TranslatedFunction Constructor -----------------------
 Error: Could not resolve symbol '??0ImColor@@QEAA@XZ'
------------------------ TranslatedFunction Destructor ------------------------
-Error: Could not resolve symbol '??_DImGuiListClipper@@QEAAXXZ'
 -------------------------- TranslatedFunction Clear --------------------------
 Error: Could not resolve symbol '?Clear@ImGuiStorage@@QEAAXXZ'
 ----------------------- TranslatedFunction Constructor -----------------------

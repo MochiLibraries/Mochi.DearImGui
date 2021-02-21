@@ -20,6 +20,17 @@ public unsafe partial struct ImFontAtlas
         { Constructor_PInvoke(@this); }
     }
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImFontAtlas@@QEAA@XZ", ExactSpelling = true)]
+    private static extern void Destructor_PInvoke(ImFontAtlas* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Destructor()
+    {
+        fixed (ImFontAtlas* @this = &this)
+        { Destructor_PInvoke(@this); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFont@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", ExactSpelling = true)]
     private static extern ImFont* AddFont_PInvoke(ImFontAtlas* @this, ImFontConfig* font_cfg);
 
