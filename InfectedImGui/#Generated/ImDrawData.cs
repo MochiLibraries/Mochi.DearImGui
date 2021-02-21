@@ -27,6 +27,28 @@ public unsafe partial struct ImDrawData
 
     [FieldOffset(48)] public ImGuiViewport* OwnerViewport;
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper25", ExactSpelling = true)]
+    private static extern void Constructor_PInvoke(ImDrawData* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Constructor()
+    {
+        fixed (ImDrawData* @this = &this)
+        { Constructor_PInvoke(@this); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
+    private static extern void Clear_PInvoke(ImDrawData* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Clear()
+    {
+        fixed (ImDrawData* @this = &this)
+        { Clear_PInvoke(@this); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
     private static extern void DeIndexAllBuffers_PInvoke(ImDrawData* @this);
 

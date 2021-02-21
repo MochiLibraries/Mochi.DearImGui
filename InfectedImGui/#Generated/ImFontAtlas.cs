@@ -175,6 +175,29 @@ public unsafe partial struct ImFontAtlas
         { GetTexDataAsRGBA32_PInvoke(@this, out_pixels, out_width, out_height, out_bytes_per_pixel); }
     }
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsBuilt@ImFontAtlas@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    private static extern bool IsBuilt_PInvoke(ImFontAtlas* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe bool IsBuilt()
+    {
+        fixed (ImFontAtlas* @this = &this)
+        { return IsBuilt_PInvoke(@this); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetTexID@ImFontAtlas@@QEAAXPEAX@Z", ExactSpelling = true)]
+    private static extern void SetTexID_PInvoke(ImFontAtlas* @this, void* id);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void SetTexID(void* id)
+    {
+        fixed (ImFontAtlas* @this = &this)
+        { SetTexID_PInvoke(@this, id); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesDefault@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
     private static extern ushort* GetGlyphRangesDefault_PInvoke(ImFontAtlas* @this);
 
@@ -283,6 +306,17 @@ public unsafe partial struct ImFontAtlas
     {
         fixed (ImFontAtlas* @this = &this)
         { return AddCustomRectFontGlyph_PInvoke(@this, font, id, width, height, advance_x, offset); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCustomRectByIndex@ImFontAtlas@@QEAAPEAUImFontAtlasCustomRect@@H@Z", ExactSpelling = true)]
+    private static extern ImFontAtlasCustomRect* GetCustomRectByIndex_PInvoke(ImFontAtlas* @this, int index);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe ImFontAtlasCustomRect* GetCustomRectByIndex(int index)
+    {
+        fixed (ImFontAtlas* @this = &this)
+        { return GetCustomRectByIndex_PInvoke(@this, index); }
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcCustomRectUV@ImFontAtlas@@QEBAXPEBUImFontAtlasCustomRect@@PEAUImVec2@@1@Z", ExactSpelling = true)]

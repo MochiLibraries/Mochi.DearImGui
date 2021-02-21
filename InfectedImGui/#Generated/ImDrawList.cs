@@ -39,6 +39,28 @@ public unsafe partial struct ImDrawList
 
     [FieldOffset(192)] public float _FringeScale;
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper23", ExactSpelling = true)]
+    private static extern void Constructor_PInvoke(ImDrawList* @this, ImDrawListSharedData* shared_data);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Constructor(ImDrawListSharedData* shared_data)
+    {
+        fixed (ImDrawList* @this = &this)
+        { Constructor_PInvoke(@this, shared_data); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper24", ExactSpelling = true)]
+    private static extern void Destructor_PInvoke(ImDrawList* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Destructor()
+    {
+        fixed (ImDrawList* @this = &this)
+        { Destructor_PInvoke(@this); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushClipRect@ImDrawList@@QEAAXUImVec2@@0_N@Z", ExactSpelling = true)]
     private static extern void PushClipRect_PInvoke(ImDrawList* @this, ImVec2 clip_rect_min, ImVec2 clip_rect_max, [MarshalAs(UnmanagedType.I1)] bool intersect_with_current_clip_rect);
 
@@ -92,6 +114,36 @@ public unsafe partial struct ImDrawList
     {
         fixed (ImDrawList* @this = &this)
         { PopTextureID_PInvoke(@this); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetClipRectMin@ImDrawList@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
+    private static extern ImVec2* GetClipRectMin_PInvoke(ImDrawList* @this, out ImVec2 __returnBuffer);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe ImVec2 GetClipRectMin()
+    {
+        fixed (ImDrawList* @this = &this)
+        {
+            ImVec2 __returnBuffer;
+            GetClipRectMin_PInvoke(@this, out __returnBuffer);
+            return __returnBuffer;
+        }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetClipRectMax@ImDrawList@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
+    private static extern ImVec2* GetClipRectMax_PInvoke(ImDrawList* @this, out ImVec2 __returnBuffer);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe ImVec2 GetClipRectMax()
+    {
+        fixed (ImDrawList* @this = &this)
+        {
+            ImVec2 __returnBuffer;
+            GetClipRectMax_PInvoke(@this, out __returnBuffer);
+            return __returnBuffer;
+        }
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddLine@ImDrawList@@QEAAXAEBUImVec2@@0IM@Z", ExactSpelling = true)]
@@ -325,6 +377,61 @@ public unsafe partial struct ImDrawList
         { AddImageRounded_PInvoke(@this, user_texture_id, p_min, p_max, uv_min, uv_max, col, rounding, rounding_corners); }
     }
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathClear@ImDrawList@@QEAAXXZ", ExactSpelling = true)]
+    private static extern void PathClear_PInvoke(ImDrawList* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void PathClear()
+    {
+        fixed (ImDrawList* @this = &this)
+        { PathClear_PInvoke(@this); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathLineTo@ImDrawList@@QEAAXAEBUImVec2@@@Z", ExactSpelling = true)]
+    private static extern void PathLineTo_PInvoke(ImDrawList* @this, ImVec2* pos);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void PathLineTo(ImVec2* pos)
+    {
+        fixed (ImDrawList* @this = &this)
+        { PathLineTo_PInvoke(@this, pos); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathLineToMergeDuplicate@ImDrawList@@QEAAXAEBUImVec2@@@Z", ExactSpelling = true)]
+    private static extern void PathLineToMergeDuplicate_PInvoke(ImDrawList* @this, ImVec2* pos);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void PathLineToMergeDuplicate(ImVec2* pos)
+    {
+        fixed (ImDrawList* @this = &this)
+        { PathLineToMergeDuplicate_PInvoke(@this, pos); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathFillConvex@ImDrawList@@QEAAXI@Z", ExactSpelling = true)]
+    private static extern void PathFillConvex_PInvoke(ImDrawList* @this, uint col);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void PathFillConvex(uint col)
+    {
+        fixed (ImDrawList* @this = &this)
+        { PathFillConvex_PInvoke(@this, col); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathStroke@ImDrawList@@QEAAXI_NM@Z", ExactSpelling = true)]
+    private static extern void PathStroke_PInvoke(ImDrawList* @this, uint col, [MarshalAs(UnmanagedType.I1)] bool closed, float thickness);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void PathStroke(uint col, bool closed, float thickness = 1f)
+    {
+        fixed (ImDrawList* @this = &this)
+        { PathStroke_PInvoke(@this, col, closed, thickness); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PathArcTo@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z", ExactSpelling = true)]
     private static extern void PathArcTo_PInvoke(ImDrawList* @this, ImVec2* center, float radius, float a_min, float a_max, int num_segments);
 
@@ -413,6 +520,39 @@ public unsafe partial struct ImDrawList
         { return CloneOutput_PInvoke(@this); }
     }
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ChannelsSplit@ImDrawList@@QEAAXH@Z", ExactSpelling = true)]
+    private static extern void ChannelsSplit_PInvoke(ImDrawList* @this, int count);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void ChannelsSplit(int count)
+    {
+        fixed (ImDrawList* @this = &this)
+        { ChannelsSplit_PInvoke(@this, count); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ChannelsMerge@ImDrawList@@QEAAXXZ", ExactSpelling = true)]
+    private static extern void ChannelsMerge_PInvoke(ImDrawList* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void ChannelsMerge()
+    {
+        fixed (ImDrawList* @this = &this)
+        { ChannelsMerge_PInvoke(@this); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ChannelsSetCurrent@ImDrawList@@QEAAXH@Z", ExactSpelling = true)]
+    private static extern void ChannelsSetCurrent_PInvoke(ImDrawList* @this, int n);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void ChannelsSetCurrent(int n)
+    {
+        fixed (ImDrawList* @this = &this)
+        { ChannelsSetCurrent_PInvoke(@this, n); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PrimReserve@ImDrawList@@QEAAXHH@Z", ExactSpelling = true)]
     private static extern void PrimReserve_PInvoke(ImDrawList* @this, int idx_count, int vtx_count);
 
@@ -466,6 +606,39 @@ public unsafe partial struct ImDrawList
     {
         fixed (ImDrawList* @this = &this)
         { PrimQuadUV_PInvoke(@this, a, b, c, d, uv_a, uv_b, uv_c, uv_d, col); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PrimWriteVtx@ImDrawList@@QEAAXAEBUImVec2@@0I@Z", ExactSpelling = true)]
+    private static extern void PrimWriteVtx_PInvoke(ImDrawList* @this, ImVec2* pos, ImVec2* uv, uint col);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void PrimWriteVtx(ImVec2* pos, ImVec2* uv, uint col)
+    {
+        fixed (ImDrawList* @this = &this)
+        { PrimWriteVtx_PInvoke(@this, pos, uv, col); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PrimWriteIdx@ImDrawList@@QEAAXG@Z", ExactSpelling = true)]
+    private static extern void PrimWriteIdx_PInvoke(ImDrawList* @this, ushort idx);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void PrimWriteIdx(ushort idx)
+    {
+        fixed (ImDrawList* @this = &this)
+        { PrimWriteIdx_PInvoke(@this, idx); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PrimVtx@ImDrawList@@QEAAXAEBUImVec2@@0I@Z", ExactSpelling = true)]
+    private static extern void PrimVtx_PInvoke(ImDrawList* @this, ImVec2* pos, ImVec2* uv, uint col);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void PrimVtx(ImVec2* pos, ImVec2* uv, uint col)
+    {
+        fixed (ImDrawList* @this = &this)
+        { PrimVtx_PInvoke(@this, pos, uv, col); }
     }
 
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?_ResetForNewFrame@ImDrawList@@QEAAXXZ", ExactSpelling = true)]

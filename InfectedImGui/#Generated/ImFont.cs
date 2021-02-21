@@ -87,6 +87,40 @@ public unsafe partial struct ImFont
         { return FindGlyphNoFallback_PInvoke(@this, c); }
     }
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCharAdvance@ImFont@@QEBAMG@Z", ExactSpelling = true)]
+    private static extern float GetCharAdvance_PInvoke(ImFont* @this, ushort c);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe float GetCharAdvance(ushort c)
+    {
+        fixed (ImFont* @this = &this)
+        { return GetCharAdvance_PInvoke(@this, c); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsLoaded@ImFont@@QEBA_NXZ", ExactSpelling = true)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    private static extern bool IsLoaded_PInvoke(ImFont* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe bool IsLoaded()
+    {
+        fixed (ImFont* @this = &this)
+        { return IsLoaded_PInvoke(@this); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetDebugName@ImFont@@QEBAPEBDXZ", ExactSpelling = true)]
+    private static extern byte* GetDebugName_PInvoke(ImFont* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe byte* GetDebugName()
+    {
+        fixed (ImFont* @this = &this)
+        { return GetDebugName_PInvoke(@this); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcTextSizeA@ImFont@@QEBA?AUImVec2@@MMMPEBD0PEAPEBD@Z", ExactSpelling = true)]
     private static extern ImVec2* CalcTextSizeA_PInvoke(ImFont* @this, out ImVec2 __returnBuffer, float size, float max_width, float wrap_width, byte* text_begin, byte* text_end, byte** remaining);
 

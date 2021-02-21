@@ -15,6 +15,39 @@ public unsafe partial struct ImDrawListSplitter
 
     [FieldOffset(8)] public ImVector<ImDrawChannel> _Channels;
 
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper21", ExactSpelling = true)]
+    private static extern void Constructor_PInvoke(ImDrawListSplitter* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Constructor()
+    {
+        fixed (ImDrawListSplitter* @this = &this)
+        { Constructor_PInvoke(@this); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper22", ExactSpelling = true)]
+    private static extern void Destructor_PInvoke(ImDrawListSplitter* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Destructor()
+    {
+        fixed (ImDrawListSplitter* @this = &this)
+        { Destructor_PInvoke(@this); }
+    }
+
+    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
+    private static extern void Clear_PInvoke(ImDrawListSplitter* @this);
+
+    [DebuggerStepThrough, DebuggerHidden]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public unsafe void Clear()
+    {
+        fixed (ImDrawListSplitter* @this = &this)
+        { Clear_PInvoke(@this); }
+    }
+
     [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFreeMemory@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
     private static extern void ClearFreeMemory_PInvoke(ImDrawListSplitter* @this);
 

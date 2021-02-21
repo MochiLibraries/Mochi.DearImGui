@@ -112,7 +112,7 @@ public unsafe static class Program
         // This looks a little odd because we're converting the SharpDX objects to pointers to the forwardly-declared types imgui_impl_dx11 has.
         ImGui_ImplDX11_Init((ID3D11Device*)g_pd3dDevice.NativePointer, (ID3D11DeviceContext*)g_pd3dDeviceContext.NativePointer);
 
-        // Out state
+        // Our state
         bool show_demo_window = true;
         bool show_another_window = false;
         ImVec4 clear_color = new() { x = 0.45f, y = 0.55f, z = 0.6f, w = 1f };

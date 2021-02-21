@@ -1,3 +1,4 @@
+..\..\InfectedImGui.Native\InfectedImGui.cpp
 Diagnostics.log
 ID3D11Device.cs
 ID3D11DeviceContext.cs

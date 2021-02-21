@@ -24,25 +24,20 @@ Building and running is currently only supported on Windows x64 with Visual Stud
 Tool | Recommended Version
 -----|--------------------
 [CMake](https://cmake.org/) | 3.18.4
-[Visual Studio 2019](https://visualstudio.microsoft.com/vs/) | 16.8.4
+[Visual Studio 2019](https://visualstudio.microsoft.com/vs/) | 16.8.5
 [.NET Core SDK](http://dot.net/) | 5.0
 
 Visual Studio requires the "Desktop development with C++" and  ".NET desktop development" workloads to be installed.
 
-(Note: I am unsure how whether CMake prefers preview or non-preview Visual Studio. You might need non-preview 2019 installed too.)
-
 ### Generating the bindings
 
 1. Ensure Git submodules are up-to-date with `git submodule update --init --recursive`
-2. Run `InfectedImGui.Native/Build.cmd`
 3. Build and run `InfectedImGui.Generator`
-
-Note: The generator will complain about missing exports due to inline methods, which are currently not properly handled by this generator.
 
 ### Building the sample
 
 1. Ensure Git submodules are up-to-date with `git submodule update --init --recursive`
-2. Run `InfectedImGui.Native/Build.cmd`
+2. Run `InfectedImGui.Native/Build.cmd` (Not necessary if you re-generated the bindings.)
 3. Open `InfectedImGui.sln` and build/run `InfectedImGui.Sample`
 
 If you make any changes to the ImGui source code or change the branch it uses, you must re-generate the bindings using the instructions above.

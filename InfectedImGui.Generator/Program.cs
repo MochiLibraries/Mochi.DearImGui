@@ -7,6 +7,7 @@ using Biohazrd.Utilities;
 using InfectedImGui.Generator;
 using System;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 
@@ -17,14 +18,17 @@ static class Program { static void Main(string[] args) {
 if (args.Length != 3)
 {
     Console.Error.WriteLine("Usage:");
-    Console.Error.WriteLine("    InfectedImGui.Generator <path-to-dear-imgui-source> <path-to-imgui-lib-file> <path-to-output>");
+    Console.Error.WriteLine("    InfectedImGui.Generator <path-to-dear-imgui-source> <path-to-infectedimgui-native> <path-to-output>");
     return;
 }
 
 string imGuiSourceDirectoryPath = Path.GetFullPath(args[0]);
 string imGuiHeaderFilePath = Path.Combine(imGuiSourceDirectoryPath, "imgui.h");
 
-string imguiLibFilePath = Path.GetFullPath(args[1]);
+string infectedImGuiNativeRootPath = Path.GetFullPath(args[1]);
+string imguiLibFilePath = Path.Combine(infectedImGuiNativeRootPath, "build", "Debug", "InfectedImGui.Native.lib");
+string imguiInlineExporterFilePath = Path.Combine(infectedImGuiNativeRootPath, "InfectedImGui.cpp");
+string infectedImGuiNativeBuildScript = Path.Combine(infectedImGuiNativeRootPath, "Build.cmd");
 
 string outputDirectoryPath = Path.GetFullPath(args[2]);
 
@@ -72,7 +76,8 @@ TranslatedLibrary library = libraryBuilder.Create();
 using OutputSession outputSession = new()
 {
     AutoRenameConflictingFiles = true,
-    BaseOutputDirectory = outputDirectoryPath
+    BaseOutputDirectory = outputDirectoryPath,
+    ConservativeFileLogging = false
 };
 
 // Apply transformations
@@ -99,6 +104,14 @@ library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(libr
 library = new AddTrampolineMethodOptionsTransformation(MethodImplOptions.AggressiveInlining).Transform(library);
 library = new MoveLooseDeclarationsIntoTypesTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
+library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath).Transform(library);
+
+// Rebuild the native DLL so that the librarian can access a version of the library including the inline-exported functions
+Console.WriteLine("Rebuilding InfectedImGui.Native...");
+Process.Start(new ProcessStartInfo(infectedImGuiNativeBuildScript)
+{
+    WorkingDirectory = infectedImGuiNativeRootPath
+})!.WaitForExit();
 
 // Use librarian to identifiy DLL exports
 LinkImportsTransformation linkImports = new()
