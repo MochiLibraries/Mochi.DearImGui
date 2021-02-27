@@ -4,13 +4,16 @@
 #nullable enable
 using System;
 
-[Flags]
-public enum ImGuiButtonFlags
+namespace InfectedImGui
 {
-    None = 0,
-    MouseButtonLeft = 1,
-    MouseButtonRight = 2,
-    MouseButtonMiddle = 4,
-    MouseButtonMask_ = 7,
-    MouseButtonDefault_ = 1
+    [Flags]
+    public enum ImGuiButtonFlags
+    {
+        None = 0,
+        MouseButtonLeft = 1,
+        MouseButtonRight = 2,
+        MouseButtonMiddle = 4,
+        MouseButtonMask_ = 7,
+        MouseButtonDefault_ = 1
+    }
 }

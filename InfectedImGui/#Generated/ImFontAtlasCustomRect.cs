@@ -6,45 +6,48 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 32)]
-public unsafe partial struct ImFontAtlasCustomRect
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public ushort Width;
-
-    [FieldOffset(2)] public ushort Height;
-
-    [FieldOffset(4)] public ushort X;
-
-    [FieldOffset(6)] public ushort Y;
-
-    [FieldOffset(8)] public uint GlyphID;
-
-    [FieldOffset(12)] public float GlyphAdvanceX;
-
-    [FieldOffset(16)] public ImVec2 GlyphOffset;
-
-    [FieldOffset(24)] public ImFont* Font;
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper27", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImFontAtlasCustomRect* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Constructor()
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
+    public unsafe partial struct ImFontAtlasCustomRect
     {
-        fixed (ImFontAtlasCustomRect* @this = &this)
-        { Constructor_PInvoke(@this); }
-    }
+        [FieldOffset(0)] public ushort Width;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ", ExactSpelling = true)]
-    [return: MarshalAs(UnmanagedType.I1)]
-    private static extern bool IsPacked_PInvoke(ImFontAtlasCustomRect* @this);
+        [FieldOffset(2)] public ushort Height;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe bool IsPacked()
-    {
-        fixed (ImFontAtlasCustomRect* @this = &this)
-        { return IsPacked_PInvoke(@this); }
+        [FieldOffset(4)] public ushort X;
+
+        [FieldOffset(6)] public ushort Y;
+
+        [FieldOffset(8)] public uint GlyphID;
+
+        [FieldOffset(12)] public float GlyphAdvanceX;
+
+        [FieldOffset(16)] public ImVec2 GlyphOffset;
+
+        [FieldOffset(24)] public ImFont* Font;
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper27", ExactSpelling = true)]
+        private static extern void Constructor_PInvoke(ImFontAtlasCustomRect* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Constructor()
+        {
+            fixed (ImFontAtlasCustomRect* @this = &this)
+            { Constructor_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ", ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool IsPacked_PInvoke(ImFontAtlasCustomRect* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe bool IsPacked()
+        {
+            fixed (ImFontAtlasCustomRect* @this = &this)
+            { return IsPacked_PInvoke(@this); }
+        }
     }
 }

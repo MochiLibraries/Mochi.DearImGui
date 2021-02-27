@@ -3,6 +3,9 @@
 // Things that are quirks of using Biohazrd and could stand to be improved are marked with `BIOQUIRK`
 #nullable disable
 using Ares.Platform.Windows.Interop;
+using InfectedImGui;
+using InfectedImGui.Backends.Direct3D11;
+using InfectedImGui.Infrastructure;
 using SharpDX.Direct3D;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
@@ -12,8 +15,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static Ares.Platform.Windows.Interop.Native;
-using static imgui_impl_dx11;
-using static imgui_impl_win32;
+using static InfectedImGui.Backends.Direct3D11.Globals;
+using static InfectedImGui.Backends.Win32.Globals;
 using static InfectedImGui.Sample.LazyPin;
 using Device = SharpDX.Direct3D11.Device;
 using HWND = System.IntPtr;

@@ -4,9 +4,12 @@
 #nullable enable
 using System;
 
-[Flags]
-public enum ImGuiTableRowFlags
+namespace InfectedImGui
 {
-    None = 0,
-    Headers = 1
+    [Flags]
+    public enum ImGuiTableRowFlags
+    {
+        None = 0,
+        Headers = 1
+    }
 }

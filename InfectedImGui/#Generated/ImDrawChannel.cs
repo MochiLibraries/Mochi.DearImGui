@@ -4,10 +4,13 @@
 #nullable enable
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 32)]
-public unsafe partial struct ImDrawChannel
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public ImVector<ImDrawCmd> _CmdBuffer;
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
+    public unsafe partial struct ImDrawChannel
+    {
+        [FieldOffset(0)] public ImVector<ImDrawCmd> _CmdBuffer;
 
-    [FieldOffset(16)] public ImVector<ushort> _IdxBuffer;
+        [FieldOffset(16)] public ImVector<ushort> _IdxBuffer;
+    }
 }

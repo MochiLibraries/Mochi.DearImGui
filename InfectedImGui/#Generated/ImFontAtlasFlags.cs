@@ -4,11 +4,14 @@
 #nullable enable
 using System;
 
-[Flags]
-public enum ImFontAtlasFlags
+namespace InfectedImGui
 {
-    None = 0,
-    NoPowerOfTwoHeight = 1,
-    NoMouseCursors = 2,
-    NoBakedLines = 4
+    [Flags]
+    public enum ImFontAtlasFlags
+    {
+        None = 0,
+        NoPowerOfTwoHeight = 1,
+        NoMouseCursors = 2,
+        NoBakedLines = 4
+    }
 }

@@ -6,219 +6,222 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 16)]
-public unsafe partial struct ImGuiStorage
+namespace InfectedImGui
 {
     [StructLayout(LayoutKind.Explicit, Size = 16)]
-    public unsafe partial struct ImGuiStoragePair
+    public unsafe partial struct ImGuiStorage
     {
-        [FieldOffset(0)] public uint key;
+        [StructLayout(LayoutKind.Explicit, Size = 16)]
+        public unsafe partial struct ImGuiStoragePair
+        {
+            [FieldOffset(0)] public uint key;
 
-        [FieldOffset(8)] public int val_i;
+            [FieldOffset(8)] public int val_i;
 
-        [FieldOffset(8)] public float val_f;
+            [FieldOffset(8)] public float val_f;
 
-        [FieldOffset(8)] public void* val_p;
+            [FieldOffset(8)] public void* val_p;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper12", ExactSpelling = true)]
-        private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, int _val_i);
+            [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper12", ExactSpelling = true)]
+            private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, int _val_i);
+
+            [DebuggerStepThrough, DebuggerHidden]
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public unsafe void Constructor(uint _key, int _val_i)
+            {
+                fixed (ImGuiStoragePair* @this = &this)
+                { Constructor_PInvoke(@this, _key, _val_i); }
+            }
+
+            [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper13", ExactSpelling = true)]
+            private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, float _val_f);
+
+            [DebuggerStepThrough, DebuggerHidden]
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public unsafe void Constructor(uint _key, float _val_f)
+            {
+                fixed (ImGuiStoragePair* @this = &this)
+                { Constructor_PInvoke(@this, _key, _val_f); }
+            }
+
+            [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper14", ExactSpelling = true)]
+            private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, void* _val_p);
+
+            [DebuggerStepThrough, DebuggerHidden]
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public unsafe void Constructor(uint _key, void* _val_p)
+            {
+                fixed (ImGuiStoragePair* @this = &this)
+                { Constructor_PInvoke(@this, _key, _val_p); }
+            }
+        }
+
+        [FieldOffset(0)] public ImVector<ImGuiStoragePair> Data;
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImGuiStorage@@QEAAXXZ", ExactSpelling = true)]
+        private static extern void Clear_PInvoke(ImGuiStorage* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(uint _key, int _val_i)
+        public unsafe void Clear()
         {
-            fixed (ImGuiStoragePair* @this = &this)
-            { Constructor_PInvoke(@this, _key, _val_i); }
+            fixed (ImGuiStorage* @this = &this)
+            { Clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper13", ExactSpelling = true)]
-        private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, float _val_f);
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetInt@ImGuiStorage@@QEBAHIH@Z", ExactSpelling = true)]
+        private static extern int GetInt_PInvoke(ImGuiStorage* @this, uint key, int default_val);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(uint _key, float _val_f)
+        public unsafe int GetInt(uint key, int default_val = 0)
         {
-            fixed (ImGuiStoragePair* @this = &this)
-            { Constructor_PInvoke(@this, _key, _val_f); }
+            fixed (ImGuiStorage* @this = &this)
+            { return GetInt_PInvoke(@this, key, default_val); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper14", ExactSpelling = true)]
-        private static extern void Constructor_PInvoke(ImGuiStoragePair* @this, uint _key, void* _val_p);
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetInt@ImGuiStorage@@QEAAXIH@Z", ExactSpelling = true)]
+        private static extern void SetInt_PInvoke(ImGuiStorage* @this, uint key, int val);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(uint _key, void* _val_p)
+        public unsafe void SetInt(uint key, int val)
         {
-            fixed (ImGuiStoragePair* @this = &this)
-            { Constructor_PInvoke(@this, _key, _val_p); }
+            fixed (ImGuiStorage* @this = &this)
+            { SetInt_PInvoke(@this, key, val); }
         }
-    }
 
-    [FieldOffset(0)] public ImVector<ImGuiStoragePair> Data;
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBool@ImGuiStorage@@QEBA_NI_N@Z", ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool GetBool_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool default_val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImGuiStorage@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Clear_PInvoke(ImGuiStorage* @this);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe bool GetBool(uint key, bool default_val = false)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { return GetBool_PInvoke(@this, key, default_val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Clear()
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { Clear_PInvoke(@this); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBool@ImGuiStorage@@QEAAXI_N@Z", ExactSpelling = true)]
+        private static extern void SetBool_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetInt@ImGuiStorage@@QEBAHIH@Z", ExactSpelling = true)]
-    private static extern int GetInt_PInvoke(ImGuiStorage* @this, uint key, int default_val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void SetBool(uint key, bool val)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { SetBool_PInvoke(@this, key, val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe int GetInt(uint key, int default_val = 0)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { return GetInt_PInvoke(@this, key, default_val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloat@ImGuiStorage@@QEBAMIM@Z", ExactSpelling = true)]
+        private static extern float GetFloat_PInvoke(ImGuiStorage* @this, uint key, float default_val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetInt@ImGuiStorage@@QEAAXIH@Z", ExactSpelling = true)]
-    private static extern void SetInt_PInvoke(ImGuiStorage* @this, uint key, int val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe float GetFloat(uint key, float default_val = 0f)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { return GetFloat_PInvoke(@this, key, default_val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void SetInt(uint key, int val)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { SetInt_PInvoke(@this, key, val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetFloat@ImGuiStorage@@QEAAXIM@Z", ExactSpelling = true)]
+        private static extern void SetFloat_PInvoke(ImGuiStorage* @this, uint key, float val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBool@ImGuiStorage@@QEBA_NI_N@Z", ExactSpelling = true)]
-    [return: MarshalAs(UnmanagedType.I1)]
-    private static extern bool GetBool_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool default_val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void SetFloat(uint key, float val)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { SetFloat_PInvoke(@this, key, val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe bool GetBool(uint key, bool default_val = false)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { return GetBool_PInvoke(@this, key, default_val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtr@ImGuiStorage@@QEBAPEAXI@Z", ExactSpelling = true)]
+        private static extern void* GetVoidPtr_PInvoke(ImGuiStorage* @this, uint key);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBool@ImGuiStorage@@QEAAXI_N@Z", ExactSpelling = true)]
-    private static extern void SetBool_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void* GetVoidPtr(uint key)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { return GetVoidPtr_PInvoke(@this, key); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void SetBool(uint key, bool val)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { SetBool_PInvoke(@this, key, val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetVoidPtr@ImGuiStorage@@QEAAXIPEAX@Z", ExactSpelling = true)]
+        private static extern void SetVoidPtr_PInvoke(ImGuiStorage* @this, uint key, void* val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloat@ImGuiStorage@@QEBAMIM@Z", ExactSpelling = true)]
-    private static extern float GetFloat_PInvoke(ImGuiStorage* @this, uint key, float default_val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void SetVoidPtr(uint key, void* val)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { SetVoidPtr_PInvoke(@this, key, val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe float GetFloat(uint key, float default_val = 0f)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { return GetFloat_PInvoke(@this, key, default_val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIntRef@ImGuiStorage@@QEAAPEAHIH@Z", ExactSpelling = true)]
+        private static extern int* GetIntRef_PInvoke(ImGuiStorage* @this, uint key, int default_val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetFloat@ImGuiStorage@@QEAAXIM@Z", ExactSpelling = true)]
-    private static extern void SetFloat_PInvoke(ImGuiStorage* @this, uint key, float val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe int* GetIntRef(uint key, int default_val = 0)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { return GetIntRef_PInvoke(@this, key, default_val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void SetFloat(uint key, float val)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { SetFloat_PInvoke(@this, key, val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z", ExactSpelling = true)]
+        private static extern bool* GetBoolRef_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool default_val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtr@ImGuiStorage@@QEBAPEAXI@Z", ExactSpelling = true)]
-    private static extern void* GetVoidPtr_PInvoke(ImGuiStorage* @this, uint key);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe bool* GetBoolRef(uint key, bool default_val = false)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { return GetBoolRef_PInvoke(@this, key, default_val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void* GetVoidPtr(uint key)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { return GetVoidPtr_PInvoke(@this, key); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloatRef@ImGuiStorage@@QEAAPEAMIM@Z", ExactSpelling = true)]
+        private static extern float* GetFloatRef_PInvoke(ImGuiStorage* @this, uint key, float default_val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetVoidPtr@ImGuiStorage@@QEAAXIPEAX@Z", ExactSpelling = true)]
-    private static extern void SetVoidPtr_PInvoke(ImGuiStorage* @this, uint key, void* val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe float* GetFloatRef(uint key, float default_val = 0f)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { return GetFloatRef_PInvoke(@this, key, default_val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void SetVoidPtr(uint key, void* val)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { SetVoidPtr_PInvoke(@this, key, val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtrRef@ImGuiStorage@@QEAAPEAPEAXIPEAX@Z", ExactSpelling = true)]
+        private static extern void** GetVoidPtrRef_PInvoke(ImGuiStorage* @this, uint key, void* default_val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIntRef@ImGuiStorage@@QEAAPEAHIH@Z", ExactSpelling = true)]
-    private static extern int* GetIntRef_PInvoke(ImGuiStorage* @this, uint key, int default_val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void** GetVoidPtrRef(uint key, void* default_val = null)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { return GetVoidPtrRef_PInvoke(@this, key, default_val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe int* GetIntRef(uint key, int default_val = 0)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { return GetIntRef_PInvoke(@this, key, default_val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetAllInt@ImGuiStorage@@QEAAXH@Z", ExactSpelling = true)]
+        private static extern void SetAllInt_PInvoke(ImGuiStorage* @this, int val);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z", ExactSpelling = true)]
-    private static extern bool* GetBoolRef_PInvoke(ImGuiStorage* @this, uint key, [MarshalAs(UnmanagedType.I1)] bool default_val);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void SetAllInt(int val)
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { SetAllInt_PInvoke(@this, val); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe bool* GetBoolRef(uint key, bool default_val = false)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { return GetBoolRef_PInvoke(@this, key, default_val); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BuildSortByKey@ImGuiStorage@@QEAAXXZ", ExactSpelling = true)]
+        private static extern void BuildSortByKey_PInvoke(ImGuiStorage* @this);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFloatRef@ImGuiStorage@@QEAAPEAMIM@Z", ExactSpelling = true)]
-    private static extern float* GetFloatRef_PInvoke(ImGuiStorage* @this, uint key, float default_val);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe float* GetFloatRef(uint key, float default_val = 0f)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { return GetFloatRef_PInvoke(@this, key, default_val); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetVoidPtrRef@ImGuiStorage@@QEAAPEAPEAXIPEAX@Z", ExactSpelling = true)]
-    private static extern void** GetVoidPtrRef_PInvoke(ImGuiStorage* @this, uint key, void* default_val);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void** GetVoidPtrRef(uint key, void* default_val = null)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { return GetVoidPtrRef_PInvoke(@this, key, default_val); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetAllInt@ImGuiStorage@@QEAAXH@Z", ExactSpelling = true)]
-    private static extern void SetAllInt_PInvoke(ImGuiStorage* @this, int val);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void SetAllInt(int val)
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { SetAllInt_PInvoke(@this, val); }
-    }
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BuildSortByKey@ImGuiStorage@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void BuildSortByKey_PInvoke(ImGuiStorage* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void BuildSortByKey()
-    {
-        fixed (ImGuiStorage* @this = &this)
-        { BuildSortByKey_PInvoke(@this); }
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void BuildSortByKey()
+        {
+            fixed (ImGuiStorage* @this = &this)
+            { BuildSortByKey_PInvoke(@this); }
+        }
     }
 }

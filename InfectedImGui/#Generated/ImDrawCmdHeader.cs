@@ -4,12 +4,15 @@
 #nullable enable
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 32)]
-public unsafe partial struct ImDrawCmdHeader
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public ImVec4 ClipRect;
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
+    public unsafe partial struct ImDrawCmdHeader
+    {
+        [FieldOffset(0)] public ImVec4 ClipRect;
 
-    [FieldOffset(16)] public void* TextureId;
+        [FieldOffset(16)] public void* TextureId;
 
-    [FieldOffset(24)] public uint VtxOffset;
+        [FieldOffset(24)] public uint VtxOffset;
+    }
 }

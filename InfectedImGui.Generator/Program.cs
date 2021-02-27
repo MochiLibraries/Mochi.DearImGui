@@ -103,7 +103,10 @@ library = new KludgeUnknownClangTypesIntoBuiltinTypesTransformation(emitErrorOnF
 library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
 library = new AddTrampolineMethodOptionsTransformation(MethodImplOptions.AggressiveInlining).Transform(library);
 library = new InfectedImGuiNamespaceTransformation().Transform(library);
-library = new MoveLooseDeclarationsIntoTypesTransformation().Transform(library);
+library = new MoveLooseDeclarationsIntoTypesTransformation
+(
+    (c, d) => d.Namespace == "InfectedImGui" ? null : "Globals"
+).Transform(library);
 library = new AutoNameUnnamedParametersTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
 

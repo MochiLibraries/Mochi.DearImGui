@@ -4,14 +4,17 @@
 #nullable enable
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 32)]
-public unsafe partial struct ImGuiSizeCallbackData
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public void* UserData;
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
+    public unsafe partial struct ImGuiSizeCallbackData
+    {
+        [FieldOffset(0)] public void* UserData;
 
-    [FieldOffset(8)] public ImVec2 Pos;
+        [FieldOffset(8)] public ImVec2 Pos;
 
-    [FieldOffset(16)] public ImVec2 CurrentSize;
+        [FieldOffset(16)] public ImVec2 CurrentSize;
 
-    [FieldOffset(24)] public ImVec2 DesiredSize;
+        [FieldOffset(24)] public ImVec2 DesiredSize;
+    }
 }

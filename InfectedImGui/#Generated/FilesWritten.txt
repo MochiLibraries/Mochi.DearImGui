@@ -1,6 +1,7 @@
 ..\..\InfectedImGui.Native\InfectedImGui.cpp
 ConstantArrayHelpers.cs
 Diagnostics.log
+Globals.cs
 ID3D11Device.cs
 ID3D11DeviceContext.cs
 ImColor.cs
@@ -22,8 +23,6 @@ ImFontBuilderIO.cs
 ImFontConfig.cs
 ImFontGlyph.cs
 ImFontGlyphRangesBuilder.cs
-imgui_impl_dx11.cs
-imgui_impl_win32.cs
 imgui.cs
 ImGuiBackendFlags.cs
 ImGuiButtonFlags.cs

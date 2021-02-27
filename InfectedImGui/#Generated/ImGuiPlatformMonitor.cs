@@ -6,27 +6,30 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 36)]
-public unsafe partial struct ImGuiPlatformMonitor
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public ImVec2 MainPos;
-
-    [FieldOffset(8)] public ImVec2 MainSize;
-
-    [FieldOffset(16)] public ImVec2 WorkPos;
-
-    [FieldOffset(24)] public ImVec2 WorkSize;
-
-    [FieldOffset(32)] public float DpiScale;
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper31", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImGuiPlatformMonitor* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Constructor()
+    [StructLayout(LayoutKind.Explicit, Size = 36)]
+    public unsafe partial struct ImGuiPlatformMonitor
     {
-        fixed (ImGuiPlatformMonitor* @this = &this)
-        { Constructor_PInvoke(@this); }
+        [FieldOffset(0)] public ImVec2 MainPos;
+
+        [FieldOffset(8)] public ImVec2 MainSize;
+
+        [FieldOffset(16)] public ImVec2 WorkPos;
+
+        [FieldOffset(24)] public ImVec2 WorkSize;
+
+        [FieldOffset(32)] public float DpiScale;
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper31", ExactSpelling = true)]
+        private static extern void Constructor_PInvoke(ImGuiPlatformMonitor* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Constructor()
+        {
+            fixed (ImGuiPlatformMonitor* @this = &this)
+            { Constructor_PInvoke(@this); }
+        }
     }
 }

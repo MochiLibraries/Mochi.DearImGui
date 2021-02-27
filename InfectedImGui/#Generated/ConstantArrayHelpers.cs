@@ -5,1094 +5,1097 @@
 using System;
 using System.Runtime.InteropServices;
 
-public unsafe ref struct ConstantArrayEnumerator<T>
-    where T : unmanaged
+namespace InfectedImGui.Infrastructure
 {
-    private readonly T* Element0;
-    private readonly int Count;
-    private int Index;
-
-    public T Current => (uint)Index < Count ? Element0[Index] : default;
-
-    internal ConstantArrayEnumerator(T* element0, int count)
+    public unsafe ref struct ConstantArrayEnumerator<T>
+        where T : unmanaged
     {
-        Element0 = element0;
-        Count = count;
-        Index = -1;
-    }
+        private readonly T* Element0;
+        private readonly int Count;
+        private int Index;
 
-    public bool MoveNext()
-    {
-        int index = Index + 1;
-        if (index < Count)
+        public T Current => (uint)Index < Count ? Element0[Index] : default;
+
+        internal ConstantArrayEnumerator(T* element0, int count)
         {
-            Index = index;
-            return true;
+            Element0 = element0;
+            Count = count;
+            Index = -1;
         }
 
-        return false;
-    }
-}
-
-public unsafe ref struct ConstantArrayOfPointersEnumerator<T>
-    where T : unmanaged
-{
-    private readonly T** Element0;
-    private readonly int Count;
-    private int Index;
-
-    public T* Current => (uint)Index < Count ? Element0[Index] : default;
-
-    internal ConstantArrayOfPointersEnumerator(T** element0, int count)
-    {
-        Element0 = element0;
-        Count = count;
-        Index = -1;
-    }
-
-    public bool MoveNext()
-    {
-        int index = Index + 1;
-        if (index < Count)
+        public bool MoveNext()
         {
-            Index = index;
-            return true;
-        }
+            int index = Index + 1;
+            if (index < Count)
+            {
+                Index = index;
+                return true;
+            }
 
-        return false;
-    }
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 5)]
-public unsafe partial struct ConstantArray_bool_5
-{
-    [FieldOffset(0)] private bool Element0;
-
-    private bool* Element0Pointer
-    {
-        get
-        {
-            fixed (bool* pElement0 = &Element0)
-            { return pElement0; }
+            return false;
         }
     }
 
-    public ref bool this[int index]
+    public unsafe ref struct ConstantArrayOfPointersEnumerator<T>
+        where T : unmanaged
     {
-        get
+        private readonly T** Element0;
+        private readonly int Count;
+        private int Index;
+
+        public T* Current => (uint)Index < Count ? Element0[Index] : default;
+
+        internal ConstantArrayOfPointersEnumerator(T** element0, int count)
         {
-            if ((uint)index < 5)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            Element0 = element0;
+            Count = count;
+            Index = -1;
+        }
+
+        public bool MoveNext()
+        {
+            int index = Index + 1;
+            if (index < Count)
+            {
+                Index = index;
+                return true;
+            }
+
+            return false;
         }
     }
 
-    public const int Length = 5;
-
-    public override string ToString()
-        => $"{typeof(bool)}[5]";
-
-    public bool[] ToArray()
+    [StructLayout(LayoutKind.Explicit, Size = 5)]
+    public unsafe partial struct ConstantArray_bool_5
     {
-        bool[] result = new bool[5];
+        [FieldOffset(0)] private bool Element0;
 
-        for (int i = 0; i < 5; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<bool> AsSpan()
-        => new Span<bool>(Element0Pointer, 5);
-
-    public ConstantArrayEnumerator<bool> GetEnumerator()
-        => new ConstantArrayEnumerator<bool>(Element0Pointer, 5);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 512)]
-public unsafe partial struct ConstantArray_bool_512
-{
-    [FieldOffset(0)] private bool Element0;
-
-    private bool* Element0Pointer
-    {
-        get
+        private bool* Element0Pointer
         {
-            fixed (bool* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                fixed (bool* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public ref bool this[int index]
-    {
-        get
+        public ref bool this[int index]
         {
-            if ((uint)index < 512)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                if ((uint)index < 5)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public const int Length = 512;
+        public const int Length = 5;
 
-    public override string ToString()
-        => $"{typeof(bool)}[512]";
+        public override string ToString()
+            => $"{typeof(bool)}[5]";
 
-    public bool[] ToArray()
-    {
-        bool[] result = new bool[512];
-
-        for (int i = 0; i < 512; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<bool> AsSpan()
-        => new Span<bool>(Element0Pointer, 512);
-
-    public ConstantArrayEnumerator<bool> GetEnumerator()
-        => new ConstantArrayEnumerator<bool>(Element0Pointer, 512);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 1)]
-public unsafe partial struct ConstantArray_char_1
-{
-    [FieldOffset(0)] private byte Element0;
-
-    private byte* Element0Pointer
-    {
-        get
+        public bool[] ToArray()
         {
-            fixed (byte* pElement0 = &Element0)
-            { return pElement0; }
+            bool[] result = new bool[5];
+
+            for (int i = 0; i < 5; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<bool> AsSpan()
+            => new Span<bool>(Element0Pointer, 5);
+
+        public ConstantArrayEnumerator<bool> GetEnumerator()
+            => new ConstantArrayEnumerator<bool>(Element0Pointer, 5);
     }
 
-    public ref byte this[int index]
+    [StructLayout(LayoutKind.Explicit, Size = 512)]
+    public unsafe partial struct ConstantArray_bool_512
     {
-        get
+        [FieldOffset(0)] private bool Element0;
+
+        private bool* Element0Pointer
         {
-            if ((uint)index < 1)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                fixed (bool* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public const int Length = 1;
-
-    public override string ToString()
-        => $"{typeof(byte)}[1]";
-
-    public byte[] ToArray()
-    {
-        byte[] result = new byte[1];
-
-        for (int i = 0; i < 1; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<byte> AsSpan()
-        => new Span<byte>(Element0Pointer, 1);
-
-    public ConstantArrayEnumerator<byte> GetEnumerator()
-        => new ConstantArrayEnumerator<byte>(Element0Pointer, 1);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 256)]
-public unsafe partial struct ConstantArray_char_256
-{
-    [FieldOffset(0)] private byte Element0;
-
-    private byte* Element0Pointer
-    {
-        get
+        public ref bool this[int index]
         {
-            fixed (byte* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                if ((uint)index < 512)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public ref byte this[int index]
-    {
-        get
+        public const int Length = 512;
+
+        public override string ToString()
+            => $"{typeof(bool)}[512]";
+
+        public bool[] ToArray()
         {
-            if ((uint)index < 256)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            bool[] result = new bool[512];
+
+            for (int i = 0; i < 512; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<bool> AsSpan()
+            => new Span<bool>(Element0Pointer, 512);
+
+        public ConstantArrayEnumerator<bool> GetEnumerator()
+            => new ConstantArrayEnumerator<bool>(Element0Pointer, 512);
     }
 
-    public const int Length = 256;
-
-    public override string ToString()
-        => $"{typeof(byte)}[256]";
-
-    public byte[] ToArray()
+    [StructLayout(LayoutKind.Explicit, Size = 1)]
+    public unsafe partial struct ConstantArray_char_1
     {
-        byte[] result = new byte[256];
+        [FieldOffset(0)] private byte Element0;
 
-        for (int i = 0; i < 256; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<byte> AsSpan()
-        => new Span<byte>(Element0Pointer, 256);
-
-    public ConstantArrayEnumerator<byte> GetEnumerator()
-        => new ConstantArrayEnumerator<byte>(Element0Pointer, 256);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 33)]
-public unsafe partial struct ConstantArray_char_33
-{
-    [FieldOffset(0)] private byte Element0;
-
-    private byte* Element0Pointer
-    {
-        get
+        private byte* Element0Pointer
         {
-            fixed (byte* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                fixed (byte* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public ref byte this[int index]
-    {
-        get
+        public ref byte this[int index]
         {
-            if ((uint)index < 33)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                if ((uint)index < 1)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public const int Length = 33;
+        public const int Length = 1;
 
-    public override string ToString()
-        => $"{typeof(byte)}[33]";
+        public override string ToString()
+            => $"{typeof(byte)}[1]";
 
-    public byte[] ToArray()
-    {
-        byte[] result = new byte[33];
-
-        for (int i = 0; i < 33; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<byte> AsSpan()
-        => new Span<byte>(Element0Pointer, 33);
-
-    public ConstantArrayEnumerator<byte> GetEnumerator()
-        => new ConstantArrayEnumerator<byte>(Element0Pointer, 33);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 40)]
-public unsafe partial struct ConstantArray_char_40
-{
-    [FieldOffset(0)] private byte Element0;
-
-    private byte* Element0Pointer
-    {
-        get
+        public byte[] ToArray()
         {
-            fixed (byte* pElement0 = &Element0)
-            { return pElement0; }
+            byte[] result = new byte[1];
+
+            for (int i = 0; i < 1; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<byte> AsSpan()
+            => new Span<byte>(Element0Pointer, 1);
+
+        public ConstantArrayEnumerator<byte> GetEnumerator()
+            => new ConstantArrayEnumerator<byte>(Element0Pointer, 1);
     }
 
-    public ref byte this[int index]
+    [StructLayout(LayoutKind.Explicit, Size = 256)]
+    public unsafe partial struct ConstantArray_char_256
     {
-        get
+        [FieldOffset(0)] private byte Element0;
+
+        private byte* Element0Pointer
         {
-            if ((uint)index < 40)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                fixed (byte* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public const int Length = 40;
-
-    public override string ToString()
-        => $"{typeof(byte)}[40]";
-
-    public byte[] ToArray()
-    {
-        byte[] result = new byte[40];
-
-        for (int i = 0; i < 40; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<byte> AsSpan()
-        => new Span<byte>(Element0Pointer, 40);
-
-    public ConstantArrayEnumerator<byte> GetEnumerator()
-        => new ConstantArrayEnumerator<byte>(Element0Pointer, 40);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 40)]
-public unsafe partial struct ConstantArray_double_5
-{
-    [FieldOffset(0)] private double Element0;
-
-    private double* Element0Pointer
-    {
-        get
+        public ref byte this[int index]
         {
-            fixed (double* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                if ((uint)index < 256)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public ref double this[int index]
-    {
-        get
+        public const int Length = 256;
+
+        public override string ToString()
+            => $"{typeof(byte)}[256]";
+
+        public byte[] ToArray()
         {
-            if ((uint)index < 5)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            byte[] result = new byte[256];
+
+            for (int i = 0; i < 256; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<byte> AsSpan()
+            => new Span<byte>(Element0Pointer, 256);
+
+        public ConstantArrayEnumerator<byte> GetEnumerator()
+            => new ConstantArrayEnumerator<byte>(Element0Pointer, 256);
     }
 
-    public const int Length = 5;
-
-    public override string ToString()
-        => $"{typeof(double)}[5]";
-
-    public double[] ToArray()
+    [StructLayout(LayoutKind.Explicit, Size = 33)]
+    public unsafe partial struct ConstantArray_char_33
     {
-        double[] result = new double[5];
+        [FieldOffset(0)] private byte Element0;
 
-        for (int i = 0; i < 5; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<double> AsSpan()
-        => new Span<double>(Element0Pointer, 5);
-
-    public ConstantArrayEnumerator<double> GetEnumerator()
-        => new ConstantArrayEnumerator<double>(Element0Pointer, 5);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 8)]
-public unsafe partial struct ConstantArray_float_2
-{
-    [FieldOffset(0)] private float Element0;
-
-    private float* Element0Pointer
-    {
-        get
+        private byte* Element0Pointer
         {
-            fixed (float* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                fixed (byte* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public ref float this[int index]
-    {
-        get
+        public ref byte this[int index]
         {
-            if ((uint)index < 2)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                if ((uint)index < 33)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public const int Length = 2;
+        public const int Length = 33;
 
-    public override string ToString()
-        => $"{typeof(float)}[2]";
+        public override string ToString()
+            => $"{typeof(byte)}[33]";
 
-    public float[] ToArray()
-    {
-        float[] result = new float[2];
-
-        for (int i = 0; i < 2; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<float> AsSpan()
-        => new Span<float>(Element0Pointer, 2);
-
-    public ConstantArrayEnumerator<float> GetEnumerator()
-        => new ConstantArrayEnumerator<float>(Element0Pointer, 2);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 84)]
-public unsafe partial struct ConstantArray_float_21
-{
-    [FieldOffset(0)] private float Element0;
-
-    private float* Element0Pointer
-    {
-        get
+        public byte[] ToArray()
         {
-            fixed (float* pElement0 = &Element0)
-            { return pElement0; }
+            byte[] result = new byte[33];
+
+            for (int i = 0; i < 33; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<byte> AsSpan()
+            => new Span<byte>(Element0Pointer, 33);
+
+        public ConstantArrayEnumerator<byte> GetEnumerator()
+            => new ConstantArrayEnumerator<byte>(Element0Pointer, 33);
     }
 
-    public ref float this[int index]
+    [StructLayout(LayoutKind.Explicit, Size = 40)]
+    public unsafe partial struct ConstantArray_char_40
     {
-        get
+        [FieldOffset(0)] private byte Element0;
+
+        private byte* Element0Pointer
         {
-            if ((uint)index < 21)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                fixed (byte* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public const int Length = 21;
-
-    public override string ToString()
-        => $"{typeof(float)}[21]";
-
-    public float[] ToArray()
-    {
-        float[] result = new float[21];
-
-        for (int i = 0; i < 21; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<float> AsSpan()
-        => new Span<float>(Element0Pointer, 21);
-
-    public ConstantArrayEnumerator<float> GetEnumerator()
-        => new ConstantArrayEnumerator<float>(Element0Pointer, 21);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 12)]
-public unsafe partial struct ConstantArray_float_3
-{
-    [FieldOffset(0)] private float Element0;
-
-    private float* Element0Pointer
-    {
-        get
+        public ref byte this[int index]
         {
-            fixed (float* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                if ((uint)index < 40)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public ref float this[int index]
-    {
-        get
+        public const int Length = 40;
+
+        public override string ToString()
+            => $"{typeof(byte)}[40]";
+
+        public byte[] ToArray()
         {
-            if ((uint)index < 3)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            byte[] result = new byte[40];
+
+            for (int i = 0; i < 40; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<byte> AsSpan()
+            => new Span<byte>(Element0Pointer, 40);
+
+        public ConstantArrayEnumerator<byte> GetEnumerator()
+            => new ConstantArrayEnumerator<byte>(Element0Pointer, 40);
     }
 
-    public const int Length = 3;
-
-    public override string ToString()
-        => $"{typeof(float)}[3]";
-
-    public float[] ToArray()
+    [StructLayout(LayoutKind.Explicit, Size = 40)]
+    public unsafe partial struct ConstantArray_double_5
     {
-        float[] result = new float[3];
+        [FieldOffset(0)] private double Element0;
 
-        for (int i = 0; i < 3; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<float> AsSpan()
-        => new Span<float>(Element0Pointer, 3);
-
-    public ConstantArrayEnumerator<float> GetEnumerator()
-        => new ConstantArrayEnumerator<float>(Element0Pointer, 3);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 16)]
-public unsafe partial struct ConstantArray_float_4
-{
-    [FieldOffset(0)] private float Element0;
-
-    private float* Element0Pointer
-    {
-        get
+        private double* Element0Pointer
         {
-            fixed (float* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                fixed (double* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public ref float this[int index]
-    {
-        get
+        public ref double this[int index]
         {
-            if ((uint)index < 4)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                if ((uint)index < 5)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public const int Length = 4;
+        public const int Length = 5;
 
-    public override string ToString()
-        => $"{typeof(float)}[4]";
+        public override string ToString()
+            => $"{typeof(double)}[5]";
 
-    public float[] ToArray()
-    {
-        float[] result = new float[4];
-
-        for (int i = 0; i < 4; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<float> AsSpan()
-        => new Span<float>(Element0Pointer, 4);
-
-    public ConstantArrayEnumerator<float> GetEnumerator()
-        => new ConstantArrayEnumerator<float>(Element0Pointer, 4);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 20)]
-public unsafe partial struct ConstantArray_float_5
-{
-    [FieldOffset(0)] private float Element0;
-
-    private float* Element0Pointer
-    {
-        get
+        public double[] ToArray()
         {
-            fixed (float* pElement0 = &Element0)
-            { return pElement0; }
+            double[] result = new double[5];
+
+            for (int i = 0; i < 5; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<double> AsSpan()
+            => new Span<double>(Element0Pointer, 5);
+
+        public ConstantArrayEnumerator<double> GetEnumerator()
+            => new ConstantArrayEnumerator<double>(Element0Pointer, 5);
     }
 
-    public ref float this[int index]
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
+    public unsafe partial struct ConstantArray_float_2
     {
-        get
+        [FieldOffset(0)] private float Element0;
+
+        private float* Element0Pointer
         {
-            if ((uint)index < 5)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                fixed (float* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public const int Length = 5;
-
-    public override string ToString()
-        => $"{typeof(float)}[5]";
-
-    public float[] ToArray()
-    {
-        float[] result = new float[5];
-
-        for (int i = 0; i < 5; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<float> AsSpan()
-        => new Span<float>(Element0Pointer, 5);
-
-    public ConstantArrayEnumerator<float> GetEnumerator()
-        => new ConstantArrayEnumerator<float>(Element0Pointer, 5);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 2048)]
-public unsafe partial struct ConstantArray_float_512
-{
-    [FieldOffset(0)] private float Element0;
-
-    private float* Element0Pointer
-    {
-        get
+        public ref float this[int index]
         {
-            fixed (float* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                if ((uint)index < 2)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public ref float this[int index]
-    {
-        get
+        public const int Length = 2;
+
+        public override string ToString()
+            => $"{typeof(float)}[2]";
+
+        public float[] ToArray()
         {
-            if ((uint)index < 512)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            float[] result = new float[2];
+
+            for (int i = 0; i < 2; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<float> AsSpan()
+            => new Span<float>(Element0Pointer, 2);
+
+        public ConstantArrayEnumerator<float> GetEnumerator()
+            => new ConstantArrayEnumerator<float>(Element0Pointer, 2);
     }
 
-    public const int Length = 512;
-
-    public override string ToString()
-        => $"{typeof(float)}[512]";
-
-    public float[] ToArray()
+    [StructLayout(LayoutKind.Explicit, Size = 84)]
+    public unsafe partial struct ConstantArray_float_21
     {
-        float[] result = new float[512];
+        [FieldOffset(0)] private float Element0;
 
-        for (int i = 0; i < 512; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<float> AsSpan()
-        => new Span<float>(Element0Pointer, 512);
-
-    public ConstantArrayEnumerator<float> GetEnumerator()
-        => new ConstantArrayEnumerator<float>(Element0Pointer, 512);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 2)]
-public unsafe partial struct ConstantArray_ImU8_2
-{
-    [FieldOffset(0)] private byte Element0;
-
-    private byte* Element0Pointer
-    {
-        get
+        private float* Element0Pointer
         {
-            fixed (byte* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                fixed (float* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public ref byte this[int index]
-    {
-        get
+        public ref float this[int index]
         {
-            if ((uint)index < 2)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                if ((uint)index < 21)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public const int Length = 2;
+        public const int Length = 21;
 
-    public override string ToString()
-        => $"{typeof(byte)}[2]";
+        public override string ToString()
+            => $"{typeof(float)}[21]";
 
-    public byte[] ToArray()
-    {
-        byte[] result = new byte[2];
-
-        for (int i = 0; i < 2; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<byte> AsSpan()
-        => new Span<byte>(Element0Pointer, 2);
-
-    public ConstantArrayEnumerator<byte> GetEnumerator()
-        => new ConstantArrayEnumerator<byte>(Element0Pointer, 2);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 16)]
-public unsafe partial struct ConstantArray_ImVec2_2
-{
-    [FieldOffset(0)] private ImVec2 Element0;
-
-    private ImVec2* Element0Pointer
-    {
-        get
+        public float[] ToArray()
         {
-            fixed (ImVec2* pElement0 = &Element0)
-            { return pElement0; }
+            float[] result = new float[21];
+
+            for (int i = 0; i < 21; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<float> AsSpan()
+            => new Span<float>(Element0Pointer, 21);
+
+        public ConstantArrayEnumerator<float> GetEnumerator()
+            => new ConstantArrayEnumerator<float>(Element0Pointer, 21);
     }
 
-    public ref ImVec2 this[int index]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
+    public unsafe partial struct ConstantArray_float_3
     {
-        get
+        [FieldOffset(0)] private float Element0;
+
+        private float* Element0Pointer
         {
-            if ((uint)index < 2)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                fixed (float* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public const int Length = 2;
-
-    public override string ToString()
-        => $"{typeof(ImVec2)}[2]";
-
-    public ImVec2[] ToArray()
-    {
-        ImVec2[] result = new ImVec2[2];
-
-        for (int i = 0; i < 2; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<ImVec2> AsSpan()
-        => new Span<ImVec2>(Element0Pointer, 2);
-
-    public ConstantArrayEnumerator<ImVec2> GetEnumerator()
-        => new ConstantArrayEnumerator<ImVec2>(Element0Pointer, 2);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 40)]
-public unsafe partial struct ConstantArray_ImVec2_5
-{
-    [FieldOffset(0)] private ImVec2 Element0;
-
-    private ImVec2* Element0Pointer
-    {
-        get
+        public ref float this[int index]
         {
-            fixed (ImVec2* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                if ((uint)index < 3)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public ref ImVec2 this[int index]
-    {
-        get
+        public const int Length = 3;
+
+        public override string ToString()
+            => $"{typeof(float)}[3]";
+
+        public float[] ToArray()
         {
-            if ((uint)index < 5)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            float[] result = new float[3];
+
+            for (int i = 0; i < 3; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<float> AsSpan()
+            => new Span<float>(Element0Pointer, 3);
+
+        public ConstantArrayEnumerator<float> GetEnumerator()
+            => new ConstantArrayEnumerator<float>(Element0Pointer, 3);
     }
 
-    public const int Length = 5;
-
-    public override string ToString()
-        => $"{typeof(ImVec2)}[5]";
-
-    public ImVec2[] ToArray()
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
+    public unsafe partial struct ConstantArray_float_4
     {
-        ImVec2[] result = new ImVec2[5];
+        [FieldOffset(0)] private float Element0;
 
-        for (int i = 0; i < 5; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<ImVec2> AsSpan()
-        => new Span<ImVec2>(Element0Pointer, 5);
-
-    public ConstantArrayEnumerator<ImVec2> GetEnumerator()
-        => new ConstantArrayEnumerator<ImVec2>(Element0Pointer, 5);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 880)]
-public unsafe partial struct ConstantArray_ImVec4_55
-{
-    [FieldOffset(0)] private ImVec4 Element0;
-
-    private ImVec4* Element0Pointer
-    {
-        get
+        private float* Element0Pointer
         {
-            fixed (ImVec4* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                fixed (float* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public ref ImVec4 this[int index]
-    {
-        get
+        public ref float this[int index]
         {
-            if ((uint)index < 55)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                if ((uint)index < 4)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public const int Length = 55;
+        public const int Length = 4;
 
-    public override string ToString()
-        => $"{typeof(ImVec4)}[55]";
+        public override string ToString()
+            => $"{typeof(float)}[4]";
 
-    public ImVec4[] ToArray()
-    {
-        ImVec4[] result = new ImVec4[55];
-
-        for (int i = 0; i < 55; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<ImVec4> AsSpan()
-        => new Span<ImVec4>(Element0Pointer, 55);
-
-    public ConstantArrayEnumerator<ImVec4> GetEnumerator()
-        => new ConstantArrayEnumerator<ImVec4>(Element0Pointer, 55);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 1024)]
-public unsafe partial struct ConstantArray_ImVec4_64
-{
-    [FieldOffset(0)] private ImVec4 Element0;
-
-    private ImVec4* Element0Pointer
-    {
-        get
+        public float[] ToArray()
         {
-            fixed (ImVec4* pElement0 = &Element0)
-            { return pElement0; }
+            float[] result = new float[4];
+
+            for (int i = 0; i < 4; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<float> AsSpan()
+            => new Span<float>(Element0Pointer, 4);
+
+        public ConstantArrayEnumerator<float> GetEnumerator()
+            => new ConstantArrayEnumerator<float>(Element0Pointer, 4);
     }
 
-    public ref ImVec4 this[int index]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
+    public unsafe partial struct ConstantArray_float_5
     {
-        get
+        [FieldOffset(0)] private float Element0;
+
+        private float* Element0Pointer
         {
-            if ((uint)index < 64)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                fixed (float* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public const int Length = 64;
-
-    public override string ToString()
-        => $"{typeof(ImVec4)}[64]";
-
-    public ImVec4[] ToArray()
-    {
-        ImVec4[] result = new ImVec4[64];
-
-        for (int i = 0; i < 64; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<ImVec4> AsSpan()
-        => new Span<ImVec4>(Element0Pointer, 64);
-
-    public ConstantArrayEnumerator<ImVec4> GetEnumerator()
-        => new ConstantArrayEnumerator<ImVec4>(Element0Pointer, 64);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 8)]
-public unsafe partial struct ConstantArray_int_2
-{
-    [FieldOffset(0)] private int Element0;
-
-    private int* Element0Pointer
-    {
-        get
+        public ref float this[int index]
         {
-            fixed (int* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                if ((uint)index < 5)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public ref int this[int index]
-    {
-        get
+        public const int Length = 5;
+
+        public override string ToString()
+            => $"{typeof(float)}[5]";
+
+        public float[] ToArray()
         {
-            if ((uint)index < 2)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            float[] result = new float[5];
+
+            for (int i = 0; i < 5; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<float> AsSpan()
+            => new Span<float>(Element0Pointer, 5);
+
+        public ConstantArrayEnumerator<float> GetEnumerator()
+            => new ConstantArrayEnumerator<float>(Element0Pointer, 5);
     }
 
-    public const int Length = 2;
-
-    public override string ToString()
-        => $"{typeof(int)}[2]";
-
-    public int[] ToArray()
+    [StructLayout(LayoutKind.Explicit, Size = 2048)]
+    public unsafe partial struct ConstantArray_float_512
     {
-        int[] result = new int[2];
+        [FieldOffset(0)] private float Element0;
 
-        for (int i = 0; i < 2; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<int> AsSpan()
-        => new Span<int>(Element0Pointer, 2);
-
-    public ConstantArrayEnumerator<int> GetEnumerator()
-        => new ConstantArrayEnumerator<int>(Element0Pointer, 2);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 88)]
-public unsafe partial struct ConstantArray_int_22
-{
-    [FieldOffset(0)] private int Element0;
-
-    private int* Element0Pointer
-    {
-        get
+        private float* Element0Pointer
         {
-            fixed (int* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                fixed (float* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public ref int this[int index]
-    {
-        get
+        public ref float this[int index]
         {
-            if ((uint)index < 22)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                if ((uint)index < 512)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public const int Length = 22;
+        public const int Length = 512;
 
-    public override string ToString()
-        => $"{typeof(int)}[22]";
+        public override string ToString()
+            => $"{typeof(float)}[512]";
 
-    public int[] ToArray()
-    {
-        int[] result = new int[22];
-
-        for (int i = 0; i < 22; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<int> AsSpan()
-        => new Span<int>(Element0Pointer, 22);
-
-    public ConstantArrayEnumerator<int> GetEnumerator()
-        => new ConstantArrayEnumerator<int>(Element0Pointer, 22);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 12)]
-public unsafe partial struct ConstantArray_int_3
-{
-    [FieldOffset(0)] private int Element0;
-
-    private int* Element0Pointer
-    {
-        get
+        public float[] ToArray()
         {
-            fixed (int* pElement0 = &Element0)
-            { return pElement0; }
+            float[] result = new float[512];
+
+            for (int i = 0; i < 512; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<float> AsSpan()
+            => new Span<float>(Element0Pointer, 512);
+
+        public ConstantArrayEnumerator<float> GetEnumerator()
+            => new ConstantArrayEnumerator<float>(Element0Pointer, 512);
     }
 
-    public ref int this[int index]
+    [StructLayout(LayoutKind.Explicit, Size = 2)]
+    public unsafe partial struct ConstantArray_ImU8_2
     {
-        get
+        [FieldOffset(0)] private byte Element0;
+
+        private byte* Element0Pointer
         {
-            if ((uint)index < 3)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            get
+            {
+                fixed (byte* pElement0 = &Element0)
+                { return pElement0; }
+            }
         }
-    }
 
-    public const int Length = 3;
-
-    public override string ToString()
-        => $"{typeof(int)}[3]";
-
-    public int[] ToArray()
-    {
-        int[] result = new int[3];
-
-        for (int i = 0; i < 3; i++)
-        { result[i] = this[i]; }
-
-        return result;
-    }
-
-    public Span<int> AsSpan()
-        => new Span<int>(Element0Pointer, 3);
-
-    public ConstantArrayEnumerator<int> GetEnumerator()
-        => new ConstantArrayEnumerator<int>(Element0Pointer, 3);
-}
-
-[StructLayout(LayoutKind.Explicit, Size = 16)]
-public unsafe partial struct ConstantArray_int_4
-{
-    [FieldOffset(0)] private int Element0;
-
-    private int* Element0Pointer
-    {
-        get
+        public ref byte this[int index]
         {
-            fixed (int* pElement0 = &Element0)
-            { return pElement0; }
+            get
+            {
+                if ((uint)index < 2)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
         }
-    }
 
-    public ref int this[int index]
-    {
-        get
+        public const int Length = 2;
+
+        public override string ToString()
+            => $"{typeof(byte)}[2]";
+
+        public byte[] ToArray()
         {
-            if ((uint)index < 4)
-            { return ref Element0Pointer[index]; }
-            else
-            { throw new IndexOutOfRangeException(); }
+            byte[] result = new byte[2];
+
+            for (int i = 0; i < 2; i++)
+            { result[i] = this[i]; }
+
+            return result;
         }
+
+        public Span<byte> AsSpan()
+            => new Span<byte>(Element0Pointer, 2);
+
+        public ConstantArrayEnumerator<byte> GetEnumerator()
+            => new ConstantArrayEnumerator<byte>(Element0Pointer, 2);
     }
 
-    public const int Length = 4;
-
-    public override string ToString()
-        => $"{typeof(int)}[4]";
-
-    public int[] ToArray()
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
+    public unsafe partial struct ConstantArray_ImVec2_2
     {
-        int[] result = new int[4];
+        [FieldOffset(0)] private ImVec2 Element0;
 
-        for (int i = 0; i < 4; i++)
-        { result[i] = this[i]; }
+        private ImVec2* Element0Pointer
+        {
+            get
+            {
+                fixed (ImVec2* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
 
-        return result;
+        public ref ImVec2 this[int index]
+        {
+            get
+            {
+                if ((uint)index < 2)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 2;
+
+        public override string ToString()
+            => $"{typeof(ImVec2)}[2]";
+
+        public ImVec2[] ToArray()
+        {
+            ImVec2[] result = new ImVec2[2];
+
+            for (int i = 0; i < 2; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<ImVec2> AsSpan()
+            => new Span<ImVec2>(Element0Pointer, 2);
+
+        public ConstantArrayEnumerator<ImVec2> GetEnumerator()
+            => new ConstantArrayEnumerator<ImVec2>(Element0Pointer, 2);
     }
 
-    public Span<int> AsSpan()
-        => new Span<int>(Element0Pointer, 4);
+    [StructLayout(LayoutKind.Explicit, Size = 40)]
+    public unsafe partial struct ConstantArray_ImVec2_5
+    {
+        [FieldOffset(0)] private ImVec2 Element0;
 
-    public ConstantArrayEnumerator<int> GetEnumerator()
-        => new ConstantArrayEnumerator<int>(Element0Pointer, 4);
+        private ImVec2* Element0Pointer
+        {
+            get
+            {
+                fixed (ImVec2* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
+
+        public ref ImVec2 this[int index]
+        {
+            get
+            {
+                if ((uint)index < 5)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 5;
+
+        public override string ToString()
+            => $"{typeof(ImVec2)}[5]";
+
+        public ImVec2[] ToArray()
+        {
+            ImVec2[] result = new ImVec2[5];
+
+            for (int i = 0; i < 5; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<ImVec2> AsSpan()
+            => new Span<ImVec2>(Element0Pointer, 5);
+
+        public ConstantArrayEnumerator<ImVec2> GetEnumerator()
+            => new ConstantArrayEnumerator<ImVec2>(Element0Pointer, 5);
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 880)]
+    public unsafe partial struct ConstantArray_ImVec4_55
+    {
+        [FieldOffset(0)] private ImVec4 Element0;
+
+        private ImVec4* Element0Pointer
+        {
+            get
+            {
+                fixed (ImVec4* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
+
+        public ref ImVec4 this[int index]
+        {
+            get
+            {
+                if ((uint)index < 55)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 55;
+
+        public override string ToString()
+            => $"{typeof(ImVec4)}[55]";
+
+        public ImVec4[] ToArray()
+        {
+            ImVec4[] result = new ImVec4[55];
+
+            for (int i = 0; i < 55; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<ImVec4> AsSpan()
+            => new Span<ImVec4>(Element0Pointer, 55);
+
+        public ConstantArrayEnumerator<ImVec4> GetEnumerator()
+            => new ConstantArrayEnumerator<ImVec4>(Element0Pointer, 55);
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 1024)]
+    public unsafe partial struct ConstantArray_ImVec4_64
+    {
+        [FieldOffset(0)] private ImVec4 Element0;
+
+        private ImVec4* Element0Pointer
+        {
+            get
+            {
+                fixed (ImVec4* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
+
+        public ref ImVec4 this[int index]
+        {
+            get
+            {
+                if ((uint)index < 64)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 64;
+
+        public override string ToString()
+            => $"{typeof(ImVec4)}[64]";
+
+        public ImVec4[] ToArray()
+        {
+            ImVec4[] result = new ImVec4[64];
+
+            for (int i = 0; i < 64; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<ImVec4> AsSpan()
+            => new Span<ImVec4>(Element0Pointer, 64);
+
+        public ConstantArrayEnumerator<ImVec4> GetEnumerator()
+            => new ConstantArrayEnumerator<ImVec4>(Element0Pointer, 64);
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
+    public unsafe partial struct ConstantArray_int_2
+    {
+        [FieldOffset(0)] private int Element0;
+
+        private int* Element0Pointer
+        {
+            get
+            {
+                fixed (int* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
+
+        public ref int this[int index]
+        {
+            get
+            {
+                if ((uint)index < 2)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 2;
+
+        public override string ToString()
+            => $"{typeof(int)}[2]";
+
+        public int[] ToArray()
+        {
+            int[] result = new int[2];
+
+            for (int i = 0; i < 2; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<int> AsSpan()
+            => new Span<int>(Element0Pointer, 2);
+
+        public ConstantArrayEnumerator<int> GetEnumerator()
+            => new ConstantArrayEnumerator<int>(Element0Pointer, 2);
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 88)]
+    public unsafe partial struct ConstantArray_int_22
+    {
+        [FieldOffset(0)] private int Element0;
+
+        private int* Element0Pointer
+        {
+            get
+            {
+                fixed (int* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
+
+        public ref int this[int index]
+        {
+            get
+            {
+                if ((uint)index < 22)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 22;
+
+        public override string ToString()
+            => $"{typeof(int)}[22]";
+
+        public int[] ToArray()
+        {
+            int[] result = new int[22];
+
+            for (int i = 0; i < 22; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<int> AsSpan()
+            => new Span<int>(Element0Pointer, 22);
+
+        public ConstantArrayEnumerator<int> GetEnumerator()
+            => new ConstantArrayEnumerator<int>(Element0Pointer, 22);
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
+    public unsafe partial struct ConstantArray_int_3
+    {
+        [FieldOffset(0)] private int Element0;
+
+        private int* Element0Pointer
+        {
+            get
+            {
+                fixed (int* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
+
+        public ref int this[int index]
+        {
+            get
+            {
+                if ((uint)index < 3)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 3;
+
+        public override string ToString()
+            => $"{typeof(int)}[3]";
+
+        public int[] ToArray()
+        {
+            int[] result = new int[3];
+
+            for (int i = 0; i < 3; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<int> AsSpan()
+            => new Span<int>(Element0Pointer, 3);
+
+        public ConstantArrayEnumerator<int> GetEnumerator()
+            => new ConstantArrayEnumerator<int>(Element0Pointer, 3);
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
+    public unsafe partial struct ConstantArray_int_4
+    {
+        [FieldOffset(0)] private int Element0;
+
+        private int* Element0Pointer
+        {
+            get
+            {
+                fixed (int* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
+
+        public ref int this[int index]
+        {
+            get
+            {
+                if ((uint)index < 4)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 4;
+
+        public override string ToString()
+            => $"{typeof(int)}[4]";
+
+        public int[] ToArray()
+        {
+            int[] result = new int[4];
+
+            for (int i = 0; i < 4; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<int> AsSpan()
+            => new Span<int>(Element0Pointer, 4);
+
+        public ConstantArrayEnumerator<int> GetEnumerator()
+            => new ConstantArrayEnumerator<int>(Element0Pointer, 4);
+    }
 }

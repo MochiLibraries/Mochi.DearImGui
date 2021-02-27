@@ -7,55 +7,58 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 8)]
-public unsafe partial struct ImVec2
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public float x;
-
-    [FieldOffset(4)] public float y;
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper0", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImVec2* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Constructor()
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
+    public unsafe partial struct ImVec2
     {
-        fixed (ImVec2* @this = &this)
-        { Constructor_PInvoke(@this); }
-    }
+        [FieldOffset(0)] public float x;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper1", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImVec2* @this, float _x, float _y);
+        [FieldOffset(4)] public float y;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Constructor(float _x, float _y)
-    {
-        fixed (ImVec2* @this = &this)
-        { Constructor_PInvoke(@this, _x, _y); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper0", ExactSpelling = true)]
+        private static extern void Constructor_PInvoke(ImVec2* @this);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImVec2@@QEBAM_K@Z", ExactSpelling = true)]
-    private static extern float operator_Subscript_Const_PInvoke(ImVec2* @this, ulong idx);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Constructor()
+        {
+            fixed (ImVec2* @this = &this)
+            { Constructor_PInvoke(@this); }
+        }
 
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe float operator_Subscript_Const(ulong idx)
-    {
-        fixed (ImVec2* @this = &this)
-        { return operator_Subscript_Const_PInvoke(@this, idx); }
-    }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper1", ExactSpelling = true)]
+        private static extern void Constructor_PInvoke(ImVec2* @this, float _x, float _y);
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImVec2@@QEAAAEAM_K@Z", ExactSpelling = true)]
-    private static extern float* operator_Subscript_PInvoke(ImVec2* @this, ulong idx);
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Constructor(float _x, float _y)
+        {
+            fixed (ImVec2* @this = &this)
+            { Constructor_PInvoke(@this, _x, _y); }
+        }
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe float* operator_Subscript(ulong idx)
-    {
-        fixed (ImVec2* @this = &this)
-        { return operator_Subscript_PInvoke(@this, idx); }
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImVec2@@QEBAM_K@Z", ExactSpelling = true)]
+        private static extern float operator_Subscript_Const_PInvoke(ImVec2* @this, ulong idx);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe float operator_Subscript_Const(ulong idx)
+        {
+            fixed (ImVec2* @this = &this)
+            { return operator_Subscript_Const_PInvoke(@this, idx); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImVec2@@QEAAAEAM_K@Z", ExactSpelling = true)]
+        private static extern float* operator_Subscript_PInvoke(ImVec2* @this, ulong idx);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe float* operator_Subscript(ulong idx)
+        {
+            fixed (ImVec2* @this = &this)
+            { return operator_Subscript_PInvoke(@this, idx); }
+        }
     }
 }

@@ -4,13 +4,16 @@
 #nullable enable
 using System;
 
-[Flags]
-public enum ImGuiSliderFlags
+namespace InfectedImGui
 {
-    None = 0,
-    AlwaysClamp = 16,
-    Logarithmic = 32,
-    NoRoundToFormat = 64,
-    NoInput = 128,
-    InvalidMask_ = 0x7000000F
+    [Flags]
+    public enum ImGuiSliderFlags
+    {
+        None = 0,
+        AlwaysClamp = 16,
+        Logarithmic = 32,
+        NoRoundToFormat = 64,
+        NoInput = 128,
+        InvalidMask_ = 0x7000000F
+    }
 }

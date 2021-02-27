@@ -6,90 +6,93 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 96)]
-public unsafe partial struct ImGuiViewport
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public uint ID;
-
-    [FieldOffset(4)] public ImGuiViewportFlags Flags;
-
-    [FieldOffset(8)] public ImVec2 Pos;
-
-    [FieldOffset(16)] public ImVec2 Size;
-
-    [FieldOffset(24)] public ImVec2 WorkPos;
-
-    [FieldOffset(32)] public ImVec2 WorkSize;
-
-    [FieldOffset(40)] public float DpiScale;
-
-    [FieldOffset(44)] public uint ParentViewportId;
-
-    [FieldOffset(48)] public ImDrawData* DrawData;
-
-    [FieldOffset(56)] public void* RendererUserData;
-
-    [FieldOffset(64)] public void* PlatformUserData;
-
-    [FieldOffset(72)] public void* PlatformHandle;
-
-    [FieldOffset(80)] public void* PlatformHandleRaw;
-
-    [FieldOffset(88)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestMove;
-
-    [FieldOffset(89)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestResize;
-
-    [FieldOffset(90)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestClose;
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper28", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImGuiViewport* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Constructor()
+    [StructLayout(LayoutKind.Explicit, Size = 96)]
+    public unsafe partial struct ImGuiViewport
     {
-        fixed (ImGuiViewport* @this = &this)
-        { Constructor_PInvoke(@this); }
-    }
+        [FieldOffset(0)] public uint ID;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper29", ExactSpelling = true)]
-    private static extern void Destructor_PInvoke(ImGuiViewport* @this);
+        [FieldOffset(4)] public ImGuiViewportFlags Flags;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Destructor()
-    {
-        fixed (ImGuiViewport* @this = &this)
-        { Destructor_PInvoke(@this); }
-    }
+        [FieldOffset(8)] public ImVec2 Pos;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
-    private static extern ImVec2* GetCenter_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
+        [FieldOffset(16)] public ImVec2 Size;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe ImVec2 GetCenter()
-    {
-        fixed (ImGuiViewport* @this = &this)
+        [FieldOffset(24)] public ImVec2 WorkPos;
+
+        [FieldOffset(32)] public ImVec2 WorkSize;
+
+        [FieldOffset(40)] public float DpiScale;
+
+        [FieldOffset(44)] public uint ParentViewportId;
+
+        [FieldOffset(48)] public ImDrawData* DrawData;
+
+        [FieldOffset(56)] public void* RendererUserData;
+
+        [FieldOffset(64)] public void* PlatformUserData;
+
+        [FieldOffset(72)] public void* PlatformHandle;
+
+        [FieldOffset(80)] public void* PlatformHandleRaw;
+
+        [FieldOffset(88)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestMove;
+
+        [FieldOffset(89)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestResize;
+
+        [FieldOffset(90)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestClose;
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper28", ExactSpelling = true)]
+        private static extern void Constructor_PInvoke(ImGuiViewport* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Constructor()
         {
-            ImVec2 __returnBuffer;
-            GetCenter_PInvoke(@this, out __returnBuffer);
-            return __returnBuffer;
+            fixed (ImGuiViewport* @this = &this)
+            { Constructor_PInvoke(@this); }
         }
-    }
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
-    private static extern ImVec2* GetWorkCenter_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper29", ExactSpelling = true)]
+        private static extern void Destructor_PInvoke(ImGuiViewport* @this);
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe ImVec2 GetWorkCenter()
-    {
-        fixed (ImGuiViewport* @this = &this)
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Destructor()
         {
-            ImVec2 __returnBuffer;
-            GetWorkCenter_PInvoke(@this, out __returnBuffer);
-            return __returnBuffer;
+            fixed (ImGuiViewport* @this = &this)
+            { Destructor_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
+        private static extern ImVec2* GetCenter_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe ImVec2 GetCenter()
+        {
+            fixed (ImGuiViewport* @this = &this)
+            {
+                ImVec2 __returnBuffer;
+                GetCenter_PInvoke(@this, out __returnBuffer);
+                return __returnBuffer;
+            }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
+        private static extern ImVec2* GetWorkCenter_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe ImVec2 GetWorkCenter()
+        {
+            fixed (ImGuiViewport* @this = &this)
+            {
+                ImVec2 __returnBuffer;
+                GetWorkCenter_PInvoke(@this, out __returnBuffer);
+                return __returnBuffer;
+            }
         }
     }
 }

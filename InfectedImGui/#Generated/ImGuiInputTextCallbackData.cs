@@ -6,97 +6,100 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 56)]
-public unsafe partial struct ImGuiInputTextCallbackData
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public ImGuiInputTextFlags EventFlag;
-
-    [FieldOffset(4)] public ImGuiInputTextFlags Flags;
-
-    [FieldOffset(8)] public void* UserData;
-
-    [FieldOffset(16)] public ushort EventChar;
-
-    [FieldOffset(20)] public ImGuiKey EventKey;
-
-    [FieldOffset(24)] public byte* Buf;
-
-    [FieldOffset(32)] public int BufTextLen;
-
-    [FieldOffset(36)] public int BufSize;
-
-    [FieldOffset(40)] [MarshalAs(UnmanagedType.I1)] public bool BufDirty;
-
-    [FieldOffset(44)] public int CursorPos;
-
-    [FieldOffset(48)] public int SelectionStart;
-
-    [FieldOffset(52)] public int SelectionEnd;
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiInputTextCallbackData@@QEAA@XZ", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImGuiInputTextCallbackData* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Constructor()
+    [StructLayout(LayoutKind.Explicit, Size = 56)]
+    public unsafe partial struct ImGuiInputTextCallbackData
     {
-        fixed (ImGuiInputTextCallbackData* @this = &this)
-        { Constructor_PInvoke(@this); }
-    }
+        [FieldOffset(0)] public ImGuiInputTextFlags EventFlag;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeleteChars@ImGuiInputTextCallbackData@@QEAAXHH@Z", ExactSpelling = true)]
-    private static extern void DeleteChars_PInvoke(ImGuiInputTextCallbackData* @this, int pos, int bytes_count);
+        [FieldOffset(4)] public ImGuiInputTextFlags Flags;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void DeleteChars(int pos, int bytes_count)
-    {
-        fixed (ImGuiInputTextCallbackData* @this = &this)
-        { DeleteChars_PInvoke(@this, pos, bytes_count); }
-    }
+        [FieldOffset(8)] public void* UserData;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InsertChars@ImGuiInputTextCallbackData@@QEAAXHPEBD0@Z", ExactSpelling = true)]
-    private static extern void InsertChars_PInvoke(ImGuiInputTextCallbackData* @this, int pos, byte* text, byte* text_end);
+        [FieldOffset(16)] public ushort EventChar;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void InsertChars(int pos, byte* text, byte* text_end = null)
-    {
-        fixed (ImGuiInputTextCallbackData* @this = &this)
-        { InsertChars_PInvoke(@this, pos, text, text_end); }
-    }
+        [FieldOffset(20)] public ImGuiKey EventKey;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SelectAll@ImGuiInputTextCallbackData@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void SelectAll_PInvoke(ImGuiInputTextCallbackData* @this);
+        [FieldOffset(24)] public byte* Buf;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void SelectAll()
-    {
-        fixed (ImGuiInputTextCallbackData* @this = &this)
-        { SelectAll_PInvoke(@this); }
-    }
+        [FieldOffset(32)] public int BufTextLen;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearSelection@ImGuiInputTextCallbackData@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void ClearSelection_PInvoke(ImGuiInputTextCallbackData* @this);
+        [FieldOffset(36)] public int BufSize;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void ClearSelection()
-    {
-        fixed (ImGuiInputTextCallbackData* @this = &this)
-        { ClearSelection_PInvoke(@this); }
-    }
+        [FieldOffset(40)] [MarshalAs(UnmanagedType.I1)] public bool BufDirty;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HasSelection@ImGuiInputTextCallbackData@@QEBA_NXZ", ExactSpelling = true)]
-    [return: MarshalAs(UnmanagedType.I1)]
-    private static extern bool HasSelection_PInvoke(ImGuiInputTextCallbackData* @this);
+        [FieldOffset(44)] public int CursorPos;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe bool HasSelection()
-    {
-        fixed (ImGuiInputTextCallbackData* @this = &this)
-        { return HasSelection_PInvoke(@this); }
+        [FieldOffset(48)] public int SelectionStart;
+
+        [FieldOffset(52)] public int SelectionEnd;
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiInputTextCallbackData@@QEAA@XZ", ExactSpelling = true)]
+        private static extern void Constructor_PInvoke(ImGuiInputTextCallbackData* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Constructor()
+        {
+            fixed (ImGuiInputTextCallbackData* @this = &this)
+            { Constructor_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeleteChars@ImGuiInputTextCallbackData@@QEAAXHH@Z", ExactSpelling = true)]
+        private static extern void DeleteChars_PInvoke(ImGuiInputTextCallbackData* @this, int pos, int bytes_count);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void DeleteChars(int pos, int bytes_count)
+        {
+            fixed (ImGuiInputTextCallbackData* @this = &this)
+            { DeleteChars_PInvoke(@this, pos, bytes_count); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InsertChars@ImGuiInputTextCallbackData@@QEAAXHPEBD0@Z", ExactSpelling = true)]
+        private static extern void InsertChars_PInvoke(ImGuiInputTextCallbackData* @this, int pos, byte* text, byte* text_end);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void InsertChars(int pos, byte* text, byte* text_end = null)
+        {
+            fixed (ImGuiInputTextCallbackData* @this = &this)
+            { InsertChars_PInvoke(@this, pos, text, text_end); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SelectAll@ImGuiInputTextCallbackData@@QEAAXXZ", ExactSpelling = true)]
+        private static extern void SelectAll_PInvoke(ImGuiInputTextCallbackData* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void SelectAll()
+        {
+            fixed (ImGuiInputTextCallbackData* @this = &this)
+            { SelectAll_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearSelection@ImGuiInputTextCallbackData@@QEAAXXZ", ExactSpelling = true)]
+        private static extern void ClearSelection_PInvoke(ImGuiInputTextCallbackData* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void ClearSelection()
+        {
+            fixed (ImGuiInputTextCallbackData* @this = &this)
+            { ClearSelection_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HasSelection@ImGuiInputTextCallbackData@@QEBA_NXZ", ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool HasSelection_PInvoke(ImGuiInputTextCallbackData* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe bool HasSelection()
+        {
+            fixed (ImGuiInputTextCallbackData* @this = &this)
+            { return HasSelection_PInvoke(@this); }
+        }
     }
 }

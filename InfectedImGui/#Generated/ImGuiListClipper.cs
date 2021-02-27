@@ -6,76 +6,79 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 28)]
-public unsafe partial struct ImGuiListClipper
+namespace InfectedImGui
 {
-    [FieldOffset(0)] public int DisplayStart;
-
-    [FieldOffset(4)] public int DisplayEnd;
-
-    [FieldOffset(8)] public int ItemsCount;
-
-    [FieldOffset(12)] public int StepNo;
-
-    [FieldOffset(16)] public int ItemsFrozen;
-
-    [FieldOffset(20)] public float ItemsHeight;
-
-    [FieldOffset(24)] public float StartPosY;
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiListClipper@@QEAA@XZ", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImGuiListClipper* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Constructor()
+    [StructLayout(LayoutKind.Explicit, Size = 28)]
+    public unsafe partial struct ImGuiListClipper
     {
-        fixed (ImGuiListClipper* @this = &this)
-        { Constructor_PInvoke(@this); }
-    }
+        [FieldOffset(0)] public int DisplayStart;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImGuiListClipper@@QEAA@XZ", ExactSpelling = true)]
-    private static extern void Destructor_PInvoke(ImGuiListClipper* @this);
+        [FieldOffset(4)] public int DisplayEnd;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Destructor()
-    {
-        fixed (ImGuiListClipper* @this = &this)
-        { Destructor_PInvoke(@this); }
-    }
+        [FieldOffset(8)] public int ItemsCount;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Begin@ImGuiListClipper@@QEAAXHM@Z", ExactSpelling = true)]
-    private static extern void Begin_PInvoke(ImGuiListClipper* @this, int items_count, float items_height);
+        [FieldOffset(12)] public int StepNo;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Begin(int items_count, float items_height = -1f)
-    {
-        fixed (ImGuiListClipper* @this = &this)
-        { Begin_PInvoke(@this, items_count, items_height); }
-    }
+        [FieldOffset(16)] public int ItemsFrozen;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?End@ImGuiListClipper@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void End_PInvoke(ImGuiListClipper* @this);
+        [FieldOffset(20)] public float ItemsHeight;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void End()
-    {
-        fixed (ImGuiListClipper* @this = &this)
-        { End_PInvoke(@this); }
-    }
+        [FieldOffset(24)] public float StartPosY;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Step@ImGuiListClipper@@QEAA_NXZ", ExactSpelling = true)]
-    [return: MarshalAs(UnmanagedType.I1)]
-    private static extern bool Step_PInvoke(ImGuiListClipper* @this);
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiListClipper@@QEAA@XZ", ExactSpelling = true)]
+        private static extern void Constructor_PInvoke(ImGuiListClipper* @this);
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe bool Step()
-    {
-        fixed (ImGuiListClipper* @this = &this)
-        { return Step_PInvoke(@this); }
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Constructor()
+        {
+            fixed (ImGuiListClipper* @this = &this)
+            { Constructor_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImGuiListClipper@@QEAA@XZ", ExactSpelling = true)]
+        private static extern void Destructor_PInvoke(ImGuiListClipper* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Destructor()
+        {
+            fixed (ImGuiListClipper* @this = &this)
+            { Destructor_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Begin@ImGuiListClipper@@QEAAXHM@Z", ExactSpelling = true)]
+        private static extern void Begin_PInvoke(ImGuiListClipper* @this, int items_count, float items_height);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Begin(int items_count, float items_height = -1f)
+        {
+            fixed (ImGuiListClipper* @this = &this)
+            { Begin_PInvoke(@this, items_count, items_height); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?End@ImGuiListClipper@@QEAAXXZ", ExactSpelling = true)]
+        private static extern void End_PInvoke(ImGuiListClipper* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void End()
+        {
+            fixed (ImGuiListClipper* @this = &this)
+            { End_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Step@ImGuiListClipper@@QEAA_NXZ", ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool Step_PInvoke(ImGuiListClipper* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe bool Step()
+        {
+            fixed (ImGuiListClipper* @this = &this)
+            { return Step_PInvoke(@this); }
+        }
     }
 }

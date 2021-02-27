@@ -4,7 +4,10 @@
 #nullable enable
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 1)]
-public unsafe partial struct ImNewWrapper
+namespace InfectedImGui
 {
+    [StructLayout(LayoutKind.Explicit, Size = 1)]
+    public unsafe partial struct ImNewWrapper
+    {
+    }
 }

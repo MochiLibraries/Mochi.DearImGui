@@ -35,9 +35,13 @@ namespace InfectedImGui.Generator
             { elementTypeString = outputTranslator.GetTypeAsString(context, declaration, elementType); }
 
             for (int i = 0; i < levelsOfIndirection; i++)
-            { elementTypeString = $"Pointer<{elementTypeString}>"; }
+            {
+                outputTranslator.AddUsing("InfectedImGui.Infrastructure"); // Pointer<T>
+                elementTypeString = $"Pointer<{elementTypeString}>";
+            }
 
             // Return the type string
+            outputTranslator.AddUsing("InfectedImGui"); // ImVector<T>
             return $"ImVector<{elementTypeString}>";
         }
 

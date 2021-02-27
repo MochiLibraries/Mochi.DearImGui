@@ -4,16 +4,19 @@
 #nullable enable
 using System;
 
-[Flags]
-public enum ImGuiComboFlags
+namespace InfectedImGui
 {
-    None = 0,
-    PopupAlignLeft = 1,
-    HeightSmall = 2,
-    HeightRegular = 4,
-    HeightLarge = 8,
-    HeightLargest = 16,
-    NoArrowButton = 32,
-    NoPreview = 64,
-    HeightMask_ = 30
+    [Flags]
+    public enum ImGuiComboFlags
+    {
+        None = 0,
+        PopupAlignLeft = 1,
+        HeightSmall = 2,
+        HeightRegular = 4,
+        HeightLarge = 8,
+        HeightLargest = 16,
+        NoArrowButton = 32,
+        NoPreview = 64,
+        HeightMask_ = 30
+    }
 }

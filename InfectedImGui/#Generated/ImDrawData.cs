@@ -6,68 +6,71 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[StructLayout(LayoutKind.Explicit, Size = 56)]
-public unsafe partial struct ImDrawData
+namespace InfectedImGui
 {
-    [FieldOffset(0)] [MarshalAs(UnmanagedType.I1)] public bool Valid;
-
-    [FieldOffset(4)] public int CmdListsCount;
-
-    [FieldOffset(8)] public int TotalIdxCount;
-
-    [FieldOffset(12)] public int TotalVtxCount;
-
-    [FieldOffset(16)] public ImDrawList** CmdLists;
-
-    [FieldOffset(24)] public ImVec2 DisplayPos;
-
-    [FieldOffset(32)] public ImVec2 DisplaySize;
-
-    [FieldOffset(40)] public ImVec2 FramebufferScale;
-
-    [FieldOffset(48)] public ImGuiViewport* OwnerViewport;
-
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper25", ExactSpelling = true)]
-    private static extern void Constructor_PInvoke(ImDrawData* @this);
-
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Constructor()
+    [StructLayout(LayoutKind.Explicit, Size = 56)]
+    public unsafe partial struct ImDrawData
     {
-        fixed (ImDrawData* @this = &this)
-        { Constructor_PInvoke(@this); }
-    }
+        [FieldOffset(0)] [MarshalAs(UnmanagedType.I1)] public bool Valid;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void Clear_PInvoke(ImDrawData* @this);
+        [FieldOffset(4)] public int CmdListsCount;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Clear()
-    {
-        fixed (ImDrawData* @this = &this)
-        { Clear_PInvoke(@this); }
-    }
+        [FieldOffset(8)] public int TotalIdxCount;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
-    private static extern void DeIndexAllBuffers_PInvoke(ImDrawData* @this);
+        [FieldOffset(12)] public int TotalVtxCount;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void DeIndexAllBuffers()
-    {
-        fixed (ImDrawData* @this = &this)
-        { DeIndexAllBuffers_PInvoke(@this); }
-    }
+        [FieldOffset(16)] public ImDrawList** CmdLists;
 
-    [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleClipRects@ImDrawData@@QEAAXAEBUImVec2@@@Z", ExactSpelling = true)]
-    private static extern void ScaleClipRects_PInvoke(ImDrawData* @this, ImVec2* fb_scale);
+        [FieldOffset(24)] public ImVec2 DisplayPos;
 
-    [DebuggerStepThrough, DebuggerHidden]
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void ScaleClipRects(ImVec2* fb_scale)
-    {
-        fixed (ImDrawData* @this = &this)
-        { ScaleClipRects_PInvoke(@this, fb_scale); }
+        [FieldOffset(32)] public ImVec2 DisplaySize;
+
+        [FieldOffset(40)] public ImVec2 FramebufferScale;
+
+        [FieldOffset(48)] public ImGuiViewport* OwnerViewport;
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper25", ExactSpelling = true)]
+        private static extern void Constructor_PInvoke(ImDrawData* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Constructor()
+        {
+            fixed (ImDrawData* @this = &this)
+            { Constructor_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
+        private static extern void Clear_PInvoke(ImDrawData* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void Clear()
+        {
+            fixed (ImDrawData* @this = &this)
+            { Clear_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
+        private static extern void DeIndexAllBuffers_PInvoke(ImDrawData* @this);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void DeIndexAllBuffers()
+        {
+            fixed (ImDrawData* @this = &this)
+            { DeIndexAllBuffers_PInvoke(@this); }
+        }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleClipRects@ImDrawData@@QEAAXAEBUImVec2@@@Z", ExactSpelling = true)]
+        private static extern void ScaleClipRects_PInvoke(ImDrawData* @this, ImVec2* fb_scale);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe void ScaleClipRects(ImVec2* fb_scale)
+        {
+            fixed (ImDrawData* @this = &this)
+            { ScaleClipRects_PInvoke(@this, fb_scale); }
+        }
     }
 }
