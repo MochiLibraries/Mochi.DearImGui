@@ -62,6 +62,7 @@ libraryBuilder.AddCommandLineArgument("--language=c++");
 libraryBuilder.AddCommandLineArgument($"-I{imGuiSourceDirectoryPath}");
 libraryBuilder.AddCommandLineArgument($"-DIMGUI_USER_CONFIG=\"{imGuiConfigFilePath}\"");
 libraryBuilder.AddFile(imGuiHeaderFilePath);
+libraryBuilder.AddFile(Path.Combine(imGuiSourceDirectoryPath, "imgui_internal.h"));
 
 if (includeExampleImplementations)
 {
@@ -101,10 +102,12 @@ library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
 library = new KludgeUnknownClangTypesIntoBuiltinTypesTransformation(emitErrorOnFail: true).Transform(library);
 library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
 library = new AddTrampolineMethodOptionsTransformation(MethodImplOptions.AggressiveInlining).Transform(library);
+library = new ImGuiInternalFixupTransformation().Transform(library);
 library = new InfectedImGuiNamespaceTransformation().Transform(library);
+library = new RemoveIllegalImVectorReferencesTransformation().Transform(library);
 library = new MoveLooseDeclarationsIntoTypesTransformation
 (
-    (c, d) => d.Namespace == "InfectedImGui" ? null : "Globals"
+    (c, d) => d.Namespace == "InfectedImGui" ? null : d.Namespace == "InfectedImGui.Internal" ? "ImGuiInternal" : "Globals"
 ).Transform(library);
 library = new AutoNameUnnamedParametersTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);

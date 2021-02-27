@@ -1,4 +1,17 @@
 ==============================================================================
+Parsing Diagnostics
+==============================================================================
+Note: Successfully late-instantiated 1 template specialization.
+Warning: Out-of-scope file 'C:\Projects\InfectedLibraries\InfectedImGui\InfectedImGui.Generator\bin\Debug\net5.0\win-x64\InfectedImGuiConfig.h' was included inside a declaration from in-scope file 'C:\Projects\InfectedLibraries\InfectedImGui\external\imgui\imgui_internal.h'. The file was implicitly promoted to be in-scope in the context of the containing declaration.
+Warning: Field 'ImGuiContext.Tables' references unsupported declaration '`ImPool<ImGuiTable>`' and was removed.
+Warning: Field 'ImGuiContext.TabBars' references unsupported declaration '`ImPool<ImGuiTabBar>`' and was removed.
+Warning: Field 'ImGuiContext.SettingsWindows' references unsupported declaration '`ImChunkStream<ImGuiWindowSettings>`' and was removed.
+Warning: Field 'ImGuiContext.SettingsTables' references unsupported declaration '`ImChunkStream<ImGuiTableSettings>`' and was removed.
+Warning: Field 'ImGuiTable.Columns' references unsupported declaration '`ImSpan<ImGuiTableColumn>`' and was removed.
+Warning: Field 'ImGuiTable.DisplayOrderToIndex' references unsupported declaration '`ImSpan<ImGuiTableColumnIdx>`' and was removed.
+Warning: Field 'ImGuiTable.RowCellData' references unsupported declaration '`ImSpan<ImGuiTableCellData>`' and was removed.
+
+==============================================================================
 Translation Diagnostics
 ==============================================================================
 --------------------- TranslatedParameter default_filter ---------------------
@@ -236,6 +249,16 @@ Warning: Dropped default parameter value '0' because parameter comes before non-
 ----------------------- TranslatedParameter outer_size -----------------------
 Warning: Non-constant default parameter values are not supported.
 -------------------------- TranslatedParameter size --------------------------
+Warning: Non-constant default parameter values are not supported.
+------------------------- TranslatedParameter flags --------------------------
+Warning: Dropped default parameter value '0' because parameter comes before non-defaulted parameter 'outer_size'.
+----------------------- TranslatedParameter outer_size -----------------------
+Warning: Non-constant default parameter values are not supported.
+------------------------- TranslatedParameter align --------------------------
+Warning: Non-constant default parameter values are not supported.
+------------------------- TranslatedParameter align --------------------------
+Warning: Non-constant default parameter values are not supported.
+------------------------ TranslatedParameter size_arg ------------------------
 Warning: Non-constant default parameter values are not supported.
 
 ==============================================================================

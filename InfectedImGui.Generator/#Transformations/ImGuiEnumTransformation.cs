@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace InfectedImGui.Generator
 {
+    //TODO: The enums in imgui_internal.h do not follow the same convention as the ones in imgui.h
     public sealed class ImGuiEnumTransformation : TransformationBase
     {
         private Dictionary<TranslatedEnum, TranslatedTypedef> Enums = new(ReferenceEqualityComparer.Instance);

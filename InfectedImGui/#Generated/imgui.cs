@@ -3,6 +3,7 @@
 // </auto-generated>
 #nullable enable
 using InfectedImGui.Infrastructure;
+using InfectedImGui.Internal;
 using System.Runtime.InteropServices;
 
 namespace InfectedImGui

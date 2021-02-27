@@ -2,6 +2,7 @@
 using Biohazrd.CSharp.Infrastructure;
 using Biohazrd.Transformation;
 using Biohazrd.Transformation.Infrastructure;
+using System.Diagnostics;
 
 namespace InfectedImGui.Generator
 {
@@ -14,6 +15,16 @@ namespace InfectedImGui.Generator
 
         string ICustomCSharpTypeReference.GetTypeAsString(ICSharpOutputGenerator outputTranslator, VisitorContext context, TranslatedDeclaration declaration)
         {
+            // A long-standing bug in the runtime means structs cannot use generic types with themselves as a type parameter
+            // This is a dirty hack to work around that issue
+            // https://github.com/dotnet/runtime/issues/6924
+            if (declaration.Name is "ChildWindows" && context.ParentDeclaration?.Name is "ImGuiWindowTempData")
+            {
+                Debug.Assert(outputTranslator.GetTypeAsString(context, declaration, ElementType) == "ImGuiWindow*");
+                outputTranslator.AddUsing("InfectedImGui.Internal");
+                return "ImGuiWindowVector";
+            }
+
             // Get the string for the element type
             // We have to wrap pointers in a special Pointer<T> type because C# doesn't support pointers in generics.
             int levelsOfIndirection = 0;
