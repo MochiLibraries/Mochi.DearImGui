@@ -1,9 +1,9 @@
 ..\..\InfectedImGui.Native\InfectedImGui.cpp
-ConstantArrayHelpers.cs
+Backends\Direct3D11\Globals.cs
+Backends\Direct3D11\ID3D11Device.cs
+Backends\Direct3D11\ID3D11DeviceContext.cs
+Backends\Win32\Globals.cs
 Diagnostics.log
-Globals.cs
-ID3D11Device.cs
-ID3D11DeviceContext.cs
 ImColor.cs
 ImDrawChannel.cs
 ImDrawCmd.cs
@@ -77,4 +77,5 @@ ImGuiWindowFlags.cs
 ImNewWrapper.cs
 ImVec2.cs
 ImVec4.cs
-NativeBoolean.cs
+Infrastructure\ConstantArrayHelpers.cs
+Infrastructure\NativeBoolean.cs

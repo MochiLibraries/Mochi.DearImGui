@@ -95,7 +95,6 @@ library = new RemoveExplicitBitFieldPaddingFieldsTransformation().Transform(libr
 library = new AddBaseVTableAliasTransformation().Transform(library);
 library = new ConstOverloadRenameTransformation().Transform(library);
 library = new MakeEverythingPublicTransformation().Transform(library);
-library = new RemoveRemainingTypedefsTransformation().Transform(library);
 library = new ImGuiCSharpTypeReductionTransformation().Transform(library);
 library = new CSharpBuiltinTypeTransformation().Transform(library);
 library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
@@ -109,6 +108,7 @@ library = new MoveLooseDeclarationsIntoTypesTransformation
 ).Transform(library);
 library = new AutoNameUnnamedParametersTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
+library = new OrganizeOutputFilesByNamespaceTransformation().Transform(library); // Relies on InfectedImGuiNamespaceTransformation, MoveLooseDeclarationsIntoTypesTransformation
 
 // Generate the inline export helper
 library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath).Transform(library);
