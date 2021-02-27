@@ -154,7 +154,7 @@ public unsafe static class Program
                 imgui.Checkbox(PinnedUtf8("Another Window"), &show_another_window);
 
                 imgui.SliderFloat(PinnedUtf8("float"), &slider_f, 0f, 1f, PinnedUtf8("%.3f")); //BIOQUIRK: Default string arguments
-                imgui.ColorEdit3(PinnedUtf8("clear color"), Unsafe.As<ImVec4, ConstantArray_float_3>(ref clear_color), 0); //BIOQUIRK: This isn't being translated correctly, see https://github.com/InfectedLibraries/Biohazrd/issues/73
+                imgui.ColorEdit3(PinnedUtf8("clear color"), (ConstantArray_float_3*)&clear_color, 0); //BIOQUIRK: This isn't being translated correctly, see https://github.com/InfectedLibraries/Biohazrd/issues/73
 
                 ImVec2 defaultVec2 = default;
                 if (imgui.Button(PinnedUtf8("Button"), &defaultVec2)) //BIOQUIRK: Default non-const arguments

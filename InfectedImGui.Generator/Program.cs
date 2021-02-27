@@ -102,8 +102,12 @@ library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
 library = new KludgeUnknownClangTypesIntoBuiltinTypesTransformation(emitErrorOnFail: true).Transform(library);
 library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
 library = new AddTrampolineMethodOptionsTransformation(MethodImplOptions.AggressiveInlining).Transform(library);
+library = new InfectedImGuiNamespaceTransformation().Transform(library);
 library = new MoveLooseDeclarationsIntoTypesTransformation().Transform(library);
+library = new AutoNameUnnamedParametersTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
+
+// Generate the inline export helper
 library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath).Transform(library);
 
 // Rebuild the native DLL so that the librarian can access a version of the library including the inline-exported functions
@@ -141,8 +145,7 @@ ImmutableArray<TranslationDiagnostic> generationDiagnostics = CSharpLibraryGener
 (
     CSharpGenerationOptions.Default with { DumpClangInfo = false },
     outputSession,
-    library,
-    LibraryTranslationMode.OneFilePerType
+    library
 );
 
 // Write out diagnostics log

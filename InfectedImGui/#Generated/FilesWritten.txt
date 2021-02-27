@@ -1,4 +1,5 @@
 ..\..\InfectedImGui.Native\InfectedImGui.cpp
+ConstantArrayHelpers.cs
 Diagnostics.log
 ID3D11Device.cs
 ID3D11DeviceContext.cs
@@ -77,4 +78,4 @@ ImGuiWindowFlags.cs
 ImNewWrapper.cs
 ImVec2.cs
 ImVec4.cs
-SynthesizedDeclarations.cs
+NativeBoolean.cs
