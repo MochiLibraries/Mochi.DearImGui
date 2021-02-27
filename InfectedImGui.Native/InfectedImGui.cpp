@@ -154,6 +154,7 @@
 #pragma comment(linker, "/export:?DockNodeGetDepth@ImGui@@YAHPEBUImGuiDockNode@@@Z")
 #pragma comment(linker, "/export:?GetWindowDockNode@ImGui@@YAPEAUImGuiDockNode@@XZ")
 #pragma comment(linker, "/export:?DockBuilderGetCentralNode@ImGui@@YAPEAUImGuiDockNode@@I@Z")
+#pragma comment(linker, "/export:?GetCurrentTable@ImGui@@YAPEAUImGuiTable@@XZ")
 #pragma comment(linker, "/export:?TempInputIsActive@ImGui@@YA_NI@Z")
 #pragma comment(linker, "/export:?GetInputTextState@ImGui@@YAPEAUImGuiInputTextState@@I@Z")
 #pragma comment(linker, "/export:?DebugDrawItemRect@ImGui@@YAXI@Z")
@@ -313,10 +314,11 @@ namespace ____BiohazrdInlineExportHelpers
     int (*unused149)(const ImGuiDockNode *) = &ImGui::DockNodeGetDepth;
     ImGuiDockNode * (*unused150)() = &ImGui::GetWindowDockNode;
     ImGuiDockNode * (*unused151)(unsigned int) = &ImGui::DockBuilderGetCentralNode;
-    bool (*unused152)(unsigned int) = &ImGui::TempInputIsActive;
-    ImGuiInputTextState * (*unused153)(unsigned int) = &ImGui::GetInputTextState;
-    void (*unused154)(unsigned int) = &ImGui::DebugDrawItemRect;
-    void (*unused155)() = &ImGui::DebugStartItemPicker;
+    ImGuiTable * (*unused152)() = &ImGui::GetCurrentTable;
+    bool (*unused153)(unsigned int) = &ImGui::TempInputIsActive;
+    ImGuiInputTextState * (*unused154)(unsigned int) = &ImGui::GetInputTextState;
+    void (*unused155)(unsigned int) = &ImGui::DebugDrawItemRect;
+    void (*unused156)() = &ImGui::DebugStartItemPicker;
 }
 
 namespace ____BiohazrdInlineExportHelpers

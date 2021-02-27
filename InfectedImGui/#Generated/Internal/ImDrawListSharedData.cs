@@ -43,15 +43,15 @@ namespace InfectedImGui.Internal
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetCircleSegmentMaxError@ImDrawListSharedData@@QEAAXM@Z", ExactSpelling = true)]
-        private static extern void SetCircleSegmentMaxError_PInvoke(ImDrawListSharedData* @this, float max_error);
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetCircleTessellationMaxError@ImDrawListSharedData@@QEAAXM@Z", ExactSpelling = true)]
+        private static extern void SetCircleTessellationMaxError_PInvoke(ImDrawListSharedData* @this, float max_error);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SetCircleSegmentMaxError(float max_error)
+        public unsafe void SetCircleTessellationMaxError(float max_error)
         {
             fixed (ImDrawListSharedData* @this = &this)
-            { SetCircleSegmentMaxError_PInvoke(@this, max_error); }
+            { SetCircleTessellationMaxError_PInvoke(@this, max_error); }
         }
     }
 }

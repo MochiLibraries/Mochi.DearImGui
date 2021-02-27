@@ -709,5 +709,16 @@ namespace InfectedImGui
             fixed (ImDrawList* @this = &this)
             { _OnChangedVtxOffset_PInvoke(@this); }
         }
+
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?_CalcCircleAutoSegmentCount@ImDrawList@@QEBAHM@Z", ExactSpelling = true)]
+        private static extern int _CalcCircleAutoSegmentCount_PInvoke(ImDrawList* @this, float radius);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe int _CalcCircleAutoSegmentCount(float radius)
+        {
+            fixed (ImDrawList* @this = &this)
+            { return _CalcCircleAutoSegmentCount_PInvoke(@this, radius); }
+        }
     }
 }

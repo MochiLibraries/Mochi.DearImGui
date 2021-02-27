@@ -142,26 +142,14 @@ namespace InfectedImGui.Internal
             }
         }
 
-        [FieldOffset(188)] private byte __EnableCloseButton__backingField;
-        public bool EnableCloseButton
-        {
-            get => ((__EnableCloseButton__backingField >> 4) & 0x1U) != 0;
-            set
-            {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 4;
-                uint otherBits = __EnableCloseButton__backingField & 0xEFU;
-                __EnableCloseButton__backingField = (byte)(otherBits | shiftedValue);
-            }
-        }
-
         [FieldOffset(188)] private byte __WantCloseAll__backingField;
         public bool WantCloseAll
         {
-            get => ((__WantCloseAll__backingField >> 5) & 0x1U) != 0;
+            get => ((__WantCloseAll__backingField >> 4) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 5;
-                uint otherBits = __WantCloseAll__backingField & 0xDFU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 4;
+                uint otherBits = __WantCloseAll__backingField & 0xEFU;
                 __WantCloseAll__backingField = (byte)(otherBits | shiftedValue);
             }
         }
@@ -169,11 +157,11 @@ namespace InfectedImGui.Internal
         [FieldOffset(188)] private byte __WantLockSizeOnce__backingField;
         public bool WantLockSizeOnce
         {
-            get => ((__WantLockSizeOnce__backingField >> 6) & 0x1U) != 0;
+            get => ((__WantLockSizeOnce__backingField >> 5) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 6;
-                uint otherBits = __WantLockSizeOnce__backingField & 0xBFU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 5;
+                uint otherBits = __WantLockSizeOnce__backingField & 0xDFU;
                 __WantLockSizeOnce__backingField = (byte)(otherBits | shiftedValue);
             }
         }
@@ -181,23 +169,23 @@ namespace InfectedImGui.Internal
         [FieldOffset(188)] private byte __WantMouseMove__backingField;
         public bool WantMouseMove
         {
-            get => ((__WantMouseMove__backingField >> 7) & 0x1U) != 0;
+            get => ((__WantMouseMove__backingField >> 6) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 7;
-                uint otherBits = __WantMouseMove__backingField & 0x7FU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 6;
+                uint otherBits = __WantMouseMove__backingField & 0xBFU;
                 __WantMouseMove__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(189)] private byte __WantHiddenTabBarUpdate__backingField;
+        [FieldOffset(188)] private byte __WantHiddenTabBarUpdate__backingField;
         public bool WantHiddenTabBarUpdate
         {
-            get => ((__WantHiddenTabBarUpdate__backingField >> 0) & 0x1U) != 0;
+            get => ((__WantHiddenTabBarUpdate__backingField >> 7) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 0;
-                uint otherBits = __WantHiddenTabBarUpdate__backingField & 0xFEU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 7;
+                uint otherBits = __WantHiddenTabBarUpdate__backingField & 0x7FU;
                 __WantHiddenTabBarUpdate__backingField = (byte)(otherBits | shiftedValue);
             }
         }
@@ -205,11 +193,11 @@ namespace InfectedImGui.Internal
         [FieldOffset(189)] private byte __WantHiddenTabBarToggle__backingField;
         public bool WantHiddenTabBarToggle
         {
-            get => ((__WantHiddenTabBarToggle__backingField >> 1) & 0x1U) != 0;
+            get => ((__WantHiddenTabBarToggle__backingField >> 0) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 1;
-                uint otherBits = __WantHiddenTabBarToggle__backingField & 0xFDU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 0;
+                uint otherBits = __WantHiddenTabBarToggle__backingField & 0xFEU;
                 __WantHiddenTabBarToggle__backingField = (byte)(otherBits | shiftedValue);
             }
         }
@@ -217,11 +205,11 @@ namespace InfectedImGui.Internal
         [FieldOffset(189)] private byte __MarkedForPosSizeWrite__backingField;
         public bool MarkedForPosSizeWrite
         {
-            get => ((__MarkedForPosSizeWrite__backingField >> 2) & 0x1U) != 0;
+            get => ((__MarkedForPosSizeWrite__backingField >> 1) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 2;
-                uint otherBits = __MarkedForPosSizeWrite__backingField & 0xFBU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 1;
+                uint otherBits = __MarkedForPosSizeWrite__backingField & 0xFDU;
                 __MarkedForPosSizeWrite__backingField = (byte)(otherBits | shiftedValue);
             }
         }

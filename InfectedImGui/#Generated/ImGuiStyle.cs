@@ -88,7 +88,7 @@ namespace InfectedImGui
 
         [FieldOffset(188)] public float CurveTessellationTol;
 
-        [FieldOffset(192)] public float CircleSegmentMaxError;
+        [FieldOffset(192)] public float CircleTessellationMaxError;
 
         [FieldOffset(196)] public ConstantArray_ImVec4_55 Colors;
 

@@ -789,6 +789,9 @@ namespace InfectedImGui.Internal
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TablePopBackgroundChannel@ImGui@@YAXXZ", ExactSpelling = true)]
         public static extern void TablePopBackgroundChannel();
 
+        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCurrentTable@ImGui@@YAPEAUImGuiTable@@XZ", ExactSpelling = true)]
+        public static extern ImGuiTable* GetCurrentTable();
+
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableFindByID@ImGui@@YAPEAUImGuiTable@@I@Z", ExactSpelling = true)]
         public static extern ImGuiTable* TableFindByID(uint id);
 

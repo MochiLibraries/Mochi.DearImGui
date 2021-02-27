@@ -118,6 +118,8 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(238)] public sbyte HiddenFramesForRenderOnly;
 
+        [FieldOffset(239)] public sbyte DisableInputsFrames;
+
         [FieldOffset(240)] private uint __SetWindowPosAllowFlags__backingField;
         public ImGuiCond SetWindowPosAllowFlags
         {

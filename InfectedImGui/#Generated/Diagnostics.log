@@ -2,7 +2,6 @@
 Parsing Diagnostics
 ==============================================================================
 Note: Successfully late-instantiated 1 template specialization.
-Warning: Out-of-scope file 'C:\Projects\InfectedLibraries\InfectedImGui\InfectedImGui.Generator\bin\Debug\net5.0\win-x64\InfectedImGuiConfig.h' was included inside a declaration from in-scope file 'C:\Projects\InfectedLibraries\InfectedImGui\external\imgui\imgui_internal.h'. The file was implicitly promoted to be in-scope in the context of the containing declaration.
 Warning: Field 'ImGuiContext.Tables' references unsupported declaration '`ImPool<ImGuiTable>`' and was removed.
 Warning: Field 'ImGuiContext.TabBars' references unsupported declaration '`ImPool<ImGuiTabBar>`' and was removed.
 Warning: Field 'ImGuiContext.SettingsWindows' references unsupported declaration '`ImChunkStream<ImGuiWindowSettings>`' and was removed.

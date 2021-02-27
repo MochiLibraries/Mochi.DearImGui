@@ -192,59 +192,61 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(571)] public sbyte ReorderColumnDir;
 
-        [FieldOffset(572)] public sbyte LeftMostStretchedColumn;
+        [FieldOffset(572)] public sbyte LeftMostEnabledColumn;
 
-        [FieldOffset(573)] public sbyte RightMostStretchedColumn;
+        [FieldOffset(573)] public sbyte RightMostEnabledColumn;
 
-        [FieldOffset(574)] public sbyte RightMostEnabledColumn;
+        [FieldOffset(574)] public sbyte LeftMostStretchedColumn;
 
-        [FieldOffset(575)] public sbyte ContextPopupColumn;
+        [FieldOffset(575)] public sbyte RightMostStretchedColumn;
 
-        [FieldOffset(576)] public sbyte FreezeRowsRequest;
+        [FieldOffset(576)] public sbyte ContextPopupColumn;
 
-        [FieldOffset(577)] public sbyte FreezeRowsCount;
+        [FieldOffset(577)] public sbyte FreezeRowsRequest;
 
-        [FieldOffset(578)] public sbyte FreezeColumnsRequest;
+        [FieldOffset(578)] public sbyte FreezeRowsCount;
 
-        [FieldOffset(579)] public sbyte FreezeColumnsCount;
+        [FieldOffset(579)] public sbyte FreezeColumnsRequest;
 
-        [FieldOffset(580)] public sbyte RowCellDataCurrent;
+        [FieldOffset(580)] public sbyte FreezeColumnsCount;
 
-        [FieldOffset(581)] public byte DummyDrawChannel;
+        [FieldOffset(581)] public sbyte RowCellDataCurrent;
 
-        [FieldOffset(582)] public byte Bg2DrawChannelCurrent;
+        [FieldOffset(582)] public byte DummyDrawChannel;
 
-        [FieldOffset(583)] public byte Bg2DrawChannelUnfrozen;
+        [FieldOffset(583)] public byte Bg2DrawChannelCurrent;
 
-        [FieldOffset(584)] [MarshalAs(UnmanagedType.I1)] public bool IsLayoutLocked;
+        [FieldOffset(584)] public byte Bg2DrawChannelUnfrozen;
 
-        [FieldOffset(585)] [MarshalAs(UnmanagedType.I1)] public bool IsInsideRow;
+        [FieldOffset(585)] [MarshalAs(UnmanagedType.I1)] public bool IsLayoutLocked;
 
-        [FieldOffset(586)] [MarshalAs(UnmanagedType.I1)] public bool IsInitializing;
+        [FieldOffset(586)] [MarshalAs(UnmanagedType.I1)] public bool IsInsideRow;
 
-        [FieldOffset(587)] [MarshalAs(UnmanagedType.I1)] public bool IsSortSpecsDirty;
+        [FieldOffset(587)] [MarshalAs(UnmanagedType.I1)] public bool IsInitializing;
 
-        [FieldOffset(588)] [MarshalAs(UnmanagedType.I1)] public bool IsUsingHeaders;
+        [FieldOffset(588)] [MarshalAs(UnmanagedType.I1)] public bool IsSortSpecsDirty;
 
-        [FieldOffset(589)] [MarshalAs(UnmanagedType.I1)] public bool IsContextPopupOpen;
+        [FieldOffset(589)] [MarshalAs(UnmanagedType.I1)] public bool IsUsingHeaders;
 
-        [FieldOffset(590)] [MarshalAs(UnmanagedType.I1)] public bool IsSettingsRequestLoad;
+        [FieldOffset(590)] [MarshalAs(UnmanagedType.I1)] public bool IsContextPopupOpen;
 
-        [FieldOffset(591)] [MarshalAs(UnmanagedType.I1)] public bool IsSettingsDirty;
+        [FieldOffset(591)] [MarshalAs(UnmanagedType.I1)] public bool IsSettingsRequestLoad;
 
-        [FieldOffset(592)] [MarshalAs(UnmanagedType.I1)] public bool IsDefaultDisplayOrder;
+        [FieldOffset(592)] [MarshalAs(UnmanagedType.I1)] public bool IsSettingsDirty;
 
-        [FieldOffset(593)] [MarshalAs(UnmanagedType.I1)] public bool IsResetAllRequest;
+        [FieldOffset(593)] [MarshalAs(UnmanagedType.I1)] public bool IsDefaultDisplayOrder;
 
-        [FieldOffset(594)] [MarshalAs(UnmanagedType.I1)] public bool IsResetDisplayOrderRequest;
+        [FieldOffset(594)] [MarshalAs(UnmanagedType.I1)] public bool IsResetAllRequest;
 
-        [FieldOffset(595)] [MarshalAs(UnmanagedType.I1)] public bool IsUnfrozenRows;
+        [FieldOffset(595)] [MarshalAs(UnmanagedType.I1)] public bool IsResetDisplayOrderRequest;
 
-        [FieldOffset(596)] [MarshalAs(UnmanagedType.I1)] public bool IsDefaultSizingPolicy;
+        [FieldOffset(596)] [MarshalAs(UnmanagedType.I1)] public bool IsUnfrozenRows;
 
-        [FieldOffset(597)] [MarshalAs(UnmanagedType.I1)] public bool MemoryCompacted;
+        [FieldOffset(597)] [MarshalAs(UnmanagedType.I1)] public bool IsDefaultSizingPolicy;
 
-        [FieldOffset(598)] [MarshalAs(UnmanagedType.I1)] public bool HostSkipItems;
+        [FieldOffset(598)] [MarshalAs(UnmanagedType.I1)] public bool MemoryCompacted;
+
+        [FieldOffset(599)] [MarshalAs(UnmanagedType.I1)] public bool HostSkipItems;
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper66", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTable* @this);
