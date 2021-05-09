@@ -50,13 +50,13 @@ namespace InfectedImGui.Internal
         public static extern byte* ImStrchrRange(byte* str_begin, byte* str_end, byte c);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrlenW@@YAHPEBG@Z", ExactSpelling = true)]
-        public static extern int ImStrlenW(ushort* str);
+        public static extern int ImStrlenW(char* str);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStreolRange@@YAPEBDPEBD0@Z", ExactSpelling = true)]
         public static extern byte* ImStreolRange(byte* str, byte* str_end);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrbolW@@YAPEBGPEBG0@Z", ExactSpelling = true)]
-        public static extern ushort* ImStrbolW(ushort* buf_mid_line, ushort* buf_begin);
+        public static extern char* ImStrbolW(char* buf_mid_line, char* buf_begin);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStristr@@YAPEBDPEBD000@Z", ExactSpelling = true)]
         public static extern byte* ImStristr(byte* haystack, byte* haystack_end, byte* needle, byte* needle_end);
@@ -94,13 +94,13 @@ namespace InfectedImGui.Internal
         public static extern bool ImCharIsBlankW(uint c);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextStrToUtf8@@YAHPEADHPEBG1@Z", ExactSpelling = true)]
-        public static extern int ImTextStrToUtf8(byte* buf, int buf_size, ushort* in_text, ushort* in_text_end);
+        public static extern int ImTextStrToUtf8(byte* buf, int buf_size, char* in_text, char* in_text_end);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextCharFromUtf8@@YAHPEAIPEBD1@Z", ExactSpelling = true)]
         public static extern int ImTextCharFromUtf8(uint* out_char, byte* in_text, byte* in_text_end);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextStrFromUtf8@@YAHPEAGHPEBD1PEAPEBD@Z", ExactSpelling = true)]
-        public static extern int ImTextStrFromUtf8(ushort* buf, int buf_size, byte* in_text, byte* in_text_end, byte** in_remaining = null);
+        public static extern int ImTextStrFromUtf8(char* buf, int buf_size, byte* in_text, byte* in_text_end, byte** in_remaining = null);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextCountCharsFromUtf8@@YAHPEBD0@Z", ExactSpelling = true)]
         public static extern int ImTextCountCharsFromUtf8(byte* in_text, byte* in_text_end);
@@ -109,7 +109,7 @@ namespace InfectedImGui.Internal
         public static extern int ImTextCountUtf8BytesFromChar(byte* in_text, byte* in_text_end);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextCountUtf8BytesFromStr@@YAHPEBG0@Z", ExactSpelling = true)]
-        public static extern int ImTextCountUtf8BytesFromStr(ushort* in_text, ushort* in_text_end);
+        public static extern int ImTextCountUtf8BytesFromStr(char* in_text, char* in_text_end);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFileOpen@@YAPEAU_iobuf@@PEBD0@Z", ExactSpelling = true)]
         public static extern void* ImFileOpen(byte* filename, byte* mode);

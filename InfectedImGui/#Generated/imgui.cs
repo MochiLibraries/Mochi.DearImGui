@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace InfectedImGui
 {
-    public unsafe static partial class imgui
+    public unsafe static partial class ImGui
     {
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CreateContext@ImGui@@YAPEAUImGuiContext@@PEAUImFontAtlas@@@Z", ExactSpelling = true)]
         public static extern ImGuiContext* CreateContext(ImFontAtlas* shared_font_atlas = null);

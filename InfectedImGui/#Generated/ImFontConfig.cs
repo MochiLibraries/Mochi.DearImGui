@@ -32,7 +32,7 @@ namespace InfectedImGui
 
         [FieldOffset(44)] public ImVec2 GlyphOffset;
 
-        [FieldOffset(56)] public ushort* GlyphRanges;
+        [FieldOffset(56)] public char* GlyphRanges;
 
         [FieldOffset(64)] public float GlyphMinAdvanceX;
 
@@ -44,7 +44,7 @@ namespace InfectedImGui
 
         [FieldOffset(80)] public float RasterizerMultiply;
 
-        [FieldOffset(84)] public ushort EllipsisChar;
+        [FieldOffset(84)] public char EllipsisChar;
 
         [FieldOffset(86)] public ConstantArray_char_40 Name;
 

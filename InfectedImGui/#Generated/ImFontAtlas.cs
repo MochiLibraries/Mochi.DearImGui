@@ -58,44 +58,44 @@ namespace InfectedImGui
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromFileTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
-        private static extern ImFont* AddFontFromFileTTF_PInvoke(ImFontAtlas* @this, byte* filename, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
+        private static extern ImFont* AddFontFromFileTTF_PInvoke(ImFontAtlas* @this, byte* filename, float size_pixels, ImFontConfig* font_cfg, char* glyph_ranges);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImFont* AddFontFromFileTTF(byte* filename, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
+        public unsafe ImFont* AddFontFromFileTTF(byte* filename, float size_pixels, ImFontConfig* font_cfg = null, char* glyph_ranges = null)
         {
             fixed (ImFontAtlas* @this = &this)
             { return AddFontFromFileTTF_PInvoke(@this, filename, size_pixels, font_cfg, glyph_ranges); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryTTF@ImFontAtlas@@QEAAPEAUImFont@@PEAXHMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
-        private static extern ImFont* AddFontFromMemoryTTF_PInvoke(ImFontAtlas* @this, void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
+        private static extern ImFont* AddFontFromMemoryTTF_PInvoke(ImFontAtlas* @this, void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg, char* glyph_ranges);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImFont* AddFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
+        public unsafe ImFont* AddFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, ImFontConfig* font_cfg = null, char* glyph_ranges = null)
         {
             fixed (ImFontAtlas* @this = &this)
             { return AddFontFromMemoryTTF_PInvoke(@this, font_data, font_size, size_pixels, font_cfg, glyph_ranges); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryCompressedTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBXHMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
-        private static extern ImFont* AddFontFromMemoryCompressedTTF_PInvoke(ImFontAtlas* @this, void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
+        private static extern ImFont* AddFontFromMemoryCompressedTTF_PInvoke(ImFontAtlas* @this, void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg, char* glyph_ranges);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImFont* AddFontFromMemoryCompressedTTF(void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
+        public unsafe ImFont* AddFontFromMemoryCompressedTTF(void* compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig* font_cfg = null, char* glyph_ranges = null)
         {
             fixed (ImFontAtlas* @this = &this)
             { return AddFontFromMemoryCompressedTTF_PInvoke(@this, compressed_font_data, compressed_font_size, size_pixels, font_cfg, glyph_ranges); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddFontFromMemoryCompressedBase85TTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", ExactSpelling = true)]
-        private static extern ImFont* AddFontFromMemoryCompressedBase85TTF_PInvoke(ImFontAtlas* @this, byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
+        private static extern ImFont* AddFontFromMemoryCompressedBase85TTF_PInvoke(ImFontAtlas* @this, byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg, char* glyph_ranges);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImFont* AddFontFromMemoryCompressedBase85TTF(byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg = null, ushort* glyph_ranges = null)
+        public unsafe ImFont* AddFontFromMemoryCompressedBase85TTF(byte* compressed_font_data_base85, float size_pixels, ImFontConfig* font_cfg = null, char* glyph_ranges = null)
         {
             fixed (ImFontAtlas* @this = &this)
             { return AddFontFromMemoryCompressedBase85TTF_PInvoke(@this, compressed_font_data_base85, size_pixels, font_cfg, glyph_ranges); }
@@ -203,88 +203,88 @@ namespace InfectedImGui
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesDefault@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
-        private static extern ushort* GetGlyphRangesDefault_PInvoke(ImFontAtlas* @this);
+        private static extern char* GetGlyphRangesDefault_PInvoke(ImFontAtlas* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ushort* GetGlyphRangesDefault()
+        public unsafe char* GetGlyphRangesDefault()
         {
             fixed (ImFontAtlas* @this = &this)
             { return GetGlyphRangesDefault_PInvoke(@this); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesKorean@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
-        private static extern ushort* GetGlyphRangesKorean_PInvoke(ImFontAtlas* @this);
+        private static extern char* GetGlyphRangesKorean_PInvoke(ImFontAtlas* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ushort* GetGlyphRangesKorean()
+        public unsafe char* GetGlyphRangesKorean()
         {
             fixed (ImFontAtlas* @this = &this)
             { return GetGlyphRangesKorean_PInvoke(@this); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesJapanese@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
-        private static extern ushort* GetGlyphRangesJapanese_PInvoke(ImFontAtlas* @this);
+        private static extern char* GetGlyphRangesJapanese_PInvoke(ImFontAtlas* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ushort* GetGlyphRangesJapanese()
+        public unsafe char* GetGlyphRangesJapanese()
         {
             fixed (ImFontAtlas* @this = &this)
             { return GetGlyphRangesJapanese_PInvoke(@this); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesChineseFull@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
-        private static extern ushort* GetGlyphRangesChineseFull_PInvoke(ImFontAtlas* @this);
+        private static extern char* GetGlyphRangesChineseFull_PInvoke(ImFontAtlas* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ushort* GetGlyphRangesChineseFull()
+        public unsafe char* GetGlyphRangesChineseFull()
         {
             fixed (ImFontAtlas* @this = &this)
             { return GetGlyphRangesChineseFull_PInvoke(@this); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesChineseSimplifiedCommon@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
-        private static extern ushort* GetGlyphRangesChineseSimplifiedCommon_PInvoke(ImFontAtlas* @this);
+        private static extern char* GetGlyphRangesChineseSimplifiedCommon_PInvoke(ImFontAtlas* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ushort* GetGlyphRangesChineseSimplifiedCommon()
+        public unsafe char* GetGlyphRangesChineseSimplifiedCommon()
         {
             fixed (ImFontAtlas* @this = &this)
             { return GetGlyphRangesChineseSimplifiedCommon_PInvoke(@this); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesCyrillic@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
-        private static extern ushort* GetGlyphRangesCyrillic_PInvoke(ImFontAtlas* @this);
+        private static extern char* GetGlyphRangesCyrillic_PInvoke(ImFontAtlas* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ushort* GetGlyphRangesCyrillic()
+        public unsafe char* GetGlyphRangesCyrillic()
         {
             fixed (ImFontAtlas* @this = &this)
             { return GetGlyphRangesCyrillic_PInvoke(@this); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesThai@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
-        private static extern ushort* GetGlyphRangesThai_PInvoke(ImFontAtlas* @this);
+        private static extern char* GetGlyphRangesThai_PInvoke(ImFontAtlas* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ushort* GetGlyphRangesThai()
+        public unsafe char* GetGlyphRangesThai()
         {
             fixed (ImFontAtlas* @this = &this)
             { return GetGlyphRangesThai_PInvoke(@this); }
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetGlyphRangesVietnamese@ImFontAtlas@@QEAAPEBGXZ", ExactSpelling = true)]
-        private static extern ushort* GetGlyphRangesVietnamese_PInvoke(ImFontAtlas* @this);
+        private static extern char* GetGlyphRangesVietnamese_PInvoke(ImFontAtlas* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ushort* GetGlyphRangesVietnamese()
+        public unsafe char* GetGlyphRangesVietnamese()
         {
             fixed (ImFontAtlas* @this = &this)
             { return GetGlyphRangesVietnamese_PInvoke(@this); }
@@ -302,11 +302,11 @@ namespace InfectedImGui
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddCustomRectFontGlyph@ImFontAtlas@@QEAAHPEAUImFont@@GHHMAEBUImVec2@@@Z", ExactSpelling = true)]
-        private static extern int AddCustomRectFontGlyph_PInvoke(ImFontAtlas* @this, ImFont* font, ushort id, int width, int height, float advance_x, ImVec2* offset);
+        private static extern int AddCustomRectFontGlyph_PInvoke(ImFontAtlas* @this, ImFont* font, char id, int width, int height, float advance_x, ImVec2* offset);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe int AddCustomRectFontGlyph(ImFont* font, ushort id, int width, int height, float advance_x, ImVec2* offset)
+        public unsafe int AddCustomRectFontGlyph(ImFont* font, char id, int width, int height, float advance_x, ImVec2* offset)
         {
             fixed (ImFontAtlas* @this = &this)
             { return AddCustomRectFontGlyph_PInvoke(@this, font, id, width, height, advance_x, offset); }

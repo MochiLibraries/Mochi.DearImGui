@@ -17,7 +17,7 @@ namespace InfectedImGui
 
         [FieldOffset(8)] public void* UserData;
 
-        [FieldOffset(16)] public ushort EventChar;
+        [FieldOffset(16)] public char EventChar;
 
         [FieldOffset(20)] public ImGuiKey EventKey;
 

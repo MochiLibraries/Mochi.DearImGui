@@ -57,7 +57,16 @@ if (!File.Exists(imGuiConfigFilePath))
 }
 
 // Create the library
-TranslatedLibraryBuilder libraryBuilder = new();
+TranslatedLibraryBuilder libraryBuilder = new()
+{
+    Options = new TranslationOptions()
+    {
+        // The only template that appears on the public API is ImVector<T>, which we special-case as a C# generic.
+        // ImPool<T>, ImChunkStream<T>, and ImSpan<T> do appear on the internal API but for now we just want them to be dropped.
+        //TODO: In theory this could be made to work, but there's a few wrinkles that need to be ironed out and these few API points are not a high priority.
+        EnableTemplateSupport = false,
+    }
+};
 libraryBuilder.AddCommandLineArgument("--language=c++");
 libraryBuilder.AddCommandLineArgument($"-I{imGuiSourceDirectoryPath}");
 libraryBuilder.AddCommandLineArgument($"-DIMGUI_USER_CONFIG=\"{imGuiConfigFilePath}\"");
@@ -98,7 +107,9 @@ library = new ConstOverloadRenameTransformation().Transform(library);
 library = new MakeEverythingPublicTransformation().Transform(library);
 library = new ImGuiCSharpTypeReductionTransformation().Transform(library);
 library = new CSharpBuiltinTypeTransformation().Transform(library);
-library = new LiftAnonymousUnionFieldsTransformation().Transform(library);
+library = new __HACK__FixupFunctionPointerReturnTypes().Transform(library);
+library = new MiscFixesTransformation().Transform(library);
+library = new LiftAnonymousRecordFieldsTransformation().Transform(library);
 library = new KludgeUnknownClangTypesIntoBuiltinTypesTransformation(emitErrorOnFail: true).Transform(library);
 library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
 library = new AddTrampolineMethodOptionsTransformation(MethodImplOptions.AggressiveInlining).Transform(library);
@@ -107,11 +118,12 @@ library = new InfectedImGuiNamespaceTransformation().Transform(library);
 library = new RemoveIllegalImVectorReferencesTransformation().Transform(library);
 library = new MoveLooseDeclarationsIntoTypesTransformation
 (
-    (c, d) => d.Namespace == "InfectedImGui" ? null : d.Namespace == "InfectedImGui.Internal" ? "ImGuiInternal" : "Globals"
+    (c, d) => d.Namespace == "InfectedImGui" ? "ImGui" : d.Namespace == "InfectedImGui.Internal" ? "ImGuiInternal" : "Globals"
 ).Transform(library);
 library = new AutoNameUnnamedParametersTransformation().Transform(library);
+library = new StripUnreferencedLazyDeclarationsTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
-library = new OrganizeOutputFilesByNamespaceTransformation().Transform(library); // Relies on InfectedImGuiNamespaceTransformation, MoveLooseDeclarationsIntoTypesTransformation
+library = new OrganizeOutputFilesByNamespaceTransformation("InfectedImGui").Transform(library); // Relies on InfectedImGuiNamespaceTransformation, MoveLooseDeclarationsIntoTypesTransformation
 
 // Generate the inline export helper
 library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath).Transform(library);

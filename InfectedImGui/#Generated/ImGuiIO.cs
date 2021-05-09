@@ -130,11 +130,11 @@ namespace InfectedImGui
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharacterUTF16@ImGuiIO@@QEAAXG@Z", ExactSpelling = true)]
-        private static extern void AddInputCharacterUTF16_PInvoke(ImGuiIO* @this, ushort c);
+        private static extern void AddInputCharacterUTF16_PInvoke(ImGuiIO* @this, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddInputCharacterUTF16(ushort c)
+        public unsafe void AddInputCharacterUTF16(char c)
         {
             fixed (ImGuiIO* @this = &this)
             { AddInputCharacterUTF16_PInvoke(@this, c); }
@@ -226,7 +226,7 @@ namespace InfectedImGui
 
         [FieldOffset(5432)] public float PenPressure;
 
-        [FieldOffset(5436)] public ushort InputQueueSurrogate;
+        [FieldOffset(5436)] public char InputQueueSurrogate;
 
         [FieldOffset(5440)] public ImVector<ushort> InputQueueCharacters;
 

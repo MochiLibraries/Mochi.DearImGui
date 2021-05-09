@@ -20,11 +20,11 @@ namespace InfectedImGui
 
         [FieldOffset(24)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void> Platform_SetWindowPos;
 
-        [FieldOffset(32)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2> Platform_GetWindowPos;
+        [FieldOffset(32)] public delegate* unmanaged[Cdecl]<ImVec2*, ImGuiViewport*, ImVec2*> Platform_GetWindowPos;
 
         [FieldOffset(40)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void> Platform_SetWindowSize;
 
-        [FieldOffset(48)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2> Platform_GetWindowSize;
+        [FieldOffset(48)] public delegate* unmanaged[Cdecl]<ImVec2*, ImGuiViewport*, ImVec2*> Platform_GetWindowSize;
 
         [FieldOffset(56)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_SetWindowFocus;
 

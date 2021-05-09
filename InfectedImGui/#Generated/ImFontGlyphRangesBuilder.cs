@@ -59,11 +59,11 @@ namespace InfectedImGui
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddChar@ImFontGlyphRangesBuilder@@QEAAXG@Z", ExactSpelling = true)]
-        private static extern void AddChar_PInvoke(ImFontGlyphRangesBuilder* @this, ushort c);
+        private static extern void AddChar_PInvoke(ImFontGlyphRangesBuilder* @this, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddChar(ushort c)
+        public unsafe void AddChar(char c)
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { AddChar_PInvoke(@this, c); }
@@ -81,11 +81,11 @@ namespace InfectedImGui
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRanges@ImFontGlyphRangesBuilder@@QEAAXPEBG@Z", ExactSpelling = true)]
-        private static extern void AddRanges_PInvoke(ImFontGlyphRangesBuilder* @this, ushort* ranges);
+        private static extern void AddRanges_PInvoke(ImFontGlyphRangesBuilder* @this, char* ranges);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddRanges(ushort* ranges)
+        public unsafe void AddRanges(char* ranges)
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { AddRanges_PInvoke(@this, ranges); }

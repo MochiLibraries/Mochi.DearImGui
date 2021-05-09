@@ -25,7 +25,7 @@ namespace InfectedImGui
         public void Dispose()
         {
             if (Data != null)
-            { imgui.MemFree(Data); }
+            { ImGui.MemFree(Data); }
         }
 
         // inline bool         empty() const                       { return Size == 0; }
@@ -67,7 +67,7 @@ namespace InfectedImGui
             if (Data != null)
             {
                 Size = Capacity = 0;
-                imgui.MemFree(Data);
+                ImGui.MemFree(Data);
                 Data = null;
             }
         }
@@ -152,12 +152,12 @@ namespace InfectedImGui
             if (new_capacity <= Capacity)
             { return; }
 
-            T* new_data = (T*)imgui.MemAlloc((ulong)(new_capacity * sizeof(T)));
+            T* new_data = (T*)ImGui.MemAlloc((ulong)(new_capacity * sizeof(T)));
 
             if (Data != null)
             {
                 AsSpan().CopyTo(new Span<T>(new_data, Size));
-                imgui.MemFree(Data);
+                ImGui.MemFree(Data);
             }
 
             Data = new_data;

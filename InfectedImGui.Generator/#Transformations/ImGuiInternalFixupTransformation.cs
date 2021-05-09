@@ -46,7 +46,22 @@ namespace InfectedImGui.Generator
             if (declaration.File != ImGuiInternalFile)
             { return declaration; }
 
-            if (declaration.Type is ClangTypeReference clangType)
+            ClangTypeReference? clangType;
+
+            switch (declaration.Type)
+            {
+                case ClangTypeReference clangTypeReference:
+                    clangType = clangTypeReference;
+                    break;
+                case TranslatedTypeReference translatedTypeReference when translatedTypeReference.TryResolve(context.Library) is null:
+                    clangType = (declaration.Original as TranslatedNormalField)?.Type as ClangTypeReference;
+                    break;
+                default:
+                    clangType = null;
+                    break;
+            }
+
+            if (clangType is not null)
             {
                 string friendlyName = declaration.Name;
                 for (int i = context.Parents.Length - 1; i >= 0; i--)
@@ -58,12 +73,9 @@ namespace InfectedImGui.Generator
                     { friendlyName = $"{parent.Namespace}.{friendlyName}"; }
                 }
 
-                MiscDiagnostics.Add(Severity.Warning, $"Field '{friendlyName}' references unsupported declaration '{clangType}' and was removed.");
+                MiscDiagnostics.Add(Severity.Warning, $"Field '{friendlyName}' was removed since it references '{clangType}', which is currently unsupported.");
                 return null;
             }
-            // We don't process the imstb_ headers yet, which are required for this field.
-            else if (declaration.Name == "Stb" && context.ParentDeclaration?.Name == "ImGuiInputTextState")
-            { return null; }
             else
             { return declaration; }
         }

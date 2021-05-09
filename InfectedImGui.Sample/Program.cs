@@ -20,10 +20,10 @@ using static InfectedImGui.Backends.Win32.Globals;
 using static InfectedImGui.Sample.LazyPin;
 using Device = SharpDX.Direct3D11.Device;
 using HWND = System.IntPtr;
-using LPARAM = nint;
-using LRESULT = nint;
+using LPARAM = System.IntPtr;
+using LRESULT = System.IntPtr;
 using MessageId = Ares.Platform.Windows.Interop.MessageId;
-using WPARAM = nint;
+using WPARAM = System.IntPtr;
 
 public unsafe static class Program
 {
@@ -77,9 +77,9 @@ public unsafe static class Program
 
         // Setup Dear ImGui context
         // IMGUI_CHECKVERSION() //BIOQUIRK: No macro translation
-        imgui.DebugCheckVersionAndDataLayout(PinnedUtf8("1.82 WIP"), (ulong)sizeof(ImGuiIO), (ulong)sizeof(ImGuiStyle), (ulong)sizeof(ImVec2), (ulong)sizeof(ImVec4), (ulong)sizeof(ImDrawVert), sizeof(ushort));
-        imgui.CreateContext();
-        ImGuiIO* io = imgui.GetIO();
+        ImGui.DebugCheckVersionAndDataLayout(PinnedUtf8("1.82 WIP"), (ulong)sizeof(ImGuiIO), (ulong)sizeof(ImGuiStyle), (ulong)sizeof(ImVec2), (ulong)sizeof(ImVec4), (ulong)sizeof(ImDrawVert), sizeof(ushort));
+        ImGui.CreateContext();
+        ImGuiIO* io = ImGui.GetIO();
         io->ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         //io->ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
         io->ConfigFlags |= ImGuiConfigFlags.DockingEnable;
@@ -95,11 +95,11 @@ public unsafe static class Program
 #endif
 
         // Setup Dear ImGui style
-        imgui.StyleColorsDark();
-        //imgui.StyleColorsClassic(null);
+        ImGui.StyleColorsDark();
+        //ImGui.StyleColorsClassic(null);
 
         // When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
-        ImGuiStyle* style = imgui.GetStyle();
+        ImGuiStyle* style = ImGui.GetStyle();
         if ((io->ConfigFlags & ImGuiConfigFlags.ViewportsEnable) != 0)
         {
             style->WindowRounding = 0f;
@@ -142,61 +142,61 @@ public unsafe static class Program
             // Start the Dear ImGui frame
             ImGui_ImplDX11_NewFrame();
             ImGui_ImplWin32_NewFrame();
-            imgui.NewFrame();
+            ImGui.NewFrame();
 
             // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
             if (show_demo_window)
-            { imgui.ShowDemoWindow(&show_demo_window); }
+            { ImGui.ShowDemoWindow(&show_demo_window); }
 
             // 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
             {
-                imgui.Begin(PinnedUtf8("Hello, world!"));
+                ImGui.Begin(PinnedUtf8("Hello, world!"));
 
-                imgui.Text(PinnedUtf8("This is some useful text."));
-                imgui.Checkbox(PinnedUtf8("Demo Window"), &show_demo_window);
-                imgui.Checkbox(PinnedUtf8("Another Window"), &show_another_window);
+                ImGui.Text(PinnedUtf8("This is some useful text."));
+                ImGui.Checkbox(PinnedUtf8("Demo Window"), &show_demo_window);
+                ImGui.Checkbox(PinnedUtf8("Another Window"), &show_another_window);
 
-                imgui.SliderFloat(PinnedUtf8("float"), &slider_f, 0f, 1f, PinnedUtf8("%.3f")); //BIOQUIRK: Default string arguments
-                imgui.ColorEdit3(PinnedUtf8("clear color"), (ConstantArray_float_3*)&clear_color, 0); //BIOQUIRK: This isn't being translated correctly, see https://github.com/InfectedLibraries/Biohazrd/issues/73
+                ImGui.SliderFloat(PinnedUtf8("float"), &slider_f, 0f, 1f, PinnedUtf8("%.3f")); //BIOQUIRK: Default string arguments
+                ImGui.ColorEdit3(PinnedUtf8("clear color"), (ConstantArray_float_3*)&clear_color, 0); //BIOQUIRK: This isn't being translated correctly, see https://github.com/InfectedLibraries/Biohazrd/issues/73
 
                 ImVec2 defaultVec2 = default;
-                if (imgui.Button(PinnedUtf8("Button"), &defaultVec2)) //BIOQUIRK: Default non-const arguments
+                if (ImGui.Button(PinnedUtf8("Button"), &defaultVec2)) //BIOQUIRK: Default non-const arguments
                 { counter++; }
-                imgui.SameLine();
-                //imgui.Text(PinnedUtf8("counter = %d"), counter); //BIOQUIRK: This variable argument function is not translated correctly!
-                imgui.TextV(PinnedUtf8("counter = %d"), (byte*)&counter); //BIOQUIRK: This is a manual ABI kludge of va_list
+                ImGui.SameLine();
+                //ImGui.Text(PinnedUtf8("counter = %d"), counter); //BIOQUIRK: This variable argument function is not translated correctly!
+                ImGui.TextV(PinnedUtf8("counter = %d"), (byte*)&counter); //BIOQUIRK: This is a manual ABI kludge of va_list
 
                 // ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-                (double, double) parameters = (1000.0f / imgui.GetIO()->Framerate, imgui.GetIO()->Framerate);
-                imgui.TextV(PinnedUtf8("Application average %.3f ms/frame (%.1f FPS)"), (byte*)&parameters);
+                (double, double) parameters = (1000.0f / ImGui.GetIO()->Framerate, ImGui.GetIO()->Framerate);
+                ImGui.TextV(PinnedUtf8("Application average %.3f ms/frame (%.1f FPS)"), (byte*)&parameters);
 
-                imgui.End();
+                ImGui.End();
             }
 
             // 3. Show another simple window
             if (show_another_window)
             {
-                imgui.Begin(PinnedUtf8("Another Window"), &show_another_window);
-                imgui.Text(PinnedUtf8("Hello from another window!"));
+                ImGui.Begin(PinnedUtf8("Another Window"), &show_another_window);
+                ImGui.Text(PinnedUtf8("Hello from another window!"));
                 ImVec2 defaultVec2 = default;
 
-                if (imgui.Button(PinnedUtf8("Close Me"), &defaultVec2)) //BIOQUIRK: Default non-const arguments
+                if (ImGui.Button(PinnedUtf8("Close Me"), &defaultVec2)) //BIOQUIRK: Default non-const arguments
                 { show_another_window = false; }
 
-                imgui.End();
+                ImGui.End();
             }
 
             // Rendering
-            imgui.Render();
+            ImGui.Render();
             g_pd3dDeviceContext.OutputMerger.SetRenderTargets(g_mainRenderTargetView);
             g_pd3dDeviceContext.ClearRenderTargetView(g_mainRenderTargetView, Unsafe.As<ImVec4, RawColor4>(ref clear_color));
-            ImGui_ImplDX11_RenderDrawData(imgui.GetDrawData());
+            ImGui_ImplDX11_RenderDrawData(ImGui.GetDrawData());
 
             // Update and Render additional Platform Windows
             if ((io->ConfigFlags & ImGuiConfigFlags.ViewportsEnable) != 0)
             {
-                imgui.UpdatePlatformWindows();
-                imgui.RenderPlatformWindowsDefault();
+                ImGui.UpdatePlatformWindows();
+                ImGui.RenderPlatformWindowsDefault();
             }
 
             g_pSwapChain.Present(1, PresentFlags.None); // Present with vsync
@@ -205,7 +205,7 @@ public unsafe static class Program
         // Cleanup
         ImGui_ImplDX11_Shutdown();
         ImGui_ImplWin32_Shutdown();
-        imgui.DestroyContext();
+        ImGui.DestroyContext();
 
         CleanupDeviceD3D();
         DestroyWindow(hwnd);
@@ -297,8 +297,8 @@ public unsafe static class Program
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
     private static LRESULT WndProc(HWND hWnd, MessageId msg, WPARAM wParam, LPARAM lParam)
     {
-        if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam) != 0)
-        { return 1; }
+        if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam) != (IntPtr)0)
+        { return (LRESULT)1; }
 
         switch (msg)
         {
@@ -307,22 +307,22 @@ public unsafe static class Program
                 if (g_pd3dDevice is not null && wParam != SIZE_MINIMIZED)
                 {
                     CleanupRenderTarget();
-                    int width = (int)(lParam & 0xFFFF);
-                    int height = (int)((lParam >> 16) & 0xFFFF);
+                    int width = (int)((nint)lParam & 0xFFFF);
+                    int height = (int)(((nint)lParam >> 16) & 0xFFFF);
                     g_pSwapChain.ResizeBuffers(0, width, height, Format.Unknown, 0);
                     CreateRenderTarget();
                 }
-                return 0;
+                return (LRESULT)0;
             case MessageId.WM_SYSCOMMAND:
                 const nint SC_KEYMENU = 0xF100;
-                if ((wParam & 0xFFF0) == SC_KEYMENU) // Disable ALT application menu
-                { return 0; }
+                if (((nint)wParam & 0xFFF0) == SC_KEYMENU) // Disable ALT application menu
+                { return (LRESULT)0; }
                 break;
             case MessageId.WM_DESTROY:
                 PostQuitMessage(0);
-                return 0;
+                return (LRESULT)0;
             case MessageId.WM_DPICHANGED:
-                if ((imgui.GetIO()->ConfigFlags & ImGuiConfigFlags.DpiEnableScaleViewports) != 0)
+                if ((ImGui.GetIO()->ConfigFlags & ImGuiConfigFlags.DpiEnableScaleViewports) != 0)
                 {
                     RECT* suggested_rect = (RECT*)lParam;
                     SetWindowPos(hWnd, IntPtr.Zero, suggested_rect->Left, suggested_rect->Top, suggested_rect->Right - suggested_rect->Left, suggested_rect->Bottom - suggested_rect->Top, SetWindowPosFlags.NOZORDER | SetWindowPosFlags.NOACTIVATE);

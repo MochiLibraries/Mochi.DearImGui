@@ -21,6 +21,11 @@ namespace InfectedImGui.Generator
                     return result;
                 }
 
+                // Note: This ends up implicitly using the canonical types for template arguments, which eliminates typedefs.
+                // (In particular, this is causing ImVector<ImWchar16> to translate as ImVector<ushort>.)
+                // This is a quirk of how Clang processes templates. Ideally we should avoid looking up the ClassTemplateSpecializationDecl and use the arguments exposed on the
+                // TemplateSpecializationType, but libclang nor ClangShapr expose this yet.
+                // See https://github.com/InfectedLibraries/Biohazrd/issues/178 for detials.
                 ClangType elementType = templateSpecialization.TemplateArgs[0];
                 return new ImVectorTypeReference(new ClangTypeReference(elementType));
             }

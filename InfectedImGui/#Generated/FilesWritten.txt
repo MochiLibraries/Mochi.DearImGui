@@ -21,7 +21,7 @@ ImFontAtlasFlags.cs
 ImFontConfig.cs
 ImFontGlyph.cs
 ImFontGlyphRangesBuilder.cs
-imgui.cs
+ImGui.cs
 ImGuiBackendFlags.cs
 ImGuiButtonFlags.cs
 ImGuiCol.cs

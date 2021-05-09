@@ -2,13 +2,14 @@
 Parsing Diagnostics
 ==============================================================================
 Note: Successfully late-instantiated 1 template specialization.
-Warning: Field 'ImGuiContext.Tables' references unsupported declaration '`ImPool<ImGuiTable>`' and was removed.
-Warning: Field 'ImGuiContext.TabBars' references unsupported declaration '`ImPool<ImGuiTabBar>`' and was removed.
-Warning: Field 'ImGuiContext.SettingsWindows' references unsupported declaration '`ImChunkStream<ImGuiWindowSettings>`' and was removed.
-Warning: Field 'ImGuiContext.SettingsTables' references unsupported declaration '`ImChunkStream<ImGuiTableSettings>`' and was removed.
-Warning: Field 'ImGuiTable.Columns' references unsupported declaration '`ImSpan<ImGuiTableColumn>`' and was removed.
-Warning: Field 'ImGuiTable.DisplayOrderToIndex' references unsupported declaration '`ImSpan<ImGuiTableColumnIdx>`' and was removed.
-Warning: Field 'ImGuiTable.RowCellData' references unsupported declaration '`ImSpan<ImGuiTableCellData>`' and was removed.
+Warning: Field 'ImGuiInputTextState.Stb' was removed since it references '`ImStb::STB_TexteditState`', which is currently unsupported.
+Warning: Field 'ImGuiContext.Tables' was removed since it references '`ImPool<ImGuiTable>`', which is currently unsupported.
+Warning: Field 'ImGuiContext.TabBars' was removed since it references '`ImPool<ImGuiTabBar>`', which is currently unsupported.
+Warning: Field 'ImGuiContext.SettingsWindows' was removed since it references '`ImChunkStream<ImGuiWindowSettings>`', which is currently unsupported.
+Warning: Field 'ImGuiContext.SettingsTables' was removed since it references '`ImChunkStream<ImGuiTableSettings>`', which is currently unsupported.
+Warning: Field 'ImGuiTable.Columns' was removed since it references '`ImSpan<ImGuiTableColumn>`', which is currently unsupported.
+Warning: Field 'ImGuiTable.DisplayOrderToIndex' was removed since it references '`ImSpan<ImGuiTableColumnIdx>`', which is currently unsupported.
+Warning: Field 'ImGuiTable.RowCellData' was removed since it references '`ImSpan<ImGuiTableCellData>`', which is currently unsupported.
 
 ==============================================================================
 Translation Diagnostics
