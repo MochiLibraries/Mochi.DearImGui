@@ -3,6 +3,8 @@
 // </auto-generated>
 #nullable enable
 using InfectedImGui.Infrastructure;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace InfectedImGui.Internal
@@ -155,22 +157,76 @@ namespace InfectedImGui.Internal
         public static extern double ImSign(double x);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper83", ExactSpelling = true)]
-        public static extern ImVec2 ImMin(ImVec2* lhs, ImVec2* rhs);
+        private static extern ImVec2* ImMin_PInvoke(out ImVec2 __returnBuffer, ImVec2* lhs, ImVec2* rhs);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImMin(ImVec2* lhs, ImVec2* rhs)
+        {
+            ImVec2 __returnBuffer;
+            ImMin_PInvoke(out __returnBuffer, lhs, rhs);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper84", ExactSpelling = true)]
-        public static extern ImVec2 ImMax(ImVec2* lhs, ImVec2* rhs);
+        private static extern ImVec2* ImMax_PInvoke(out ImVec2 __returnBuffer, ImVec2* lhs, ImVec2* rhs);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImMax(ImVec2* lhs, ImVec2* rhs)
+        {
+            ImVec2 __returnBuffer;
+            ImMax_PInvoke(out __returnBuffer, lhs, rhs);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper85", ExactSpelling = true)]
-        public static extern ImVec2 ImClamp(ImVec2* v, ImVec2* mn, ImVec2 mx);
+        private static extern ImVec2* ImClamp_PInvoke(out ImVec2 __returnBuffer, ImVec2* v, ImVec2* mn, ImVec2 mx);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImClamp(ImVec2* v, ImVec2* mn, ImVec2 mx)
+        {
+            ImVec2 __returnBuffer;
+            ImClamp_PInvoke(out __returnBuffer, v, mn, mx);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper86", ExactSpelling = true)]
-        public static extern ImVec2 ImLerp(ImVec2* a, ImVec2* b, float t);
+        private static extern ImVec2* ImLerp_PInvoke(out ImVec2 __returnBuffer, ImVec2* a, ImVec2* b, float t);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImLerp(ImVec2* a, ImVec2* b, float t)
+        {
+            ImVec2 __returnBuffer;
+            ImLerp_PInvoke(out __returnBuffer, a, b, t);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper87", ExactSpelling = true)]
-        public static extern ImVec2 ImLerp(ImVec2* a, ImVec2* b, ImVec2* t);
+        private static extern ImVec2* ImLerp_PInvoke(out ImVec2 __returnBuffer, ImVec2* a, ImVec2* b, ImVec2* t);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImLerp(ImVec2* a, ImVec2* b, ImVec2* t)
+        {
+            ImVec2 __returnBuffer;
+            ImLerp_PInvoke(out __returnBuffer, a, b, t);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper88", ExactSpelling = true)]
-        public static extern ImVec4* ImLerp(out ImVec4 __returnBuffer, ImVec4* a, ImVec4* b, float t);
+        private static extern ImVec4* ImLerp_PInvoke(out ImVec4 __returnBuffer, ImVec4* a, ImVec4* b, float t);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec4 ImLerp(ImVec4* a, ImVec4* b, float t)
+        {
+            ImVec4 __returnBuffer;
+            ImLerp_PInvoke(out __returnBuffer, a, b, t);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper89", ExactSpelling = true)]
         public static extern float ImSaturate(float f);
@@ -188,7 +244,16 @@ namespace InfectedImGui.Internal
         public static extern float ImFloor(float f);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper94", ExactSpelling = true)]
-        public static extern ImVec2 ImFloor(ImVec2* v);
+        private static extern ImVec2* ImFloor_PInvoke(out ImVec2 __returnBuffer, ImVec2* v);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImFloor(ImVec2* v)
+        {
+            ImVec2 __returnBuffer;
+            ImFloor_PInvoke(out __returnBuffer, v);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper95", ExactSpelling = true)]
         public static extern int ImModPositive(int a, int b);
@@ -197,35 +262,107 @@ namespace InfectedImGui.Internal
         public static extern float ImDot(ImVec2* a, ImVec2* b);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper97", ExactSpelling = true)]
-        public static extern ImVec2 ImRotate(ImVec2* v, float cos_a, float sin_a);
+        private static extern ImVec2* ImRotate_PInvoke(out ImVec2 __returnBuffer, ImVec2* v, float cos_a, float sin_a);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImRotate(ImVec2* v, float cos_a, float sin_a)
+        {
+            ImVec2 __returnBuffer;
+            ImRotate_PInvoke(out __returnBuffer, v, cos_a, sin_a);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper98", ExactSpelling = true)]
         public static extern float ImLinearSweep(float current, float target, float speed);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper99", ExactSpelling = true)]
-        public static extern ImVec2 ImMul(ImVec2* lhs, ImVec2* rhs);
+        private static extern ImVec2* ImMul_PInvoke(out ImVec2 __returnBuffer, ImVec2* lhs, ImVec2* rhs);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImMul(ImVec2* lhs, ImVec2* rhs)
+        {
+            ImVec2 __returnBuffer;
+            ImMul_PInvoke(out __returnBuffer, lhs, rhs);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBezierCubicCalc@@YA?AUImVec2@@AEBU1@000M@Z", ExactSpelling = true)]
-        public static extern ImVec2 ImBezierCubicCalc(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, float t);
+        private static extern ImVec2* ImBezierCubicCalc_PInvoke(out ImVec2 __returnBuffer, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, float t);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImBezierCubicCalc(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, float t)
+        {
+            ImVec2 __returnBuffer;
+            ImBezierCubicCalc_PInvoke(out __returnBuffer, p1, p2, p3, p4, t);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBezierCubicClosestPoint@@YA?AUImVec2@@AEBU1@0000H@Z", ExactSpelling = true)]
-        public static extern ImVec2 ImBezierCubicClosestPoint(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, int num_segments);
+        private static extern ImVec2* ImBezierCubicClosestPoint_PInvoke(out ImVec2 __returnBuffer, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, int num_segments);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImBezierCubicClosestPoint(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, int num_segments)
+        {
+            ImVec2 __returnBuffer;
+            ImBezierCubicClosestPoint_PInvoke(out __returnBuffer, p1, p2, p3, p4, p, num_segments);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBezierCubicClosestPointCasteljau@@YA?AUImVec2@@AEBU1@0000M@Z", ExactSpelling = true)]
-        public static extern ImVec2 ImBezierCubicClosestPointCasteljau(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, float tess_tol);
+        private static extern ImVec2* ImBezierCubicClosestPointCasteljau_PInvoke(out ImVec2 __returnBuffer, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, float tess_tol);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImBezierCubicClosestPointCasteljau(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, float tess_tol)
+        {
+            ImVec2 __returnBuffer;
+            ImBezierCubicClosestPointCasteljau_PInvoke(out __returnBuffer, p1, p2, p3, p4, p, tess_tol);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBezierQuadraticCalc@@YA?AUImVec2@@AEBU1@00M@Z", ExactSpelling = true)]
-        public static extern ImVec2 ImBezierQuadraticCalc(ImVec2* p1, ImVec2* p2, ImVec2* p3, float t);
+        private static extern ImVec2* ImBezierQuadraticCalc_PInvoke(out ImVec2 __returnBuffer, ImVec2* p1, ImVec2* p2, ImVec2* p3, float t);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImBezierQuadraticCalc(ImVec2* p1, ImVec2* p2, ImVec2* p3, float t)
+        {
+            ImVec2 __returnBuffer;
+            ImBezierQuadraticCalc_PInvoke(out __returnBuffer, p1, p2, p3, t);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImLineClosestPoint@@YA?AUImVec2@@AEBU1@00@Z", ExactSpelling = true)]
-        public static extern ImVec2 ImLineClosestPoint(ImVec2* a, ImVec2* b, ImVec2* p);
+        private static extern ImVec2* ImLineClosestPoint_PInvoke(out ImVec2 __returnBuffer, ImVec2* a, ImVec2* b, ImVec2* p);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImLineClosestPoint(ImVec2* a, ImVec2* b, ImVec2* p)
+        {
+            ImVec2 __returnBuffer;
+            ImLineClosestPoint_PInvoke(out __returnBuffer, a, b, p);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTriangleContainsPoint@@YA_NAEBUImVec2@@000@Z", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImTriangleContainsPoint(ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTriangleClosestPoint@@YA?AUImVec2@@AEBU1@000@Z", ExactSpelling = true)]
-        public static extern ImVec2 ImTriangleClosestPoint(ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p);
+        private static extern ImVec2* ImTriangleClosestPoint_PInvoke(out ImVec2 __returnBuffer, ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ImTriangleClosestPoint(ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p)
+        {
+            ImVec2 __returnBuffer;
+            ImTriangleClosestPoint_PInvoke(out __returnBuffer, a, b, c, p);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTriangleBarycentricCoords@@YAXAEBUImVec2@@000AEAM11@Z", ExactSpelling = true)]
         public static extern void ImTriangleBarycentricCoords(ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p, float* out_u, float* out_v, float* out_w);
@@ -265,7 +402,16 @@ namespace InfectedImGui.Internal
         public static extern void UpdateWindowParentAndRootLinks(ImGuiWindow* window, ImGuiWindowFlags flags, ImGuiWindow* parent_window);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcWindowNextAutoFitSize@ImGui@@YA?AUImVec2@@PEAUImGuiWindow@@@Z", ExactSpelling = true)]
-        public static extern ImVec2 CalcWindowNextAutoFitSize(ImGuiWindow* window);
+        private static extern ImVec2* CalcWindowNextAutoFitSize_PInvoke(out ImVec2 __returnBuffer, ImGuiWindow* window);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 CalcWindowNextAutoFitSize(ImGuiWindow* window)
+        {
+            ImVec2 __returnBuffer;
+            CalcWindowNextAutoFitSize_PInvoke(out __returnBuffer, window);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsWindowChildOf@ImGui@@YA_NPEAUImGuiWindow@@0@Z", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
@@ -280,7 +426,16 @@ namespace InfectedImGui.Internal
         public static extern bool IsWindowNavFocusable(ImGuiWindow* window);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowAllowedExtentRect@ImGui@@YA?AUImRect@@PEAUImGuiWindow@@@Z", ExactSpelling = true)]
-        public static extern ImRect* GetWindowAllowedExtentRect(out ImRect __returnBuffer, ImGuiWindow* window);
+        private static extern ImRect* GetWindowAllowedExtentRect_PInvoke(out ImRect __returnBuffer, ImGuiWindow* window);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImRect GetWindowAllowedExtentRect(ImGuiWindow* window)
+        {
+            ImRect __returnBuffer;
+            GetWindowAllowedExtentRect_PInvoke(out __returnBuffer, window);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetWindowPos@ImGui@@YAXPEAUImGuiWindow@@AEBUImVec2@@H@Z", ExactSpelling = true)]
         public static extern void SetWindowPos(ImGuiWindow* window, ImVec2* pos, ImGuiCond cond = ImGuiCond.None);
@@ -394,7 +549,16 @@ namespace InfectedImGui.Internal
         public static extern void SetScrollFromPosY(ImGuiWindow* window, float local_y, float center_y_ratio);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScrollToBringRectIntoView@ImGui@@YA?AUImVec2@@PEAUImGuiWindow@@AEBUImRect@@@Z", ExactSpelling = true)]
-        public static extern ImVec2 ScrollToBringRectIntoView(ImGuiWindow* window, ImRect* item_rect);
+        private static extern ImVec2* ScrollToBringRectIntoView_PInvoke(out ImVec2 __returnBuffer, ImGuiWindow* window, ImRect* item_rect);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 ScrollToBringRectIntoView(ImGuiWindow* window, ImRect* item_rect)
+        {
+            ImVec2 __returnBuffer;
+            ScrollToBringRectIntoView_PInvoke(out __returnBuffer, window, item_rect);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetItemID@ImGui@@YAIXZ", ExactSpelling = true)]
         public static extern uint GetItemID();
@@ -467,7 +631,16 @@ namespace InfectedImGui.Internal
         public static extern void FocusableItemUnregister(ImGuiWindow* window);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcItemSize@ImGui@@YA?AUImVec2@@U2@MM@Z", ExactSpelling = true)]
-        public static extern ImVec2 CalcItemSize(ImVec2 size, float default_w, float default_h);
+        private static extern ImVec2* CalcItemSize_PInvoke(out ImVec2 __returnBuffer, ImVec2 size, float default_w, float default_h);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 CalcItemSize(ImVec2 size, float default_w, float default_h)
+        {
+            ImVec2 __returnBuffer;
+            CalcItemSize_PInvoke(out __returnBuffer, size, default_w, default_h);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcWrapWidthForPos@ImGui@@YAMAEBUImVec2@@M@Z", ExactSpelling = true)]
         public static extern float CalcWrapWidthForPos(ImVec2* pos, float wrap_pos_x);
@@ -486,7 +659,16 @@ namespace InfectedImGui.Internal
         public static extern bool IsItemToggledSelection();
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetContentRegionMaxAbs@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
-        public static extern ImVec2 GetContentRegionMaxAbs();
+        private static extern ImVec2* GetContentRegionMaxAbs_PInvoke(out ImVec2 __returnBuffer);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 GetContentRegionMaxAbs()
+        {
+            ImVec2 __returnBuffer;
+            GetContentRegionMaxAbs_PInvoke(out __returnBuffer);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShrinkWidths@ImGui@@YAXPEAUImGuiShrinkWidthItem@@HM@Z", ExactSpelling = true)]
         public static extern void ShrinkWidths(ImGuiShrinkWidthItem* items, int count, float width_excess);
@@ -531,10 +713,28 @@ namespace InfectedImGui.Internal
         public static extern ImGuiWindow* GetTopMostPopupModal();
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindBestWindowPosForPopup@ImGui@@YA?AUImVec2@@PEAUImGuiWindow@@@Z", ExactSpelling = true)]
-        public static extern ImVec2 FindBestWindowPosForPopup(ImGuiWindow* window);
+        private static extern ImVec2* FindBestWindowPosForPopup_PInvoke(out ImVec2 __returnBuffer, ImGuiWindow* window);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 FindBestWindowPosForPopup(ImGuiWindow* window)
+        {
+            ImVec2 __returnBuffer;
+            FindBestWindowPosForPopup_PInvoke(out __returnBuffer, window);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindBestWindowPosForPopupEx@ImGui@@YA?AUImVec2@@AEBU2@0PEAHAEBUImRect@@2W4ImGuiPopupPositionPolicy@@@Z", ExactSpelling = true)]
-        public static extern ImVec2 FindBestWindowPosForPopupEx(ImVec2* ref_pos, ImVec2* size, ImGuiDir* last_dir, ImRect* r_outer, ImRect* r_avoid, ImGuiPopupPositionPolicy policy);
+        private static extern ImVec2* FindBestWindowPosForPopupEx_PInvoke(out ImVec2 __returnBuffer, ImVec2* ref_pos, ImVec2* size, ImGuiDir* last_dir, ImRect* r_outer, ImRect* r_avoid, ImGuiPopupPositionPolicy policy);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 FindBestWindowPosForPopupEx(ImVec2* ref_pos, ImVec2* size, ImGuiDir* last_dir, ImRect* r_outer, ImRect* r_avoid, ImGuiPopupPositionPolicy policy)
+        {
+            ImVec2 __returnBuffer;
+            FindBestWindowPosForPopupEx_PInvoke(out __returnBuffer, ref_pos, size, last_dir, r_outer, r_avoid, policy);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?NavInitWindow@ImGui@@YAXPEAUImGuiWindow@@_N@Z", ExactSpelling = true)]
         public static extern void NavInitWindow(ImGuiWindow* window, [MarshalAs(UnmanagedType.I1)] bool force_reinit);
@@ -556,7 +756,16 @@ namespace InfectedImGui.Internal
         public static extern float GetNavInputAmount(ImGuiNavInput n, ImGuiInputReadMode mode);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetNavInputAmount2d@ImGui@@YA?AUImVec2@@HW4ImGuiInputReadMode@@MM@Z", ExactSpelling = true)]
-        public static extern ImVec2 GetNavInputAmount2d(ImGuiNavDirSourceFlags dir_sources, ImGuiInputReadMode mode, float slow_factor = 0f, float fast_factor = 0f);
+        private static extern ImVec2* GetNavInputAmount2d_PInvoke(out ImVec2 __returnBuffer, ImGuiNavDirSourceFlags dir_sources, ImGuiInputReadMode mode, float slow_factor = 0f, float fast_factor = 0f);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 GetNavInputAmount2d(ImGuiNavDirSourceFlags dir_sources, ImGuiInputReadMode mode, float slow_factor = 0f, float fast_factor = 0f)
+        {
+            ImVec2 __returnBuffer;
+            GetNavInputAmount2d_PInvoke(out __returnBuffer, dir_sources, mode, slow_factor, fast_factor);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcTypematicRepeatAmount@ImGui@@YAHMMMM@Z", ExactSpelling = true)]
         public static extern int CalcTypematicRepeatAmount(float t0, float t1, float repeat_delay, float repeat_rate);
@@ -854,7 +1063,16 @@ namespace InfectedImGui.Internal
         public static extern void TableEndCell(ImGuiTable* table);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetCellBgRect@ImGui@@YA?AUImRect@@PEBUImGuiTable@@H@Z", ExactSpelling = true)]
-        public static extern ImRect* TableGetCellBgRect(out ImRect __returnBuffer, ImGuiTable* table, int column_n);
+        private static extern ImRect* TableGetCellBgRect_PInvoke(out ImRect __returnBuffer, ImGuiTable* table, int column_n);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImRect TableGetCellBgRect(ImGuiTable* table, int column_n)
+        {
+            ImRect __returnBuffer;
+            TableGetCellBgRect_PInvoke(out __returnBuffer, table, column_n);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnName@ImGui@@YAPEBDPEBUImGuiTable@@H@Z", ExactSpelling = true)]
         public static extern byte* TableGetColumnName(ImGuiTable* table, int column_n);
@@ -932,7 +1150,16 @@ namespace InfectedImGui.Internal
         public static extern bool TabItemEx(ImGuiTabBar* tab_bar, byte* label, bool* p_open, ImGuiTabItemFlags flags, ImGuiWindow* docked_window);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabItemCalcSize@ImGui@@YA?AUImVec2@@PEBD_N@Z", ExactSpelling = true)]
-        public static extern ImVec2 TabItemCalcSize(byte* label, [MarshalAs(UnmanagedType.I1)] bool has_close_button);
+        private static extern ImVec2* TabItemCalcSize_PInvoke(out ImVec2 __returnBuffer, byte* label, [MarshalAs(UnmanagedType.I1)] bool has_close_button);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImVec2 TabItemCalcSize(byte* label, bool has_close_button)
+        {
+            ImVec2 __returnBuffer;
+            TabItemCalcSize_PInvoke(out __returnBuffer, label, has_close_button);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabItemBackground@ImGui@@YAXPEAUImDrawList@@AEBUImRect@@HI@Z", ExactSpelling = true)]
         public static extern void TabItemBackground(ImDrawList* draw_list, ImRect* bb, ImGuiTabItemFlags flags, uint col);
@@ -1025,7 +1252,16 @@ namespace InfectedImGui.Internal
         public static extern bool ImageButtonEx(uint id, void* texture_id, ImVec2* size, ImVec2* uv0, ImVec2* uv1, ImVec2* padding, ImVec4* bg_col, ImVec4* tint_col);
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowScrollbarRect@ImGui@@YA?AUImRect@@PEAUImGuiWindow@@W4ImGuiAxis@@@Z", ExactSpelling = true)]
-        public static extern ImRect* GetWindowScrollbarRect(out ImRect __returnBuffer, ImGuiWindow* window, ImGuiAxis axis);
+        private static extern ImRect* GetWindowScrollbarRect_PInvoke(out ImRect __returnBuffer, ImGuiWindow* window, ImGuiAxis axis);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImRect GetWindowScrollbarRect(ImGuiWindow* window, ImGuiAxis axis)
+        {
+            ImRect __returnBuffer;
+            GetWindowScrollbarRect_PInvoke(out __returnBuffer, window, axis);
+            return __returnBuffer;
+        }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowScrollbarID@ImGui@@YAIPEAUImGuiWindow@@W4ImGuiAxis@@@Z", ExactSpelling = true)]
         public static extern uint GetWindowScrollbarID(ImGuiWindow* window, ImGuiAxis axis);

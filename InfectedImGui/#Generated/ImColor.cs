@@ -106,6 +106,15 @@ namespace InfectedImGui
         }
 
         [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HSV@ImColor@@SA?AU1@MMMM@Z", ExactSpelling = true)]
-        public static extern ImColor* HSV(out ImColor __returnBuffer, float h, float s, float v, float a = 1f);
+        private static extern ImColor* HSV_PInvoke(out ImColor __returnBuffer, float h, float s, float v, float a = 1f);
+
+        [DebuggerStepThrough, DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ImColor HSV(float h, float s, float v, float a = 1f)
+        {
+            ImColor __returnBuffer;
+            HSV_PInvoke(out __returnBuffer, h, s, v, a);
+            return __returnBuffer;
+        }
     }
 }
