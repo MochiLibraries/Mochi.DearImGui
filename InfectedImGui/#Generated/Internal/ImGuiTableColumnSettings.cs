@@ -57,12 +57,12 @@ namespace InfectedImGui.Internal
             }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper68", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper68", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTableColumnSettings* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiTableColumnSettings* @this = &this)
             { Constructor_PInvoke(@this); }

@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiWindowDockStyleCol
+    public enum ImGuiWindowDockStyleCol : uint
     {
         ImGuiWindowDockStyleCol_Text,
         ImGuiWindowDockStyleCol_Tab,

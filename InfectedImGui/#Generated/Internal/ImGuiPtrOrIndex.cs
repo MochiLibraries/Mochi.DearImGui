@@ -15,23 +15,23 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(8)] public int Index;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper50", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper50", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiPtrOrIndex* @this, void* ptr);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(void* ptr)
+        public void Constructor(void* ptr)
         {
             fixed (ImGuiPtrOrIndex* @this = &this)
             { Constructor_PInvoke(@this, ptr); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper51", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper51", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiPtrOrIndex* @this, int index);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(int index)
+        public void Constructor(int index)
         {
             fixed (ImGuiPtrOrIndex* @this = &this)
             { Constructor_PInvoke(@this, index); }

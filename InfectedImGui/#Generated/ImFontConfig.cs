@@ -50,12 +50,12 @@ namespace InfectedImGui
 
         [FieldOffset(128)] public ImFont* DstFont;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFontConfig@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN12ImFontConfigC1Ev", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImFontConfig* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImFontConfig* @this = &this)
             { Constructor_PInvoke(@this); }

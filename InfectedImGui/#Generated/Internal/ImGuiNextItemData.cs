@@ -21,23 +21,23 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(16)] [MarshalAs(UnmanagedType.I1)] public bool OpenVal;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper49", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper49", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiNextItemData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiNextItemData* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFlags@ImGuiNextItemData@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN17ImGuiNextItemData10ClearFlagsEv", ExactSpelling = true)]
         private static extern void ClearFlags_PInvoke(ImGuiNextItemData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearFlags()
+        public void ClearFlags()
         {
             fixed (ImGuiNextItemData* @this = &this)
             { ClearFlags_PInvoke(@this); }

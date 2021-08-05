@@ -92,23 +92,23 @@ namespace InfectedImGui
 
         [FieldOffset(196)] public ConstantArray_ImVec4_55 Colors;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiStyle@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN10ImGuiStyleC1Ev", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiStyle* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiStyle* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleAllSizes@ImGuiStyle@@QEAAXM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN10ImGuiStyle13ScaleAllSizesEf", ExactSpelling = true)]
         private static extern void ScaleAllSizes_PInvoke(ImGuiStyle* @this, float scale_factor);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ScaleAllSizes(float scale_factor)
+        public void ScaleAllSizes(float scale_factor)
         {
             fixed (ImGuiStyle* @this = &this)
             { ScaleAllSizes_PInvoke(@this, scale_factor); }

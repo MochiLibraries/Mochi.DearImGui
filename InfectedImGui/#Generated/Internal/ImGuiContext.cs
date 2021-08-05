@@ -440,12 +440,12 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(13144)] public ConstantArray_char_3073 TempBuffer;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper62", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper62", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiContext* @this, ImFontAtlas* shared_font_atlas);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(ImFontAtlas* shared_font_atlas)
+        public void Constructor(ImFontAtlas* shared_font_atlas)
         {
             fixed (ImGuiContext* @this = &this)
             { Constructor_PInvoke(@this, shared_font_atlas); }

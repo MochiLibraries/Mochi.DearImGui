@@ -25,12 +25,12 @@ namespace InfectedImGui
 
         [FieldOffset(48)] public void* UserCallbackData;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper20", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper20", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImDrawCmd* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImDrawCmd* @this = &this)
             { Constructor_PInvoke(@this); }

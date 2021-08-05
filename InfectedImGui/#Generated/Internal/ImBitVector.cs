@@ -13,57 +13,57 @@ namespace InfectedImGui.Internal
     {
         [FieldOffset(0)] public ImVector<uint> Storage;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Create@ImBitVector@@QEAAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImBitVector6CreateEi", ExactSpelling = true)]
         private static extern void Create_PInvoke(ImBitVector* @this, int sz);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Create(int sz)
+        public void Create(int sz)
         {
             fixed (ImBitVector* @this = &this)
             { Create_PInvoke(@this, sz); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImBitVector@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImBitVector5ClearEv", ExactSpelling = true)]
         private static extern void Clear_PInvoke(ImBitVector* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Clear()
+        public void Clear()
         {
             fixed (ImBitVector* @this = &this)
             { Clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TestBit@ImBitVector@@QEBA_NH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImBitVector7TestBitEi", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool TestBit_PInvoke(ImBitVector* @this, int n);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool TestBit(int n)
+        public bool TestBit(int n)
         {
             fixed (ImBitVector* @this = &this)
             { return TestBit_PInvoke(@this, n); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBit@ImBitVector@@QEAAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImBitVector6SetBitEi", ExactSpelling = true)]
         private static extern void SetBit_PInvoke(ImBitVector* @this, int n);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SetBit(int n)
+        public void SetBit(int n)
         {
             fixed (ImBitVector* @this = &this)
             { SetBit_PInvoke(@this, n); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearBit@ImBitVector@@QEAAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImBitVector8ClearBitEi", ExactSpelling = true)]
         private static extern void ClearBit_PInvoke(ImBitVector* @this, int n);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearBit(int n)
+        public void ClearBit(int n)
         {
             fixed (ImBitVector* @this = &this)
             { ClearBit_PInvoke(@this, n); }

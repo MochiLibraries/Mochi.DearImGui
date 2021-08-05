@@ -27,12 +27,12 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(12)] public int ShowTablesRectsType;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper59", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper59", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiMetricsConfig* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiMetricsConfig* @this = &this)
             { Constructor_PInvoke(@this); }

@@ -25,12 +25,12 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(40)] public ImVec2 OpenMousePos;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper46", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper46", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiPopupData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiPopupData* @this = &this)
             { Constructor_PInvoke(@this); }

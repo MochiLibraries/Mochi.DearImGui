@@ -28,59 +28,59 @@ namespace InfectedImGui
 
         [FieldOffset(58)] [MarshalAs(UnmanagedType.I1)] public bool Delivery;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper5", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper5", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiPayload* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiPayload* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImGuiPayload@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN12ImGuiPayload5ClearEv", ExactSpelling = true)]
         private static extern void Clear_PInvoke(ImGuiPayload* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Clear()
+        public void Clear()
         {
             fixed (ImGuiPayload* @this = &this)
             { Clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDataType@ImGuiPayload@@QEBA_NPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK12ImGuiPayload10IsDataTypeEPKc", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsDataType_PInvoke(ImGuiPayload* @this, byte* type);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsDataType(byte* type)
+        public bool IsDataType(byte* type)
         {
             fixed (ImGuiPayload* @this = &this)
             { return IsDataType_PInvoke(@this, type); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPreview@ImGuiPayload@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK12ImGuiPayload9IsPreviewEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsPreview_PInvoke(ImGuiPayload* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsPreview()
+        public bool IsPreview()
         {
             fixed (ImGuiPayload* @this = &this)
             { return IsPreview_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDelivery@ImGuiPayload@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK12ImGuiPayload10IsDeliveryEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsDelivery_PInvoke(ImGuiPayload* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsDelivery()
+        public bool IsDelivery()
         {
             fixed (ImGuiPayload* @this = &this)
             { return IsDelivery_PInvoke(@this); }

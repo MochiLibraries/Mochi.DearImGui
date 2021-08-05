@@ -3,1449 +3,1213 @@
 // </auto-generated>
 #nullable enable
 using InfectedImGui.Infrastructure;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace InfectedImGui.Internal
 {
     public unsafe static partial class ImGuiInternal
     {
-        public static readonly ImGuiContext** GImGui = (ImGuiContext**)NativeLibrary.GetExport(NativeLibrary.Load("InfectedImGui.Native.dll"), "?GImGui@@3PEAUImGuiContext@@EA");
+        public static readonly ImGuiContext** GImGui = (ImGuiContext**)NativeLibrary.GetExport(NativeLibrary.Load("libInfectedImGui.Native.so"), "GImGui");
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImHashData@@YAIPEBX_KI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z10ImHashDataPKvmj", ExactSpelling = true)]
         public static extern uint ImHashData(void* data, ulong data_size, uint seed = 0);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImHashStr@@YAIPEBD_KI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z9ImHashStrPKcmj", ExactSpelling = true)]
         public static extern uint ImHashStr(byte* data, ulong data_size = 0, uint seed = 0);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImAlphaBlendColors@@YAIII@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z18ImAlphaBlendColorsjj", ExactSpelling = true)]
         public static extern uint ImAlphaBlendColors(uint col_a, uint col_b);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper70", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper70", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImIsPowerOfTwo(int v);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper71", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper71", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImIsPowerOfTwo(ulong v);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper72", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper72", ExactSpelling = true)]
         public static extern int ImUpperPowerOfTwo(int v);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStricmp@@YAHPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z9ImStricmpPKcS0_", ExactSpelling = true)]
         public static extern int ImStricmp(byte* str1, byte* str2);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrnicmp@@YAHPEBD0_K@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z10ImStrnicmpPKcS0_m", ExactSpelling = true)]
         public static extern int ImStrnicmp(byte* str1, byte* str2, ulong count);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrncpy@@YAXPEADPEBD_K@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z9ImStrncpyPcPKcm", ExactSpelling = true)]
         public static extern void ImStrncpy(byte* dst, byte* src, ulong count);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrdup@@YAPEADPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z8ImStrdupPKc", ExactSpelling = true)]
         public static extern byte* ImStrdup(byte* str);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrdupcpy@@YAPEADPEADPEA_KPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z11ImStrdupcpyPcPmPKc", ExactSpelling = true)]
         public static extern byte* ImStrdupcpy(byte* dst, ulong* p_dst_size, byte* str);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrchrRange@@YAPEBDPEBD0D@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z13ImStrchrRangePKcS0_c", ExactSpelling = true)]
         public static extern byte* ImStrchrRange(byte* str_begin, byte* str_end, byte c);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrlenW@@YAHPEBG@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z9ImStrlenWPKt", ExactSpelling = true)]
         public static extern int ImStrlenW(char* str);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStreolRange@@YAPEBDPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z13ImStreolRangePKcS0_", ExactSpelling = true)]
         public static extern byte* ImStreolRange(byte* str, byte* str_end);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrbolW@@YAPEBGPEBG0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z9ImStrbolWPKtS0_", ExactSpelling = true)]
         public static extern char* ImStrbolW(char* buf_mid_line, char* buf_begin);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStristr@@YAPEBDPEBD000@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z9ImStristrPKcS0_S0_S0_", ExactSpelling = true)]
         public static extern byte* ImStristr(byte* haystack, byte* haystack_end, byte* needle, byte* needle_end);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrTrimBlanks@@YAXPEAD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z15ImStrTrimBlanksPc", ExactSpelling = true)]
         public static extern void ImStrTrimBlanks(byte* str);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImStrSkipBlank@@YAPEBDPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z14ImStrSkipBlankPKc", ExactSpelling = true)]
         public static extern byte* ImStrSkipBlank(byte* str);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFormatString@@YAHPEAD_KPEBDZZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z14ImFormatStringPcmPKcz", ExactSpelling = true)]
         public static extern int ImFormatString(byte* buf, ulong buf_size, byte* fmt);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFormatStringV@@YAHPEAD_KPEBD0@Z", ExactSpelling = true)]
-        public static extern int ImFormatStringV(byte* buf, ulong buf_size, byte* fmt, byte* args);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z15ImFormatStringVPcmPKcP13__va_list_tag", ExactSpelling = true)]
+        public static extern int ImFormatStringV(byte* buf, ulong buf_size, byte* fmt, ConstantArray___va_list_tag_1* args);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImParseFormatFindStart@@YAPEBDPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z22ImParseFormatFindStartPKc", ExactSpelling = true)]
         public static extern byte* ImParseFormatFindStart(byte* format);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImParseFormatFindEnd@@YAPEBDPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z20ImParseFormatFindEndPKc", ExactSpelling = true)]
         public static extern byte* ImParseFormatFindEnd(byte* format);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImParseFormatTrimDecorations@@YAPEBDPEBDPEAD_K@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z28ImParseFormatTrimDecorationsPKcPcm", ExactSpelling = true)]
         public static extern byte* ImParseFormatTrimDecorations(byte* format, byte* buf, ulong buf_size);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImParseFormatPrecision@@YAHPEBDH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z22ImParseFormatPrecisionPKci", ExactSpelling = true)]
         public static extern int ImParseFormatPrecision(byte* format, int default_value);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper73", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper73", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImCharIsBlankA(byte c);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper74", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper74", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImCharIsBlankW(uint c);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextStrToUtf8@@YAHPEADHPEBG1@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z15ImTextStrToUtf8PciPKtS1_", ExactSpelling = true)]
         public static extern int ImTextStrToUtf8(byte* buf, int buf_size, char* in_text, char* in_text_end);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextCharFromUtf8@@YAHPEAIPEBD1@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z18ImTextCharFromUtf8PjPKcS1_", ExactSpelling = true)]
         public static extern int ImTextCharFromUtf8(uint* out_char, byte* in_text, byte* in_text_end);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextStrFromUtf8@@YAHPEAGHPEBD1PEAPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z17ImTextStrFromUtf8PtiPKcS1_PS1_", ExactSpelling = true)]
         public static extern int ImTextStrFromUtf8(char* buf, int buf_size, byte* in_text, byte* in_text_end, byte** in_remaining = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextCountCharsFromUtf8@@YAHPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z24ImTextCountCharsFromUtf8PKcS0_", ExactSpelling = true)]
         public static extern int ImTextCountCharsFromUtf8(byte* in_text, byte* in_text_end);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextCountUtf8BytesFromChar@@YAHPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z28ImTextCountUtf8BytesFromCharPKcS0_", ExactSpelling = true)]
         public static extern int ImTextCountUtf8BytesFromChar(byte* in_text, byte* in_text_end);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTextCountUtf8BytesFromStr@@YAHPEBG0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z27ImTextCountUtf8BytesFromStrPKtS0_", ExactSpelling = true)]
         public static extern int ImTextCountUtf8BytesFromStr(char* in_text, char* in_text_end);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFileOpen@@YAPEAU_iobuf@@PEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z10ImFileOpenPKcS0_", ExactSpelling = true)]
         public static extern void* ImFileOpen(byte* filename, byte* mode);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFileClose@@YA_NPEAU_iobuf@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z11ImFileCloseP8_IO_FILE", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImFileClose(void* file);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFileGetSize@@YA_KPEAU_iobuf@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z13ImFileGetSizeP8_IO_FILE", ExactSpelling = true)]
         public static extern ulong ImFileGetSize(void* file);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFileRead@@YA_KPEAX_K1PEAU_iobuf@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z10ImFileReadPvyyP8_IO_FILE", ExactSpelling = true)]
         public static extern ulong ImFileRead(void* data, ulong size, ulong count, void* file);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFileWrite@@YA_KPEBX_K1PEAU_iobuf@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z11ImFileWritePKvyyP8_IO_FILE", ExactSpelling = true)]
         public static extern ulong ImFileWrite(void* data, ulong size, ulong count, void* file);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFileLoadToMemory@@YAPEAXPEBD0PEA_KH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z18ImFileLoadToMemoryPKcS0_Pmi", ExactSpelling = true)]
         public static extern void* ImFileLoadToMemory(byte* filename, byte* mode, ulong* out_file_size = null, int padding_bytes = 0);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper75", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper75", ExactSpelling = true)]
         public static extern float ImPow(float x, float y);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper76", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper76", ExactSpelling = true)]
         public static extern double ImPow(double x, double y);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper77", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper77", ExactSpelling = true)]
         public static extern float ImLog(float x);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper78", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper78", ExactSpelling = true)]
         public static extern double ImLog(double x);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper79", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper79", ExactSpelling = true)]
         public static extern float ImAbs(float x);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper80", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper80", ExactSpelling = true)]
         public static extern double ImAbs(double x);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper81", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper81", ExactSpelling = true)]
         public static extern float ImSign(float x);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper82", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper82", ExactSpelling = true)]
         public static extern double ImSign(double x);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper83", ExactSpelling = true)]
-        private static extern ImVec2* ImMin_PInvoke(out ImVec2 __returnBuffer, ImVec2* lhs, ImVec2* rhs);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper83", ExactSpelling = true)]
+        public static extern ImVec2 ImMin(ImVec2* lhs, ImVec2* rhs);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImMin(ImVec2* lhs, ImVec2* rhs)
-        {
-            ImVec2 __returnBuffer;
-            ImMin_PInvoke(out __returnBuffer, lhs, rhs);
-            return __returnBuffer;
-        }
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper84", ExactSpelling = true)]
+        public static extern ImVec2 ImMax(ImVec2* lhs, ImVec2* rhs);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper84", ExactSpelling = true)]
-        private static extern ImVec2* ImMax_PInvoke(out ImVec2 __returnBuffer, ImVec2* lhs, ImVec2* rhs);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper85", ExactSpelling = true)]
+        public static extern ImVec2 ImClamp(ImVec2* v, ImVec2* mn, ImVec2 mx);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImMax(ImVec2* lhs, ImVec2* rhs)
-        {
-            ImVec2 __returnBuffer;
-            ImMax_PInvoke(out __returnBuffer, lhs, rhs);
-            return __returnBuffer;
-        }
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper86", ExactSpelling = true)]
+        public static extern ImVec2 ImLerp(ImVec2* a, ImVec2* b, float t);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper85", ExactSpelling = true)]
-        private static extern ImVec2* ImClamp_PInvoke(out ImVec2 __returnBuffer, ImVec2* v, ImVec2* mn, ImVec2 mx);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper87", ExactSpelling = true)]
+        public static extern ImVec2 ImLerp(ImVec2* a, ImVec2* b, ImVec2* t);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImClamp(ImVec2* v, ImVec2* mn, ImVec2 mx)
-        {
-            ImVec2 __returnBuffer;
-            ImClamp_PInvoke(out __returnBuffer, v, mn, mx);
-            return __returnBuffer;
-        }
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper88", ExactSpelling = true)]
+        public static extern ImVec4 ImLerp(ImVec4* a, ImVec4* b, float t);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper86", ExactSpelling = true)]
-        private static extern ImVec2* ImLerp_PInvoke(out ImVec2 __returnBuffer, ImVec2* a, ImVec2* b, float t);
-
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImLerp(ImVec2* a, ImVec2* b, float t)
-        {
-            ImVec2 __returnBuffer;
-            ImLerp_PInvoke(out __returnBuffer, a, b, t);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper87", ExactSpelling = true)]
-        private static extern ImVec2* ImLerp_PInvoke(out ImVec2 __returnBuffer, ImVec2* a, ImVec2* b, ImVec2* t);
-
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImLerp(ImVec2* a, ImVec2* b, ImVec2* t)
-        {
-            ImVec2 __returnBuffer;
-            ImLerp_PInvoke(out __returnBuffer, a, b, t);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper88", ExactSpelling = true)]
-        private static extern ImVec4* ImLerp_PInvoke(out ImVec4 __returnBuffer, ImVec4* a, ImVec4* b, float t);
-
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec4 ImLerp(ImVec4* a, ImVec4* b, float t)
-        {
-            ImVec4 __returnBuffer;
-            ImLerp_PInvoke(out __returnBuffer, a, b, t);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper89", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper89", ExactSpelling = true)]
         public static extern float ImSaturate(float f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper90", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper90", ExactSpelling = true)]
         public static extern float ImLengthSqr(ImVec2* lhs);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper91", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper91", ExactSpelling = true)]
         public static extern float ImLengthSqr(ImVec4* lhs);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper92", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper92", ExactSpelling = true)]
         public static extern float ImInvLength(ImVec2* lhs, float fail_value);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper93", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper93", ExactSpelling = true)]
         public static extern float ImFloor(float f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper94", ExactSpelling = true)]
-        private static extern ImVec2* ImFloor_PInvoke(out ImVec2 __returnBuffer, ImVec2* v);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper94", ExactSpelling = true)]
+        public static extern ImVec2 ImFloor(ImVec2* v);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImFloor(ImVec2* v)
-        {
-            ImVec2 __returnBuffer;
-            ImFloor_PInvoke(out __returnBuffer, v);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper95", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper95", ExactSpelling = true)]
         public static extern int ImModPositive(int a, int b);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper96", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper96", ExactSpelling = true)]
         public static extern float ImDot(ImVec2* a, ImVec2* b);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper97", ExactSpelling = true)]
-        private static extern ImVec2* ImRotate_PInvoke(out ImVec2 __returnBuffer, ImVec2* v, float cos_a, float sin_a);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper97", ExactSpelling = true)]
+        public static extern ImVec2 ImRotate(ImVec2* v, float cos_a, float sin_a);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImRotate(ImVec2* v, float cos_a, float sin_a)
-        {
-            ImVec2 __returnBuffer;
-            ImRotate_PInvoke(out __returnBuffer, v, cos_a, sin_a);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper98", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper98", ExactSpelling = true)]
         public static extern float ImLinearSweep(float current, float target, float speed);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper99", ExactSpelling = true)]
-        private static extern ImVec2* ImMul_PInvoke(out ImVec2 __returnBuffer, ImVec2* lhs, ImVec2* rhs);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper99", ExactSpelling = true)]
+        public static extern ImVec2 ImMul(ImVec2* lhs, ImVec2* rhs);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImMul(ImVec2* lhs, ImVec2* rhs)
-        {
-            ImVec2 __returnBuffer;
-            ImMul_PInvoke(out __returnBuffer, lhs, rhs);
-            return __returnBuffer;
-        }
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z17ImBezierCubicCalcRK6ImVec2S1_S1_S1_f", ExactSpelling = true)]
+        public static extern ImVec2 ImBezierCubicCalc(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, float t);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBezierCubicCalc@@YA?AUImVec2@@AEBU1@000M@Z", ExactSpelling = true)]
-        private static extern ImVec2* ImBezierCubicCalc_PInvoke(out ImVec2 __returnBuffer, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, float t);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z25ImBezierCubicClosestPointRK6ImVec2S1_S1_S1_S1_i", ExactSpelling = true)]
+        public static extern ImVec2 ImBezierCubicClosestPoint(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, int num_segments);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImBezierCubicCalc(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, float t)
-        {
-            ImVec2 __returnBuffer;
-            ImBezierCubicCalc_PInvoke(out __returnBuffer, p1, p2, p3, p4, t);
-            return __returnBuffer;
-        }
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z34ImBezierCubicClosestPointCasteljauRK6ImVec2S1_S1_S1_S1_f", ExactSpelling = true)]
+        public static extern ImVec2 ImBezierCubicClosestPointCasteljau(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, float tess_tol);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBezierCubicClosestPoint@@YA?AUImVec2@@AEBU1@0000H@Z", ExactSpelling = true)]
-        private static extern ImVec2* ImBezierCubicClosestPoint_PInvoke(out ImVec2 __returnBuffer, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, int num_segments);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z21ImBezierQuadraticCalcRK6ImVec2S1_S1_f", ExactSpelling = true)]
+        public static extern ImVec2 ImBezierQuadraticCalc(ImVec2* p1, ImVec2* p2, ImVec2* p3, float t);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImBezierCubicClosestPoint(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, int num_segments)
-        {
-            ImVec2 __returnBuffer;
-            ImBezierCubicClosestPoint_PInvoke(out __returnBuffer, p1, p2, p3, p4, p, num_segments);
-            return __returnBuffer;
-        }
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z18ImLineClosestPointRK6ImVec2S1_S1_", ExactSpelling = true)]
+        public static extern ImVec2 ImLineClosestPoint(ImVec2* a, ImVec2* b, ImVec2* p);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBezierCubicClosestPointCasteljau@@YA?AUImVec2@@AEBU1@0000M@Z", ExactSpelling = true)]
-        private static extern ImVec2* ImBezierCubicClosestPointCasteljau_PInvoke(out ImVec2 __returnBuffer, ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, float tess_tol);
-
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImBezierCubicClosestPointCasteljau(ImVec2* p1, ImVec2* p2, ImVec2* p3, ImVec2* p4, ImVec2* p, float tess_tol)
-        {
-            ImVec2 __returnBuffer;
-            ImBezierCubicClosestPointCasteljau_PInvoke(out __returnBuffer, p1, p2, p3, p4, p, tess_tol);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBezierQuadraticCalc@@YA?AUImVec2@@AEBU1@00M@Z", ExactSpelling = true)]
-        private static extern ImVec2* ImBezierQuadraticCalc_PInvoke(out ImVec2 __returnBuffer, ImVec2* p1, ImVec2* p2, ImVec2* p3, float t);
-
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImBezierQuadraticCalc(ImVec2* p1, ImVec2* p2, ImVec2* p3, float t)
-        {
-            ImVec2 __returnBuffer;
-            ImBezierQuadraticCalc_PInvoke(out __returnBuffer, p1, p2, p3, t);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImLineClosestPoint@@YA?AUImVec2@@AEBU1@00@Z", ExactSpelling = true)]
-        private static extern ImVec2* ImLineClosestPoint_PInvoke(out ImVec2 __returnBuffer, ImVec2* a, ImVec2* b, ImVec2* p);
-
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImLineClosestPoint(ImVec2* a, ImVec2* b, ImVec2* p)
-        {
-            ImVec2 __returnBuffer;
-            ImLineClosestPoint_PInvoke(out __returnBuffer, a, b, p);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTriangleContainsPoint@@YA_NAEBUImVec2@@000@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z23ImTriangleContainsPointRK6ImVec2S1_S1_S1_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImTriangleContainsPoint(ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTriangleClosestPoint@@YA?AUImVec2@@AEBU1@000@Z", ExactSpelling = true)]
-        private static extern ImVec2* ImTriangleClosestPoint_PInvoke(out ImVec2 __returnBuffer, ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z22ImTriangleClosestPointRK6ImVec2S1_S1_S1_", ExactSpelling = true)]
+        public static extern ImVec2 ImTriangleClosestPoint(ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ImTriangleClosestPoint(ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p)
-        {
-            ImVec2 __returnBuffer;
-            ImTriangleClosestPoint_PInvoke(out __returnBuffer, a, b, c, p);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTriangleBarycentricCoords@@YAXAEBUImVec2@@000AEAM11@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z27ImTriangleBarycentricCoordsRK6ImVec2S1_S1_S1_RfS2_S2_", ExactSpelling = true)]
         public static extern void ImTriangleBarycentricCoords(ImVec2* a, ImVec2* b, ImVec2* c, ImVec2* p, float* out_u, float* out_v, float* out_w);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImTriangleArea@@YAMAEBUImVec2@@00@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z14ImTriangleAreaRK6ImVec2S1_S1_", ExactSpelling = true)]
         public static extern float ImTriangleArea(ImVec2* a, ImVec2* b, ImVec2* c);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImGetDirQuadrantFromDelta@@YAHMM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z25ImGetDirQuadrantFromDeltaff", ExactSpelling = true)]
         public static extern ImGuiDir ImGetDirQuadrantFromDelta(float dx, float dy);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBitArrayTestBit@@YA_NPEBIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z17ImBitArrayTestBitPKji", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImBitArrayTestBit(uint* arr, int n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBitArrayClearBit@@YAXPEAIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z18ImBitArrayClearBitPji", ExactSpelling = true)]
         public static extern void ImBitArrayClearBit(uint* arr, int n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBitArraySetBit@@YAXPEAIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z16ImBitArraySetBitPji", ExactSpelling = true)]
         public static extern void ImBitArraySetBit(uint* arr, int n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImBitArraySetBitRange@@YAXPEAIHH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z21ImBitArraySetBitRangePjii", ExactSpelling = true)]
         public static extern void ImBitArraySetBitRange(uint* arr, int n, int n2);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCurrentWindowRead@ImGui@@YAPEAUImGuiWindow@@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20GetCurrentWindowReadEv", ExactSpelling = true)]
         public static extern ImGuiWindow* GetCurrentWindowRead();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCurrentWindow@ImGui@@YAPEAUImGuiWindow@@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16GetCurrentWindowEv", ExactSpelling = true)]
         public static extern ImGuiWindow* GetCurrentWindow();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindWindowByID@ImGui@@YAPEAUImGuiWindow@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14FindWindowByIDEj", ExactSpelling = true)]
         public static extern ImGuiWindow* FindWindowByID(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindWindowByName@ImGui@@YAPEAUImGuiWindow@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16FindWindowByNameEPKc", ExactSpelling = true)]
         public static extern ImGuiWindow* FindWindowByName(byte* name);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?UpdateWindowParentAndRootLinks@ImGui@@YAXPEAUImGuiWindow@@H0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui30UpdateWindowParentAndRootLinksEP11ImGuiWindowiS1_", ExactSpelling = true)]
         public static extern void UpdateWindowParentAndRootLinks(ImGuiWindow* window, ImGuiWindowFlags flags, ImGuiWindow* parent_window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcWindowNextAutoFitSize@ImGui@@YA?AUImVec2@@PEAUImGuiWindow@@@Z", ExactSpelling = true)]
-        private static extern ImVec2* CalcWindowNextAutoFitSize_PInvoke(out ImVec2 __returnBuffer, ImGuiWindow* window);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25CalcWindowNextAutoFitSizeEP11ImGuiWindow", ExactSpelling = true)]
+        public static extern ImVec2 CalcWindowNextAutoFitSize(ImGuiWindow* window);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 CalcWindowNextAutoFitSize(ImGuiWindow* window)
-        {
-            ImVec2 __returnBuffer;
-            CalcWindowNextAutoFitSize_PInvoke(out __returnBuffer, window);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsWindowChildOf@ImGui@@YA_NPEAUImGuiWindow@@0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15IsWindowChildOfEP11ImGuiWindowS1_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsWindowChildOf(ImGuiWindow* window, ImGuiWindow* potential_parent);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsWindowAbove@ImGui@@YA_NPEAUImGuiWindow@@0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13IsWindowAboveEP11ImGuiWindowS1_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsWindowAbove(ImGuiWindow* potential_above, ImGuiWindow* potential_below);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsWindowNavFocusable@ImGui@@YA_NPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20IsWindowNavFocusableEP11ImGuiWindow", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsWindowNavFocusable(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowAllowedExtentRect@ImGui@@YA?AUImRect@@PEAUImGuiWindow@@@Z", ExactSpelling = true)]
-        private static extern ImRect* GetWindowAllowedExtentRect_PInvoke(out ImRect __returnBuffer, ImGuiWindow* window);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui26GetWindowAllowedExtentRectEP11ImGuiWindow", ExactSpelling = true)]
+        public static extern ImRect GetWindowAllowedExtentRect(ImGuiWindow* window);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImRect GetWindowAllowedExtentRect(ImGuiWindow* window)
-        {
-            ImRect __returnBuffer;
-            GetWindowAllowedExtentRect_PInvoke(out __returnBuffer, window);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetWindowPos@ImGui@@YAXPEAUImGuiWindow@@AEBUImVec2@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12SetWindowPosEP11ImGuiWindowRK6ImVec2i", ExactSpelling = true)]
         public static extern void SetWindowPos(ImGuiWindow* window, ImVec2* pos, ImGuiCond cond = ImGuiCond.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetWindowSize@ImGui@@YAXPEAUImGuiWindow@@AEBUImVec2@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13SetWindowSizeEP11ImGuiWindowRK6ImVec2i", ExactSpelling = true)]
         public static extern void SetWindowSize(ImGuiWindow* window, ImVec2* size, ImGuiCond cond = ImGuiCond.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetWindowCollapsed@ImGui@@YAXPEAUImGuiWindow@@_NH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18SetWindowCollapsedEP11ImGuiWindowbi", ExactSpelling = true)]
         public static extern void SetWindowCollapsed(ImGuiWindow* window, [MarshalAs(UnmanagedType.I1)] bool collapsed, ImGuiCond cond = ImGuiCond.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetWindowHitTestHole@ImGui@@YAXPEAUImGuiWindow@@AEBUImVec2@@1@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20SetWindowHitTestHoleEP11ImGuiWindowRK6ImVec2S4_", ExactSpelling = true)]
         public static extern void SetWindowHitTestHole(ImGuiWindow* window, ImVec2* pos, ImVec2* size);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FocusWindow@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11FocusWindowEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void FocusWindow(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FocusTopMostWindowUnderOne@ImGui@@YAXPEAUImGuiWindow@@0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui26FocusTopMostWindowUnderOneEP11ImGuiWindowS1_", ExactSpelling = true)]
         public static extern void FocusTopMostWindowUnderOne(ImGuiWindow* under_this_window, ImGuiWindow* ignore_window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BringWindowToFocusFront@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23BringWindowToFocusFrontEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void BringWindowToFocusFront(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BringWindowToDisplayFront@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25BringWindowToDisplayFrontEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void BringWindowToDisplayFront(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BringWindowToDisplayBack@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui24BringWindowToDisplayBackEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void BringWindowToDisplayBack(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetCurrentFont@ImGui@@YAXPEAUImFont@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14SetCurrentFontEP6ImFont", ExactSpelling = true)]
         public static extern void SetCurrentFont(ImFont* font);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetDefaultFont@ImGui@@YAPEAUImFont@@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14GetDefaultFontEv", ExactSpelling = true)]
         public static extern ImFont* GetDefaultFont();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetForegroundDrawList@ImGui@@YAPEAUImDrawList@@PEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21GetForegroundDrawListEP11ImGuiWindow", ExactSpelling = true)]
         public static extern ImDrawList* GetForegroundDrawList(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Initialize@ImGui@@YAXPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui10InitializeEP12ImGuiContext", ExactSpelling = true)]
         public static extern void Initialize(ImGuiContext* context);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Shutdown@ImGui@@YAXPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui8ShutdownEP12ImGuiContext", ExactSpelling = true)]
         public static extern void Shutdown(ImGuiContext* context);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?UpdateHoveredWindowAndCaptureFlags@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui34UpdateHoveredWindowAndCaptureFlagsEv", ExactSpelling = true)]
         public static extern void UpdateHoveredWindowAndCaptureFlags();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?StartMouseMovingWindow@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22StartMouseMovingWindowEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void StartMouseMovingWindow(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?StartMouseMovingWindowOrNode@ImGui@@YAXPEAUImGuiWindow@@PEAUImGuiDockNode@@_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui28StartMouseMovingWindowOrNodeEP11ImGuiWindowP13ImGuiDockNodeb", ExactSpelling = true)]
         public static extern void StartMouseMovingWindowOrNode(ImGuiWindow* window, ImGuiDockNode* node, [MarshalAs(UnmanagedType.I1)] bool undock_floating_node);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?UpdateMouseMovingWindowNewFrame@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui31UpdateMouseMovingWindowNewFrameEv", ExactSpelling = true)]
         public static extern void UpdateMouseMovingWindowNewFrame();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?UpdateMouseMovingWindowEndFrame@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui31UpdateMouseMovingWindowEndFrameEv", ExactSpelling = true)]
         public static extern void UpdateMouseMovingWindowEndFrame();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddContextHook@ImGui@@YAIPEAUImGuiContext@@PEBUImGuiContextHook@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14AddContextHookEP12ImGuiContextPK16ImGuiContextHook", ExactSpelling = true)]
         public static extern uint AddContextHook(ImGuiContext* context, ImGuiContextHook* hook);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RemoveContextHook@ImGui@@YAXPEAUImGuiContext@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17RemoveContextHookEP12ImGuiContextj", ExactSpelling = true)]
         public static extern void RemoveContextHook(ImGuiContext* context, uint hook_to_remove);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CallContextHooks@ImGui@@YAXPEAUImGuiContext@@W4ImGuiContextHookType@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16CallContextHooksEP12ImGuiContext20ImGuiContextHookType", ExactSpelling = true)]
         public static extern void CallContextHooks(ImGuiContext* context, ImGuiContextHookType type);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TranslateWindowsInViewport@ImGui@@YAXPEAUImGuiViewportP@@AEBUImVec2@@1@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui26TranslateWindowsInViewportEP14ImGuiViewportPRK6ImVec2S4_", ExactSpelling = true)]
         public static extern void TranslateWindowsInViewport(ImGuiViewportP* viewport, ImVec2* old_pos, ImVec2* new_pos);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleWindowsInViewport@ImGui@@YAXPEAUImGuiViewportP@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22ScaleWindowsInViewportEP14ImGuiViewportPf", ExactSpelling = true)]
         public static extern void ScaleWindowsInViewport(ImGuiViewportP* viewport, float scale);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DestroyPlatformWindow@ImGui@@YAXPEAUImGuiViewportP@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21DestroyPlatformWindowEP14ImGuiViewportP", ExactSpelling = true)]
         public static extern void DestroyPlatformWindow(ImGuiViewportP* viewport);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?MarkIniSettingsDirty@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20MarkIniSettingsDirtyEv", ExactSpelling = true)]
         public static extern void MarkIniSettingsDirty();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?MarkIniSettingsDirty@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20MarkIniSettingsDirtyEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void MarkIniSettingsDirty(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearIniSettings@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16ClearIniSettingsEv", ExactSpelling = true)]
         public static extern void ClearIniSettings();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CreateNewWindowSettings@ImGui@@YAPEAUImGuiWindowSettings@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23CreateNewWindowSettingsEPKc", ExactSpelling = true)]
         public static extern ImGuiWindowSettings* CreateNewWindowSettings(byte* name);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindWindowSettings@ImGui@@YAPEAUImGuiWindowSettings@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18FindWindowSettingsEj", ExactSpelling = true)]
         public static extern ImGuiWindowSettings* FindWindowSettings(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindOrCreateWindowSettings@ImGui@@YAPEAUImGuiWindowSettings@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui26FindOrCreateWindowSettingsEPKc", ExactSpelling = true)]
         public static extern ImGuiWindowSettings* FindOrCreateWindowSettings(byte* name);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindSettingsHandler@ImGui@@YAPEAUImGuiSettingsHandler@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19FindSettingsHandlerEPKc", ExactSpelling = true)]
         public static extern ImGuiSettingsHandler* FindSettingsHandler(byte* type_name);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetNextWindowScroll@ImGui@@YAXAEBUImVec2@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19SetNextWindowScrollERK6ImVec2", ExactSpelling = true)]
         public static extern void SetNextWindowScroll(ImVec2* scroll);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetScrollX@ImGui@@YAXPEAUImGuiWindow@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui10SetScrollXEP11ImGuiWindowf", ExactSpelling = true)]
         public static extern void SetScrollX(ImGuiWindow* window, float scroll_x);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetScrollY@ImGui@@YAXPEAUImGuiWindow@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui10SetScrollYEP11ImGuiWindowf", ExactSpelling = true)]
         public static extern void SetScrollY(ImGuiWindow* window, float scroll_y);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetScrollFromPosX@ImGui@@YAXPEAUImGuiWindow@@MM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17SetScrollFromPosXEP11ImGuiWindowff", ExactSpelling = true)]
         public static extern void SetScrollFromPosX(ImGuiWindow* window, float local_x, float center_x_ratio);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetScrollFromPosY@ImGui@@YAXPEAUImGuiWindow@@MM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17SetScrollFromPosYEP11ImGuiWindowff", ExactSpelling = true)]
         public static extern void SetScrollFromPosY(ImGuiWindow* window, float local_y, float center_y_ratio);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScrollToBringRectIntoView@ImGui@@YA?AUImVec2@@PEAUImGuiWindow@@AEBUImRect@@@Z", ExactSpelling = true)]
-        private static extern ImVec2* ScrollToBringRectIntoView_PInvoke(out ImVec2 __returnBuffer, ImGuiWindow* window, ImRect* item_rect);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25ScrollToBringRectIntoViewEP11ImGuiWindowRK6ImRect", ExactSpelling = true)]
+        public static extern ImVec2 ScrollToBringRectIntoView(ImGuiWindow* window, ImRect* item_rect);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 ScrollToBringRectIntoView(ImGuiWindow* window, ImRect* item_rect)
-        {
-            ImVec2 __returnBuffer;
-            ScrollToBringRectIntoView_PInvoke(out __returnBuffer, window, item_rect);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetItemID@ImGui@@YAIXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui9GetItemIDEv", ExactSpelling = true)]
         public static extern uint GetItemID();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetItemStatusFlags@ImGui@@YAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18GetItemStatusFlagsEv", ExactSpelling = true)]
         public static extern ImGuiItemStatusFlags GetItemStatusFlags();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetActiveID@ImGui@@YAIXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11GetActiveIDEv", ExactSpelling = true)]
         public static extern uint GetActiveID();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFocusID@ImGui@@YAIXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui10GetFocusIDEv", ExactSpelling = true)]
         public static extern uint GetFocusID();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetItemsFlags@ImGui@@YAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13GetItemsFlagsEv", ExactSpelling = true)]
         public static extern ImGuiItemFlags GetItemsFlags();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetActiveID@ImGui@@YAXIPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11SetActiveIDEjP11ImGuiWindow", ExactSpelling = true)]
         public static extern void SetActiveID(uint id, ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetFocusID@ImGui@@YAXIPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui10SetFocusIDEjP11ImGuiWindow", ExactSpelling = true)]
         public static extern void SetFocusID(uint id, ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearActiveID@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13ClearActiveIDEv", ExactSpelling = true)]
         public static extern void ClearActiveID();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetHoveredID@ImGui@@YAIXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12GetHoveredIDEv", ExactSpelling = true)]
         public static extern uint GetHoveredID();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetHoveredID@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12SetHoveredIDEj", ExactSpelling = true)]
         public static extern void SetHoveredID(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?KeepAliveID@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11KeepAliveIDEj", ExactSpelling = true)]
         public static extern void KeepAliveID(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?MarkItemEdited@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14MarkItemEditedEj", ExactSpelling = true)]
         public static extern void MarkItemEdited(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushOverrideID@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14PushOverrideIDEj", ExactSpelling = true)]
         public static extern void PushOverrideID(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIDWithSeed@ImGui@@YAIPEBD0I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13GetIDWithSeedEPKcS1_j", ExactSpelling = true)]
         public static extern uint GetIDWithSeed(byte* str_id_begin, byte* str_id_end, uint seed);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ItemSize@ImGui@@YAXAEBUImVec2@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui8ItemSizeERK6ImVec2f", ExactSpelling = true)]
         public static extern void ItemSize(ImVec2* size, float text_baseline_y = -1f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ItemSize@ImGui@@YAXAEBUImRect@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui8ItemSizeERK6ImRectf", ExactSpelling = true)]
         public static extern void ItemSize(ImRect* bb, float text_baseline_y = -1f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ItemAdd@ImGui@@YA_NAEBUImRect@@IPEBU2@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui7ItemAddERK6ImRectjPS1_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ItemAdd(ImRect* bb, uint id, ImRect* nav_bb = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ItemHoverable@ImGui@@YA_NAEBUImRect@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13ItemHoverableERK6ImRectj", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ItemHoverable(ImRect* bb, uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsClippedEx@ImGui@@YA_NAEBUImRect@@I_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11IsClippedExERK6ImRectjb", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsClippedEx(ImRect* bb, uint id, [MarshalAs(UnmanagedType.I1)] bool clip_even_when_logged);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetLastItemData@ImGui@@YAXPEAUImGuiWindow@@IHAEBUImRect@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15SetLastItemDataEP11ImGuiWindowjiRK6ImRect", ExactSpelling = true)]
         public static extern void SetLastItemData(ImGuiWindow* window, uint item_id, ImGuiItemStatusFlags status_flags, ImRect* item_rect);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FocusableItemRegister@ImGui@@YA_NPEAUImGuiWindow@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21FocusableItemRegisterEP11ImGuiWindowj", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool FocusableItemRegister(ImGuiWindow* window, uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FocusableItemUnregister@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23FocusableItemUnregisterEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void FocusableItemUnregister(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcItemSize@ImGui@@YA?AUImVec2@@U2@MM@Z", ExactSpelling = true)]
-        private static extern ImVec2* CalcItemSize_PInvoke(out ImVec2 __returnBuffer, ImVec2 size, float default_w, float default_h);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12CalcItemSizeE6ImVec2ff", ExactSpelling = true)]
+        public static extern ImVec2 CalcItemSize(ImVec2 size, float default_w, float default_h);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 CalcItemSize(ImVec2 size, float default_w, float default_h)
-        {
-            ImVec2 __returnBuffer;
-            CalcItemSize_PInvoke(out __returnBuffer, size, default_w, default_h);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcWrapWidthForPos@ImGui@@YAMAEBUImVec2@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19CalcWrapWidthForPosERK6ImVec2f", ExactSpelling = true)]
         public static extern float CalcWrapWidthForPos(ImVec2* pos, float wrap_pos_x);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushMultiItemsWidths@ImGui@@YAXHM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20PushMultiItemsWidthsEif", ExactSpelling = true)]
         public static extern void PushMultiItemsWidths(int components, float width_full);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushItemFlag@ImGui@@YAXH_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12PushItemFlagEib", ExactSpelling = true)]
         public static extern void PushItemFlag(ImGuiItemFlags option, [MarshalAs(UnmanagedType.I1)] bool enabled);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopItemFlag@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11PopItemFlagEv", ExactSpelling = true)]
         public static extern void PopItemFlag();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsItemToggledSelection@ImGui@@YA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22IsItemToggledSelectionEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsItemToggledSelection();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetContentRegionMaxAbs@ImGui@@YA?AUImVec2@@XZ", ExactSpelling = true)]
-        private static extern ImVec2* GetContentRegionMaxAbs_PInvoke(out ImVec2 __returnBuffer);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22GetContentRegionMaxAbsEv", ExactSpelling = true)]
+        public static extern ImVec2 GetContentRegionMaxAbs();
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 GetContentRegionMaxAbs()
-        {
-            ImVec2 __returnBuffer;
-            GetContentRegionMaxAbs_PInvoke(out __returnBuffer);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShrinkWidths@ImGui@@YAXPEAUImGuiShrinkWidthItem@@HM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12ShrinkWidthsEP20ImGuiShrinkWidthItemif", ExactSpelling = true)]
         public static extern void ShrinkWidths(ImGuiShrinkWidthItem* items, int count, float width_excess);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?LogBegin@ImGui@@YAXW4ImGuiLogType@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui8LogBeginE12ImGuiLogTypei", ExactSpelling = true)]
         public static extern void LogBegin(ImGuiLogType type, int auto_open_depth);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?LogToBuffer@ImGui@@YAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11LogToBufferEi", ExactSpelling = true)]
         public static extern void LogToBuffer(int auto_open_depth = -1);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?LogRenderedText@ImGui@@YAXPEBUImVec2@@PEBD1@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15LogRenderedTextEPK6ImVec2PKcS4_", ExactSpelling = true)]
         public static extern void LogRenderedText(ImVec2* ref_pos, byte* text, byte* text_end = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?LogSetNextTextDecoration@ImGui@@YAXPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui24LogSetNextTextDecorationEPKcS1_", ExactSpelling = true)]
         public static extern void LogSetNextTextDecoration(byte* prefix, byte* suffix);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginChildEx@ImGui@@YA_NPEBDIAEBUImVec2@@_NH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12BeginChildExEPKcjRK6ImVec2bi", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool BeginChildEx(byte* name, uint id, ImVec2* size_arg, [MarshalAs(UnmanagedType.I1)] bool border, ImGuiWindowFlags flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?OpenPopupEx@ImGui@@YAXIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11OpenPopupExEji", ExactSpelling = true)]
         public static extern void OpenPopupEx(uint id, ImGuiPopupFlags popup_flags = ImGuiPopupFlags.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClosePopupToLevel@ImGui@@YAXH_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17ClosePopupToLevelEib", ExactSpelling = true)]
         public static extern void ClosePopupToLevel(int remaining, [MarshalAs(UnmanagedType.I1)] bool restore_focus_to_window_under_popup);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClosePopupsOverWindow@ImGui@@YAXPEAUImGuiWindow@@_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21ClosePopupsOverWindowEP11ImGuiWindowb", ExactSpelling = true)]
         public static extern void ClosePopupsOverWindow(ImGuiWindow* ref_window, [MarshalAs(UnmanagedType.I1)] bool restore_focus_to_window_under_popup);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPopupOpen@ImGui@@YA_NIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11IsPopupOpenEji", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsPopupOpen(uint id, ImGuiPopupFlags popup_flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginPopupEx@ImGui@@YA_NIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12BeginPopupExEji", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool BeginPopupEx(uint id, ImGuiWindowFlags extra_flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginTooltipEx@ImGui@@YAXHH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14BeginTooltipExEii", ExactSpelling = true)]
         public static extern void BeginTooltipEx(ImGuiWindowFlags extra_flags, ImGuiTooltipFlags tooltip_flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTopMostPopupModal@ImGui@@YAPEAUImGuiWindow@@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20GetTopMostPopupModalEv", ExactSpelling = true)]
         public static extern ImGuiWindow* GetTopMostPopupModal();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindBestWindowPosForPopup@ImGui@@YA?AUImVec2@@PEAUImGuiWindow@@@Z", ExactSpelling = true)]
-        private static extern ImVec2* FindBestWindowPosForPopup_PInvoke(out ImVec2 __returnBuffer, ImGuiWindow* window);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25FindBestWindowPosForPopupEP11ImGuiWindow", ExactSpelling = true)]
+        public static extern ImVec2 FindBestWindowPosForPopup(ImGuiWindow* window);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 FindBestWindowPosForPopup(ImGuiWindow* window)
-        {
-            ImVec2 __returnBuffer;
-            FindBestWindowPosForPopup_PInvoke(out __returnBuffer, window);
-            return __returnBuffer;
-        }
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui27FindBestWindowPosForPopupExERK6ImVec2S2_PiRK6ImRectS6_24ImGuiPopupPositionPolicy", ExactSpelling = true)]
+        public static extern ImVec2 FindBestWindowPosForPopupEx(ImVec2* ref_pos, ImVec2* size, ImGuiDir* last_dir, ImRect* r_outer, ImRect* r_avoid, ImGuiPopupPositionPolicy policy);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindBestWindowPosForPopupEx@ImGui@@YA?AUImVec2@@AEBU2@0PEAHAEBUImRect@@2W4ImGuiPopupPositionPolicy@@@Z", ExactSpelling = true)]
-        private static extern ImVec2* FindBestWindowPosForPopupEx_PInvoke(out ImVec2 __returnBuffer, ImVec2* ref_pos, ImVec2* size, ImGuiDir* last_dir, ImRect* r_outer, ImRect* r_avoid, ImGuiPopupPositionPolicy policy);
-
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 FindBestWindowPosForPopupEx(ImVec2* ref_pos, ImVec2* size, ImGuiDir* last_dir, ImRect* r_outer, ImRect* r_avoid, ImGuiPopupPositionPolicy policy)
-        {
-            ImVec2 __returnBuffer;
-            FindBestWindowPosForPopupEx_PInvoke(out __returnBuffer, ref_pos, size, last_dir, r_outer, r_avoid, policy);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?NavInitWindow@ImGui@@YAXPEAUImGuiWindow@@_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13NavInitWindowEP11ImGuiWindowb", ExactSpelling = true)]
         public static extern void NavInitWindow(ImGuiWindow* window, [MarshalAs(UnmanagedType.I1)] bool force_reinit);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?NavMoveRequestButNoResultYet@ImGui@@YA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui28NavMoveRequestButNoResultYetEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool NavMoveRequestButNoResultYet();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?NavMoveRequestCancel@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20NavMoveRequestCancelEv", ExactSpelling = true)]
         public static extern void NavMoveRequestCancel();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?NavMoveRequestForward@ImGui@@YAXHHAEBUImRect@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21NavMoveRequestForwardEiiRK6ImRecti", ExactSpelling = true)]
         public static extern void NavMoveRequestForward(ImGuiDir move_dir, ImGuiDir clip_dir, ImRect* bb_rel, ImGuiNavMoveFlags move_flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?NavMoveRequestTryWrapping@ImGui@@YAXPEAUImGuiWindow@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25NavMoveRequestTryWrappingEP11ImGuiWindowi", ExactSpelling = true)]
         public static extern void NavMoveRequestTryWrapping(ImGuiWindow* window, ImGuiNavMoveFlags move_flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetNavInputAmount@ImGui@@YAMHW4ImGuiInputReadMode@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17GetNavInputAmountEi18ImGuiInputReadMode", ExactSpelling = true)]
         public static extern float GetNavInputAmount(ImGuiNavInput n, ImGuiInputReadMode mode);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetNavInputAmount2d@ImGui@@YA?AUImVec2@@HW4ImGuiInputReadMode@@MM@Z", ExactSpelling = true)]
-        private static extern ImVec2* GetNavInputAmount2d_PInvoke(out ImVec2 __returnBuffer, ImGuiNavDirSourceFlags dir_sources, ImGuiInputReadMode mode, float slow_factor = 0f, float fast_factor = 0f);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19GetNavInputAmount2dEi18ImGuiInputReadModeff", ExactSpelling = true)]
+        public static extern ImVec2 GetNavInputAmount2d(ImGuiNavDirSourceFlags dir_sources, ImGuiInputReadMode mode, float slow_factor = 0f, float fast_factor = 0f);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 GetNavInputAmount2d(ImGuiNavDirSourceFlags dir_sources, ImGuiInputReadMode mode, float slow_factor = 0f, float fast_factor = 0f)
-        {
-            ImVec2 __returnBuffer;
-            GetNavInputAmount2d_PInvoke(out __returnBuffer, dir_sources, mode, slow_factor, fast_factor);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcTypematicRepeatAmount@ImGui@@YAHMMMM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25CalcTypematicRepeatAmountEffff", ExactSpelling = true)]
         public static extern int CalcTypematicRepeatAmount(float t0, float t1, float repeat_delay, float repeat_rate);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ActivateItem@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12ActivateItemEj", ExactSpelling = true)]
         public static extern void ActivateItem(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetNavID@ImGui@@YAXIHI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui8SetNavIDEjij", ExactSpelling = true)]
         public static extern void SetNavID(uint id, int nav_layer, uint focus_scope_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetNavIDWithRectRel@ImGui@@YAXIHIAEBUImRect@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19SetNavIDWithRectRelEjijRK6ImRect", ExactSpelling = true)]
         public static extern void SetNavIDWithRectRel(uint id, int nav_layer, uint focus_scope_id, ImRect* rect_rel);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushFocusScope@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14PushFocusScopeEj", ExactSpelling = true)]
         public static extern void PushFocusScope(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopFocusScope@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13PopFocusScopeEv", ExactSpelling = true)]
         public static extern void PopFocusScope();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFocusedFocusScope@ImGui@@YAIXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20GetFocusedFocusScopeEv", ExactSpelling = true)]
         public static extern uint GetFocusedFocusScope();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetFocusScope@ImGui@@YAIXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13GetFocusScopeEv", ExactSpelling = true)]
         public static extern uint GetFocusScope();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetItemUsingMouseWheel@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22SetItemUsingMouseWheelEv", ExactSpelling = true)]
         public static extern void SetItemUsingMouseWheel();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsActiveIdUsingNavDir@ImGui@@YA_NH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21IsActiveIdUsingNavDirEi", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsActiveIdUsingNavDir(ImGuiDir dir);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsActiveIdUsingNavInput@ImGui@@YA_NH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23IsActiveIdUsingNavInputEi", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsActiveIdUsingNavInput(ImGuiNavInput input);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsActiveIdUsingKey@ImGui@@YA_NH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18IsActiveIdUsingKeyEi", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsActiveIdUsingKey(ImGuiKey key);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsMouseDragPastThreshold@ImGui@@YA_NHM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui24IsMouseDragPastThresholdEif", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsMouseDragPastThreshold(ImGuiMouseButton button, float lock_threshold = -1f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsKeyPressedMap@ImGui@@YA_NH_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15IsKeyPressedMapEib", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsKeyPressedMap(ImGuiKey key, [MarshalAs(UnmanagedType.I1)] bool repeat = true);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsNavInputDown@ImGui@@YA_NH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14IsNavInputDownEi", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsNavInputDown(ImGuiNavInput n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsNavInputTest@ImGui@@YA_NHW4ImGuiInputReadMode@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14IsNavInputTestEi18ImGuiInputReadMode", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsNavInputTest(ImGuiNavInput n, ImGuiInputReadMode rm);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetMergedKeyModFlags@ImGui@@YAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20GetMergedKeyModFlagsEv", ExactSpelling = true)]
         public static extern ImGuiKeyModFlags GetMergedKeyModFlags();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextInitialize@ImGui@@YAXPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21DockContextInitializeEP12ImGuiContext", ExactSpelling = true)]
         public static extern void DockContextInitialize(ImGuiContext* ctx);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextShutdown@ImGui@@YAXPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19DockContextShutdownEP12ImGuiContext", ExactSpelling = true)]
         public static extern void DockContextShutdown(ImGuiContext* ctx);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextClearNodes@ImGui@@YAXPEAUImGuiContext@@I_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21DockContextClearNodesEP12ImGuiContextjb", ExactSpelling = true)]
         public static extern void DockContextClearNodes(ImGuiContext* ctx, uint root_id, [MarshalAs(UnmanagedType.I1)] bool clear_settings_refs);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextRebuildNodes@ImGui@@YAXPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23DockContextRebuildNodesEP12ImGuiContext", ExactSpelling = true)]
         public static extern void DockContextRebuildNodes(ImGuiContext* ctx);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextNewFrameUpdateUndocking@ImGui@@YAXPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui34DockContextNewFrameUpdateUndockingEP12ImGuiContext", ExactSpelling = true)]
         public static extern void DockContextNewFrameUpdateUndocking(ImGuiContext* ctx);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextNewFrameUpdateDocking@ImGui@@YAXPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui32DockContextNewFrameUpdateDockingEP12ImGuiContext", ExactSpelling = true)]
         public static extern void DockContextNewFrameUpdateDocking(ImGuiContext* ctx);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextGenNodeID@ImGui@@YAIPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20DockContextGenNodeIDEP12ImGuiContext", ExactSpelling = true)]
         public static extern uint DockContextGenNodeID(ImGuiContext* ctx);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextQueueDock@ImGui@@YAXPEAUImGuiContext@@PEAUImGuiWindow@@PEAUImGuiDockNode@@1HM_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20DockContextQueueDockEP12ImGuiContextP11ImGuiWindowP13ImGuiDockNodeS3_ifb", ExactSpelling = true)]
         public static extern void DockContextQueueDock(ImGuiContext* ctx, ImGuiWindow* target, ImGuiDockNode* target_node, ImGuiWindow* payload, ImGuiDir split_dir, float split_ratio, [MarshalAs(UnmanagedType.I1)] bool split_outer);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextQueueUndockWindow@ImGui@@YAXPEAUImGuiContext@@PEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui28DockContextQueueUndockWindowEP12ImGuiContextP11ImGuiWindow", ExactSpelling = true)]
         public static extern void DockContextQueueUndockWindow(ImGuiContext* ctx, ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextQueueUndockNode@ImGui@@YAXPEAUImGuiContext@@PEAUImGuiDockNode@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui26DockContextQueueUndockNodeEP12ImGuiContextP13ImGuiDockNode", ExactSpelling = true)]
         public static extern void DockContextQueueUndockNode(ImGuiContext* ctx, ImGuiDockNode* node);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockContextCalcDropPosForDocking@ImGui@@YA_NPEAUImGuiWindow@@PEAUImGuiDockNode@@0H_NPEAUImVec2@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui32DockContextCalcDropPosForDockingEP11ImGuiWindowP13ImGuiDockNodeS1_ibP6ImVec2", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool DockContextCalcDropPosForDocking(ImGuiWindow* target, ImGuiDockNode* target_node, ImGuiWindow* payload, ImGuiDir split_dir, [MarshalAs(UnmanagedType.I1)] bool split_outer, ImVec2* out_pos);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockNodeBeginAmendTabBar@ImGui@@YA_NPEAUImGuiDockNode@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui24DockNodeBeginAmendTabBarEP13ImGuiDockNode", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool DockNodeBeginAmendTabBar(ImGuiDockNode* node);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockNodeEndAmendTabBar@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22DockNodeEndAmendTabBarEv", ExactSpelling = true)]
         public static extern void DockNodeEndAmendTabBar();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockNodeGetRootNode@ImGui@@YAPEAUImGuiDockNode@@PEAU2@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19DockNodeGetRootNodeEP13ImGuiDockNode", ExactSpelling = true)]
         public static extern ImGuiDockNode* DockNodeGetRootNode(ImGuiDockNode* node);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockNodeGetDepth@ImGui@@YAHPEBUImGuiDockNode@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16DockNodeGetDepthEPK13ImGuiDockNode", ExactSpelling = true)]
         public static extern int DockNodeGetDepth(ImGuiDockNode* node);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowDockNode@ImGui@@YAPEAUImGuiDockNode@@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17GetWindowDockNodeEv", ExactSpelling = true)]
         public static extern ImGuiDockNode* GetWindowDockNode();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowAlwaysWantOwnTabBar@ImGui@@YA_NPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui28GetWindowAlwaysWantOwnTabBarEP11ImGuiWindow", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool GetWindowAlwaysWantOwnTabBar(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginDocked@ImGui@@YAXPEAUImGuiWindow@@PEA_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11BeginDockedEP11ImGuiWindowPb", ExactSpelling = true)]
         public static extern void BeginDocked(ImGuiWindow* window, bool* p_open);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginDockableDragDropSource@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui27BeginDockableDragDropSourceEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void BeginDockableDragDropSource(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginDockableDragDropTarget@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui27BeginDockableDragDropTargetEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void BeginDockableDragDropTarget(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetWindowDock@ImGui@@YAXPEAUImGuiWindow@@IH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13SetWindowDockEP11ImGuiWindowji", ExactSpelling = true)]
         public static extern void SetWindowDock(ImGuiWindow* window, uint dock_id, ImGuiCond cond);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderDockWindow@ImGui@@YAXPEBDI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21DockBuilderDockWindowEPKcj", ExactSpelling = true)]
         public static extern void DockBuilderDockWindow(byte* window_name, uint node_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderGetNode@ImGui@@YAPEAUImGuiDockNode@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18DockBuilderGetNodeEj", ExactSpelling = true)]
         public static extern ImGuiDockNode* DockBuilderGetNode(uint node_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderGetCentralNode@ImGui@@YAPEAUImGuiDockNode@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25DockBuilderGetCentralNodeEj", ExactSpelling = true)]
         public static extern ImGuiDockNode* DockBuilderGetCentralNode(uint node_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderAddNode@ImGui@@YAIIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18DockBuilderAddNodeEji", ExactSpelling = true)]
         public static extern uint DockBuilderAddNode(uint node_id = 0, ImGuiDockNodeFlags flags = ImGuiDockNodeFlags.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderRemoveNode@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21DockBuilderRemoveNodeEj", ExactSpelling = true)]
         public static extern void DockBuilderRemoveNode(uint node_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderRemoveNodeDockedWindows@ImGui@@YAXI_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui34DockBuilderRemoveNodeDockedWindowsEjb", ExactSpelling = true)]
         public static extern void DockBuilderRemoveNodeDockedWindows(uint node_id, [MarshalAs(UnmanagedType.I1)] bool clear_settings_refs = true);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderRemoveNodeChildNodes@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui31DockBuilderRemoveNodeChildNodesEj", ExactSpelling = true)]
         public static extern void DockBuilderRemoveNodeChildNodes(uint node_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderSetNodePos@ImGui@@YAXIUImVec2@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21DockBuilderSetNodePosEj6ImVec2", ExactSpelling = true)]
         public static extern void DockBuilderSetNodePos(uint node_id, ImVec2 pos);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderSetNodeSize@ImGui@@YAXIUImVec2@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22DockBuilderSetNodeSizeEj6ImVec2", ExactSpelling = true)]
         public static extern void DockBuilderSetNodeSize(uint node_id, ImVec2 size);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderSplitNode@ImGui@@YAIIHMPEAI0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20DockBuilderSplitNodeEjifPjS0_", ExactSpelling = true)]
         public static extern uint DockBuilderSplitNode(uint node_id, ImGuiDir split_dir, float size_ratio_for_node_at_dir, uint* out_id_at_dir, uint* out_id_at_opposite_dir);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderCopyDockSpace@ImGui@@YAXIIPEAU?$ImVector@PEBD@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui24DockBuilderCopyDockSpaceEjjP8ImVectorIPKcE", ExactSpelling = true)]
         public static extern void DockBuilderCopyDockSpace(uint src_dockspace_id, uint dst_dockspace_id, ImVector<Pointer<byte>>* in_window_remap_pairs);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderCopyNode@ImGui@@YAXIIPEAU?$ImVector@I@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19DockBuilderCopyNodeEjjP8ImVectorIjE", ExactSpelling = true)]
         public static extern void DockBuilderCopyNode(uint src_node_id, uint dst_node_id, ImVector<uint>* out_node_remap_pairs);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderCopyWindowSettings@ImGui@@YAXPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui29DockBuilderCopyWindowSettingsEPKcS1_", ExactSpelling = true)]
         public static extern void DockBuilderCopyWindowSettings(byte* src_name, byte* dst_name);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DockBuilderFinish@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17DockBuilderFinishEj", ExactSpelling = true)]
         public static extern void DockBuilderFinish(uint node_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginDragDropTargetCustom@ImGui@@YA_NAEBUImRect@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25BeginDragDropTargetCustomERK6ImRectj", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool BeginDragDropTargetCustom(ImRect* bb, uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearDragDrop@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13ClearDragDropEv", ExactSpelling = true)]
         public static extern void ClearDragDrop();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDragDropPayloadBeingAccepted@ImGui@@YA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui30IsDragDropPayloadBeingAcceptedEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool IsDragDropPayloadBeingAccepted();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetWindowClipRectBeforeSetChannel@ImGui@@YAXPEAUImGuiWindow@@AEBUImRect@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui33SetWindowClipRectBeforeSetChannelEP11ImGuiWindowRK6ImRect", ExactSpelling = true)]
         public static extern void SetWindowClipRectBeforeSetChannel(ImGuiWindow* window, ImRect* clip_rect);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginColumns@ImGui@@YAXPEBDHH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12BeginColumnsEPKcii", ExactSpelling = true)]
         public static extern void BeginColumns(byte* str_id, int count, ImGuiOldColumnFlags flags = ImGuiOldColumnFlags.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?EndColumns@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui10EndColumnsEv", ExactSpelling = true)]
         public static extern void EndColumns();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushColumnClipRect@ImGui@@YAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18PushColumnClipRectEi", ExactSpelling = true)]
         public static extern void PushColumnClipRect(int column_index);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PushColumnsBackground@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21PushColumnsBackgroundEv", ExactSpelling = true)]
         public static extern void PushColumnsBackground();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PopColumnsBackground@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20PopColumnsBackgroundEv", ExactSpelling = true)]
         public static extern void PopColumnsBackground();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColumnsID@ImGui@@YAIPEBDH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12GetColumnsIDEPKci", ExactSpelling = true)]
         public static extern uint GetColumnsID(byte* str_id, int count);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindOrCreateColumns@ImGui@@YAPEAUImGuiOldColumns@@PEAUImGuiWindow@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19FindOrCreateColumnsEP11ImGuiWindowj", ExactSpelling = true)]
         public static extern ImGuiOldColumns* FindOrCreateColumns(ImGuiWindow* window, uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColumnOffsetFromNorm@ImGui@@YAMPEBUImGuiOldColumns@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23GetColumnOffsetFromNormEPK15ImGuiOldColumnsf", ExactSpelling = true)]
         public static extern float GetColumnOffsetFromNorm(ImGuiOldColumns* columns, float offset_norm);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColumnNormFromOffset@ImGui@@YAMPEBUImGuiOldColumns@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23GetColumnNormFromOffsetEPK15ImGuiOldColumnsf", ExactSpelling = true)]
         public static extern float GetColumnNormFromOffset(ImGuiOldColumns* columns, float offset);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableOpenContextMenu@ImGui@@YAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20TableOpenContextMenuEi", ExactSpelling = true)]
         public static extern void TableOpenContextMenu(int column_n = -1);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetColumnEnabled@ImGui@@YAXH_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21TableSetColumnEnabledEib", ExactSpelling = true)]
         public static extern void TableSetColumnEnabled(int column_n, [MarshalAs(UnmanagedType.I1)] bool enabled);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetColumnWidth@ImGui@@YAXHM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19TableSetColumnWidthEif", ExactSpelling = true)]
         public static extern void TableSetColumnWidth(int column_n, float width);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetColumnSortDirection@ImGui@@YAXHH_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui27TableSetColumnSortDirectionEiib", ExactSpelling = true)]
         public static extern void TableSetColumnSortDirection(int column_n, ImGuiSortDirection sort_direction, [MarshalAs(UnmanagedType.I1)] bool append_to_sort_specs);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetHoveredColumn@ImGui@@YAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21TableGetHoveredColumnEv", ExactSpelling = true)]
         public static extern int TableGetHoveredColumn();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetHeaderRowHeight@ImGui@@YAMXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23TableGetHeaderRowHeightEv", ExactSpelling = true)]
         public static extern float TableGetHeaderRowHeight();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TablePushBackgroundChannel@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui26TablePushBackgroundChannelEv", ExactSpelling = true)]
         public static extern void TablePushBackgroundChannel();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TablePopBackgroundChannel@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25TablePopBackgroundChannelEv", ExactSpelling = true)]
         public static extern void TablePopBackgroundChannel();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCurrentTable@ImGui@@YAPEAUImGuiTable@@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15GetCurrentTableEv", ExactSpelling = true)]
         public static extern ImGuiTable* GetCurrentTable();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableFindByID@ImGui@@YAPEAUImGuiTable@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13TableFindByIDEj", ExactSpelling = true)]
         public static extern ImGuiTable* TableFindByID(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginTableEx@ImGui@@YA_NPEBDIHHAEBUImVec2@@M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12BeginTableExEPKcjiiRK6ImVec2f", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool BeginTableEx(byte* name, uint id, int columns_count, ImGuiTableFlags flags, ImVec2* outer_size, float inner_width = 0f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableBeginInitMemory@ImGui@@YAXPEAUImGuiTable@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20TableBeginInitMemoryEP10ImGuiTablei", ExactSpelling = true)]
         public static extern void TableBeginInitMemory(ImGuiTable* table, int columns_count);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableBeginApplyRequests@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23TableBeginApplyRequestsEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableBeginApplyRequests(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetupDrawChannels@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22TableSetupDrawChannelsEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableSetupDrawChannels(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableUpdateLayout@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17TableUpdateLayoutEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableUpdateLayout(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableUpdateBorders@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18TableUpdateBordersEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableUpdateBorders(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableUpdateColumnsWeightFromWidth@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui33TableUpdateColumnsWeightFromWidthEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableUpdateColumnsWeightFromWidth(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableDrawBorders@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16TableDrawBordersEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableDrawBorders(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableDrawContextMenu@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20TableDrawContextMenuEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableDrawContextMenu(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableMergeDrawChannels@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22TableMergeDrawChannelsEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableMergeDrawChannels(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSortSpecsSanitize@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22TableSortSpecsSanitizeEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableSortSpecsSanitize(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSortSpecsBuild@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19TableSortSpecsBuildEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableSortSpecsBuild(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnNextSortDirection@ImGui@@YAHPEAUImGuiTableColumn@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui31TableGetColumnNextSortDirectionEP16ImGuiTableColumn", ExactSpelling = true)]
         public static extern ImGuiSortDirection TableGetColumnNextSortDirection(ImGuiTableColumn* column);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableFixColumnSortDirection@ImGui@@YAXPEAUImGuiTable@@PEAUImGuiTableColumn@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui27TableFixColumnSortDirectionEP10ImGuiTableP16ImGuiTableColumn", ExactSpelling = true)]
         public static extern void TableFixColumnSortDirection(ImGuiTable* table, ImGuiTableColumn* column);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnWidthAuto@ImGui@@YAMPEAUImGuiTable@@PEAUImGuiTableColumn@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23TableGetColumnWidthAutoEP10ImGuiTableP16ImGuiTableColumn", ExactSpelling = true)]
         public static extern float TableGetColumnWidthAuto(ImGuiTable* table, ImGuiTableColumn* column);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableBeginRow@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13TableBeginRowEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableBeginRow(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableEndRow@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11TableEndRowEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableEndRow(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableBeginCell@ImGui@@YAXPEAUImGuiTable@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14TableBeginCellEP10ImGuiTablei", ExactSpelling = true)]
         public static extern void TableBeginCell(ImGuiTable* table, int column_n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableEndCell@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12TableEndCellEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableEndCell(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetCellBgRect@ImGui@@YA?AUImRect@@PEBUImGuiTable@@H@Z", ExactSpelling = true)]
-        private static extern ImRect* TableGetCellBgRect_PInvoke(out ImRect __returnBuffer, ImGuiTable* table, int column_n);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18TableGetCellBgRectEPK10ImGuiTablei", ExactSpelling = true)]
+        public static extern ImRect TableGetCellBgRect(ImGuiTable* table, int column_n);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImRect TableGetCellBgRect(ImGuiTable* table, int column_n)
-        {
-            ImRect __returnBuffer;
-            TableGetCellBgRect_PInvoke(out __returnBuffer, table, column_n);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnName@ImGui@@YAPEBDPEBUImGuiTable@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18TableGetColumnNameEPK10ImGuiTablei", ExactSpelling = true)]
         public static extern byte* TableGetColumnName(ImGuiTable* table, int column_n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetColumnResizeID@ImGui@@YAIPEBUImGuiTable@@HH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22TableGetColumnResizeIDEPK10ImGuiTableii", ExactSpelling = true)]
         public static extern uint TableGetColumnResizeID(ImGuiTable* table, int column_n, int instance_no = 0);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetMaxColumnWidth@ImGui@@YAMPEBUImGuiTable@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22TableGetMaxColumnWidthEPK10ImGuiTablei", ExactSpelling = true)]
         public static extern float TableGetMaxColumnWidth(ImGuiTable* table, int column_n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetColumnWidthAutoSingle@ImGui@@YAXPEAUImGuiTable@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui29TableSetColumnWidthAutoSingleEP10ImGuiTablei", ExactSpelling = true)]
         public static extern void TableSetColumnWidthAutoSingle(ImGuiTable* table, int column_n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSetColumnWidthAutoAll@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui26TableSetColumnWidthAutoAllEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableSetColumnWidthAutoAll(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableRemove@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11TableRemoveEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableRemove(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGcCompactTransientBuffers@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui30TableGcCompactTransientBuffersEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableGcCompactTransientBuffers(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGcCompactSettings@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22TableGcCompactSettingsEv", ExactSpelling = true)]
         public static extern void TableGcCompactSettings();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableLoadSettings@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17TableLoadSettingsEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableLoadSettings(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSaveSettings@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17TableSaveSettingsEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableSaveSettings(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableResetSettings@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18TableResetSettingsEP10ImGuiTable", ExactSpelling = true)]
         public static extern void TableResetSettings(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableGetBoundSettings@ImGui@@YAPEAUImGuiTableSettings@@PEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21TableGetBoundSettingsEP10ImGuiTable", ExactSpelling = true)]
         public static extern ImGuiTableSettings* TableGetBoundSettings(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSettingsInstallHandler@ImGui@@YAXPEAUImGuiContext@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui27TableSettingsInstallHandlerEP12ImGuiContext", ExactSpelling = true)]
         public static extern void TableSettingsInstallHandler(ImGuiContext* context);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSettingsCreate@ImGui@@YAPEAUImGuiTableSettings@@IH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19TableSettingsCreateEji", ExactSpelling = true)]
         public static extern ImGuiTableSettings* TableSettingsCreate(uint id, int columns_count);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TableSettingsFindByID@ImGui@@YAPEAUImGuiTableSettings@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21TableSettingsFindByIDEj", ExactSpelling = true)]
         public static extern ImGuiTableSettings* TableSettingsFindByID(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BeginTabBarEx@ImGui@@YA_NPEAUImGuiTabBar@@AEBUImRect@@HPEAUImGuiDockNode@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13BeginTabBarExEP11ImGuiTabBarRK6ImRectiP13ImGuiDockNode", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool BeginTabBarEx(ImGuiTabBar* tab_bar, ImRect* bb, ImGuiTabBarFlags flags, ImGuiDockNode* dock_node);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabBarFindTabByID@ImGui@@YAPEAUImGuiTabItem@@PEAUImGuiTabBar@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17TabBarFindTabByIDEP11ImGuiTabBarj", ExactSpelling = true)]
         public static extern ImGuiTabItem* TabBarFindTabByID(ImGuiTabBar* tab_bar, uint tab_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabBarFindMostRecentlySelectedTabForActiveWindow@ImGui@@YAPEAUImGuiTabItem@@PEAUImGuiTabBar@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui48TabBarFindMostRecentlySelectedTabForActiveWindowEP11ImGuiTabBar", ExactSpelling = true)]
         public static extern ImGuiTabItem* TabBarFindMostRecentlySelectedTabForActiveWindow(ImGuiTabBar* tab_bar);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabBarAddTab@ImGui@@YAXPEAUImGuiTabBar@@HPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12TabBarAddTabEP11ImGuiTabBariP11ImGuiWindow", ExactSpelling = true)]
         public static extern void TabBarAddTab(ImGuiTabBar* tab_bar, ImGuiTabItemFlags tab_flags, ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabBarRemoveTab@ImGui@@YAXPEAUImGuiTabBar@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15TabBarRemoveTabEP11ImGuiTabBarj", ExactSpelling = true)]
         public static extern void TabBarRemoveTab(ImGuiTabBar* tab_bar, uint tab_id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabBarCloseTab@ImGui@@YAXPEAUImGuiTabBar@@PEAUImGuiTabItem@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14TabBarCloseTabEP11ImGuiTabBarP12ImGuiTabItem", ExactSpelling = true)]
         public static extern void TabBarCloseTab(ImGuiTabBar* tab_bar, ImGuiTabItem* tab);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabBarQueueReorder@ImGui@@YAXPEAUImGuiTabBar@@PEBUImGuiTabItem@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18TabBarQueueReorderEP11ImGuiTabBarPK12ImGuiTabItemi", ExactSpelling = true)]
         public static extern void TabBarQueueReorder(ImGuiTabBar* tab_bar, ImGuiTabItem* tab, int dir);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabBarProcessReorder@ImGui@@YA_NPEAUImGuiTabBar@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20TabBarProcessReorderEP11ImGuiTabBar", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool TabBarProcessReorder(ImGuiTabBar* tab_bar);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabItemEx@ImGui@@YA_NPEAUImGuiTabBar@@PEBDPEA_NHPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui9TabItemExEP11ImGuiTabBarPKcPbiP11ImGuiWindow", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool TabItemEx(ImGuiTabBar* tab_bar, byte* label, bool* p_open, ImGuiTabItemFlags flags, ImGuiWindow* docked_window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabItemCalcSize@ImGui@@YA?AUImVec2@@PEBD_N@Z", ExactSpelling = true)]
-        private static extern ImVec2* TabItemCalcSize_PInvoke(out ImVec2 __returnBuffer, byte* label, [MarshalAs(UnmanagedType.I1)] bool has_close_button);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15TabItemCalcSizeEPKcb", ExactSpelling = true)]
+        public static extern ImVec2 TabItemCalcSize(byte* label, [MarshalAs(UnmanagedType.I1)] bool has_close_button);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImVec2 TabItemCalcSize(byte* label, bool has_close_button)
-        {
-            ImVec2 __returnBuffer;
-            TabItemCalcSize_PInvoke(out __returnBuffer, label, has_close_button);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabItemBackground@ImGui@@YAXPEAUImDrawList@@AEBUImRect@@HI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17TabItemBackgroundEP10ImDrawListRK6ImRectij", ExactSpelling = true)]
         public static extern void TabItemBackground(ImDrawList* draw_list, ImRect* bb, ImGuiTabItemFlags flags, uint col);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TabItemLabelAndCloseButton@ImGui@@YAXPEAUImDrawList@@AEBUImRect@@HUImVec2@@PEBDII_NPEA_N5@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui26TabItemLabelAndCloseButtonEP10ImDrawListRK6ImRecti6ImVec2PKcjjbPbS8_", ExactSpelling = true)]
         public static extern void TabItemLabelAndCloseButton(ImDrawList* draw_list, ImRect* bb, ImGuiTabItemFlags flags, ImVec2 frame_padding, byte* label, uint tab_id, uint close_button_id, [MarshalAs(UnmanagedType.I1)] bool is_contents_visible, bool* out_just_closed, bool* out_text_clipped);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderText@ImGui@@YAXUImVec2@@PEBD1_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui10RenderTextE6ImVec2PKcS2_b", ExactSpelling = true)]
         public static extern void RenderText(ImVec2 pos, byte* text, byte* text_end = null, [MarshalAs(UnmanagedType.I1)] bool hide_text_after_hash = true);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderTextWrapped@ImGui@@YAXUImVec2@@PEBD1M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17RenderTextWrappedE6ImVec2PKcS2_f", ExactSpelling = true)]
         public static extern void RenderTextWrapped(ImVec2 pos, byte* text, byte* text_end, float wrap_width);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderTextClipped@ImGui@@YAXAEBUImVec2@@0PEBD1PEBU2@0PEBUImRect@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17RenderTextClippedERK6ImVec2S2_PKcS4_PS1_S2_PK6ImRect", ExactSpelling = true)]
         public static extern void RenderTextClipped(ImVec2* pos_min, ImVec2* pos_max, byte* text, byte* text_end, ImVec2* text_size_if_known, ImVec2* align, ImRect* clip_rect = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderTextClippedEx@ImGui@@YAXPEAUImDrawList@@AEBUImVec2@@1PEBD2PEBU3@1PEBUImRect@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19RenderTextClippedExEP10ImDrawListRK6ImVec2S4_PKcS6_PS3_S4_PK6ImRect", ExactSpelling = true)]
         public static extern void RenderTextClippedEx(ImDrawList* draw_list, ImVec2* pos_min, ImVec2* pos_max, byte* text, byte* text_end, ImVec2* text_size_if_known, ImVec2* align, ImRect* clip_rect = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderTextEllipsis@ImGui@@YAXPEAUImDrawList@@AEBUImVec2@@1MMPEBD2PEBU3@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18RenderTextEllipsisEP10ImDrawListRK6ImVec2S4_ffPKcS6_PS3_", ExactSpelling = true)]
         public static extern void RenderTextEllipsis(ImDrawList* draw_list, ImVec2* pos_min, ImVec2* pos_max, float clip_max_x, float ellipsis_max_x, byte* text, byte* text_end, ImVec2* text_size_if_known);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderFrame@ImGui@@YAXUImVec2@@0I_NM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11RenderFrameE6ImVec2S0_jbf", ExactSpelling = true)]
         public static extern void RenderFrame(ImVec2 p_min, ImVec2 p_max, uint fill_col, [MarshalAs(UnmanagedType.I1)] bool border = true, float rounding = 0f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderFrameBorder@ImGui@@YAXUImVec2@@0M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17RenderFrameBorderE6ImVec2S0_f", ExactSpelling = true)]
         public static extern void RenderFrameBorder(ImVec2 p_min, ImVec2 p_max, float rounding = 0f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderColorRectWithAlphaCheckerboard@ImGui@@YAXPEAUImDrawList@@UImVec2@@1IM1MH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui36RenderColorRectWithAlphaCheckerboardEP10ImDrawList6ImVec2S2_jfS2_fi", ExactSpelling = true)]
         public static extern void RenderColorRectWithAlphaCheckerboard(ImDrawList* draw_list, ImVec2 p_min, ImVec2 p_max, uint fill_col, float grid_step, ImVec2 grid_off, float rounding = 0f, int rounding_corners_flags = -1);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderNavHighlight@ImGui@@YAXAEBUImRect@@IH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18RenderNavHighlightERK6ImRectji", ExactSpelling = true)]
         public static extern void RenderNavHighlight(ImRect* bb, uint id, ImGuiNavHighlightFlags flags = ImGuiNavHighlightFlags.TypeDefault);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindRenderedTextEnd@ImGui@@YAPEBDPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19FindRenderedTextEndEPKcS1_", ExactSpelling = true)]
         public static extern byte* FindRenderedTextEnd(byte* text, byte* text_end = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderArrow@ImGui@@YAXPEAUImDrawList@@UImVec2@@IHM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11RenderArrowEP10ImDrawList6ImVec2jif", ExactSpelling = true)]
         public static extern void RenderArrow(ImDrawList* draw_list, ImVec2 pos, uint col, ImGuiDir dir, float scale = 1f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderBullet@ImGui@@YAXPEAUImDrawList@@UImVec2@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12RenderBulletEP10ImDrawList6ImVec2j", ExactSpelling = true)]
         public static extern void RenderBullet(ImDrawList* draw_list, ImVec2 pos, uint col);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderCheckMark@ImGui@@YAXPEAUImDrawList@@UImVec2@@IM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15RenderCheckMarkEP10ImDrawList6ImVec2jf", ExactSpelling = true)]
         public static extern void RenderCheckMark(ImDrawList* draw_list, ImVec2 pos, uint col, float sz);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderMouseCursor@ImGui@@YAXPEAUImDrawList@@UImVec2@@MHIII@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17RenderMouseCursorEP10ImDrawList6ImVec2fijjj", ExactSpelling = true)]
         public static extern void RenderMouseCursor(ImDrawList* draw_list, ImVec2 pos, float scale, ImGuiMouseCursor mouse_cursor, uint col_fill, uint col_border, uint col_shadow);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderArrowPointingAt@ImGui@@YAXPEAUImDrawList@@UImVec2@@1HI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21RenderArrowPointingAtEP10ImDrawList6ImVec2S2_ij", ExactSpelling = true)]
         public static extern void RenderArrowPointingAt(ImDrawList* draw_list, ImVec2 pos, ImVec2 half_sz, ImGuiDir direction, uint col);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderArrowDockMenu@ImGui@@YAXPEAUImDrawList@@UImVec2@@MI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui19RenderArrowDockMenuEP10ImDrawList6ImVec2fj", ExactSpelling = true)]
         public static extern void RenderArrowDockMenu(ImDrawList* draw_list, ImVec2 p_min, float sz, uint col);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderRectFilledRangeH@ImGui@@YAXPEAUImDrawList@@AEBUImRect@@IMMM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22RenderRectFilledRangeHEP10ImDrawListRK6ImRectjfff", ExactSpelling = true)]
         public static extern void RenderRectFilledRangeH(ImDrawList* draw_list, ImRect* rect, uint col, float x_start_norm, float x_end_norm, float rounding);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderRectFilledWithHole@ImGui@@YAXPEAUImDrawList@@UImRect@@1IM@Z", ExactSpelling = true)]
-        public static extern void RenderRectFilledWithHole(ImDrawList* draw_list, ImRect* outer, ImRect* inner, uint col, float rounding);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui24RenderRectFilledWithHoleEP10ImDrawList6ImRectS2_jf", ExactSpelling = true)]
+        public static extern void RenderRectFilledWithHole(ImDrawList* draw_list, ImRect outer, ImRect inner, uint col, float rounding);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TextEx@ImGui@@YAXPEBD0H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui6TextExEPKcS1_i", ExactSpelling = true)]
         public static extern void TextEx(byte* text, byte* text_end = null, ImGuiTextFlags flags = ImGuiTextFlags.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ButtonEx@ImGui@@YA_NPEBDAEBUImVec2@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui8ButtonExEPKcRK6ImVec2i", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ButtonEx(byte* label, ImVec2* size_arg, ImGuiButtonFlags flags = ImGuiButtonFlags.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CloseButton@ImGui@@YA_NIAEBUImVec2@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11CloseButtonEjRK6ImVec2", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool CloseButton(uint id, ImVec2* pos);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CollapseButton@ImGui@@YA_NIAEBUImVec2@@PEAUImGuiDockNode@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14CollapseButtonEjRK6ImVec2P13ImGuiDockNode", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool CollapseButton(uint id, ImVec2* pos, ImGuiDockNode* dock_node);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ArrowButtonEx@ImGui@@YA_NPEBDHUImVec2@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13ArrowButtonExEPKci6ImVec2i", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ArrowButtonEx(byte* str_id, ImGuiDir dir, ImVec2 size_arg, ImGuiButtonFlags flags = ImGuiButtonFlags.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Scrollbar@ImGui@@YAXW4ImGuiAxis@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui9ScrollbarE9ImGuiAxis", ExactSpelling = true)]
         public static extern void Scrollbar(ImGuiAxis axis);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScrollbarEx@ImGui@@YA_NAEBUImRect@@IW4ImGuiAxis@@PEAMMMH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11ScrollbarExERK6ImRectj9ImGuiAxisPfffi", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ScrollbarEx(ImRect* bb, uint id, ImGuiAxis axis, float* p_scroll_v, float avail_v, float contents_v, ImDrawCornerFlags rounding_corners);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImageButtonEx@ImGui@@YA_NIPEAXAEBUImVec2@@111AEBUImVec4@@2@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13ImageButtonExEjPvRK6ImVec2S3_S3_S3_RK6ImVec4S6_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ImageButtonEx(uint id, void* texture_id, ImVec2* size, ImVec2* uv0, ImVec2* uv1, ImVec2* padding, ImVec4* bg_col, ImVec4* tint_col);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowScrollbarRect@ImGui@@YA?AUImRect@@PEAUImGuiWindow@@W4ImGuiAxis@@@Z", ExactSpelling = true)]
-        private static extern ImRect* GetWindowScrollbarRect_PInvoke(out ImRect __returnBuffer, ImGuiWindow* window, ImGuiAxis axis);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22GetWindowScrollbarRectEP11ImGuiWindow9ImGuiAxis", ExactSpelling = true)]
+        public static extern ImRect GetWindowScrollbarRect(ImGuiWindow* window, ImGuiAxis axis);
 
-        [DebuggerStepThrough, DebuggerHidden]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ImRect GetWindowScrollbarRect(ImGuiWindow* window, ImGuiAxis axis)
-        {
-            ImRect __returnBuffer;
-            GetWindowScrollbarRect_PInvoke(out __returnBuffer, window, axis);
-            return __returnBuffer;
-        }
-
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowScrollbarID@ImGui@@YAIPEAUImGuiWindow@@W4ImGuiAxis@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20GetWindowScrollbarIDEP11ImGuiWindow9ImGuiAxis", ExactSpelling = true)]
         public static extern uint GetWindowScrollbarID(ImGuiWindow* window, ImGuiAxis axis);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWindowResizeID@ImGui@@YAIPEAUImGuiWindow@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17GetWindowResizeIDEP11ImGuiWindowi", ExactSpelling = true)]
         public static extern uint GetWindowResizeID(ImGuiWindow* window, int n);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SeparatorEx@ImGui@@YAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11SeparatorExEi", ExactSpelling = true)]
         public static extern void SeparatorEx(ImGuiSeparatorFlags flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CheckboxFlags@ImGui@@YA_NPEBDPEA_J_J@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13CheckboxFlagsEPKcPxx", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool CheckboxFlags(byte* label, long* flags, long flags_value);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CheckboxFlags@ImGui@@YA_NPEBDPEA_K_K@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13CheckboxFlagsEPKcPyy", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool CheckboxFlags(byte* label, ulong* flags, ulong flags_value);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ButtonBehavior@ImGui@@YA_NAEBUImRect@@IPEA_N1H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14ButtonBehaviorERK6ImRectjPbS3_i", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool ButtonBehavior(ImRect* bb, uint id, bool* out_hovered, bool* out_held, ImGuiButtonFlags flags = ImGuiButtonFlags.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DragBehavior@ImGui@@YA_NIHPEAXMPEBX1PEBDH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12DragBehaviorEjiPvfPKvS2_PKci", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool DragBehavior(uint id, ImGuiDataType data_type, void* p_v, float v_speed, void* p_min, void* p_max, byte* format, ImGuiSliderFlags flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SliderBehavior@ImGui@@YA_NAEBUImRect@@IHPEAXPEBX2PEBDHPEAU2@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14SliderBehaviorERK6ImRectjiPvPKvS5_PKciPS0_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool SliderBehavior(ImRect* bb, uint id, ImGuiDataType data_type, void* p_v, void* p_min, void* p_max, byte* format, ImGuiSliderFlags flags, ImRect* out_grab_bb);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SplitterBehavior@ImGui@@YA_NAEBUImRect@@IW4ImGuiAxis@@PEAM2MMMM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16SplitterBehaviorERK6ImRectj9ImGuiAxisPfS4_ffff", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool SplitterBehavior(ImRect* bb, uint id, ImGuiAxis axis, float* size1, float* size2, float min_size1, float min_size2, float hover_extend = 0f, float hover_visibility_delay = 0f);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TreeNodeBehavior@ImGui@@YA_NIHPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16TreeNodeBehaviorEjiPKcS1_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool TreeNodeBehavior(uint id, ImGuiTreeNodeFlags flags, byte* label, byte* label_end = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TreeNodeBehaviorIsOpen@ImGui@@YA_NIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22TreeNodeBehaviorIsOpenEji", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool TreeNodeBehaviorIsOpen(uint id, ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TreePushOverrideID@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18TreePushOverrideIDEj", ExactSpelling = true)]
         public static extern void TreePushOverrideID(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DataTypeGetInfo@ImGui@@YAPEBUImGuiDataTypeInfo@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15DataTypeGetInfoEi", ExactSpelling = true)]
         public static extern ImGuiDataTypeInfo* DataTypeGetInfo(ImGuiDataType data_type);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DataTypeFormatString@ImGui@@YAHPEADHHPEBXPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20DataTypeFormatStringEPciiPKvPKc", ExactSpelling = true)]
         public static extern int DataTypeFormatString(byte* buf, int buf_size, ImGuiDataType data_type, void* p_data, byte* format);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DataTypeApplyOp@ImGui@@YAXHHPEAXPEBX1@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15DataTypeApplyOpEiiPvPKvS2_", ExactSpelling = true)]
         public static extern void DataTypeApplyOp(ImGuiDataType data_type, int op, void* output, void* arg_1, void* arg_2);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DataTypeApplyOpFromText@ImGui@@YA_NPEBD0HPEAX0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23DataTypeApplyOpFromTextEPKcS1_iPvS1_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool DataTypeApplyOpFromText(byte* buf, byte* initial_value_buf, ImGuiDataType data_type, void* p_data, byte* format);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DataTypeCompare@ImGui@@YAHHPEBX0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15DataTypeCompareEiPKvS1_", ExactSpelling = true)]
         public static extern int DataTypeCompare(ImGuiDataType data_type, void* arg_1, void* arg_2);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DataTypeClamp@ImGui@@YA_NHPEAXPEBX1@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13DataTypeClampEiPvPKvS2_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool DataTypeClamp(ImGuiDataType data_type, void* p_data, void* p_min, void* p_max);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?InputTextEx@ImGui@@YA_NPEBD0PEADHAEBUImVec2@@HP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui11InputTextExEPKcS1_PciRK6ImVec2iPFiP26ImGuiInputTextCallbackDataEPv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool InputTextEx(byte* label, byte* hint, byte* buf, int buf_size, ImVec2* size_arg, ImGuiInputTextFlags flags, delegate* unmanaged[Cdecl]<ImGuiInputTextCallbackData*, int> callback = null, void* user_data = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TempInputText@ImGui@@YA_NAEBUImRect@@IPEBDPEADHH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui13TempInputTextERK6ImRectjPKcPcii", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool TempInputText(ImRect* bb, uint id, byte* label, byte* buf, int buf_size, ImGuiInputTextFlags flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TempInputScalar@ImGui@@YA_NAEBUImRect@@IPEBDHPEAX1PEBX3@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15TempInputScalarERK6ImRectjPKciPvS4_PKvS7_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool TempInputScalar(ImRect* bb, uint id, byte* label, ImGuiDataType data_type, void* p_data, byte* format, void* p_clamp_min = null, void* p_clamp_max = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TempInputIsActive@ImGui@@YA_NI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17TempInputIsActiveEj", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool TempInputIsActive(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetInputTextState@ImGui@@YAPEAUImGuiInputTextState@@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17GetInputTextStateEj", ExactSpelling = true)]
         public static extern ImGuiInputTextState* GetInputTextState(uint id);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ColorTooltip@ImGui@@YAXPEBDPEBMH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui12ColorTooltipEPKcPKfi", ExactSpelling = true)]
         public static extern void ColorTooltip(byte* text, float* col, ImGuiColorEditFlags flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ColorEditOptionsPopup@ImGui@@YAXPEBMH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui21ColorEditOptionsPopupEPKfi", ExactSpelling = true)]
         public static extern void ColorEditOptionsPopup(float* col, ImGuiColorEditFlags flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ColorPickerOptionsPopup@ImGui@@YAXPEBMH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23ColorPickerOptionsPopupEPKfi", ExactSpelling = true)]
         public static extern void ColorPickerOptionsPopup(float* ref_col, ImGuiColorEditFlags flags);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PlotEx@ImGui@@YAHW4ImGuiPlotType@@PEBDP6AMPEAXH@Z2HH1MMUImVec2@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui6PlotExE13ImGuiPlotTypePKcPFfPviES3_iiS2_ff6ImVec2", ExactSpelling = true)]
         public static extern int PlotEx(ImGuiPlotType plot_type, byte* label, delegate* unmanaged[Cdecl]<void*, int, float> values_getter, void* data, int values_count, int values_offset, byte* overlay_text, float scale_min, float scale_max, ImVec2 frame_size);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShadeVertsLinearColorGradientKeepAlpha@ImGui@@YAXPEAUImDrawList@@HHUImVec2@@1II@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui38ShadeVertsLinearColorGradientKeepAlphaEP10ImDrawListii6ImVec2S2_jj", ExactSpelling = true)]
         public static extern void ShadeVertsLinearColorGradientKeepAlpha(ImDrawList* draw_list, int vert_start_idx, int vert_end_idx, ImVec2 gradient_p0, ImVec2 gradient_p1, uint col0, uint col1);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ShadeVertsLinearUV@ImGui@@YAXPEAUImDrawList@@HHAEBUImVec2@@111_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui18ShadeVertsLinearUVEP10ImDrawListiiRK6ImVec2S4_S4_S4_b", ExactSpelling = true)]
         public static extern void ShadeVertsLinearUV(ImDrawList* draw_list, int vert_start_idx, int vert_end_idx, ImVec2* a, ImVec2* b, ImVec2* uv_a, ImVec2* uv_b, [MarshalAs(UnmanagedType.I1)] bool clamp);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GcCompactTransientMiscBuffers@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui29GcCompactTransientMiscBuffersEv", ExactSpelling = true)]
         public static extern void GcCompactTransientMiscBuffers();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GcCompactTransientWindowBuffers@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui31GcCompactTransientWindowBuffersEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void GcCompactTransientWindowBuffers(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GcAwakeTransientWindowBuffers@ImGui@@YAXPEAUImGuiWindow@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui29GcAwakeTransientWindowBuffersEP11ImGuiWindow", ExactSpelling = true)]
         public static extern void GcAwakeTransientWindowBuffers(ImGuiWindow* window);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ErrorCheckEndFrameRecover@ImGui@@YAXP6AXPEAXPEBDZZ0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui25ErrorCheckEndFrameRecoverEPFvPvPKczES0_", ExactSpelling = true)]
         public static extern void ErrorCheckEndFrameRecover(delegate* unmanaged[Cdecl]<void*, byte*, void> log_callback, void* user_data = null);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugDrawItemRect@ImGui@@YAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17DebugDrawItemRectEj", ExactSpelling = true)]
         public static extern void DebugDrawItemRect(uint col = 4278190335);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugStartItemPicker@ImGui@@YAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20DebugStartItemPickerEv", ExactSpelling = true)]
         public static extern void DebugStartItemPicker();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeColumns@ImGui@@YAXPEAUImGuiOldColumns@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16DebugNodeColumnsEP15ImGuiOldColumns", ExactSpelling = true)]
         public static extern void DebugNodeColumns(ImGuiOldColumns* columns);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeDockNode@ImGui@@YAXPEAUImGuiDockNode@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17DebugNodeDockNodeEP13ImGuiDockNodePKc", ExactSpelling = true)]
         public static extern void DebugNodeDockNode(ImGuiDockNode* node, byte* label);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeDrawList@ImGui@@YAXPEAUImGuiWindow@@PEAUImGuiViewportP@@PEBUImDrawList@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17DebugNodeDrawListEP11ImGuiWindowP14ImGuiViewportPPK10ImDrawListPKc", ExactSpelling = true)]
         public static extern void DebugNodeDrawList(ImGuiWindow* window, ImGuiViewportP* viewport, ImDrawList* draw_list, byte* label);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeDrawCmdShowMeshAndBoundingBox@ImGui@@YAXPEAUImDrawList@@PEBU2@PEBUImDrawCmd@@_N3@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui38DebugNodeDrawCmdShowMeshAndBoundingBoxEP10ImDrawListPKS0_PK9ImDrawCmdbb", ExactSpelling = true)]
         public static extern void DebugNodeDrawCmdShowMeshAndBoundingBox(ImDrawList* out_draw_list, ImDrawList* draw_list, ImDrawCmd* draw_cmd, [MarshalAs(UnmanagedType.I1)] bool show_mesh, [MarshalAs(UnmanagedType.I1)] bool show_aabb);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeStorage@ImGui@@YAXPEAUImGuiStorage@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui16DebugNodeStorageEP12ImGuiStoragePKc", ExactSpelling = true)]
         public static extern void DebugNodeStorage(ImGuiStorage* storage, byte* label);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeTabBar@ImGui@@YAXPEAUImGuiTabBar@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15DebugNodeTabBarEP11ImGuiTabBarPKc", ExactSpelling = true)]
         public static extern void DebugNodeTabBar(ImGuiTabBar* tab_bar, byte* label);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeTable@ImGui@@YAXPEAUImGuiTable@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui14DebugNodeTableEP10ImGuiTable", ExactSpelling = true)]
         public static extern void DebugNodeTable(ImGuiTable* table);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeTableSettings@ImGui@@YAXPEAUImGuiTableSettings@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui22DebugNodeTableSettingsEP18ImGuiTableSettings", ExactSpelling = true)]
         public static extern void DebugNodeTableSettings(ImGuiTableSettings* settings);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeWindow@ImGui@@YAXPEAUImGuiWindow@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui15DebugNodeWindowEP11ImGuiWindowPKc", ExactSpelling = true)]
         public static extern void DebugNodeWindow(ImGuiWindow* window, byte* label);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeWindowSettings@ImGui@@YAXPEAUImGuiWindowSettings@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui23DebugNodeWindowSettingsEP19ImGuiWindowSettings", ExactSpelling = true)]
         public static extern void DebugNodeWindowSettings(ImGuiWindowSettings* settings);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeWindowsList@ImGui@@YAXPEAU?$ImVector@PEAUImGuiWindow@@@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui20DebugNodeWindowsListEP8ImVectorIP11ImGuiWindowEPKc", ExactSpelling = true)]
         public static extern void DebugNodeWindowsList(ImVector<Pointer<ImGuiWindow>>* windows, byte* label);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugNodeViewport@ImGui@@YAXPEAUImGuiViewportP@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui17DebugNodeViewportEP14ImGuiViewportP", ExactSpelling = true)]
         public static extern void DebugNodeViewport(ImGuiViewportP* viewport);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DebugRenderViewportThumbnail@ImGui@@YAXPEAUImDrawList@@PEAUImGuiViewportP@@AEBUImRect@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN5ImGui28DebugRenderViewportThumbnailEP10ImDrawListP14ImGuiViewportPRK6ImRect", ExactSpelling = true)]
         public static extern void DebugRenderViewportThumbnail(ImDrawList* draw_list, ImGuiViewportP* viewport, ImRect* bb);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasGetBuilderForStbTruetype@@YAPEBUImFontBuilderIO@@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z35ImFontAtlasGetBuilderForStbTruetypev", ExactSpelling = true)]
         public static extern ImFontBuilderIO* ImFontAtlasGetBuilderForStbTruetype();
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasBuildInit@@YAXPEAUImFontAtlas@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z20ImFontAtlasBuildInitP11ImFontAtlas", ExactSpelling = true)]
         public static extern void ImFontAtlasBuildInit(ImFontAtlas* atlas);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasBuildSetupFont@@YAXPEAUImFontAtlas@@PEAUImFont@@PEAUImFontConfig@@MM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z25ImFontAtlasBuildSetupFontP11ImFontAtlasP6ImFontP12ImFontConfigff", ExactSpelling = true)]
         public static extern void ImFontAtlasBuildSetupFont(ImFontAtlas* atlas, ImFont* font, ImFontConfig* font_config, float ascent, float descent);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasBuildPackCustomRects@@YAXPEAUImFontAtlas@@PEAX@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z31ImFontAtlasBuildPackCustomRectsP11ImFontAtlasPv", ExactSpelling = true)]
         public static extern void ImFontAtlasBuildPackCustomRects(ImFontAtlas* atlas, void* stbrp_context_opaque);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasBuildFinish@@YAXPEAUImFontAtlas@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z22ImFontAtlasBuildFinishP11ImFontAtlas", ExactSpelling = true)]
         public static extern void ImFontAtlasBuildFinish(ImFontAtlas* atlas);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasBuildRender8bppRectFromString@@YAXPEAUImFontAtlas@@HHHHPEBDDE@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z40ImFontAtlasBuildRender8bppRectFromStringP11ImFontAtlasiiiiPKcch", ExactSpelling = true)]
         public static extern void ImFontAtlasBuildRender8bppRectFromString(ImFontAtlas* atlas, int x, int y, int w, int h, byte* in_str, byte in_marker_char, byte in_marker_pixel_value);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasBuildRender32bppRectFromString@@YAXPEAUImFontAtlas@@HHHHPEBDDI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z41ImFontAtlasBuildRender32bppRectFromStringP11ImFontAtlasiiiiPKccj", ExactSpelling = true)]
         public static extern void ImFontAtlasBuildRender32bppRectFromString(ImFontAtlas* atlas, int x, int y, int w, int h, byte* in_str, byte in_marker_char, uint in_marker_pixel_value);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasBuildMultiplyCalcLookupTable@@YAXQEAEM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z39ImFontAtlasBuildMultiplyCalcLookupTablePhf", ExactSpelling = true)]
         public static extern void ImFontAtlasBuildMultiplyCalcLookupTable(ConstantArray_unsigned__UNICODE_0020__char_256* out_table, float in_multiply_factor);
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ImFontAtlasBuildMultiplyRectAlpha8@@YAXQEBEPEAEHHHHH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_Z34ImFontAtlasBuildMultiplyRectAlpha8PKhPhiiiii", ExactSpelling = true)]
         public static extern void ImFontAtlasBuildMultiplyRectAlpha8(ConstantArray_const__UNICODE_0020__unsigned__UNICODE_0020__char_256* table, byte* pixels, int x, int y, int w, int h, int stride);
     }
 }

@@ -248,23 +248,23 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(599)] [MarshalAs(UnmanagedType.I1)] public bool HostSkipItems;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper66", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper66", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTable* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiTable* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper67", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper67", ExactSpelling = true)]
         private static extern void Destructor_PInvoke(ImGuiTable* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Destructor()
+        public void Destructor()
         {
             fixed (ImGuiTable* @this = &this)
             { Destructor_PInvoke(@this); }

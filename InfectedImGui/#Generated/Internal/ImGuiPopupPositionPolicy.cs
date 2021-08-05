@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiPopupPositionPolicy
+    public enum ImGuiPopupPositionPolicy : uint
     {
         ImGuiPopupPositionPolicy_Default,
         ImGuiPopupPositionPolicy_ComboBox,

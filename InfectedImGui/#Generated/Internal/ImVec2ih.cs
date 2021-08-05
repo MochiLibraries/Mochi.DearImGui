@@ -15,34 +15,34 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(2)] public short y;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper34", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper34", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImVec2ih* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImVec2ih* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper35", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper35", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImVec2ih* @this, short _x, short _y);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(short _x, short _y)
+        public void Constructor(short _x, short _y)
         {
             fixed (ImVec2ih* @this = &this)
             { Constructor_PInvoke(@this, _x, _y); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper36", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper36", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImVec2ih* @this, ImVec2* rhs);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(ImVec2* rhs)
+        public void Constructor(ImVec2* rhs)
         {
             fixed (ImVec2ih* @this = &this)
             { Constructor_PInvoke(@this, rhs); }

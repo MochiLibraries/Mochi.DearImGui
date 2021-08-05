@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tooling", "tooling", "{AEF7
 		tooling\Common.csproj.props = tooling\Common.csproj.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfectedImGui.Sample.Linux", "InfectedImGui.Sample.Linux\InfectedImGui.Sample.Linux.csproj", "{C1F5FBD1-2AE6-4462-8C91-24BA832104AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{B24409AF-EABB-4E2B-873C-2A5295E5CE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B24409AF-EABB-4E2B-873C-2A5295E5CE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B24409AF-EABB-4E2B-873C-2A5295E5CE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F5FBD1-2AE6-4462-8C91-24BA832104AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F5FBD1-2AE6-4462-8C91-24BA832104AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F5FBD1-2AE6-4462-8C91-24BA832104AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F5FBD1-2AE6-4462-8C91-24BA832104AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

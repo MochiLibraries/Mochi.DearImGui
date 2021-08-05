@@ -31,23 +31,23 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(31)] [MarshalAs(UnmanagedType.I1)] public bool WantApply;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper57", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper57", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiWindowSettings* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiWindowSettings* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetName@ImGuiWindowSettings@@QEAAPEADXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiWindowSettings7GetNameEv", ExactSpelling = true)]
         private static extern byte* GetName_PInvoke(ImGuiWindowSettings* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe byte* GetName()
+        public byte* GetName()
         {
             fixed (ImGuiWindowSettings* @this = &this)
             { return GetName_PInvoke(@this); }

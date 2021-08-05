@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiInputReadMode
+    public enum ImGuiInputReadMode : uint
     {
         ImGuiInputReadMode_Down,
         ImGuiInputReadMode_Pressed,

@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiSelectableFlagsPrivate_
+    public enum ImGuiSelectableFlagsPrivate_ : uint
     {
         ImGuiSelectableFlags_NoHoldingActiveID = 1048576,
         ImGuiSelectableFlags_SelectOnClick = 2097152,

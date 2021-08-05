@@ -27,24 +27,24 @@ namespace InfectedImGui
 
         [FieldOffset(24)] public ImFont* Font;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper27", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper27", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImFontAtlasCustomRect* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImFontAtlasCustomRect* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK21ImFontAtlasCustomRect8IsPackedEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsPacked_PInvoke(ImFontAtlasCustomRect* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsPacked()
+        public bool IsPacked()
         {
             fixed (ImFontAtlasCustomRect* @this = &this)
             { return IsPacked_PInvoke(@this); }

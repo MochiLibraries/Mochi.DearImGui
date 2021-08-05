@@ -14,136 +14,136 @@ namespace InfectedImGui
     {
         [FieldOffset(0)] public ImVector<byte> Buf;
 
-        public static readonly ConstantArray_char_1* EmptyString = (ConstantArray_char_1*)NativeLibrary.GetExport(NativeLibrary.Load("InfectedImGui.Native.dll"), "?EmptyString@ImGuiTextBuffer@@2PADA");
+        public static readonly ConstantArray_char_1* EmptyString = (ConstantArray_char_1*)NativeLibrary.GetExport(NativeLibrary.Load("libInfectedImGui.Native.so"), "_ZN15ImGuiTextBuffer11EmptyStringE");
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper11", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper11", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTextBuffer* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??AImGuiTextBuffer@@QEBADH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextBufferixEi", ExactSpelling = true)]
         private static extern byte operator_Subscript_PInvoke(ImGuiTextBuffer* @this, int i);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe byte operator_Subscript(int i)
+        public byte operator_Subscript(int i)
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { return operator_Subscript_PInvoke(@this, i); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?begin@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextBuffer5beginEv", ExactSpelling = true)]
         private static extern byte* begin_PInvoke(ImGuiTextBuffer* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe byte* begin()
+        public byte* begin()
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { return begin_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?end@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextBuffer3endEv", ExactSpelling = true)]
         private static extern byte* end_PInvoke(ImGuiTextBuffer* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe byte* end()
+        public byte* end()
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { return end_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?size@ImGuiTextBuffer@@QEBAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextBuffer4sizeEv", ExactSpelling = true)]
         private static extern int size_PInvoke(ImGuiTextBuffer* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe int size()
+        public int size()
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { return size_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?empty@ImGuiTextBuffer@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextBuffer5emptyEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool empty_PInvoke(ImGuiTextBuffer* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool empty()
+        public bool empty()
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { return empty_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?clear@ImGuiTextBuffer@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextBuffer5clearEv", ExactSpelling = true)]
         private static extern void clear_PInvoke(ImGuiTextBuffer* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void clear()
+        public void clear()
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?reserve@ImGuiTextBuffer@@QEAAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextBuffer7reserveEi", ExactSpelling = true)]
         private static extern void reserve_PInvoke(ImGuiTextBuffer* @this, int capacity);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void reserve(int capacity)
+        public void reserve(int capacity)
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { reserve_PInvoke(@this, capacity); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?c_str@ImGuiTextBuffer@@QEBAPEBDXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextBuffer5c_strEv", ExactSpelling = true)]
         private static extern byte* c_str_PInvoke(ImGuiTextBuffer* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe byte* c_str()
+        public byte* c_str()
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { return c_str_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?append@ImGuiTextBuffer@@QEAAXPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextBuffer6appendEPKcS1_", ExactSpelling = true)]
         private static extern void append_PInvoke(ImGuiTextBuffer* @this, byte* str, byte* str_end);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void append(byte* str, byte* str_end = null)
+        public void append(byte* str, byte* str_end = null)
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { append_PInvoke(@this, str, str_end); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?appendf@ImGuiTextBuffer@@QEAAXPEBDZZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextBuffer7appendfEPKcz", ExactSpelling = true)]
         private static extern void appendf_PInvoke(ImGuiTextBuffer* @this, byte* fmt);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void appendf(byte* fmt)
+        public void appendf(byte* fmt)
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { appendf_PInvoke(@this, fmt); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?appendfv@ImGuiTextBuffer@@QEAAXPEBDPEAD@Z", ExactSpelling = true)]
-        private static extern void appendfv_PInvoke(ImGuiTextBuffer* @this, byte* fmt, byte* args);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextBuffer8appendfvEPKcP13__va_list_tag", ExactSpelling = true)]
+        private static extern void appendfv_PInvoke(ImGuiTextBuffer* @this, byte* fmt, ConstantArray___va_list_tag_1* args);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void appendfv(byte* fmt, byte* args)
+        public void appendfv(byte* fmt, ConstantArray___va_list_tag_1* args)
         {
             fixed (ImGuiTextBuffer* @this = &this)
             { appendfv_PInvoke(@this, fmt, args); }

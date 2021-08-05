@@ -22,45 +22,45 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(24)] public ConstantArray_float_3 NextWidths;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper44", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper44", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiMenuColumns* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiMenuColumns* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Update@ImGuiMenuColumns@@QEAAXHM_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN16ImGuiMenuColumns6UpdateEifb", ExactSpelling = true)]
         private static extern void Update_PInvoke(ImGuiMenuColumns* @this, int count, float spacing, [MarshalAs(UnmanagedType.I1)] bool clear);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Update(int count, float spacing, bool clear)
+        public void Update(int count, float spacing, bool clear)
         {
             fixed (ImGuiMenuColumns* @this = &this)
             { Update_PInvoke(@this, count, spacing, clear); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeclColumns@ImGuiMenuColumns@@QEAAMMMM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN16ImGuiMenuColumns11DeclColumnsEfff", ExactSpelling = true)]
         private static extern float DeclColumns_PInvoke(ImGuiMenuColumns* @this, float w0, float w1, float w2);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe float DeclColumns(float w0, float w1, float w2)
+        public float DeclColumns(float w0, float w1, float w2)
         {
             fixed (ImGuiMenuColumns* @this = &this)
             { return DeclColumns_PInvoke(@this, w0, w1, w2); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcExtraSpace@ImGuiMenuColumns@@QEBAMM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK16ImGuiMenuColumns14CalcExtraSpaceEf", ExactSpelling = true)]
         private static extern float CalcExtraSpace_PInvoke(ImGuiMenuColumns* @this, float avail_w);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe float CalcExtraSpace(float avail_w)
+        public float CalcExtraSpace(float avail_w)
         {
             fixed (ImGuiMenuColumns* @this = &this)
             { return CalcExtraSpace_PInvoke(@this, avail_w); }

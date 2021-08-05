@@ -21,12 +21,12 @@ namespace InfectedImGui
 
         [FieldOffset(32)] public float DpiScale;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper31", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper31", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiPlatformMonitor* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiPlatformMonitor* @this = &this)
             { Constructor_PInvoke(@this); }

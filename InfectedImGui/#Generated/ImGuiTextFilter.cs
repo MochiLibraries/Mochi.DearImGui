@@ -12,70 +12,70 @@ namespace InfectedImGui
     [StructLayout(LayoutKind.Explicit, Size = 280)]
     public unsafe partial struct ImGuiTextFilter
     {
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiTextFilter@@QEAA@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextFilterC1EPKc", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTextFilter* @this, byte* default_filter);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(byte* default_filter)
+        public void Constructor(byte* default_filter)
         {
             fixed (ImGuiTextFilter* @this = &this)
             { Constructor_PInvoke(@this, default_filter); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Draw@ImGuiTextFilter@@QEAA_NPEBDM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextFilter4DrawEPKcf", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool Draw_PInvoke(ImGuiTextFilter* @this, byte* label, float width);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool Draw(byte* label, float width = 0f)
+        public bool Draw(byte* label, float width = 0f)
         {
             fixed (ImGuiTextFilter* @this = &this)
             { return Draw_PInvoke(@this, label, width); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?PassFilter@ImGuiTextFilter@@QEBA_NPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextFilter10PassFilterEPKcS1_", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool PassFilter_PInvoke(ImGuiTextFilter* @this, byte* text, byte* text_end);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool PassFilter(byte* text, byte* text_end = null)
+        public bool PassFilter(byte* text, byte* text_end = null)
         {
             fixed (ImGuiTextFilter* @this = &this)
             { return PassFilter_PInvoke(@this, text, text_end); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Build@ImGuiTextFilter@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextFilter5BuildEv", ExactSpelling = true)]
         private static extern void Build_PInvoke(ImGuiTextFilter* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Build()
+        public void Build()
         {
             fixed (ImGuiTextFilter* @this = &this)
             { Build_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImGuiTextFilter@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiTextFilter5ClearEv", ExactSpelling = true)]
         private static extern void Clear_PInvoke(ImGuiTextFilter* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Clear()
+        public void Clear()
         {
             fixed (ImGuiTextFilter* @this = &this)
             { Clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsActive@ImGuiTextFilter@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextFilter8IsActiveEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsActive_PInvoke(ImGuiTextFilter* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsActive()
+        public bool IsActive()
         {
             fixed (ImGuiTextFilter* @this = &this)
             { return IsActive_PInvoke(@this); }
@@ -88,46 +88,46 @@ namespace InfectedImGui
 
             [FieldOffset(8)] public byte* e;
 
-            [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper9", ExactSpelling = true)]
+            [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper9", ExactSpelling = true)]
             private static extern void Constructor_PInvoke(ImGuiTextRange* @this);
 
             [DebuggerStepThrough, DebuggerHidden]
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public unsafe void Constructor()
+            public void Constructor()
             {
                 fixed (ImGuiTextRange* @this = &this)
                 { Constructor_PInvoke(@this); }
             }
 
-            [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper10", ExactSpelling = true)]
+            [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper10", ExactSpelling = true)]
             private static extern void Constructor_PInvoke(ImGuiTextRange* @this, byte* _b, byte* _e);
 
             [DebuggerStepThrough, DebuggerHidden]
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public unsafe void Constructor(byte* _b, byte* _e)
+            public void Constructor(byte* _b, byte* _e)
             {
                 fixed (ImGuiTextRange* @this = &this)
                 { Constructor_PInvoke(@this, _b, _e); }
             }
 
-            [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?empty@ImGuiTextRange@ImGuiTextFilter@@QEBA_NXZ", ExactSpelling = true)]
+            [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextFilter14ImGuiTextRange5emptyEv", ExactSpelling = true)]
             [return: MarshalAs(UnmanagedType.I1)]
             private static extern bool empty_PInvoke(ImGuiTextRange* @this);
 
             [DebuggerStepThrough, DebuggerHidden]
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public unsafe bool empty()
+            public bool empty()
             {
                 fixed (ImGuiTextRange* @this = &this)
                 { return empty_PInvoke(@this); }
             }
 
-            [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?split@ImGuiTextRange@ImGuiTextFilter@@QEBAXDPEAU?$ImVector@UImGuiTextRange@ImGuiTextFilter@@@@@Z", ExactSpelling = true)]
+            [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK15ImGuiTextFilter14ImGuiTextRange5splitEcP8ImVectorIS0_E", ExactSpelling = true)]
             private static extern void split_PInvoke(ImGuiTextRange* @this, byte separator, ImVector<ImGuiTextRange>* @out);
 
             [DebuggerStepThrough, DebuggerHidden]
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public unsafe void split(byte separator, ImVector<ImGuiTextRange>* @out)
+            public void split(byte separator, ImVector<ImGuiTextRange>* @out)
             {
                 fixed (ImGuiTextRange* @this = &this)
                 { split_PInvoke(@this, separator, @out); }

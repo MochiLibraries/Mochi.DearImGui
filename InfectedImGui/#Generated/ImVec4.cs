@@ -19,23 +19,23 @@ namespace InfectedImGui
 
         [FieldOffset(12)] public float w;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper2", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper2", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImVec4* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImVec4* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper3", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper3", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImVec4* @this, float _x, float _y, float _z, float _w);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(float _x, float _y, float _z, float _w)
+        public void Constructor(float _x, float _y, float _z, float _w)
         {
             fixed (ImVec4* @this = &this)
             { Constructor_PInvoke(@this, _x, _y, _z, _w); }

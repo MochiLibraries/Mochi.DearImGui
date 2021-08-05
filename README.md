@@ -32,7 +32,13 @@ Visual Studio requires the "Desktop development with C++" and  ".NET desktop dev
 ### Generating the bindings
 
 1. Ensure Git submodules are up-to-date with `git submodule update --init --recursive`
-3. Build and run `InfectedImGui.Generator`
+2. Build and run `InfectedImGui.Generator`
+
+<!--
+TODO: On Linux go to `InfectedImGui.Generator` folder and run `dotnet run ../external/imgui/ ../InfectedImGui.Native/ ../InfectedImGui/#Generated/`
+TODO: libInfectedImGui.Native.so does not seem to be linking to GLFW correctly.
+  Currently have to launch with `LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libglfw.so dotnet run`
+-->
 
 ### Building the sample
 

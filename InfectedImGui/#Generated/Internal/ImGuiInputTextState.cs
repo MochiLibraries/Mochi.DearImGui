@@ -43,123 +43,123 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(3728)] public void* UserCallbackData;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper45", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper45", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearText@ImGuiInputTextState@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiInputTextState9ClearTextEv", ExactSpelling = true)]
         private static extern void ClearText_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearText()
+        public void ClearText()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { ClearText_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFreeMemory@ImGuiInputTextState@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiInputTextState15ClearFreeMemoryEv", ExactSpelling = true)]
         private static extern void ClearFreeMemory_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearFreeMemory()
+        public void ClearFreeMemory()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { ClearFreeMemory_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetUndoAvailCount@ImGuiInputTextState@@QEBAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK19ImGuiInputTextState17GetUndoAvailCountEv", ExactSpelling = true)]
         private static extern int GetUndoAvailCount_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe int GetUndoAvailCount()
+        public int GetUndoAvailCount()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { return GetUndoAvailCount_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetRedoAvailCount@ImGuiInputTextState@@QEBAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK19ImGuiInputTextState17GetRedoAvailCountEv", ExactSpelling = true)]
         private static extern int GetRedoAvailCount_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe int GetRedoAvailCount()
+        public int GetRedoAvailCount()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { return GetRedoAvailCount_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?OnKeyPressed@ImGuiInputTextState@@QEAAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiInputTextState12OnKeyPressedEi", ExactSpelling = true)]
         private static extern void OnKeyPressed_PInvoke(ImGuiInputTextState* @this, int key);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void OnKeyPressed(int key)
+        public void OnKeyPressed(int key)
         {
             fixed (ImGuiInputTextState* @this = &this)
             { OnKeyPressed_PInvoke(@this, key); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CursorAnimReset@ImGuiInputTextState@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiInputTextState15CursorAnimResetEv", ExactSpelling = true)]
         private static extern void CursorAnimReset_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void CursorAnimReset()
+        public void CursorAnimReset()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { CursorAnimReset_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CursorClamp@ImGuiInputTextState@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiInputTextState11CursorClampEv", ExactSpelling = true)]
         private static extern void CursorClamp_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void CursorClamp()
+        public void CursorClamp()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { CursorClamp_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?HasSelection@ImGuiInputTextState@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK19ImGuiInputTextState12HasSelectionEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool HasSelection_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool HasSelection()
+        public bool HasSelection()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { return HasSelection_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearSelection@ImGuiInputTextState@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiInputTextState14ClearSelectionEv", ExactSpelling = true)]
         private static extern void ClearSelection_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearSelection()
+        public void ClearSelection()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { ClearSelection_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SelectAll@ImGuiInputTextState@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiInputTextState9SelectAllEv", ExactSpelling = true)]
         private static extern void SelectAll_PInvoke(ImGuiInputTextState* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SelectAll()
+        public void SelectAll()
         {
             fixed (ImGuiInputTextState* @this = &this)
             { SelectAll_PInvoke(@this); }

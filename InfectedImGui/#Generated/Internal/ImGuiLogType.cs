@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiLogType
+    public enum ImGuiLogType : uint
     {
         ImGuiLogType_None = 0,
         ImGuiLogType_TTY,

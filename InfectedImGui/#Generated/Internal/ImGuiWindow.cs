@@ -288,181 +288,169 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(1128)] public ImRect DockTabItemRect;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiWindow@@QEAA@PEAUImGuiContext@@PEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindowC1EP12ImGuiContextPKc", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiWindow* @this, ImGuiContext* context, byte* name);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(ImGuiContext* context, byte* name)
+        public void Constructor(ImGuiContext* context, byte* name)
         {
             fixed (ImGuiWindow* @this = &this)
             { Constructor_PInvoke(@this, context, name); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImGuiWindow@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindowD2Ev", ExactSpelling = true)]
         private static extern void Destructor_PInvoke(ImGuiWindow* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Destructor()
+        public void Destructor()
         {
             fixed (ImGuiWindow* @this = &this)
             { Destructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetID@ImGuiWindow@@QEAAIPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindow5GetIDEPKcS1_", ExactSpelling = true)]
         private static extern uint GetID_PInvoke(ImGuiWindow* @this, byte* str, byte* str_end);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe uint GetID(byte* str, byte* str_end = null)
+        public uint GetID(byte* str, byte* str_end = null)
         {
             fixed (ImGuiWindow* @this = &this)
             { return GetID_PInvoke(@this, str, str_end); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetID@ImGuiWindow@@QEAAIPEBX@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindow5GetIDEPKv", ExactSpelling = true)]
         private static extern uint GetID_PInvoke(ImGuiWindow* @this, void* ptr);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe uint GetID(void* ptr)
+        public uint GetID(void* ptr)
         {
             fixed (ImGuiWindow* @this = &this)
             { return GetID_PInvoke(@this, ptr); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetID@ImGuiWindow@@QEAAIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindow5GetIDEi", ExactSpelling = true)]
         private static extern uint GetID_PInvoke(ImGuiWindow* @this, int n);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe uint GetID(int n)
+        public uint GetID(int n)
         {
             fixed (ImGuiWindow* @this = &this)
             { return GetID_PInvoke(@this, n); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIDNoKeepAlive@ImGuiWindow@@QEAAIPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindow16GetIDNoKeepAliveEPKcS1_", ExactSpelling = true)]
         private static extern uint GetIDNoKeepAlive_PInvoke(ImGuiWindow* @this, byte* str, byte* str_end);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe uint GetIDNoKeepAlive(byte* str, byte* str_end = null)
+        public uint GetIDNoKeepAlive(byte* str, byte* str_end = null)
         {
             fixed (ImGuiWindow* @this = &this)
             { return GetIDNoKeepAlive_PInvoke(@this, str, str_end); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIDNoKeepAlive@ImGuiWindow@@QEAAIPEBX@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindow16GetIDNoKeepAliveEPKv", ExactSpelling = true)]
         private static extern uint GetIDNoKeepAlive_PInvoke(ImGuiWindow* @this, void* ptr);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe uint GetIDNoKeepAlive(void* ptr)
+        public uint GetIDNoKeepAlive(void* ptr)
         {
             fixed (ImGuiWindow* @this = &this)
             { return GetIDNoKeepAlive_PInvoke(@this, ptr); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIDNoKeepAlive@ImGuiWindow@@QEAAIH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindow16GetIDNoKeepAliveEi", ExactSpelling = true)]
         private static extern uint GetIDNoKeepAlive_PInvoke(ImGuiWindow* @this, int n);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe uint GetIDNoKeepAlive(int n)
+        public uint GetIDNoKeepAlive(int n)
         {
             fixed (ImGuiWindow* @this = &this)
             { return GetIDNoKeepAlive_PInvoke(@this, n); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetIDFromRectangle@ImGuiWindow@@QEAAIAEBUImRect@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiWindow18GetIDFromRectangleERK6ImRect", ExactSpelling = true)]
         private static extern uint GetIDFromRectangle_PInvoke(ImGuiWindow* @this, ImRect* r_abs);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe uint GetIDFromRectangle(ImRect* r_abs)
+        public uint GetIDFromRectangle(ImRect* r_abs)
         {
             fixed (ImGuiWindow* @this = &this)
             { return GetIDFromRectangle_PInvoke(@this, r_abs); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Rect@ImGuiWindow@@QEBA?AUImRect@@XZ", ExactSpelling = true)]
-        private static extern ImRect* Rect_PInvoke(ImGuiWindow* @this, out ImRect __returnBuffer);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImGuiWindow4RectEv", ExactSpelling = true)]
+        private static extern ImRect Rect_PInvoke(ImGuiWindow* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImRect Rect()
+        public ImRect Rect()
         {
             fixed (ImGuiWindow* @this = &this)
-            {
-                ImRect __returnBuffer;
-                Rect_PInvoke(@this, out __returnBuffer);
-                return __returnBuffer;
-            }
+            { return Rect_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcFontSize@ImGuiWindow@@QEBAMXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImGuiWindow12CalcFontSizeEv", ExactSpelling = true)]
         private static extern float CalcFontSize_PInvoke(ImGuiWindow* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe float CalcFontSize()
+        public float CalcFontSize()
         {
             fixed (ImGuiWindow* @this = &this)
             { return CalcFontSize_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TitleBarHeight@ImGuiWindow@@QEBAMXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImGuiWindow14TitleBarHeightEv", ExactSpelling = true)]
         private static extern float TitleBarHeight_PInvoke(ImGuiWindow* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe float TitleBarHeight()
+        public float TitleBarHeight()
         {
             fixed (ImGuiWindow* @this = &this)
             { return TitleBarHeight_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?TitleBarRect@ImGuiWindow@@QEBA?AUImRect@@XZ", ExactSpelling = true)]
-        private static extern ImRect* TitleBarRect_PInvoke(ImGuiWindow* @this, out ImRect __returnBuffer);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImGuiWindow12TitleBarRectEv", ExactSpelling = true)]
+        private static extern ImRect TitleBarRect_PInvoke(ImGuiWindow* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImRect TitleBarRect()
+        public ImRect TitleBarRect()
         {
             fixed (ImGuiWindow* @this = &this)
-            {
-                ImRect __returnBuffer;
-                TitleBarRect_PInvoke(@this, out __returnBuffer);
-                return __returnBuffer;
-            }
+            { return TitleBarRect_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?MenuBarHeight@ImGuiWindow@@QEBAMXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImGuiWindow13MenuBarHeightEv", ExactSpelling = true)]
         private static extern float MenuBarHeight_PInvoke(ImGuiWindow* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe float MenuBarHeight()
+        public float MenuBarHeight()
         {
             fixed (ImGuiWindow* @this = &this)
             { return MenuBarHeight_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?MenuBarRect@ImGuiWindow@@QEBA?AUImRect@@XZ", ExactSpelling = true)]
-        private static extern ImRect* MenuBarRect_PInvoke(ImGuiWindow* @this, out ImRect __returnBuffer);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImGuiWindow11MenuBarRectEv", ExactSpelling = true)]
+        private static extern ImRect MenuBarRect_PInvoke(ImGuiWindow* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImRect MenuBarRect()
+        public ImRect MenuBarRect()
         {
             fixed (ImGuiWindow* @this = &this)
-            {
-                ImRect __returnBuffer;
-                MenuBarRect_PInvoke(@this, out __returnBuffer);
-                return __returnBuffer;
-            }
+            { return MenuBarRect_PInvoke(@this); }
         }
     }
 }

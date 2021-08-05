@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiTreeNodeFlagsPrivate_
+    public enum ImGuiTreeNodeFlagsPrivate_ : uint
     {
         ImGuiTreeNodeFlags_ClipLabelForTrailingButton = 1048576
     }

@@ -43,56 +43,48 @@ namespace InfectedImGui
 
         [FieldOffset(90)] [MarshalAs(UnmanagedType.I1)] public bool PlatformRequestClose;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper28", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper28", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiViewport* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiViewport* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper29", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper29", ExactSpelling = true)]
         private static extern void Destructor_PInvoke(ImGuiViewport* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Destructor()
+        public void Destructor()
         {
             fixed (ImGuiViewport* @this = &this)
             { Destructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
-        private static extern ImVec2* GetCenter_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiViewport9GetCenterEv", ExactSpelling = true)]
+        private static extern ImVec2 GetCenter_PInvoke(ImGuiViewport* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImVec2 GetCenter()
+        public ImVec2 GetCenter()
         {
             fixed (ImGuiViewport* @this = &this)
-            {
-                ImVec2 __returnBuffer;
-                GetCenter_PInvoke(@this, out __returnBuffer);
-                return __returnBuffer;
-            }
+            { return GetCenter_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetWorkCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", ExactSpelling = true)]
-        private static extern ImVec2* GetWorkCenter_PInvoke(ImGuiViewport* @this, out ImVec2 __returnBuffer);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiViewport13GetWorkCenterEv", ExactSpelling = true)]
+        private static extern ImVec2 GetWorkCenter_PInvoke(ImGuiViewport* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImVec2 GetWorkCenter()
+        public ImVec2 GetWorkCenter()
         {
             fixed (ImGuiViewport* @this = &this)
-            {
-                ImVec2 __returnBuffer;
-                GetWorkCenter_PInvoke(@this, out __returnBuffer);
-                return __returnBuffer;
-            }
+            { return GetWorkCenter_PInvoke(@this); }
         }
     }
 }

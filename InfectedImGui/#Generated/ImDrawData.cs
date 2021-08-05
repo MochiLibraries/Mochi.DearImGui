@@ -29,45 +29,45 @@ namespace InfectedImGui
 
         [FieldOffset(48)] public ImGuiViewport* OwnerViewport;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper25", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper25", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImDrawData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImDrawData* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN10ImDrawData5ClearEv", ExactSpelling = true)]
         private static extern void Clear_PInvoke(ImDrawData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Clear()
+        public void Clear()
         {
             fixed (ImDrawData* @this = &this)
             { Clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN10ImDrawData17DeIndexAllBuffersEv", ExactSpelling = true)]
         private static extern void DeIndexAllBuffers_PInvoke(ImDrawData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void DeIndexAllBuffers()
+        public void DeIndexAllBuffers()
         {
             fixed (ImDrawData* @this = &this)
             { DeIndexAllBuffers_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ScaleClipRects@ImDrawData@@QEAAXAEBUImVec2@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN10ImDrawData14ScaleClipRectsERK6ImVec2", ExactSpelling = true)]
         private static extern void ScaleClipRects_PInvoke(ImDrawData* @this, ImVec2* fb_scale);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ScaleClipRects(ImVec2* fb_scale)
+        public void ScaleClipRects(ImVec2* fb_scale)
         {
             fixed (ImDrawData* @this = &this)
             { ScaleClipRects_PInvoke(@this, fb_scale); }

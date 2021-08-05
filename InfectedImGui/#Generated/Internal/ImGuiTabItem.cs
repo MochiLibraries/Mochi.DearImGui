@@ -35,12 +35,12 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(42)] [MarshalAs(UnmanagedType.I1)] public bool WantClose;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper64", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper64", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTabItem* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiTabItem* @this = &this)
             { Constructor_PInvoke(@this); }

@@ -66,6 +66,55 @@ namespace InfectedImGui.Infrastructure
         }
     }
 
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
+    public unsafe partial struct ConstantArray___va_list_tag_1
+    {
+        /* Failed to emit ConstantArrayTypeDeclaration ConstantArray___va_list_tag_1: Failed to resolve `Ref resolved by __va_list_tag` during emit time. */
+
+        [FieldOffset(0)] private int Element0;
+
+        private int* Element0Pointer
+        {
+            get
+            {
+                fixed (int* pElement0 = &Element0)
+                { return pElement0; }
+            }
+        }
+
+        public ref int this[int index]
+        {
+            get
+            {
+                if ((uint)index < 1)
+                { return ref Element0Pointer[index]; }
+                else
+                { throw new IndexOutOfRangeException(); }
+            }
+        }
+
+        public const int Length = 1;
+
+        public override string ToString()
+            => $"{typeof(int)}[1]";
+
+        public int[] ToArray()
+        {
+            int[] result = new int[1];
+
+            for (int i = 0; i < 1; i++)
+            { result[i] = this[i]; }
+
+            return result;
+        }
+
+        public Span<int> AsSpan()
+            => new Span<int>(Element0Pointer, 1);
+
+        public ConstantArrayEnumerator<int> GetEnumerator()
+            => new ConstantArrayEnumerator<int>(Element0Pointer, 1);
+    }
+
     [StructLayout(LayoutKind.Explicit, Size = 5)]
     public unsafe partial struct ConstantArray_bool_5
     {

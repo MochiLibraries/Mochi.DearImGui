@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiInputSource
+    public enum ImGuiInputSource : uint
     {
         ImGuiInputSource_None = 0,
         ImGuiInputSource_Mouse,

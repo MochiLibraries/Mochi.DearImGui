@@ -25,34 +25,34 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(12)] public short SizeOfBeginPopupStack;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper60", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper60", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiStackSizes* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiStackSizes* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetToCurrentState@ImGuiStackSizes@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiStackSizes17SetToCurrentStateEv", ExactSpelling = true)]
         private static extern void SetToCurrentState_PInvoke(ImGuiStackSizes* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SetToCurrentState()
+        public void SetToCurrentState()
         {
             fixed (ImGuiStackSizes* @this = &this)
             { SetToCurrentState_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CompareWithCurrentState@ImGuiStackSizes@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN15ImGuiStackSizes23CompareWithCurrentStateEv", ExactSpelling = true)]
         private static extern void CompareWithCurrentState_PInvoke(ImGuiStackSizes* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void CompareWithCurrentState()
+        public void CompareWithCurrentState()
         {
             fixed (ImGuiStackSizes* @this = &this)
             { CompareWithCurrentState_PInvoke(@this); }

@@ -11,12 +11,12 @@ namespace InfectedImGui
     [StructLayout(LayoutKind.Explicit, Size = 4)]
     public unsafe partial struct ImGuiOnceUponAFrame
     {
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper8", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper8", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiOnceUponAFrame* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiOnceUponAFrame* @this = &this)
             { Constructor_PInvoke(@this); }
@@ -24,13 +24,13 @@ namespace InfectedImGui
 
         [FieldOffset(0)] public int RefFrame;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??BImGuiOnceUponAFrame@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK19ImGuiOnceUponAFramecvbEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool ____ConversionOperator_bool_PInvoke(ImGuiOnceUponAFrame* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool ____ConversionOperator_bool()
+        public bool ____ConversionOperator_bool()
         {
             fixed (ImGuiOnceUponAFrame* @this = &this)
             { return ____ConversionOperator_bool_PInvoke(@this); }

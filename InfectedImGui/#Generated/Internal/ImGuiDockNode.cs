@@ -94,280 +94,276 @@ namespace InfectedImGui.Internal
             }
         }
 
-        [FieldOffset(188)] private byte __IsVisible__backingField;
+        [FieldOffset(185)] private byte __IsVisible__backingField;
         public bool IsVisible
         {
-            get => ((__IsVisible__backingField >> 0) & 0x1U) != 0;
+            get => ((__IsVisible__backingField >> 1) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 0;
-                uint otherBits = __IsVisible__backingField & 0xFEU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 1;
+                uint otherBits = __IsVisible__backingField & 0xFDU;
                 __IsVisible__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(188)] private byte __IsFocused__backingField;
+        [FieldOffset(185)] private byte __IsFocused__backingField;
         public bool IsFocused
         {
-            get => ((__IsFocused__backingField >> 1) & 0x1U) != 0;
+            get => ((__IsFocused__backingField >> 2) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 1;
-                uint otherBits = __IsFocused__backingField & 0xFDU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 2;
+                uint otherBits = __IsFocused__backingField & 0xFBU;
                 __IsFocused__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(188)] private byte __HasCloseButton__backingField;
+        [FieldOffset(185)] private byte __HasCloseButton__backingField;
         public bool HasCloseButton
         {
-            get => ((__HasCloseButton__backingField >> 2) & 0x1U) != 0;
+            get => ((__HasCloseButton__backingField >> 3) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 2;
-                uint otherBits = __HasCloseButton__backingField & 0xFBU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 3;
+                uint otherBits = __HasCloseButton__backingField & 0xF7U;
                 __HasCloseButton__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(188)] private byte __HasWindowMenuButton__backingField;
+        [FieldOffset(185)] private byte __HasWindowMenuButton__backingField;
         public bool HasWindowMenuButton
         {
-            get => ((__HasWindowMenuButton__backingField >> 3) & 0x1U) != 0;
+            get => ((__HasWindowMenuButton__backingField >> 4) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 3;
-                uint otherBits = __HasWindowMenuButton__backingField & 0xF7U;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 4;
+                uint otherBits = __HasWindowMenuButton__backingField & 0xEFU;
                 __HasWindowMenuButton__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(188)] private byte __WantCloseAll__backingField;
+        [FieldOffset(185)] private byte __WantCloseAll__backingField;
         public bool WantCloseAll
         {
-            get => ((__WantCloseAll__backingField >> 4) & 0x1U) != 0;
+            get => ((__WantCloseAll__backingField >> 5) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 4;
-                uint otherBits = __WantCloseAll__backingField & 0xEFU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 5;
+                uint otherBits = __WantCloseAll__backingField & 0xDFU;
                 __WantCloseAll__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(188)] private byte __WantLockSizeOnce__backingField;
+        [FieldOffset(185)] private byte __WantLockSizeOnce__backingField;
         public bool WantLockSizeOnce
         {
-            get => ((__WantLockSizeOnce__backingField >> 5) & 0x1U) != 0;
+            get => ((__WantLockSizeOnce__backingField >> 6) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 5;
-                uint otherBits = __WantLockSizeOnce__backingField & 0xDFU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 6;
+                uint otherBits = __WantLockSizeOnce__backingField & 0xBFU;
                 __WantLockSizeOnce__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(188)] private byte __WantMouseMove__backingField;
+        [FieldOffset(185)] private byte __WantMouseMove__backingField;
         public bool WantMouseMove
         {
-            get => ((__WantMouseMove__backingField >> 6) & 0x1U) != 0;
+            get => ((__WantMouseMove__backingField >> 7) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 6;
-                uint otherBits = __WantMouseMove__backingField & 0xBFU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 7;
+                uint otherBits = __WantMouseMove__backingField & 0x7FU;
                 __WantMouseMove__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(188)] private byte __WantHiddenTabBarUpdate__backingField;
+        [FieldOffset(186)] private byte __WantHiddenTabBarUpdate__backingField;
         public bool WantHiddenTabBarUpdate
         {
-            get => ((__WantHiddenTabBarUpdate__backingField >> 7) & 0x1U) != 0;
+            get => ((__WantHiddenTabBarUpdate__backingField >> 0) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 7;
-                uint otherBits = __WantHiddenTabBarUpdate__backingField & 0x7FU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 0;
+                uint otherBits = __WantHiddenTabBarUpdate__backingField & 0xFEU;
                 __WantHiddenTabBarUpdate__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(189)] private byte __WantHiddenTabBarToggle__backingField;
+        [FieldOffset(186)] private byte __WantHiddenTabBarToggle__backingField;
         public bool WantHiddenTabBarToggle
         {
-            get => ((__WantHiddenTabBarToggle__backingField >> 0) & 0x1U) != 0;
+            get => ((__WantHiddenTabBarToggle__backingField >> 1) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 0;
-                uint otherBits = __WantHiddenTabBarToggle__backingField & 0xFEU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 1;
+                uint otherBits = __WantHiddenTabBarToggle__backingField & 0xFDU;
                 __WantHiddenTabBarToggle__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [FieldOffset(189)] private byte __MarkedForPosSizeWrite__backingField;
+        [FieldOffset(186)] private byte __MarkedForPosSizeWrite__backingField;
         public bool MarkedForPosSizeWrite
         {
-            get => ((__MarkedForPosSizeWrite__backingField >> 1) & 0x1U) != 0;
+            get => ((__MarkedForPosSizeWrite__backingField >> 2) & 0x1U) != 0;
             set
             {
-                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 1;
-                uint otherBits = __MarkedForPosSizeWrite__backingField & 0xFDU;
+                uint shiftedValue = ((value ? 1U : 0U) & 0x1U) << 2;
+                uint otherBits = __MarkedForPosSizeWrite__backingField & 0xFBU;
                 __MarkedForPosSizeWrite__backingField = (byte)(otherBits | shiftedValue);
             }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiDockNode@@QEAA@I@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN13ImGuiDockNodeC1Ej", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiDockNode* @this, uint id);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(uint id)
+        public void Constructor(uint id)
         {
             fixed (ImGuiDockNode* @this = &this)
             { Constructor_PInvoke(@this, id); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImGuiDockNode@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN13ImGuiDockNodeD2Ev", ExactSpelling = true)]
         private static extern void Destructor_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Destructor()
+        public void Destructor()
         {
             fixed (ImGuiDockNode* @this = &this)
             { Destructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsRootNode@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode10IsRootNodeEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsRootNode_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsRootNode()
+        public bool IsRootNode()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsRootNode_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsDockSpace@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode11IsDockSpaceEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsDockSpace_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsDockSpace()
+        public bool IsDockSpace()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsDockSpace_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsFloatingNode@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode14IsFloatingNodeEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsFloatingNode_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsFloatingNode()
+        public bool IsFloatingNode()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsFloatingNode_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsCentralNode@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode13IsCentralNodeEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsCentralNode_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsCentralNode()
+        public bool IsCentralNode()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsCentralNode_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsHiddenTabBar@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode14IsHiddenTabBarEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsHiddenTabBar_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsHiddenTabBar()
+        public bool IsHiddenTabBar()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsHiddenTabBar_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsNoTabBar@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode10IsNoTabBarEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsNoTabBar_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsNoTabBar()
+        public bool IsNoTabBar()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsNoTabBar_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsSplitNode@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode11IsSplitNodeEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsSplitNode_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsSplitNode()
+        public bool IsSplitNode()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsSplitNode_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsLeafNode@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode10IsLeafNodeEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsLeafNode_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsLeafNode()
+        public bool IsLeafNode()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsLeafNode_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsEmpty@ImGuiDockNode@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode7IsEmptyEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsEmpty_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsEmpty()
+        public bool IsEmpty()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return IsEmpty_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetMergedFlags@ImGuiDockNode@@QEBAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode14GetMergedFlagsEv", ExactSpelling = true)]
         private static extern ImGuiDockNodeFlags GetMergedFlags_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImGuiDockNodeFlags GetMergedFlags()
+        public ImGuiDockNodeFlags GetMergedFlags()
         {
             fixed (ImGuiDockNode* @this = &this)
             { return GetMergedFlags_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Rect@ImGuiDockNode@@QEBA?AUImRect@@XZ", ExactSpelling = true)]
-        private static extern ImRect* Rect_PInvoke(ImGuiDockNode* @this, out ImRect __returnBuffer);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK13ImGuiDockNode4RectEv", ExactSpelling = true)]
+        private static extern ImRect Rect_PInvoke(ImGuiDockNode* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImRect Rect()
+        public ImRect Rect()
         {
             fixed (ImGuiDockNode* @this = &this)
-            {
-                ImRect __returnBuffer;
-                Rect_PInvoke(@this, out __returnBuffer);
-                return __returnBuffer;
-            }
+            { return Rect_PInvoke(@this); }
         }
     }
 }

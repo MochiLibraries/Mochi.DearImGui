@@ -45,12 +45,12 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(112)] public ImDrawListSplitter Splitter;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper53", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper53", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiOldColumns* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiOldColumns* @this = &this)
             { Constructor_PInvoke(@this); }

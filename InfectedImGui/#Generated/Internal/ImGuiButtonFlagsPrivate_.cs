@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiButtonFlagsPrivate_
+    public enum ImGuiButtonFlagsPrivate_ : uint
     {
         ImGuiButtonFlags_PressedOnClick = 16,
         ImGuiButtonFlags_PressedOnClickRelease = 32,

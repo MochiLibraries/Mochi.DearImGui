@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiContextHookType
+    public enum ImGuiContextHookType : uint
     {
         ImGuiContextHookType_NewFramePre,
         ImGuiContextHookType_NewFramePost,

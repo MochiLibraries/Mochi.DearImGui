@@ -29,12 +29,12 @@ namespace InfectedImGui
 
         [FieldOffset(29)] [MarshalAs(UnmanagedType.I1)] public bool DockingAllowUnclassed;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper4", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper4", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiWindowClass* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiWindowClass* @this = &this)
             { Constructor_PInvoke(@this); }

@@ -46,216 +46,212 @@ namespace InfectedImGui
 
         [FieldOffset(104)] public ConstantArray_ImU8_2 Used4kPagesMap;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImFont@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFontC1Ev", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImFont* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImFont* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImFont@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFontD2Ev", ExactSpelling = true)]
         private static extern void Destructor_PInvoke(ImFont* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Destructor()
+        public void Destructor()
         {
             fixed (ImFont* @this = &this)
             { Destructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindGlyph@ImFont@@QEBAPEBUImFontGlyph@@G@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont9FindGlyphEt", ExactSpelling = true)]
         private static extern ImFontGlyph* FindGlyph_PInvoke(ImFont* @this, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImFontGlyph* FindGlyph(char c)
+        public ImFontGlyph* FindGlyph(char c)
         {
             fixed (ImFont* @this = &this)
             { return FindGlyph_PInvoke(@this, c); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FindGlyphNoFallback@ImFont@@QEBAPEBUImFontGlyph@@G@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont19FindGlyphNoFallbackEt", ExactSpelling = true)]
         private static extern ImFontGlyph* FindGlyphNoFallback_PInvoke(ImFont* @this, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImFontGlyph* FindGlyphNoFallback(char c)
+        public ImFontGlyph* FindGlyphNoFallback(char c)
         {
             fixed (ImFont* @this = &this)
             { return FindGlyphNoFallback_PInvoke(@this, c); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetCharAdvance@ImFont@@QEBAMG@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont14GetCharAdvanceEt", ExactSpelling = true)]
         private static extern float GetCharAdvance_PInvoke(ImFont* @this, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe float GetCharAdvance(char c)
+        public float GetCharAdvance(char c)
         {
             fixed (ImFont* @this = &this)
             { return GetCharAdvance_PInvoke(@this, c); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsLoaded@ImFont@@QEBA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont8IsLoadedEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsLoaded_PInvoke(ImFont* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsLoaded()
+        public bool IsLoaded()
         {
             fixed (ImFont* @this = &this)
             { return IsLoaded_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetDebugName@ImFont@@QEBAPEBDXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont12GetDebugNameEv", ExactSpelling = true)]
         private static extern byte* GetDebugName_PInvoke(ImFont* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe byte* GetDebugName()
+        public byte* GetDebugName()
         {
             fixed (ImFont* @this = &this)
             { return GetDebugName_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcTextSizeA@ImFont@@QEBA?AUImVec2@@MMMPEBD0PEAPEBD@Z", ExactSpelling = true)]
-        private static extern ImVec2* CalcTextSizeA_PInvoke(ImFont* @this, out ImVec2 __returnBuffer, float size, float max_width, float wrap_width, byte* text_begin, byte* text_end, byte** remaining);
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont13CalcTextSizeAEfffPKcS1_PS1_", ExactSpelling = true)]
+        private static extern ImVec2 CalcTextSizeA_PInvoke(ImFont* @this, float size, float max_width, float wrap_width, byte* text_begin, byte* text_end, byte** remaining);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImVec2 CalcTextSizeA(float size, float max_width, float wrap_width, byte* text_begin, byte* text_end = null, byte** remaining = null)
+        public ImVec2 CalcTextSizeA(float size, float max_width, float wrap_width, byte* text_begin, byte* text_end = null, byte** remaining = null)
         {
             fixed (ImFont* @this = &this)
-            {
-                ImVec2 __returnBuffer;
-                CalcTextSizeA_PInvoke(@this, out __returnBuffer, size, max_width, wrap_width, text_begin, text_end, remaining);
-                return __returnBuffer;
-            }
+            { return CalcTextSizeA_PInvoke(@this, size, max_width, wrap_width, text_begin, text_end, remaining); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CalcWordWrapPositionA@ImFont@@QEBAPEBDMPEBD0M@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont21CalcWordWrapPositionAEfPKcS1_f", ExactSpelling = true)]
         private static extern byte* CalcWordWrapPositionA_PInvoke(ImFont* @this, float scale, byte* text, byte* text_end, float wrap_width);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe byte* CalcWordWrapPositionA(float scale, byte* text, byte* text_end, float wrap_width)
+        public byte* CalcWordWrapPositionA(float scale, byte* text, byte* text_end, float wrap_width)
         {
             fixed (ImFont* @this = &this)
             { return CalcWordWrapPositionA_PInvoke(@this, scale, text, text_end, wrap_width); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderChar@ImFont@@QEBAXPEAUImDrawList@@MUImVec2@@IG@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont10RenderCharEP10ImDrawListf6ImVec2jt", ExactSpelling = true)]
         private static extern void RenderChar_PInvoke(ImFont* @this, ImDrawList* draw_list, float size, ImVec2 pos, uint col, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void RenderChar(ImDrawList* draw_list, float size, ImVec2 pos, uint col, char c)
+        public void RenderChar(ImDrawList* draw_list, float size, ImVec2 pos, uint col, char c)
         {
             fixed (ImFont* @this = &this)
             { RenderChar_PInvoke(@this, draw_list, size, pos, col, c); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?RenderText@ImFont@@QEBAXPEAUImDrawList@@MUImVec2@@IAEBUImVec4@@PEBD3M_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK6ImFont10RenderTextEP10ImDrawListf6ImVec2jRK6ImVec4PKcS7_fb", ExactSpelling = true)]
         private static extern void RenderText_PInvoke(ImFont* @this, ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width, [MarshalAs(UnmanagedType.I1)] bool cpu_fine_clip);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void RenderText(ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width = 0f, bool cpu_fine_clip = false)
+        public void RenderText(ImDrawList* draw_list, float size, ImVec2 pos, uint col, ImVec4* clip_rect, byte* text_begin, byte* text_end, float wrap_width = 0f, bool cpu_fine_clip = false)
         {
             fixed (ImFont* @this = &this)
             { RenderText_PInvoke(@this, draw_list, size, pos, col, clip_rect, text_begin, text_end, wrap_width, cpu_fine_clip); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BuildLookupTable@ImFont@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFont16BuildLookupTableEv", ExactSpelling = true)]
         private static extern void BuildLookupTable_PInvoke(ImFont* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void BuildLookupTable()
+        public void BuildLookupTable()
         {
             fixed (ImFont* @this = &this)
             { BuildLookupTable_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearOutputData@ImFont@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFont15ClearOutputDataEv", ExactSpelling = true)]
         private static extern void ClearOutputData_PInvoke(ImFont* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearOutputData()
+        public void ClearOutputData()
         {
             fixed (ImFont* @this = &this)
             { ClearOutputData_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GrowIndex@ImFont@@QEAAXH@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFont9GrowIndexEi", ExactSpelling = true)]
         private static extern void GrowIndex_PInvoke(ImFont* @this, int new_size);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void GrowIndex(int new_size)
+        public void GrowIndex(int new_size)
         {
             fixed (ImFont* @this = &this)
             { GrowIndex_PInvoke(@this, new_size); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddGlyph@ImFont@@QEAAXPEBUImFontConfig@@GMMMMMMMMM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFont8AddGlyphEPK12ImFontConfigtfffffffff", ExactSpelling = true)]
         private static extern void AddGlyph_PInvoke(ImFont* @this, ImFontConfig* src_cfg, char c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddGlyph(ImFontConfig* src_cfg, char c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x)
+        public void AddGlyph(ImFontConfig* src_cfg, char c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x)
         {
             fixed (ImFont* @this = &this)
             { AddGlyph_PInvoke(@this, src_cfg, c, x0, y0, x1, y1, u0, v0, u1, v1, advance_x); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRemapChar@ImFont@@QEAAXGG_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFont12AddRemapCharEttb", ExactSpelling = true)]
         private static extern void AddRemapChar_PInvoke(ImFont* @this, char dst, char src, [MarshalAs(UnmanagedType.I1)] bool overwrite_dst);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddRemapChar(char dst, char src, bool overwrite_dst = true)
+        public void AddRemapChar(char dst, char src, bool overwrite_dst = true)
         {
             fixed (ImFont* @this = &this)
             { AddRemapChar_PInvoke(@this, dst, src, overwrite_dst); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetGlyphVisible@ImFont@@QEAAXG_N@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFont15SetGlyphVisibleEtb", ExactSpelling = true)]
         private static extern void SetGlyphVisible_PInvoke(ImFont* @this, char c, [MarshalAs(UnmanagedType.I1)] bool visible);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SetGlyphVisible(char c, bool visible)
+        public void SetGlyphVisible(char c, bool visible)
         {
             fixed (ImFont* @this = &this)
             { SetGlyphVisible_PInvoke(@this, c, visible); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetFallbackChar@ImFont@@QEAAXG@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFont15SetFallbackCharEt", ExactSpelling = true)]
         private static extern void SetFallbackChar_PInvoke(ImFont* @this, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SetFallbackChar(char c)
+        public void SetFallbackChar(char c)
         {
             fixed (ImFont* @this = &this)
             { SetFallbackChar_PInvoke(@this, c); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?IsGlyphRangeUnused@ImFont@@QEAA_NII@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN6ImFont18IsGlyphRangeUnusedEjj", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool IsGlyphRangeUnused_PInvoke(ImFont* @this, uint c_begin, uint c_last);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool IsGlyphRangeUnused(uint c_begin, uint c_last)
+        public bool IsGlyphRangeUnused(uint c_begin, uint c_last)
         {
             fixed (ImFont* @this = &this)
             { return IsGlyphRangeUnused_PInvoke(@this, c_begin, c_last); }

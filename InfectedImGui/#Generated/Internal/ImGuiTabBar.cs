@@ -73,34 +73,34 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(136)] public ImGuiTextBuffer TabsNames;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiTabBar@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN11ImGuiTabBarC1Ev", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTabBar* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiTabBar* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTabOrder@ImGuiTabBar@@QEBAHPEBUImGuiTabItem@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImGuiTabBar11GetTabOrderEPK12ImGuiTabItem", ExactSpelling = true)]
         private static extern int GetTabOrder_PInvoke(ImGuiTabBar* @this, ImGuiTabItem* tab);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe int GetTabOrder(ImGuiTabItem* tab)
+        public int GetTabOrder(ImGuiTabItem* tab)
         {
             fixed (ImGuiTabBar* @this = &this)
             { return GetTabOrder_PInvoke(@this, tab); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetTabName@ImGuiTabBar@@QEBAPEBDPEBUImGuiTabItem@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK11ImGuiTabBar10GetTabNameEPK12ImGuiTabItem", ExactSpelling = true)]
         private static extern byte* GetTabName_PInvoke(ImGuiTabBar* @this, ImGuiTabItem* tab);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe byte* GetTabName(ImGuiTabItem* tab)
+        public byte* GetTabName(ImGuiTabItem* tab)
         {
             fixed (ImGuiTabBar* @this = &this)
             { return GetTabName_PInvoke(@this, tab); }

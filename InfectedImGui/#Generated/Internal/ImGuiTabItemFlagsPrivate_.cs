@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiTabItemFlagsPrivate_
+    public enum ImGuiTabItemFlagsPrivate_ : uint
     {
         ImGuiTabItemFlags_NoCloseButton = 1048576,
         ImGuiTabItemFlags_Button = 2097152,

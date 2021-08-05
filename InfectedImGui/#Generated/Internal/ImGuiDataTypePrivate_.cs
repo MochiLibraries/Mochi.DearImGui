@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiDataTypePrivate_
+    public enum ImGuiDataTypePrivate_ : uint
     {
         ImGuiDataType_String = 11,
         ImGuiDataType_Pointer,

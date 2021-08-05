@@ -17,78 +17,78 @@ namespace InfectedImGui
 
         [FieldOffset(8)] public ImVector<ImDrawChannel> _Channels;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper21", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper21", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImDrawListSplitter* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImDrawListSplitter* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper22", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper22", ExactSpelling = true)]
         private static extern void Destructor_PInvoke(ImDrawListSplitter* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Destructor()
+        public void Destructor()
         {
             fixed (ImDrawListSplitter* @this = &this)
             { Destructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN18ImDrawListSplitter5ClearEv", ExactSpelling = true)]
         private static extern void Clear_PInvoke(ImDrawListSplitter* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Clear()
+        public void Clear()
         {
             fixed (ImDrawListSplitter* @this = &this)
             { Clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFreeMemory@ImDrawListSplitter@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN18ImDrawListSplitter15ClearFreeMemoryEv", ExactSpelling = true)]
         private static extern void ClearFreeMemory_PInvoke(ImDrawListSplitter* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearFreeMemory()
+        public void ClearFreeMemory()
         {
             fixed (ImDrawListSplitter* @this = &this)
             { ClearFreeMemory_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Split@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN18ImDrawListSplitter5SplitEP10ImDrawListi", ExactSpelling = true)]
         private static extern void Split_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list, int count);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Split(ImDrawList* draw_list, int count)
+        public void Split(ImDrawList* draw_list, int count)
         {
             fixed (ImDrawListSplitter* @this = &this)
             { Split_PInvoke(@this, draw_list, count); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Merge@ImDrawListSplitter@@QEAAXPEAUImDrawList@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN18ImDrawListSplitter5MergeEP10ImDrawList", ExactSpelling = true)]
         private static extern void Merge_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Merge(ImDrawList* draw_list)
+        public void Merge(ImDrawList* draw_list)
         {
             fixed (ImDrawListSplitter* @this = &this)
             { Merge_PInvoke(@this, draw_list); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetCurrentChannel@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN18ImDrawListSplitter17SetCurrentChannelEP10ImDrawListi", ExactSpelling = true)]
         private static extern void SetCurrentChannel_PInvoke(ImDrawListSplitter* @this, ImDrawList* draw_list, int channel_idx);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SetCurrentChannel(ImDrawList* draw_list, int channel_idx)
+        public void SetCurrentChannel(ImDrawList* draw_list, int channel_idx)
         {
             fixed (ImDrawListSplitter* @this = &this)
             { SetCurrentChannel_PInvoke(@this, draw_list, channel_idx); }

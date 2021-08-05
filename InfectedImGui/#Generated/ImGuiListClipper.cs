@@ -25,57 +25,57 @@ namespace InfectedImGui
 
         [FieldOffset(24)] public float StartPosY;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiListClipper@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN16ImGuiListClipperC1Ev", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiListClipper* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiListClipper* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??1ImGuiListClipper@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN16ImGuiListClipperD2Ev", ExactSpelling = true)]
         private static extern void Destructor_PInvoke(ImGuiListClipper* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Destructor()
+        public void Destructor()
         {
             fixed (ImGuiListClipper* @this = &this)
             { Destructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Begin@ImGuiListClipper@@QEAAXHM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN16ImGuiListClipper5BeginEif", ExactSpelling = true)]
         private static extern void Begin_PInvoke(ImGuiListClipper* @this, int items_count, float items_height);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Begin(int items_count, float items_height = -1f)
+        public void Begin(int items_count, float items_height = -1f)
         {
             fixed (ImGuiListClipper* @this = &this)
             { Begin_PInvoke(@this, items_count, items_height); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?End@ImGuiListClipper@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN16ImGuiListClipper3EndEv", ExactSpelling = true)]
         private static extern void End_PInvoke(ImGuiListClipper* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void End()
+        public void End()
         {
             fixed (ImGuiListClipper* @this = &this)
             { End_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Step@ImGuiListClipper@@QEAA_NXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN16ImGuiListClipper4StepEv", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool Step_PInvoke(ImGuiListClipper* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool Step()
+        public bool Step()
         {
             fixed (ImGuiListClipper* @this = &this)
             { return Step_PInvoke(@this); }

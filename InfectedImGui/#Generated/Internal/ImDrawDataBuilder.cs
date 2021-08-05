@@ -14,45 +14,45 @@ namespace InfectedImGui.Internal
     {
         [FieldOffset(0)] public ConstantArray_ImVector__UNICODE_003C__ImDrawList__UNICODE_0020____UNICODE_002A____UNICODE_003E___2 Layers;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImDrawDataBuilder@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN17ImDrawDataBuilder5ClearEv", ExactSpelling = true)]
         private static extern void Clear_PInvoke(ImDrawDataBuilder* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Clear()
+        public void Clear()
         {
             fixed (ImDrawDataBuilder* @this = &this)
             { Clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFreeMemory@ImDrawDataBuilder@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN17ImDrawDataBuilder15ClearFreeMemoryEv", ExactSpelling = true)]
         private static extern void ClearFreeMemory_PInvoke(ImDrawDataBuilder* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearFreeMemory()
+        public void ClearFreeMemory()
         {
             fixed (ImDrawDataBuilder* @this = &this)
             { ClearFreeMemory_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetDrawListCount@ImDrawDataBuilder@@QEBAHXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK17ImDrawDataBuilder16GetDrawListCountEv", ExactSpelling = true)]
         private static extern int GetDrawListCount_PInvoke(ImDrawDataBuilder* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe int GetDrawListCount()
+        public int GetDrawListCount()
         {
             fixed (ImDrawDataBuilder* @this = &this)
             { return GetDrawListCount_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?FlattenIntoSingleLayer@ImDrawDataBuilder@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN17ImDrawDataBuilder22FlattenIntoSingleLayerEv", ExactSpelling = true)]
         private static extern void FlattenIntoSingleLayer_PInvoke(ImDrawDataBuilder* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void FlattenIntoSingleLayer()
+        public void FlattenIntoSingleLayer()
         {
             fixed (ImDrawDataBuilder* @this = &this)
             { FlattenIntoSingleLayer_PInvoke(@this); }

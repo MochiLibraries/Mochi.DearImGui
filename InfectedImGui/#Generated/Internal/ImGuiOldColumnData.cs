@@ -19,12 +19,12 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(12)] public ImRect ClipRect;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper52", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper52", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiOldColumnData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiOldColumnData* @this = &this)
             { Constructor_PInvoke(@this); }

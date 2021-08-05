@@ -264,4 +264,4 @@ Warning: Non-constant default parameter values are not supported.
 ==============================================================================
 Generation Diagnostics
 ==============================================================================
-Generation completed successfully
+Error: Could not emit ConstantArrayTypeDeclaration ConstantArray___va_list_tag_1 @ TranslatedLibrary: Failed to resolve `Ref resolved by __va_list_tag` during emit time.

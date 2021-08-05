@@ -18,34 +18,34 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(4)] public ConstantArray_float_2 BackupFloat;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper41", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper41", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiStyleMod* @this, ImGuiStyleVar idx, int v);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(ImGuiStyleVar idx, int v)
+        public void Constructor(ImGuiStyleVar idx, int v)
         {
             fixed (ImGuiStyleMod* @this = &this)
             { Constructor_PInvoke(@this, idx, v); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper42", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper42", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiStyleMod* @this, ImGuiStyleVar idx, float v);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(ImGuiStyleVar idx, float v)
+        public void Constructor(ImGuiStyleVar idx, float v)
         {
             fixed (ImGuiStyleMod* @this = &this)
             { Constructor_PInvoke(@this, idx, v); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper43", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper43", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiStyleMod* @this, ImGuiStyleVar idx, ImVec2 v);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor(ImGuiStyleVar idx, ImVec2 v)
+        public void Constructor(ImGuiStyleVar idx, ImVec2 v)
         {
             fixed (ImGuiStyleMod* @this = &this)
             { Constructor_PInvoke(@this, idx, v); }

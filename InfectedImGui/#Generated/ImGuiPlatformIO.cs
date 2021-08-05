@@ -20,11 +20,11 @@ namespace InfectedImGui
 
         [FieldOffset(24)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void> Platform_SetWindowPos;
 
-        [FieldOffset(32)] public delegate* unmanaged[Cdecl]<ImVec2*, ImGuiViewport*, ImVec2*> Platform_GetWindowPos;
+        [FieldOffset(32)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2> Platform_GetWindowPos;
 
         [FieldOffset(40)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2, void> Platform_SetWindowSize;
 
-        [FieldOffset(48)] public delegate* unmanaged[Cdecl]<ImVec2*, ImGuiViewport*, ImVec2*> Platform_GetWindowSize;
+        [FieldOffset(48)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, ImVec2> Platform_GetWindowSize;
 
         [FieldOffset(56)] public delegate* unmanaged[Cdecl]<ImGuiViewport*, void> Platform_SetWindowFocus;
 
@@ -64,12 +64,12 @@ namespace InfectedImGui
 
         [FieldOffset(208)] public ImVector<Pointer<ImGuiViewport>> Viewports;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper30", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper30", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiPlatformIO* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiPlatformIO* @this = &this)
             { Constructor_PInvoke(@this); }

@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiNavLayer
+    public enum ImGuiNavLayer : uint
     {
         ImGuiNavLayer_Main = 0,
         ImGuiNavLayer_Menu = 1,

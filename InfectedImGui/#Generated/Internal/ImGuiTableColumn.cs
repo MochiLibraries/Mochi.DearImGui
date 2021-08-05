@@ -121,12 +121,12 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(101)] public byte SortDirectionsAvailList;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper65", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper65", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTableColumn* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiTableColumn* @this = &this)
             { Constructor_PInvoke(@this); }

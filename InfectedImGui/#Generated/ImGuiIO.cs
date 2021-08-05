@@ -118,45 +118,45 @@ namespace InfectedImGui
 
         [FieldOffset(824)] public ConstantArray_float_21 NavInputs;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharacter@ImGuiIO@@QEAAXI@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN7ImGuiIO17AddInputCharacterEj", ExactSpelling = true)]
         private static extern void AddInputCharacter_PInvoke(ImGuiIO* @this, uint c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddInputCharacter(uint c)
+        public void AddInputCharacter(uint c)
         {
             fixed (ImGuiIO* @this = &this)
             { AddInputCharacter_PInvoke(@this, c); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharacterUTF16@ImGuiIO@@QEAAXG@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN7ImGuiIO22AddInputCharacterUTF16Et", ExactSpelling = true)]
         private static extern void AddInputCharacterUTF16_PInvoke(ImGuiIO* @this, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddInputCharacterUTF16(char c)
+        public void AddInputCharacterUTF16(char c)
         {
             fixed (ImGuiIO* @this = &this)
             { AddInputCharacterUTF16_PInvoke(@this, c); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddInputCharactersUTF8@ImGuiIO@@QEAAXPEBD@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN7ImGuiIO22AddInputCharactersUTF8EPKc", ExactSpelling = true)]
         private static extern void AddInputCharactersUTF8_PInvoke(ImGuiIO* @this, byte* str);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddInputCharactersUTF8(byte* str)
+        public void AddInputCharactersUTF8(byte* str)
         {
             fixed (ImGuiIO* @this = &this)
             { AddInputCharactersUTF8_PInvoke(@this, str); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearInputCharacters@ImGuiIO@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN7ImGuiIO20ClearInputCharactersEv", ExactSpelling = true)]
         private static extern void ClearInputCharacters_PInvoke(ImGuiIO* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearInputCharacters()
+        public void ClearInputCharacters()
         {
             fixed (ImGuiIO* @this = &this)
             { ClearInputCharacters_PInvoke(@this); }
@@ -230,12 +230,12 @@ namespace InfectedImGui
 
         [FieldOffset(5440)] public ImVector<ushort> InputQueueCharacters;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImGuiIO@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN7ImGuiIOC1Ev", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiIO* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiIO* @this = &this)
             { Constructor_PInvoke(@this); }

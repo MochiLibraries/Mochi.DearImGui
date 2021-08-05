@@ -7,10 +7,8 @@
     <LangVersion>preview</LangVersion>
 
     <!--
-      ClangSharp.Pathogen requires Windows x64 right now
-      This is also indirectly a workaround for https://github.com/microsoft/ClangSharp/issues/118#issuecomment-598305888
+      ClangSharp.Pathogen requires x64 right now
     -->
     <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 </Project>

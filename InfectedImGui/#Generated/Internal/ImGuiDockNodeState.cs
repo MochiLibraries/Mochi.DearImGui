@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiDockNodeState
+    public enum ImGuiDockNodeState : uint
     {
         ImGuiDockNodeState_Unknown,
         ImGuiDockNodeState_HostWindowHiddenBecauseSingleWindow,

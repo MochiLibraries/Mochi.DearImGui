@@ -27,8 +27,9 @@ string imGuiHeaderFilePath = Path.Combine(imGuiSourceDirectoryPath, "imgui.h");
 
 string infectedImGuiNativeRootPath = Path.GetFullPath(args[1]);
 string imguiLibFilePath = Path.Combine(infectedImGuiNativeRootPath, "build", "Debug", "InfectedImGui.Native.lib");
+imguiLibFilePath = Path.Combine(infectedImGuiNativeRootPath, "build-linux", "libInfectedImGui.Native.so");
 string imguiInlineExporterFilePath = Path.Combine(infectedImGuiNativeRootPath, "InfectedImGui.cpp");
-string infectedImGuiNativeBuildScript = Path.Combine(infectedImGuiNativeRootPath, "Build.cmd");
+string infectedImGuiNativeBuildScript = Path.Combine(infectedImGuiNativeRootPath, "Build.sh");
 
 string outputDirectoryPath = Path.GetFullPath(args[2]);
 
@@ -76,9 +77,16 @@ libraryBuilder.AddFile(Path.Combine(imGuiSourceDirectoryPath, "imgui_internal.h"
 if (includeExampleImplementations)
 {
     string backendsPath = Path.Combine(imGuiSourceDirectoryPath, "backends");
-    libraryBuilder.AddFile(Path.Combine(backendsPath, "imgui_impl_win32.h"));
-    libraryBuilder.AddFile(Path.Combine(backendsPath, "imgui_impl_dx11.h"));
+    libraryBuilder.AddFile(Path.Combine(backendsPath, "imgui_impl_opengl3.h"));
+    libraryBuilder.AddCommandLineArgument($"-I{Path.Combine(imGuiSourceDirectoryPath, "examples", "libs", "gl3w")}");
+    libraryBuilder.AddCommandLineArgument($"-DIMGUI_IMPL_OPENGL_LOADER_GL3W");
+    libraryBuilder.AddFile(Path.Combine(backendsPath, "imgui_impl_glfw.h"));
 }
+
+//TODO: Figure out a better way to deal with this
+// https://github.com/InfectedLibraries/Biohazrd/issues/201
+if (OperatingSystem.IsLinux())
+{ libraryBuilder.AddCommandLineArguments("-isystem/usr/lib/llvm-10/lib/clang/10.0.0/include/"); }
 
 TranslatedLibrary library = libraryBuilder.Create();
 
@@ -124,9 +132,10 @@ library = new DeduplicateNamesTransformation().Transform(library);
 library = new OrganizeOutputFilesByNamespaceTransformation("InfectedImGui").Transform(library); // Relies on InfectedImGuiNamespaceTransformation, MoveLooseDeclarationsIntoTypesTransformation
 
 // Generate the inline export helper
-library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath).Transform(library);
+library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath) { __ItaniumExportMode = true }.Transform(library);
 
 // Rebuild the native DLL so that the librarian can access a version of the library including the inline-exported functions
+//TODO: Handle build failure more elegantly since failure causes this to be burried in the log
 Console.WriteLine("Rebuilding InfectedImGui.Native...");
 Process.Start(new ProcessStartInfo(infectedImGuiNativeBuildScript)
 {

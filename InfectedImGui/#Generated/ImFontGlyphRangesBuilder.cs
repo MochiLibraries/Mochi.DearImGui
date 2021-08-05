@@ -13,90 +13,90 @@ namespace InfectedImGui
     {
         [FieldOffset(0)] public ImVector<uint> UsedChars;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper26", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper26", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImFontGlyphRangesBuilder* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Clear@ImFontGlyphRangesBuilder@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN24ImFontGlyphRangesBuilder5ClearEv", ExactSpelling = true)]
         private static extern void Clear_PInvoke(ImFontGlyphRangesBuilder* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Clear()
+        public void Clear()
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { Clear_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetBit@ImFontGlyphRangesBuilder@@QEBA_N_K@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK24ImFontGlyphRangesBuilder6GetBitEm", ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool GetBit_PInvoke(ImFontGlyphRangesBuilder* @this, ulong n);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool GetBit(ulong n)
+        public bool GetBit(ulong n)
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { return GetBit_PInvoke(@this, n); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetBit@ImFontGlyphRangesBuilder@@QEAAX_K@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN24ImFontGlyphRangesBuilder6SetBitEm", ExactSpelling = true)]
         private static extern void SetBit_PInvoke(ImFontGlyphRangesBuilder* @this, ulong n);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SetBit(ulong n)
+        public void SetBit(ulong n)
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { SetBit_PInvoke(@this, n); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddChar@ImFontGlyphRangesBuilder@@QEAAXG@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN24ImFontGlyphRangesBuilder7AddCharEt", ExactSpelling = true)]
         private static extern void AddChar_PInvoke(ImFontGlyphRangesBuilder* @this, char c);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddChar(char c)
+        public void AddChar(char c)
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { AddChar_PInvoke(@this, c); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddText@ImFontGlyphRangesBuilder@@QEAAXPEBD0@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN24ImFontGlyphRangesBuilder7AddTextEPKcS1_", ExactSpelling = true)]
         private static extern void AddText_PInvoke(ImFontGlyphRangesBuilder* @this, byte* text, byte* text_end);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddText(byte* text, byte* text_end = null)
+        public void AddText(byte* text, byte* text_end = null)
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { AddText_PInvoke(@this, text, text_end); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?AddRanges@ImFontGlyphRangesBuilder@@QEAAXPEBG@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN24ImFontGlyphRangesBuilder9AddRangesEPKt", ExactSpelling = true)]
         private static extern void AddRanges_PInvoke(ImFontGlyphRangesBuilder* @this, char* ranges);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void AddRanges(char* ranges)
+        public void AddRanges(char* ranges)
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { AddRanges_PInvoke(@this, ranges); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?BuildRanges@ImFontGlyphRangesBuilder@@QEAAXPEAU?$ImVector@G@@@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN24ImFontGlyphRangesBuilder11BuildRangesEP8ImVectorItE", ExactSpelling = true)]
         private static extern void BuildRanges_PInvoke(ImFontGlyphRangesBuilder* @this, ImVector<ushort>* out_ranges);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void BuildRanges(ImVector<ushort>* out_ranges)
+        public void BuildRanges(ImVector<ushort>* out_ranges)
         {
             fixed (ImFontGlyphRangesBuilder* @this = &this)
             { BuildRanges_PInvoke(@this, out_ranges); }

@@ -19,34 +19,34 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(24)] public ImRect LastItemDisplayRect;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper63", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper63", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiLastItemDataBackup* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiLastItemDataBackup* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Backup@ImGuiLastItemDataBackup@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN23ImGuiLastItemDataBackup6BackupEv", ExactSpelling = true)]
         private static extern void Backup_PInvoke(ImGuiLastItemDataBackup* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Backup()
+        public void Backup()
         {
             fixed (ImGuiLastItemDataBackup* @this = &this)
             { Backup_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?Restore@ImGuiLastItemDataBackup@@QEBAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZNK23ImGuiLastItemDataBackup7RestoreEv", ExactSpelling = true)]
         private static extern void Restore_PInvoke(ImGuiLastItemDataBackup* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Restore()
+        public void Restore()
         {
             fixed (ImGuiLastItemDataBackup* @this = &this)
             { Restore_PInvoke(@this); }

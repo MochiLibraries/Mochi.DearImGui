@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiTabBarFlagsPrivate_
+    public enum ImGuiTabBarFlagsPrivate_ : uint
     {
         ImGuiTabBarFlags_DockNode = 1048576,
         ImGuiTabBarFlags_IsFocused = 2097152,

@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiNavForward
+    public enum ImGuiNavForward : uint
     {
         ImGuiNavForward_None,
         ImGuiNavForward_ForwardQueued,

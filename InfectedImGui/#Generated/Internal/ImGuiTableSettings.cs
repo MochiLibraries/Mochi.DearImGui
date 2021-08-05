@@ -23,23 +23,23 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(14)] [MarshalAs(UnmanagedType.I1)] public bool WantApply;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper69", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper69", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiTableSettings* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiTableSettings* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?GetColumnSettings@ImGuiTableSettings@@QEAAPEAUImGuiTableColumnSettings@@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN18ImGuiTableSettings17GetColumnSettingsEv", ExactSpelling = true)]
         private static extern ImGuiTableColumnSettings* GetColumnSettings_PInvoke(ImGuiTableSettings* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe ImGuiTableColumnSettings* GetColumnSettings()
+        public ImGuiTableColumnSettings* GetColumnSettings()
         {
             fixed (ImGuiTableSettings* @this = &this)
             { return GetColumnSettings_PInvoke(@this); }

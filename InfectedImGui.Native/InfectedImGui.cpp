@@ -2,168 +2,11 @@
 #include "../external/imgui/imgui.h"
 #include "../external/imgui/imgui_internal.h"
 
-#pragma comment(linker, "/export:??AImVec2@@QEBAM_K@Z")
-#pragma comment(linker, "/export:??AImVec2@@QEAAAEAM_K@Z")
-#pragma comment(linker, "/export:?SelectAll@ImGuiInputTextCallbackData@@QEAAXXZ")
-#pragma comment(linker, "/export:?ClearSelection@ImGuiInputTextCallbackData@@QEAAXXZ")
-#pragma comment(linker, "/export:?HasSelection@ImGuiInputTextCallbackData@@QEBA_NXZ")
-#pragma comment(linker, "/export:?Clear@ImGuiPayload@@QEAAXXZ")
-#pragma comment(linker, "/export:?IsDataType@ImGuiPayload@@QEBA_NPEBD@Z")
-#pragma comment(linker, "/export:?IsPreview@ImGuiPayload@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsDelivery@ImGuiPayload@@QEBA_NXZ")
-#pragma comment(linker, "/export:??BImGuiOnceUponAFrame@@QEBA_NXZ")
-#pragma comment(linker, "/export:?Clear@ImGuiTextFilter@@QEAAXXZ")
-#pragma comment(linker, "/export:?IsActive@ImGuiTextFilter@@QEBA_NXZ")
-#pragma comment(linker, "/export:?empty@ImGuiTextRange@ImGuiTextFilter@@QEBA_NXZ")
-#pragma comment(linker, "/export:??AImGuiTextBuffer@@QEBADH@Z")
-#pragma comment(linker, "/export:?begin@ImGuiTextBuffer@@QEBAPEBDXZ")
-#pragma comment(linker, "/export:?end@ImGuiTextBuffer@@QEBAPEBDXZ")
-#pragma comment(linker, "/export:?size@ImGuiTextBuffer@@QEBAHXZ")
-#pragma comment(linker, "/export:?empty@ImGuiTextBuffer@@QEBA_NXZ")
-#pragma comment(linker, "/export:?clear@ImGuiTextBuffer@@QEAAXXZ")
-#pragma comment(linker, "/export:?reserve@ImGuiTextBuffer@@QEAAXH@Z")
-#pragma comment(linker, "/export:?c_str@ImGuiTextBuffer@@QEBAPEBDXZ")
-#pragma comment(linker, "/export:?Clear@ImGuiStorage@@QEAAXXZ")
-#pragma comment(linker, "/export:??BImColor@@QEBAIXZ")
-#pragma comment(linker, "/export:??BImColor@@QEBA?AUImVec4@@XZ")
-#pragma comment(linker, "/export:?SetHSV@ImColor@@QEAAXMMMM@Z")
-#pragma comment(linker, "/export:?HSV@ImColor@@SA?AU1@MMMM@Z")
-#pragma comment(linker, "/export:?Clear@ImDrawListSplitter@@QEAAXXZ")
-#pragma comment(linker, "/export:?GetClipRectMin@ImDrawList@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?GetClipRectMax@ImDrawList@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?PathClear@ImDrawList@@QEAAXXZ")
-#pragma comment(linker, "/export:?PathLineTo@ImDrawList@@QEAAXAEBUImVec2@@@Z")
-#pragma comment(linker, "/export:?PathLineToMergeDuplicate@ImDrawList@@QEAAXAEBUImVec2@@@Z")
-#pragma comment(linker, "/export:?PathFillConvex@ImDrawList@@QEAAXI@Z")
-#pragma comment(linker, "/export:?PathStroke@ImDrawList@@QEAAXI_NM@Z")
-#pragma comment(linker, "/export:?ChannelsSplit@ImDrawList@@QEAAXH@Z")
-#pragma comment(linker, "/export:?ChannelsMerge@ImDrawList@@QEAAXXZ")
-#pragma comment(linker, "/export:?ChannelsSetCurrent@ImDrawList@@QEAAXH@Z")
-#pragma comment(linker, "/export:?PrimWriteVtx@ImDrawList@@QEAAXAEBUImVec2@@0I@Z")
-#pragma comment(linker, "/export:?PrimWriteIdx@ImDrawList@@QEAAXG@Z")
-#pragma comment(linker, "/export:?PrimVtx@ImDrawList@@QEAAXAEBUImVec2@@0I@Z")
-#pragma comment(linker, "/export:?Clear@ImDrawData@@QEAAXXZ")
-#pragma comment(linker, "/export:?Clear@ImFontGlyphRangesBuilder@@QEAAXXZ")
-#pragma comment(linker, "/export:?GetBit@ImFontGlyphRangesBuilder@@QEBA_N_K@Z")
-#pragma comment(linker, "/export:?SetBit@ImFontGlyphRangesBuilder@@QEAAX_K@Z")
-#pragma comment(linker, "/export:?AddChar@ImFontGlyphRangesBuilder@@QEAAXG@Z")
-#pragma comment(linker, "/export:?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsBuilt@ImFontAtlas@@QEBA_NXZ")
-#pragma comment(linker, "/export:?SetTexID@ImFontAtlas@@QEAAXPEAX@Z")
-#pragma comment(linker, "/export:?GetCustomRectByIndex@ImFontAtlas@@QEAAPEAUImFontAtlasCustomRect@@H@Z")
-#pragma comment(linker, "/export:?GetCharAdvance@ImFont@@QEBAMG@Z")
-#pragma comment(linker, "/export:?IsLoaded@ImFont@@QEBA_NXZ")
-#pragma comment(linker, "/export:?GetDebugName@ImFont@@QEBAPEBDXZ")
-#pragma comment(linker, "/export:?GetCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?GetWorkCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?GetCenter@ImRect@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?GetSize@ImRect@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?GetWidth@ImRect@@QEBAMXZ")
-#pragma comment(linker, "/export:?GetHeight@ImRect@@QEBAMXZ")
-#pragma comment(linker, "/export:?GetTL@ImRect@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?GetTR@ImRect@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?GetBL@ImRect@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?GetBR@ImRect@@QEBA?AUImVec2@@XZ")
-#pragma comment(linker, "/export:?Contains@ImRect@@QEBA_NAEBUImVec2@@@Z")
-#pragma comment(linker, "/export:?Contains@ImRect@@QEBA_NAEBU1@@Z")
-#pragma comment(linker, "/export:?Overlaps@ImRect@@QEBA_NAEBU1@@Z")
-#pragma comment(linker, "/export:?Add@ImRect@@QEAAXAEBUImVec2@@@Z")
-#pragma comment(linker, "/export:?Add@ImRect@@QEAAXAEBU1@@Z")
-#pragma comment(linker, "/export:?Expand@ImRect@@QEAAXM@Z")
-#pragma comment(linker, "/export:?Expand@ImRect@@QEAAXAEBUImVec2@@@Z")
-#pragma comment(linker, "/export:?Translate@ImRect@@QEAAXAEBUImVec2@@@Z")
-#pragma comment(linker, "/export:?TranslateX@ImRect@@QEAAXM@Z")
-#pragma comment(linker, "/export:?TranslateY@ImRect@@QEAAXM@Z")
-#pragma comment(linker, "/export:?ClipWith@ImRect@@QEAAXAEBU1@@Z")
-#pragma comment(linker, "/export:?ClipWithFull@ImRect@@QEAAXAEBU1@@Z")
-#pragma comment(linker, "/export:?Floor@ImRect@@QEAAXXZ")
-#pragma comment(linker, "/export:?IsInverted@ImRect@@QEBA_NXZ")
-#pragma comment(linker, "/export:?ToVec4@ImRect@@QEBA?AUImVec4@@XZ")
-#pragma comment(linker, "/export:?Create@ImBitVector@@QEAAXH@Z")
-#pragma comment(linker, "/export:?Clear@ImBitVector@@QEAAXXZ")
-#pragma comment(linker, "/export:?TestBit@ImBitVector@@QEBA_NH@Z")
-#pragma comment(linker, "/export:?SetBit@ImBitVector@@QEAAXH@Z")
-#pragma comment(linker, "/export:?ClearBit@ImBitVector@@QEAAXH@Z")
-#pragma comment(linker, "/export:?Clear@ImDrawDataBuilder@@QEAAXXZ")
-#pragma comment(linker, "/export:?ClearFreeMemory@ImDrawDataBuilder@@QEAAXXZ")
-#pragma comment(linker, "/export:?GetDrawListCount@ImDrawDataBuilder@@QEBAHXZ")
-#pragma comment(linker, "/export:?ClearText@ImGuiInputTextState@@QEAAXXZ")
-#pragma comment(linker, "/export:?ClearFreeMemory@ImGuiInputTextState@@QEAAXXZ")
-#pragma comment(linker, "/export:?GetUndoAvailCount@ImGuiInputTextState@@QEBAHXZ")
-#pragma comment(linker, "/export:?GetRedoAvailCount@ImGuiInputTextState@@QEBAHXZ")
-#pragma comment(linker, "/export:?CursorAnimReset@ImGuiInputTextState@@QEAAXXZ")
-#pragma comment(linker, "/export:?CursorClamp@ImGuiInputTextState@@QEAAXXZ")
-#pragma comment(linker, "/export:?HasSelection@ImGuiInputTextState@@QEBA_NXZ")
-#pragma comment(linker, "/export:?ClearSelection@ImGuiInputTextState@@QEAAXXZ")
-#pragma comment(linker, "/export:?SelectAll@ImGuiInputTextState@@QEAAXXZ")
-#pragma comment(linker, "/export:?Clear@ImGuiNavMoveResult@@QEAAXXZ")
-#pragma comment(linker, "/export:?ClearFlags@ImGuiNextWindowData@@QEAAXXZ")
-#pragma comment(linker, "/export:?ClearFlags@ImGuiNextItemData@@QEAAXXZ")
-#pragma comment(linker, "/export:?IsRootNode@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsDockSpace@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsFloatingNode@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsCentralNode@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsHiddenTabBar@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsNoTabBar@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsSplitNode@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsLeafNode@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?IsEmpty@ImGuiDockNode@@QEBA_NXZ")
-#pragma comment(linker, "/export:?GetMergedFlags@ImGuiDockNode@@QEBAHXZ")
-#pragma comment(linker, "/export:?Rect@ImGuiDockNode@@QEBA?AUImRect@@XZ")
-#pragma comment(linker, "/export:?GetMainRect@ImGuiViewportP@@QEBA?AUImRect@@XZ")
-#pragma comment(linker, "/export:?GetWorkRect@ImGuiViewportP@@QEBA?AUImRect@@XZ")
-#pragma comment(linker, "/export:?UpdateWorkRect@ImGuiViewportP@@QEAAXXZ")
-#pragma comment(linker, "/export:?ClearRequestFlags@ImGuiViewportP@@QEAAXXZ")
-#pragma comment(linker, "/export:?GetName@ImGuiWindowSettings@@QEAAPEADXZ")
-#pragma comment(linker, "/export:?Rect@ImGuiWindow@@QEBA?AUImRect@@XZ")
-#pragma comment(linker, "/export:?CalcFontSize@ImGuiWindow@@QEBAMXZ")
-#pragma comment(linker, "/export:?TitleBarHeight@ImGuiWindow@@QEBAMXZ")
-#pragma comment(linker, "/export:?TitleBarRect@ImGuiWindow@@QEBA?AUImRect@@XZ")
-#pragma comment(linker, "/export:?MenuBarHeight@ImGuiWindow@@QEBAMXZ")
-#pragma comment(linker, "/export:?MenuBarRect@ImGuiWindow@@QEBA?AUImRect@@XZ")
-#pragma comment(linker, "/export:?Backup@ImGuiLastItemDataBackup@@QEAAXXZ")
-#pragma comment(linker, "/export:?Restore@ImGuiLastItemDataBackup@@QEBAXXZ")
-#pragma comment(linker, "/export:?GetTabOrder@ImGuiTabBar@@QEBAHPEBUImGuiTabItem@@@Z")
-#pragma comment(linker, "/export:?GetTabName@ImGuiTabBar@@QEBAPEBDPEBUImGuiTabItem@@@Z")
-#pragma comment(linker, "/export:?GetColumnSettings@ImGuiTableSettings@@QEAAPEAUImGuiTableColumnSettings@@XZ")
-#pragma comment(linker, "/export:??2@YAPEAX_KUImNewWrapper@@PEAX@Z")
-#pragma comment(linker, "/export:??3@YAXPEAXUImNewWrapper@@0@Z")
-#pragma comment(linker, "/export:?ImTriangleArea@@YAMAEBUImVec2@@00@Z")
-#pragma comment(linker, "/export:?ImBitArrayTestBit@@YA_NPEBIH@Z")
-#pragma comment(linker, "/export:?ImBitArrayClearBit@@YAXPEAIH@Z")
-#pragma comment(linker, "/export:?ImBitArraySetBit@@YAXPEAIH@Z")
-#pragma comment(linker, "/export:?ImBitArraySetBitRange@@YAXPEAIHH@Z")
-#pragma comment(linker, "/export:?GetCurrentWindowRead@ImGui@@YAPEAUImGuiWindow@@XZ")
-#pragma comment(linker, "/export:?GetCurrentWindow@ImGui@@YAPEAUImGuiWindow@@XZ")
-#pragma comment(linker, "/export:?GetDefaultFont@ImGui@@YAPEAUImFont@@XZ")
-#pragma comment(linker, "/export:?GetForegroundDrawList@ImGui@@YAPEAUImDrawList@@PEAUImGuiWindow@@@Z")
-#pragma comment(linker, "/export:?GetItemID@ImGui@@YAIXZ")
-#pragma comment(linker, "/export:?GetItemStatusFlags@ImGui@@YAHXZ")
-#pragma comment(linker, "/export:?GetActiveID@ImGui@@YAIXZ")
-#pragma comment(linker, "/export:?GetFocusID@ImGui@@YAIXZ")
-#pragma comment(linker, "/export:?GetItemsFlags@ImGui@@YAHXZ")
-#pragma comment(linker, "/export:?GetFocusedFocusScope@ImGui@@YAIXZ")
-#pragma comment(linker, "/export:?GetFocusScope@ImGui@@YAIXZ")
-#pragma comment(linker, "/export:?IsActiveIdUsingNavDir@ImGui@@YA_NH@Z")
-#pragma comment(linker, "/export:?IsActiveIdUsingNavInput@ImGui@@YA_NH@Z")
-#pragma comment(linker, "/export:?IsActiveIdUsingKey@ImGui@@YA_NH@Z")
-#pragma comment(linker, "/export:?IsKeyPressedMap@ImGui@@YA_NH_N@Z")
-#pragma comment(linker, "/export:?IsNavInputDown@ImGui@@YA_NH@Z")
-#pragma comment(linker, "/export:?IsNavInputTest@ImGui@@YA_NHW4ImGuiInputReadMode@@@Z")
-#pragma comment(linker, "/export:?DockNodeGetRootNode@ImGui@@YAPEAUImGuiDockNode@@PEAU2@@Z")
-#pragma comment(linker, "/export:?DockNodeGetDepth@ImGui@@YAHPEBUImGuiDockNode@@@Z")
-#pragma comment(linker, "/export:?GetWindowDockNode@ImGui@@YAPEAUImGuiDockNode@@XZ")
-#pragma comment(linker, "/export:?DockBuilderGetCentralNode@ImGui@@YAPEAUImGuiDockNode@@I@Z")
-#pragma comment(linker, "/export:?GetCurrentTable@ImGui@@YAPEAUImGuiTable@@XZ")
-#pragma comment(linker, "/export:?TempInputIsActive@ImGui@@YA_NI@Z")
-#pragma comment(linker, "/export:?GetInputTextState@ImGui@@YAPEAUImGuiInputTextState@@I@Z")
-#pragma comment(linker, "/export:?DebugDrawItemRect@ImGui@@YAXI@Z")
-#pragma comment(linker, "/export:?DebugStartItemPicker@ImGui@@YAXXZ")
-
 namespace ____BiohazrdInlineExportHelpers
 {
-    float (ImVec2::* unused0)(unsigned long long) const = &ImVec2::operator[];
-    float & (ImVec2::* unused1)(unsigned long long) = &ImVec2::operator[];
+#pragma GCC visibility push(hidden)
+    float (ImVec2::* unused0)(unsigned long) const = &ImVec2::operator[];
+    float & (ImVec2::* unused1)(unsigned long) = &ImVec2::operator[];
     void (ImGuiInputTextCallbackData::* unused2)() = &ImGuiInputTextCallbackData::SelectAll;
     void (ImGuiInputTextCallbackData::* unused3)() = &ImGuiInputTextCallbackData::ClearSelection;
     bool (ImGuiInputTextCallbackData::* unused4)() const = &ImGuiInputTextCallbackData::HasSelection;
@@ -204,8 +47,8 @@ namespace ____BiohazrdInlineExportHelpers
     void (ImDrawList::* unused39)(const ImVec2 &, const ImVec2 &, unsigned int) = &ImDrawList::PrimVtx;
     void (ImDrawData::* unused40)() = &ImDrawData::Clear;
     void (ImFontGlyphRangesBuilder::* unused41)() = &ImFontGlyphRangesBuilder::Clear;
-    bool (ImFontGlyphRangesBuilder::* unused42)(unsigned long long) const = &ImFontGlyphRangesBuilder::GetBit;
-    void (ImFontGlyphRangesBuilder::* unused43)(unsigned long long) = &ImFontGlyphRangesBuilder::SetBit;
+    bool (ImFontGlyphRangesBuilder::* unused42)(unsigned long) const = &ImFontGlyphRangesBuilder::GetBit;
+    void (ImFontGlyphRangesBuilder::* unused43)(unsigned long) = &ImFontGlyphRangesBuilder::SetBit;
     void (ImFontGlyphRangesBuilder::* unused44)(unsigned short) = &ImFontGlyphRangesBuilder::AddChar;
     bool (ImFontAtlasCustomRect::* unused45)() const = &ImFontAtlasCustomRect::IsPacked;
     bool (ImFontAtlas::* unused46)() const = &ImFontAtlas::IsBuilt;
@@ -286,7 +129,7 @@ namespace ____BiohazrdInlineExportHelpers
     int (ImGuiTabBar::* unused121)(const ImGuiTabItem *) const = &ImGuiTabBar::GetTabOrder;
     const char * (ImGuiTabBar::* unused122)(const ImGuiTabItem *) const = &ImGuiTabBar::GetTabName;
     ImGuiTableColumnSettings * (ImGuiTableSettings::* unused123)() = &ImGuiTableSettings::GetColumnSettings;
-    void * (*unused124)(unsigned long long, ImNewWrapper, void *) = &operator new;
+    void * (*unused124)(unsigned long, ImNewWrapper, void *) = &operator new;
     void (*unused125)(void *, ImNewWrapper, void *) = &operator delete;
     float (*unused126)(const ImVec2 &, const ImVec2 &, const ImVec2 &) = &ImTriangleArea;
     bool (*unused127)(const unsigned int *, int) = &ImBitArrayTestBit;
@@ -319,6 +162,7 @@ namespace ____BiohazrdInlineExportHelpers
     ImGuiInputTextState * (*unused154)(unsigned int) = &ImGui::GetInputTextState;
     void (*unused155)(unsigned int) = &ImGui::DebugDrawItemRect;
     void (*unused156)() = &ImGui::DebugStartItemPicker;
+#pragma GCC visibility pop
 }
 
 namespace ____BiohazrdInlineExportHelpers
@@ -332,303 +176,306 @@ inline void operator delete(void*, ____BiohazrdInlineExportHelpers::__BiohazrdNe
 #pragma warning(disable: 4190) // C-linkage function returning C++ type
 extern "C" namespace ____BiohazrdInlineExportHelpers
 {
-    __declspec(dllexport) ImVec2* __InlineHelper0(ImVec2* _this)
+#pragma GCC visibility push(default)
+
+    ImVec2* __InlineHelper0(ImVec2* _this)
     { return new (__BiohazrdNewHelper(), _this) ImVec2(); }
 
-    __declspec(dllexport) ImVec2* __InlineHelper1(ImVec2* _this, float _0, float _1)
+    ImVec2* __InlineHelper1(ImVec2* _this, float _0, float _1)
     { return new (__BiohazrdNewHelper(), _this) ImVec2(_0, _1); }
 
-    __declspec(dllexport) ImVec4* __InlineHelper2(ImVec4* _this)
+    ImVec4* __InlineHelper2(ImVec4* _this)
     { return new (__BiohazrdNewHelper(), _this) ImVec4(); }
 
-    __declspec(dllexport) ImVec4* __InlineHelper3(ImVec4* _this, float _0, float _1, float _2, float _3)
+    ImVec4* __InlineHelper3(ImVec4* _this, float _0, float _1, float _2, float _3)
     { return new (__BiohazrdNewHelper(), _this) ImVec4(_0, _1, _2, _3); }
 
-    __declspec(dllexport) ImGuiWindowClass* __InlineHelper4(ImGuiWindowClass* _this)
+    ImGuiWindowClass* __InlineHelper4(ImGuiWindowClass* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiWindowClass(); }
 
-    __declspec(dllexport) ImGuiPayload* __InlineHelper5(ImGuiPayload* _this)
+    ImGuiPayload* __InlineHelper5(ImGuiPayload* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiPayload(); }
 
-    __declspec(dllexport) ImGuiTableColumnSortSpecs* __InlineHelper6(ImGuiTableColumnSortSpecs* _this)
+    ImGuiTableColumnSortSpecs* __InlineHelper6(ImGuiTableColumnSortSpecs* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTableColumnSortSpecs(); }
 
-    __declspec(dllexport) ImGuiTableSortSpecs* __InlineHelper7(ImGuiTableSortSpecs* _this)
+    ImGuiTableSortSpecs* __InlineHelper7(ImGuiTableSortSpecs* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTableSortSpecs(); }
 
-    __declspec(dllexport) ImGuiOnceUponAFrame* __InlineHelper8(ImGuiOnceUponAFrame* _this)
+    ImGuiOnceUponAFrame* __InlineHelper8(ImGuiOnceUponAFrame* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiOnceUponAFrame(); }
 
-    __declspec(dllexport) ImGuiTextFilter::ImGuiTextRange* __InlineHelper9(ImGuiTextFilter::ImGuiTextRange* _this)
+    ImGuiTextFilter::ImGuiTextRange* __InlineHelper9(ImGuiTextFilter::ImGuiTextRange* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTextFilter::ImGuiTextRange(); }
 
-    __declspec(dllexport) ImGuiTextFilter::ImGuiTextRange* __InlineHelper10(ImGuiTextFilter::ImGuiTextRange* _this, const char *_0, const char *_1)
+    ImGuiTextFilter::ImGuiTextRange* __InlineHelper10(ImGuiTextFilter::ImGuiTextRange* _this, const char *_0, const char *_1)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTextFilter::ImGuiTextRange(_0, _1); }
 
-    __declspec(dllexport) ImGuiTextBuffer* __InlineHelper11(ImGuiTextBuffer* _this)
+    ImGuiTextBuffer* __InlineHelper11(ImGuiTextBuffer* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTextBuffer(); }
 
-    __declspec(dllexport) ImGuiStorage::ImGuiStoragePair* __InlineHelper12(ImGuiStorage::ImGuiStoragePair* _this, unsigned int _0, int _1)
+    ImGuiStorage::ImGuiStoragePair* __InlineHelper12(ImGuiStorage::ImGuiStoragePair* _this, unsigned int _0, int _1)
     { return new (__BiohazrdNewHelper(), _this) ImGuiStorage::ImGuiStoragePair(_0, _1); }
 
-    __declspec(dllexport) ImGuiStorage::ImGuiStoragePair* __InlineHelper13(ImGuiStorage::ImGuiStoragePair* _this, unsigned int _0, float _1)
+    ImGuiStorage::ImGuiStoragePair* __InlineHelper13(ImGuiStorage::ImGuiStoragePair* _this, unsigned int _0, float _1)
     { return new (__BiohazrdNewHelper(), _this) ImGuiStorage::ImGuiStoragePair(_0, _1); }
 
-    __declspec(dllexport) ImGuiStorage::ImGuiStoragePair* __InlineHelper14(ImGuiStorage::ImGuiStoragePair* _this, unsigned int _0, void *_1)
+    ImGuiStorage::ImGuiStoragePair* __InlineHelper14(ImGuiStorage::ImGuiStoragePair* _this, unsigned int _0, void *_1)
     { return new (__BiohazrdNewHelper(), _this) ImGuiStorage::ImGuiStoragePair(_0, _1); }
 
-    __declspec(dllexport) ImColor* __InlineHelper15(ImColor* _this)
+    ImColor* __InlineHelper15(ImColor* _this)
     { return new (__BiohazrdNewHelper(), _this) ImColor(); }
 
-    __declspec(dllexport) ImColor* __InlineHelper16(ImColor* _this, int _0, int _1, int _2, int _3)
+    ImColor* __InlineHelper16(ImColor* _this, int _0, int _1, int _2, int _3)
     { return new (__BiohazrdNewHelper(), _this) ImColor(_0, _1, _2, _3); }
 
-    __declspec(dllexport) ImColor* __InlineHelper17(ImColor* _this, unsigned int _0)
+    ImColor* __InlineHelper17(ImColor* _this, unsigned int _0)
     { return new (__BiohazrdNewHelper(), _this) ImColor(_0); }
 
-    __declspec(dllexport) ImColor* __InlineHelper18(ImColor* _this, float _0, float _1, float _2, float _3)
+    ImColor* __InlineHelper18(ImColor* _this, float _0, float _1, float _2, float _3)
     { return new (__BiohazrdNewHelper(), _this) ImColor(_0, _1, _2, _3); }
 
-    __declspec(dllexport) ImColor* __InlineHelper19(ImColor* _this, const ImVec4 &_0)
+    ImColor* __InlineHelper19(ImColor* _this, const ImVec4 &_0)
     { return new (__BiohazrdNewHelper(), _this) ImColor(_0); }
 
-    __declspec(dllexport) ImDrawCmd* __InlineHelper20(ImDrawCmd* _this)
+    ImDrawCmd* __InlineHelper20(ImDrawCmd* _this)
     { return new (__BiohazrdNewHelper(), _this) ImDrawCmd(); }
 
-    __declspec(dllexport) ImDrawListSplitter* __InlineHelper21(ImDrawListSplitter* _this)
+    ImDrawListSplitter* __InlineHelper21(ImDrawListSplitter* _this)
     { return new (__BiohazrdNewHelper(), _this) ImDrawListSplitter(); }
 
-    __declspec(dllexport) void __InlineHelper22(ImDrawListSplitter* _this)
+    void __InlineHelper22(ImDrawListSplitter* _this)
     { _this->~ImDrawListSplitter(); }
 
-    __declspec(dllexport) ImDrawList* __InlineHelper23(ImDrawList* _this, const ImDrawListSharedData *_0)
+    ImDrawList* __InlineHelper23(ImDrawList* _this, const ImDrawListSharedData *_0)
     { return new (__BiohazrdNewHelper(), _this) ImDrawList(_0); }
 
-    __declspec(dllexport) void __InlineHelper24(ImDrawList* _this)
+    void __InlineHelper24(ImDrawList* _this)
     { _this->~ImDrawList(); }
 
-    __declspec(dllexport) ImDrawData* __InlineHelper25(ImDrawData* _this)
+    ImDrawData* __InlineHelper25(ImDrawData* _this)
     { return new (__BiohazrdNewHelper(), _this) ImDrawData(); }
 
-    __declspec(dllexport) ImFontGlyphRangesBuilder* __InlineHelper26(ImFontGlyphRangesBuilder* _this)
+    ImFontGlyphRangesBuilder* __InlineHelper26(ImFontGlyphRangesBuilder* _this)
     { return new (__BiohazrdNewHelper(), _this) ImFontGlyphRangesBuilder(); }
 
-    __declspec(dllexport) ImFontAtlasCustomRect* __InlineHelper27(ImFontAtlasCustomRect* _this)
+    ImFontAtlasCustomRect* __InlineHelper27(ImFontAtlasCustomRect* _this)
     { return new (__BiohazrdNewHelper(), _this) ImFontAtlasCustomRect(); }
 
-    __declspec(dllexport) ImGuiViewport* __InlineHelper28(ImGuiViewport* _this)
+    ImGuiViewport* __InlineHelper28(ImGuiViewport* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiViewport(); }
 
-    __declspec(dllexport) void __InlineHelper29(ImGuiViewport* _this)
+    void __InlineHelper29(ImGuiViewport* _this)
     { _this->~ImGuiViewport(); }
 
-    __declspec(dllexport) ImGuiPlatformIO* __InlineHelper30(ImGuiPlatformIO* _this)
+    ImGuiPlatformIO* __InlineHelper30(ImGuiPlatformIO* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiPlatformIO(); }
 
-    __declspec(dllexport) ImGuiPlatformMonitor* __InlineHelper31(ImGuiPlatformMonitor* _this)
+    ImGuiPlatformMonitor* __InlineHelper31(ImGuiPlatformMonitor* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiPlatformMonitor(); }
 
-    __declspec(dllexport) ImVec1* __InlineHelper32(ImVec1* _this)
+    ImVec1* __InlineHelper32(ImVec1* _this)
     { return new (__BiohazrdNewHelper(), _this) ImVec1(); }
 
-    __declspec(dllexport) ImVec1* __InlineHelper33(ImVec1* _this, float _0)
+    ImVec1* __InlineHelper33(ImVec1* _this, float _0)
     { return new (__BiohazrdNewHelper(), _this) ImVec1(_0); }
 
-    __declspec(dllexport) ImVec2ih* __InlineHelper34(ImVec2ih* _this)
+    ImVec2ih* __InlineHelper34(ImVec2ih* _this)
     { return new (__BiohazrdNewHelper(), _this) ImVec2ih(); }
 
-    __declspec(dllexport) ImVec2ih* __InlineHelper35(ImVec2ih* _this, short _0, short _1)
+    ImVec2ih* __InlineHelper35(ImVec2ih* _this, short _0, short _1)
     { return new (__BiohazrdNewHelper(), _this) ImVec2ih(_0, _1); }
 
-    __declspec(dllexport) ImVec2ih* __InlineHelper36(ImVec2ih* _this, const ImVec2 &_0)
+    ImVec2ih* __InlineHelper36(ImVec2ih* _this, const ImVec2 &_0)
     { return new (__BiohazrdNewHelper(), _this) ImVec2ih(_0); }
 
-    __declspec(dllexport) ImRect* __InlineHelper37(ImRect* _this)
+    ImRect* __InlineHelper37(ImRect* _this)
     { return new (__BiohazrdNewHelper(), _this) ImRect(); }
 
-    __declspec(dllexport) ImRect* __InlineHelper38(ImRect* _this, const ImVec2 &_0, const ImVec2 &_1)
+    ImRect* __InlineHelper38(ImRect* _this, const ImVec2 &_0, const ImVec2 &_1)
     { return new (__BiohazrdNewHelper(), _this) ImRect(_0, _1); }
 
-    __declspec(dllexport) ImRect* __InlineHelper39(ImRect* _this, const ImVec4 &_0)
+    ImRect* __InlineHelper39(ImRect* _this, const ImVec4 &_0)
     { return new (__BiohazrdNewHelper(), _this) ImRect(_0); }
 
-    __declspec(dllexport) ImRect* __InlineHelper40(ImRect* _this, float _0, float _1, float _2, float _3)
+    ImRect* __InlineHelper40(ImRect* _this, float _0, float _1, float _2, float _3)
     { return new (__BiohazrdNewHelper(), _this) ImRect(_0, _1, _2, _3); }
 
-    __declspec(dllexport) ImGuiStyleMod* __InlineHelper41(ImGuiStyleMod* _this, int _0, int _1)
+    ImGuiStyleMod* __InlineHelper41(ImGuiStyleMod* _this, int _0, int _1)
     { return new (__BiohazrdNewHelper(), _this) ImGuiStyleMod(_0, _1); }
 
-    __declspec(dllexport) ImGuiStyleMod* __InlineHelper42(ImGuiStyleMod* _this, int _0, float _1)
+    ImGuiStyleMod* __InlineHelper42(ImGuiStyleMod* _this, int _0, float _1)
     { return new (__BiohazrdNewHelper(), _this) ImGuiStyleMod(_0, _1); }
 
-    __declspec(dllexport) ImGuiStyleMod* __InlineHelper43(ImGuiStyleMod* _this, int _0, ImVec2 _1)
+    ImGuiStyleMod* __InlineHelper43(ImGuiStyleMod* _this, int _0, ImVec2 _1)
     { return new (__BiohazrdNewHelper(), _this) ImGuiStyleMod(_0, _1); }
 
-    __declspec(dllexport) ImGuiMenuColumns* __InlineHelper44(ImGuiMenuColumns* _this)
+    ImGuiMenuColumns* __InlineHelper44(ImGuiMenuColumns* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiMenuColumns(); }
 
-    __declspec(dllexport) ImGuiInputTextState* __InlineHelper45(ImGuiInputTextState* _this)
+    ImGuiInputTextState* __InlineHelper45(ImGuiInputTextState* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiInputTextState(); }
 
-    __declspec(dllexport) ImGuiPopupData* __InlineHelper46(ImGuiPopupData* _this)
+    ImGuiPopupData* __InlineHelper46(ImGuiPopupData* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiPopupData(); }
 
-    __declspec(dllexport) ImGuiNavMoveResult* __InlineHelper47(ImGuiNavMoveResult* _this)
+    ImGuiNavMoveResult* __InlineHelper47(ImGuiNavMoveResult* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiNavMoveResult(); }
 
-    __declspec(dllexport) ImGuiNextWindowData* __InlineHelper48(ImGuiNextWindowData* _this)
+    ImGuiNextWindowData* __InlineHelper48(ImGuiNextWindowData* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiNextWindowData(); }
 
-    __declspec(dllexport) ImGuiNextItemData* __InlineHelper49(ImGuiNextItemData* _this)
+    ImGuiNextItemData* __InlineHelper49(ImGuiNextItemData* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiNextItemData(); }
 
-    __declspec(dllexport) ImGuiPtrOrIndex* __InlineHelper50(ImGuiPtrOrIndex* _this, void *_0)
+    ImGuiPtrOrIndex* __InlineHelper50(ImGuiPtrOrIndex* _this, void *_0)
     { return new (__BiohazrdNewHelper(), _this) ImGuiPtrOrIndex(_0); }
 
-    __declspec(dllexport) ImGuiPtrOrIndex* __InlineHelper51(ImGuiPtrOrIndex* _this, int _0)
+    ImGuiPtrOrIndex* __InlineHelper51(ImGuiPtrOrIndex* _this, int _0)
     { return new (__BiohazrdNewHelper(), _this) ImGuiPtrOrIndex(_0); }
 
-    __declspec(dllexport) ImGuiOldColumnData* __InlineHelper52(ImGuiOldColumnData* _this)
+    ImGuiOldColumnData* __InlineHelper52(ImGuiOldColumnData* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiOldColumnData(); }
 
-    __declspec(dllexport) ImGuiOldColumns* __InlineHelper53(ImGuiOldColumns* _this)
+    ImGuiOldColumns* __InlineHelper53(ImGuiOldColumns* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiOldColumns(); }
 
-    __declspec(dllexport) ImGuiDockContext* __InlineHelper54(ImGuiDockContext* _this)
+    ImGuiDockContext* __InlineHelper54(ImGuiDockContext* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiDockContext(); }
 
-    __declspec(dllexport) ImGuiViewportP* __InlineHelper55(ImGuiViewportP* _this)
+    ImGuiViewportP* __InlineHelper55(ImGuiViewportP* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiViewportP(); }
 
-    __declspec(dllexport) void __InlineHelper56(ImGuiViewportP* _this)
+    void __InlineHelper56(ImGuiViewportP* _this)
     { _this->~ImGuiViewportP(); }
 
-    __declspec(dllexport) ImGuiWindowSettings* __InlineHelper57(ImGuiWindowSettings* _this)
+    ImGuiWindowSettings* __InlineHelper57(ImGuiWindowSettings* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiWindowSettings(); }
 
-    __declspec(dllexport) ImGuiSettingsHandler* __InlineHelper58(ImGuiSettingsHandler* _this)
+    ImGuiSettingsHandler* __InlineHelper58(ImGuiSettingsHandler* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiSettingsHandler(); }
 
-    __declspec(dllexport) ImGuiMetricsConfig* __InlineHelper59(ImGuiMetricsConfig* _this)
+    ImGuiMetricsConfig* __InlineHelper59(ImGuiMetricsConfig* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiMetricsConfig(); }
 
-    __declspec(dllexport) ImGuiStackSizes* __InlineHelper60(ImGuiStackSizes* _this)
+    ImGuiStackSizes* __InlineHelper60(ImGuiStackSizes* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiStackSizes(); }
 
-    __declspec(dllexport) ImGuiContextHook* __InlineHelper61(ImGuiContextHook* _this)
+    ImGuiContextHook* __InlineHelper61(ImGuiContextHook* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiContextHook(); }
 
-    __declspec(dllexport) ImGuiContext* __InlineHelper62(ImGuiContext* _this, ImFontAtlas *_0)
+    ImGuiContext* __InlineHelper62(ImGuiContext* _this, ImFontAtlas *_0)
     { return new (__BiohazrdNewHelper(), _this) ImGuiContext(_0); }
 
-    __declspec(dllexport) ImGuiLastItemDataBackup* __InlineHelper63(ImGuiLastItemDataBackup* _this)
+    ImGuiLastItemDataBackup* __InlineHelper63(ImGuiLastItemDataBackup* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiLastItemDataBackup(); }
 
-    __declspec(dllexport) ImGuiTabItem* __InlineHelper64(ImGuiTabItem* _this)
+    ImGuiTabItem* __InlineHelper64(ImGuiTabItem* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTabItem(); }
 
-    __declspec(dllexport) ImGuiTableColumn* __InlineHelper65(ImGuiTableColumn* _this)
+    ImGuiTableColumn* __InlineHelper65(ImGuiTableColumn* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTableColumn(); }
 
-    __declspec(dllexport) ImGuiTable* __InlineHelper66(ImGuiTable* _this)
+    ImGuiTable* __InlineHelper66(ImGuiTable* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTable(); }
 
-    __declspec(dllexport) void __InlineHelper67(ImGuiTable* _this)
+    void __InlineHelper67(ImGuiTable* _this)
     { _this->~ImGuiTable(); }
 
-    __declspec(dllexport) ImGuiTableColumnSettings* __InlineHelper68(ImGuiTableColumnSettings* _this)
+    ImGuiTableColumnSettings* __InlineHelper68(ImGuiTableColumnSettings* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTableColumnSettings(); }
 
-    __declspec(dllexport) ImGuiTableSettings* __InlineHelper69(ImGuiTableSettings* _this)
+    ImGuiTableSettings* __InlineHelper69(ImGuiTableSettings* _this)
     { return new (__BiohazrdNewHelper(), _this) ImGuiTableSettings(); }
 
-    __declspec(dllexport) bool __InlineHelper70(int _0)
+    bool __InlineHelper70(int _0)
     { return ImIsPowerOfTwo(_0); }
 
-    __declspec(dllexport) bool __InlineHelper71(unsigned long long _0)
+    bool __InlineHelper71(unsigned long long _0)
     { return ImIsPowerOfTwo(_0); }
 
-    __declspec(dllexport) int __InlineHelper72(int _0)
+    int __InlineHelper72(int _0)
     { return ImUpperPowerOfTwo(_0); }
 
-    __declspec(dllexport) bool __InlineHelper73(char _0)
+    bool __InlineHelper73(char _0)
     { return ImCharIsBlankA(_0); }
 
-    __declspec(dllexport) bool __InlineHelper74(unsigned int _0)
+    bool __InlineHelper74(unsigned int _0)
     { return ImCharIsBlankW(_0); }
 
-    __declspec(dllexport) float __InlineHelper75(float _0, float _1)
+    float __InlineHelper75(float _0, float _1)
     { return ImPow(_0, _1); }
 
-    __declspec(dllexport) double __InlineHelper76(double _0, double _1)
+    double __InlineHelper76(double _0, double _1)
     { return ImPow(_0, _1); }
 
-    __declspec(dllexport) float __InlineHelper77(float _0)
+    float __InlineHelper77(float _0)
     { return ImLog(_0); }
 
-    __declspec(dllexport) double __InlineHelper78(double _0)
+    double __InlineHelper78(double _0)
     { return ImLog(_0); }
 
-    __declspec(dllexport) float __InlineHelper79(float _0)
+    float __InlineHelper79(float _0)
     { return ImAbs(_0); }
 
-    __declspec(dllexport) double __InlineHelper80(double _0)
+    double __InlineHelper80(double _0)
     { return ImAbs(_0); }
 
-    __declspec(dllexport) float __InlineHelper81(float _0)
+    float __InlineHelper81(float _0)
     { return ImSign(_0); }
 
-    __declspec(dllexport) double __InlineHelper82(double _0)
+    double __InlineHelper82(double _0)
     { return ImSign(_0); }
 
-    __declspec(dllexport) ImVec2 __InlineHelper83(const ImVec2 &_0, const ImVec2 &_1)
+    ImVec2 __InlineHelper83(const ImVec2 &_0, const ImVec2 &_1)
     { return ImMin(_0, _1); }
 
-    __declspec(dllexport) ImVec2 __InlineHelper84(const ImVec2 &_0, const ImVec2 &_1)
+    ImVec2 __InlineHelper84(const ImVec2 &_0, const ImVec2 &_1)
     { return ImMax(_0, _1); }
 
-    __declspec(dllexport) ImVec2 __InlineHelper85(const ImVec2 &_0, const ImVec2 &_1, ImVec2 _2)
+    ImVec2 __InlineHelper85(const ImVec2 &_0, const ImVec2 &_1, ImVec2 _2)
     { return ImClamp(_0, _1, _2); }
 
-    __declspec(dllexport) ImVec2 __InlineHelper86(const ImVec2 &_0, const ImVec2 &_1, float _2)
+    ImVec2 __InlineHelper86(const ImVec2 &_0, const ImVec2 &_1, float _2)
     { return ImLerp(_0, _1, _2); }
 
-    __declspec(dllexport) ImVec2 __InlineHelper87(const ImVec2 &_0, const ImVec2 &_1, const ImVec2 &_2)
+    ImVec2 __InlineHelper87(const ImVec2 &_0, const ImVec2 &_1, const ImVec2 &_2)
     { return ImLerp(_0, _1, _2); }
 
-    __declspec(dllexport) ImVec4 __InlineHelper88(const ImVec4 &_0, const ImVec4 &_1, float _2)
+    ImVec4 __InlineHelper88(const ImVec4 &_0, const ImVec4 &_1, float _2)
     { return ImLerp(_0, _1, _2); }
 
-    __declspec(dllexport) float __InlineHelper89(float _0)
+    float __InlineHelper89(float _0)
     { return ImSaturate(_0); }
 
-    __declspec(dllexport) float __InlineHelper90(const ImVec2 &_0)
+    float __InlineHelper90(const ImVec2 &_0)
     { return ImLengthSqr(_0); }
 
-    __declspec(dllexport) float __InlineHelper91(const ImVec4 &_0)
+    float __InlineHelper91(const ImVec4 &_0)
     { return ImLengthSqr(_0); }
 
-    __declspec(dllexport) float __InlineHelper92(const ImVec2 &_0, float _1)
+    float __InlineHelper92(const ImVec2 &_0, float _1)
     { return ImInvLength(_0, _1); }
 
-    __declspec(dllexport) float __InlineHelper93(float _0)
+    float __InlineHelper93(float _0)
     { return ImFloor(_0); }
 
-    __declspec(dllexport) ImVec2 __InlineHelper94(const ImVec2 &_0)
+    ImVec2 __InlineHelper94(const ImVec2 &_0)
     { return ImFloor(_0); }
 
-    __declspec(dllexport) int __InlineHelper95(int _0, int _1)
+    int __InlineHelper95(int _0, int _1)
     { return ImModPositive(_0, _1); }
 
-    __declspec(dllexport) float __InlineHelper96(const ImVec2 &_0, const ImVec2 &_1)
+    float __InlineHelper96(const ImVec2 &_0, const ImVec2 &_1)
     { return ImDot(_0, _1); }
 
-    __declspec(dllexport) ImVec2 __InlineHelper97(const ImVec2 &_0, float _1, float _2)
+    ImVec2 __InlineHelper97(const ImVec2 &_0, float _1, float _2)
     { return ImRotate(_0, _1, _2); }
 
-    __declspec(dllexport) float __InlineHelper98(float _0, float _1, float _2)
+    float __InlineHelper98(float _0, float _1, float _2)
     { return ImLinearSweep(_0, _1, _2); }
 
-    __declspec(dllexport) ImVec2 __InlineHelper99(const ImVec2 &_0, const ImVec2 &_1)
+    ImVec2 __InlineHelper99(const ImVec2 &_0, const ImVec2 &_1)
     { return ImMul(_0, _1); }
+#pragma GCC visibility pop
 }

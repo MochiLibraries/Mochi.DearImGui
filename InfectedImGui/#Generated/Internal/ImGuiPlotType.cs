@@ -4,7 +4,7 @@
 #nullable enable
 namespace InfectedImGui.Internal
 {
-    public enum ImGuiPlotType
+    public enum ImGuiPlotType : uint
     {
         ImGuiPlotType_Lines,
         ImGuiPlotType_Histogram

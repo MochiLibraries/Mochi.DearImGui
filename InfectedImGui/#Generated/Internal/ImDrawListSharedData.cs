@@ -32,23 +32,23 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(208)] public ImVec4* TexUvLines;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "??0ImDrawListSharedData@@QEAA@XZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN20ImDrawListSharedDataC1Ev", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImDrawListSharedData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImDrawListSharedData* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?SetCircleTessellationMaxError@ImDrawListSharedData@@QEAAXM@Z", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN20ImDrawListSharedData29SetCircleTessellationMaxErrorEf", ExactSpelling = true)]
         private static extern void SetCircleTessellationMaxError_PInvoke(ImDrawListSharedData* @this, float max_error);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void SetCircleTessellationMaxError(float max_error)
+        public void SetCircleTessellationMaxError(float max_error)
         {
             fixed (ImDrawListSharedData* @this = &this)
             { SetCircleTessellationMaxError_PInvoke(@this, max_error); }

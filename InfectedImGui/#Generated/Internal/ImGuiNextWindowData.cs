@@ -51,23 +51,23 @@ namespace InfectedImGui.Internal
 
         [FieldOffset(140)] public ImVec2 MenuBarOffsetMinVal;
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper48", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "__InlineHelper48", ExactSpelling = true)]
         private static extern void Constructor_PInvoke(ImGuiNextWindowData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void Constructor()
+        public void Constructor()
         {
             fixed (ImGuiNextWindowData* @this = &this)
             { Constructor_PInvoke(@this); }
         }
 
-        [DllImport("InfectedImGui.Native.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?ClearFlags@ImGuiNextWindowData@@QEAAXXZ", ExactSpelling = true)]
+        [DllImport("libInfectedImGui.Native.so", CallingConvention = CallingConvention.Cdecl, EntryPoint = "_ZN19ImGuiNextWindowData10ClearFlagsEv", ExactSpelling = true)]
         private static extern void ClearFlags_PInvoke(ImGuiNextWindowData* @this);
 
         [DebuggerStepThrough, DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void ClearFlags()
+        public void ClearFlags()
         {
             fixed (ImGuiNextWindowData* @this = &this)
             { ClearFlags_PInvoke(@this); }
