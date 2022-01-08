@@ -1,25 +1,27 @@
-InfectedImGui incorporates third-party libraries licensed as follows.
+Mochi.DearImGui incorporates third-party libraries licensed as follows.
 
 <!-- TOC -->
 
-- [InfectedImGui](#infectedimgui)
+- [Mochi.DearImGui](#mochidearimgui)
     - [Dear ImGui](#dear-imgui)
-- [InfectedImGui.Generator](#infectedimguigenerator)
+- [Mochi.DearImGui.Generator](#mochidearimguigenerator)
     - [Biohazrd](#biohazrd)
     - [ClangSharp](#clangsharp)
     - [ClangSharp.Pathogen](#clangsharppathogen)
+    - [Kaisa the Sharp Librarian](#kaisa-the-sharp-librarian)
+    - [Microsoft Visual Studio Setup Software Development Kit](#microsoft-visual-studio-setup-software-development-kit)
     - [The LLVM Project](#the-llvm-project)
 
 <!-- /TOC -->
 
-# InfectedImGui
+# Mochi.DearImGui
 
 ## Dear ImGui
 
 ```
 The MIT License (MIT)
 
-Copyright (c) 2014-2020 Omar Cornut
+Copyright (c) 2014-2022 Omar Cornut
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -40,7 +42,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-# InfectedImGui.Generator
+# Mochi.DearImGui.Generator
 
 ## Biohazrd
 
@@ -114,6 +116,38 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Kaisa the Sharp Librarian
+
+```
+The MIT License (MIT)
+
+Copyright (c) David Maas
+
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Microsoft Visual Studio Setup Software Development Kit
+
+The Visual Studio Setup SDK is licensed under the license terms found at https://go.microsoft.com/fwlink/?linkid=831109.
 
 ## The LLVM Project
 

@@ -1,16 +1,23 @@
 <Project>
   <PropertyGroup>
     <!-- Common C# Properties -->
+    <LangVersion>10.0</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Features>strict</Features>
     <Nullable>enable</Nullable>
-    <LangVersion>preview</LangVersion>
+    <AnalysisLevel>5.0</AnalysisLevel>
+  </PropertyGroup>
+  <!-- ================================================================================================================
+  Configure NuGet package restore sources
+  ================================================================================================================= -->
+  <PropertyGroup>
+    <OfficialNuGetApiUrl>https://api.nuget.org/v3/index.json</OfficialNuGetApiUrl>
+    <RestoreSources>$(OfficialNuGetApiUrl)</RestoreSources>
 
-    <!--
-      ClangSharp.Pathogen requires Windows x64 right now
-      This is also indirectly a workaround for https://github.com/microsoft/ClangSharp/issues/118#issuecomment-598305888
-    -->
-    <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- Append CI-specific NuGet API if it's not the official NuGet API -->
+    <RestoreSources Condition="'$(CiNuGetApiUrl)' != '' and '$(CiNuGetApiUrl)' != '$(OfficialNuGetApiUrl)'">$(RestoreSources);$(CiNuGetApiUrl)</RestoreSources>
+
+    <!-- Allow consuming sibling CI packages if this build is not for packages which will be released publicly -->
+    <RestoreSources Condition="'$(CiIsForRelease)' != 'true'">$(RestoreSources);https://nuget-ci.mochilibraries.net/index.json</RestoreSources>
   </PropertyGroup>
 </Project>

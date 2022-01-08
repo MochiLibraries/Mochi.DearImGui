@@ -1,0 +1,2 @@
+# Don't attempt end of line normalization on shell scripts
+*.sh -text

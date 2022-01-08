@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "InfectedImGui.Generator": {
-      "commandName": "Project",
-      "commandLineArgs": "\"$(ProjectDir)../external/imgui/\" \"$(ProjectDir)../InfectedImGui.Native/\" \"$(ProjectDir)../InfectedImGui/#Generated/\""
-    }
-  }
-}

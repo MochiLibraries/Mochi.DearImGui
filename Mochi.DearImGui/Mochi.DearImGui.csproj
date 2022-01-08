@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImGuiSourceCodeDirectory>$(ProjectDir)../external/imgui/</ImGuiSourceCodeDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <NativeCodeFile Include="$(ImGuiSourceCodeDirectory)imgui*.cpp" />
+    <NativeCodeFile Include="$(ImGuiSourceCodeDirectory)imgui*.h" />
+    <NativeCodeFile Include="$(ProjectDir)../Mochi.DearImGui.Native/*.cpp" />
+    <NativeCodeFile Include="$(ProjectDir)../Mochi.DearImGui.Native/*.h" />
+    <None Include="@(NativeCodeFile)" Link="#Native/$([System.IO.Path]::GetFileName('%(Identity)'))" />
+  </ItemGroup>
+
+</Project>

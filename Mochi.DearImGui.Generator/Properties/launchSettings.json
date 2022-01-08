@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Mochi.DearImGui.Generator": {
+      "commandName": "Project",
+      "commandLineArgs": "\"$(ProjectDir)../external/imgui/\" \"$(ProjectDir)../Mochi.DearImGui.Native/\" \"$(ProjectDir)../Mochi.DearImGui/#Generated/\""
+    }
+  }
+}

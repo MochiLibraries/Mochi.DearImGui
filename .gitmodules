@@ -4,5 +4,5 @@
 	branch = docking
 [submodule "external/Biohazrd"]
 	path = external/Biohazrd
-	url = https://github.com/InfectedLibraries/Biohazrd.git
+	url = https://github.com/MochiLibraries/Biohazrd.git
 	branch = main

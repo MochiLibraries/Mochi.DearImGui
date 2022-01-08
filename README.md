@@ -1,13 +1,11 @@
-# Infected Dear ImGui
+# Dear ImGui-flavored Mochi
 
-[![MIT Licensed](https://img.shields.io/github/license/infectedlibraries/infectedimgui?style=flat-square)](LICENSE.txt)
+[![MIT Licensed](https://img.shields.io/github/license/mochilibraries/mochi.dearimgui?style=flat-square)](LICENSE.txt)
 [![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=flat-square)](https://github.com/sponsors/PathogenDavid)
 
-This repo contains C# bindings for [Dear ImGui](https://github.com/ocornut/imgui/) as well as a [Biohazrd](https://github.com/InfectedLibraries/Biohazrd)-powered generator for generating them.
+This repo contains C# bindings for [Dear ImGui](https://github.com/ocornut/imgui/) as well as a [Biohazrd](https://github.com/MochiLibraries/Biohazrd)-powered generator for generating them.
 
-This project is not ready to be used, if you're looking for an ImGui binding for C# I'd suggest watching releases on this repository and using the excellent [ImGui.NET](https://github.com/mellinoe/ImGui.NET) for the time being. (These bindings work, but they have some very rough edges and not everything works.)
-
-This repository primarily exists to serve as an example what using Biohazrd looks like today with a C++ library that has a relatively simple API. For the sake of demonstration, the output of the generator for Windows x64 is committed under [InfectedImGui/#Generated](InfectedImGui/#Generated).
+In contrast to other C# bindings for Dear ImGui, this one interacts with the C++ API directly and is lower-level. If you need high-level bindings consider using the excellent [ImGui.NET](https://github.com/mellinoe/ImGui.NET) instead.
 
 ## License
 
@@ -17,27 +15,4 @@ Additionally, this project has some third-party dependencies. [See the third-par
 
 ## Building
 
-Building and running is currently only supported on Windows x64 with Visual Studio 2019.
-
-### Prerequisites
-
-Tool | Recommended Version
------|--------------------
-[CMake](https://cmake.org/) | 3.18.4
-[Visual Studio 2019](https://visualstudio.microsoft.com/vs/) | 16.8.5
-[.NET Core SDK](http://dot.net/) | 5.0
-
-Visual Studio requires the "Desktop development with C++" and  ".NET desktop development" workloads to be installed.
-
-### Generating the bindings
-
-1. Ensure Git submodules are up-to-date with `git submodule update --init --recursive`
-3. Build and run `InfectedImGui.Generator`
-
-### Building the sample
-
-1. Ensure Git submodules are up-to-date with `git submodule update --init --recursive`
-2. Run `InfectedImGui.Native/Build.cmd` (Not necessary if you re-generated the bindings.)
-3. Open `InfectedImGui.sln` and build/run `InfectedImGui.Sample`
-
-If you make any changes to the ImGui source code or change the branch it uses, you must re-generate the bindings using the instructions above.
+(Building instructions temporarily removed for refactor.)

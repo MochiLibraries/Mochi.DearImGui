@@ -1,4 +1,6 @@
 .vs/
-bin/
-obj/
-build/
+/bin/
+/obj/
+/packages/
+/Mochi.DearImGui/#Generated/
+/Mochi.DearImGui.Native/*.gen.*
