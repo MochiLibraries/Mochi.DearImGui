@@ -121,7 +121,7 @@ library = new MoveLooseDeclarationsIntoTypesTransformation
 (
     (c, d) => d.Namespace == "Mochi.DearImGui" ? "ImGui" : d.Namespace == "Mochi.DearImGui.Internal" ? "ImGuiInternal" : "Globals"
 ).Transform(library);
-//TODO: library = new ImGuiCreateStringWrappersTransformation().Transform(library);
+library = new ImGuiCreateStringWrappersTransformation().Transform(library);
 library = new AutoNameUnnamedParametersTransformation().Transform(library);
 library = new StripUnreferencedLazyDeclarationsTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
