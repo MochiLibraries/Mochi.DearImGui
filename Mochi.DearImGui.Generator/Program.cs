@@ -127,6 +127,7 @@ library = new StripUnreferencedLazyDeclarationsTransformation().Transform(librar
 library = new DeduplicateNamesTransformation().Transform(library);
 library = new OrganizeOutputFilesByNamespaceTransformation("Mochi.DearImGui").Transform(library); // Relies on MochiDearImGuiNamespaceTransformation, MoveLooseDeclarationsIntoTypesTransformation
 library = new ImVersionConstantsTransformation(library, constantEvaluator).Transform(library);
+library = new VectorTypeTransformation().Transform(library);
 
 // Generate the inline export helper
 library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath).Transform(library);
