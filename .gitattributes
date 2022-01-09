@@ -1,2 +1,3 @@
-# Don't attempt end of line normalization on shell scripts
+# Don't attempt end of line normalization on shell scripts or shaders
 *.sh -text
+*.glsl -text

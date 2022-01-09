@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Shaders\*.glsl" />
+    <EmbeddedResource Include="Shaders\*.glsl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTK" Version="4.6.7" />
+    <ProjectReference Include="..\Mochi.DearImGui\Mochi.DearImGui.csproj" />
+  </ItemGroup>
+
+</Project>
