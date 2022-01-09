@@ -22,12 +22,21 @@ const string canonicalBuildVariant = "Release";
 string dotNetRid;
 string nativeRuntimeBuildScript;
 string importLibraryName;
+bool itaniumExportMode;
 
 if (OperatingSystem.IsWindows())
 {
     dotNetRid = "win-x64";
     nativeRuntimeBuildScript = "build-native.cmd";
     importLibraryName = "Mochi.DearImGui.Native.lib";
+    itaniumExportMode = false;
+}
+else if (OperatingSystem.IsLinux())
+{
+    dotNetRid = "linux-x64";
+    nativeRuntimeBuildScript = "build-native.sh";
+    importLibraryName = "libMochi.DearImGui.Native.so";
+    itaniumExportMode = true;
 }
 else
 {
@@ -130,7 +139,7 @@ library = new ImVersionConstantsTransformation(library, constantEvaluator).Trans
 library = new VectorTypeTransformation().Transform(library);
 
 // Generate the inline export helper
-library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath).Transform(library);
+library = new InlineExportHelper(outputSession, imguiInlineExporterFilePath) { __ItaniumExportMode = itaniumExportMode }.Transform(library);
 
 // Rebuild the native DLL so that the librarian can access a version of the library including the inline-exported functions
 Console.WriteLine("Rebuilding Mochi.DearImGui.Native...");

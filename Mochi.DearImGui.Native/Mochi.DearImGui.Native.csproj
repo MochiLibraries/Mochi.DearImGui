@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+
+    <!-- ==============================================================================================================
+    Paths to Mochi.DearImGui.Native things
+    =============================================================================================================== -->
+    <MochiDearImGuiNativeFileName Condition="$(RuntimeIdentifier.StartsWith('win-'))">Mochi.DearImGui.Native.dll</MochiDearImGuiNativeFileName>
+    <MochiDearImGuiNativePdbName Condition="$(RuntimeIdentifier.StartsWith('win-')) and '$(Configuration)' != 'Release'">Mochi.DearImGui.Native.pdb</MochiDearImGuiNativePdbName>
+    <MochiDearImGuiNativeFileName Condition="$(RuntimeIdentifier.StartsWith('linux-'))">libMochi.DearImGui.Native.so</MochiDearImGuiNativeFileName>
+
+    <MochiDearImGuiNativeDirectory>$(MSBuildThisFileDirectory)../bin/Mochi.DearImGui.Native/$(RuntimeIdentifier)/$(Configuration)/</MochiDearImGuiNativeDirectory>
+
+    <MochiDearImGuiNativeFilePath Condition="'$(MochiDearImGuiNativeFileName)' != ''">$(MochiDearImGuiNativeDirectory)$(MochiDearImGuiNativeFileName)</MochiDearImGuiNativeFilePath>
+    <MochiDearImGuiNativePdbPath Condition="'$(MochiDearImGuiNativePdbName)' != ''">$(MochiDearImGuiNativeDirectory)$(MochiDearImGuiNativePdbName)</MochiDearImGuiNativePdbPath>
+
+    <MochiDearImGuiRuntimesPackagePathPrefix>runtimes/$(RuntimeIdentifier)/native/</MochiDearImGuiRuntimesPackagePathPrefix>
+    <MochiDearImGuiRuntimesPackagePathPrefix Condition="'$(Configuration)' != 'Release'">$(MochiDearImGuiRuntimesPackagePathPrefix)$(Configuration)/</MochiDearImGuiRuntimesPackagePathPrefix>
+    <MochiDearImGuiNativeFilePackagePath Condition="'$(MochiDearImGuiNativeFileName)' != ''">$(MochiDearImGuiRuntimesPackagePathPrefix)$(MochiDearImGuiNativeFileName)</MochiDearImGuiNativeFilePackagePath>
+    <MochiDearImGuiNativePdbPackagePath Condition="'$(MochiDearImGuiNativePdbName)' != ''">$(MochiDearImGuiRuntimesPackagePathPrefix)$(MochiDearImGuiNativePdbName)</MochiDearImGuiNativePdbPackagePath>
+
+    <DearImGuiLicenseFilePath>$(MSBuildThisFileDirectory)../external/imgui/LICENSE.txt</DearImGuiLicenseFilePath>
+
+    <!-- ==============================================================================================================
+    Package Info
+    =============================================================================================================== -->
+    <IsPackable>true</IsPackable>
+    
+    <!--
+      The package ID includes both the runtime identifier *and* the variant
+      It was considered haivng the variant be part of the version, but having it be part of the package ID means that it's possible to reference multiple variants and select between them at runtime.
+      Additionally, NuGet Restore runs in a context that doesn't have things like the active configuration so it would be wonky to switch between variants at compile time.
+    -->
+    <PackageId>$(MSBuildProjectName).$(RuntimeIdentifier)</PackageId>
+    <PackageId Condition="'$(Configuration)' != 'Release'">$(PackageId)-$(Configuration.ToLowerInvariant())</PackageId>
+
+    <Description>Native runtime support package for Mochi.DearImGui on $(RuntimeIdentifier)</Description>
+    <Description Condition="'$(Configuration)' != 'Release'">$(Description) ($(Configuration) variant)</Description>
+    
+    <!-- Apply DearImGUi license and copyright info since the meat of this package is just the native bits of Dear ImGui -->
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Authors>Omar Cornut, David Maas, and Contributors</Authors>
+    <Copyright>Copyright (c) 2014-2022 Omar Cornut</Copyright>
+
+    <!-- This package is only for the native runtime, don't try to build/pack the .NET assembly or specify a framework dependency -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <!--
+    Ideally we would do this and use ReferenceOutputAssembly="false" in Mochi.DearImGui.csproj but that doesn't play nice with the NuGet pack task.
+    https://github.com/NuGet/Home/issues/8133 would let us do this the way we want.
+    The assembly is renamed to avoid conflicting with the native DLL.
+    The PlatformTarget is fixed for the same reasons as in Mochi.DearImGui.
+    <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+    -->
+    <AssemblyName>Mochi.DearImGui.Native.DummyAssembly</AssemblyName>
+    <PlatformTarget Condition="'$(PlatformTarget)' == ''">$(Platform)</PlatformTarget>
+    <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+    
+    <!-- Symbol packages only work with portable PDBs, which are .NET-only -->
+    <IncludeSymbols>false</IncludeSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Remove the Mochi.DearImGui license and replace it with the Dear ImGui one -->
+    <None Remove="$(MSBuildThisFileDirectory)../LICENSE.txt" />
+    <None Include="$(DearImGuiLicenseFilePath)" Pack="true" PackagePath="" Visible="false" />
+
+    <!-- Copy native runtime to output directory and pack it -->
+    <None Include="$(MochiDearImGuiNativeFilePath)" Link="$(MochiDearImGuiNativeFileName)" Condition="'$(MochiDearImGuiNativeFilePath)' != '' and Exists('$(MochiDearImGuiNativeFilePath)')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>true</Pack>
+      <PackagePath>$(MochiDearImGuiNativeFilePackagePath)</PackagePath>
+    </None>
+    <None Include="$(MochiDearImGuiNativePdbPath)" Link="$(MochiDearImGuiNativePdbName)" Condition="'$(MochiDearImGuiNativePdbPath)' != '' and Exists('$(MochiDearImGuiNativePdbPath)')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <!-- We include the PDB since it's small, but ideally we should be using a symbol server. See https://github.com/MochiLibraries/Mochi.PhysX/issues/5 -->
+      <Pack>true</Pack>
+      <PackagePath>$(MochiDearImGuiNativePdbPackagePath)</PackagePath>
+    </None>
+  </ItemGroup>
+  <!-- Error if required assets are missing -->
+  <Target Name="_NativeRuntimeChecks" BeforeTargets="GetCopyToOutputDirectoryItems;Build;GenerateNuspec;Pack">
+    <Error Text="Dear ImGui license file is missing, ensure Git submodules are up-to-date." Condition="!Exists('$(DearImGuiLicenseFilePath)')" />
+    <Error Text="Could not automatically determine the native runtime to use based on runtime identifier '$(RuntimeIdentifier)'" Condition="'$(MochiDearImGuiNativeFileName)' == ''" />
+    <Error Text="Could not locate native runtime for '$(RuntimeIdentifier)' at '$(MochiDearImGuiNativeFilePath)', did you run build-native.cmd/sh?" Condition="!Exists('$(MochiDearImGuiNativeFilePath)')" />
+    <Error Text="Could not locate native runtime PDB for '$(RuntimeIdentifier)' at '$(MochiDearImGuiNativePdbPath)', did you run build-native.cmd/sh?" Condition="'$(MochiDearImGuiNativePdbName)' != '' and !Exists('$(MochiDearImGuiNativePdbPath)')" />
+  </Target>
+</Project>

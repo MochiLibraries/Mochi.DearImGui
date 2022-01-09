@@ -8,9 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="$(ImGuiNativeBinDir)Mochi.DearImGui.Native.dll" CopyToOutputDirectory="PreserveNewest" />
-    <None Include="$(ImGuiNativeBinDir)Mochi.DearImGui.Native.pdb" CopyToOutputDirectory="PreserveNewest" Condition="Exists('$(ImGuiNativeBinDir)Mochi.DearImGui.Native.pdb')" />
-    
     <!-- Include the fonts from ImGui for sake of demonstration -->
     <DemoFont Include="$(ProjectDir)..\external\imgui\misc\fonts\*.ttf" />
     <None Include="@(DemoFont)" CopyToOutputDirectory="PreserveNewest" Link="fonts\$([System.IO.Path]::GetFileName('%(Identity)'))" />
@@ -19,6 +16,7 @@
   <ItemGroup>
     <PackageReference Include="OpenTK" Version="4.6.7" />
     <ProjectReference Include="..\Mochi.DearImGui\Mochi.DearImGui.csproj" />
+    <ProjectReference Include="..\Mochi.DearImGui.Native\Mochi.DearImGui.Native.csproj" />
     <ProjectReference Include="..\Mochi.DearImGui.OpenTK\Mochi.DearImGui.OpenTK.csproj" />
   </ItemGroup>
 

@@ -183,12 +183,21 @@ unsafe partial class PlatformBackend
     }
 
     // ImGui_ImplGlfw_GetWindowPos
-    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-    private static Vector2* GetWindowPos(Vector2* returnBuffer, ImGuiViewport* viewport)
+    private static Vector2 GetWindowPosManaged(ImGuiViewport* viewport)
     {
         ViewportData* viewportData = (ViewportData*)viewport->PlatformUserData;
         GLFW.GetWindowPos(viewportData->Window, out int x, out int y);
-        *returnBuffer = new Vector2((float)x, (float)y);
+        return new Vector2((float)x, (float)y);
+    }
+
+    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+    private static Vector2 GetWindowPos(ImGuiViewport* viewport)
+        => GetWindowPosManaged(viewport);
+
+    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+    private static Vector2* GetWindowPos(Vector2* returnBuffer, ImGuiViewport* viewport)
+    {
+        *returnBuffer = GetWindowPosManaged(viewport);
         return returnBuffer;
     }
 
@@ -216,12 +225,21 @@ unsafe partial class PlatformBackend
     }
 
     // ImGui_ImplGlfw_GetWindowSize
-    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-    private static Vector2* GetWindowSize(Vector2* returnBuffer, ImGuiViewport* viewport)
+    private static Vector2 GetWindowSizeManaged(ImGuiViewport* viewport)
     {
         ViewportData* viewportData = (ViewportData*)viewport->PlatformUserData;
         GLFW.GetWindowSize(viewportData->Window, out int width, out int height);
-        *returnBuffer = new Vector2((float)width, (float)height);
+        return new Vector2((float)width, (float)height);
+    }
+
+    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+    private static Vector2 GetWindowSize(ImGuiViewport* viewport)
+        => GetWindowSizeManaged(viewport);
+
+    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+    private static Vector2* GetWindowSize(Vector2* returnBuffer, ImGuiViewport* viewport)
+    {
+        *returnBuffer = GetWindowSizeManaged(viewport);
         return returnBuffer;
     }
 

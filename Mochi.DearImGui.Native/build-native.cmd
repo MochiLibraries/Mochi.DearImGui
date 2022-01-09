@@ -21,8 +21,8 @@ cmake -G "Visual Studio 16 2019" -S . -B %BUILD_FOLDER% || exit /B 1
 echo ==============================================================================
 echo Building Mochi.DearImGui.Native %PLATFORM_RID% debug build...
 echo ==============================================================================
-cmake --build %BUILD_FOLDER% --config debug || exit /B 1
+cmake --build %BUILD_FOLDER% --config Debug || exit /B 1
 echo ==============================================================================
 echo Building Mochi.DearImGui.Native %PLATFORM_RID% release build...
 echo ==============================================================================
-cmake --build %BUILD_FOLDER% --config release || exit /B 1
+cmake --build %BUILD_FOLDER% --config Release || exit /B 1
