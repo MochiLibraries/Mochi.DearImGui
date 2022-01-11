@@ -1,16 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImGuiSourceCodeDirectory>$(ProjectDir)../external/imgui/</ImGuiSourceCodeDirectory>
-  </PropertyGroup>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
 
+    <!--
+      //TODO:
+      This is a temporary workaround to force our output assembly to be AnyCPU even though it realistically isn't.
+      This avoids causing consumers to get a warning about this assembly being x64-only when their project is AnyCPU.
+      We don't want to make people change their projects to be x64-only because eventually we want to provide an
+      AnyCPU reference assembly with this one used at runtime.
+    -->
+    <PlatformTarget Condition="'$(PlatformTarget)' == ''">$(Platform)</PlatformTarget>
+
+    <!-- ==============================================================================================================
+    Package Info
+    =============================================================================================================== -->
+    <IsPackable>true</IsPackable>
+    <PackageId>$(MSBuildProjectName).$(RuntimeIdentifier)</PackageId>
+    <Description>$(Description) (Support package for $(RuntimeIdentifier))</Description>
+  </PropertyGroup>
   <ItemGroup>
     <NativeCodeFile Include="$(ImGuiSourceCodeDirectory)imgui*.cpp" />
     <NativeCodeFile Include="$(ImGuiSourceCodeDirectory)imgui*.h" />
     <NativeCodeFile Include="$(ProjectDir)../Mochi.DearImGui.Native/*.cpp" />
     <NativeCodeFile Include="$(ProjectDir)../Mochi.DearImGui.Native/*.h" />
     <None Include="@(NativeCodeFile)" Link="#Native/$([System.IO.Path]::GetFileName('%(Identity)'))" />
-  </ItemGroup>
 
+    <ProjectReference Include="..\Mochi.DearImGui.Native\Mochi.DearImGui.Native.csproj" />
+  </ItemGroup>
 </Project>

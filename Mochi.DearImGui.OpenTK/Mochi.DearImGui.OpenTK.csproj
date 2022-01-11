@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <Description>Mochi.DearImGui backend for OpenTK.</Description>
+    <NuspecFile>Mochi.DearImGui.OpenTK.nuspec</NuspecFile>
+    <OpenTkVersion>4.6.7</OpenTkVersion>
+
+    <!-- Both of these warnings only matter for legacy nuget.config package consumption -->
+    <NoWarn>$(NoWarn);NU5128;NU5131</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,8 +17,59 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenTK" Version="4.6.7" />
+    <!-- These dependencies need to be manually replicated to the nuspec as appropriate. -->
+    <PackageReference Include="OpenTK.Graphics" Version="$(OpenTkVersion)" />
+    <PackageReference Include="OpenTK.Windowing.Desktop" Version="$(OpenTkVersion)" />
     <ProjectReference Include="..\Mochi.DearImGui\Mochi.DearImGui.csproj" />
   </ItemGroup>
+
+  <Target Name="BuildNuspecPropertiesList" DependsOnTargets="InitializeSourceControlInformationFromSourceControlManager" BeforeTargets="GenerateNuSpec;Pack">
+    <Error Text="'LinuxBinariesRoot' was not specified, cannot pack." Condition="'$(LinuxBinariesRoot)' == ''" />
+
+    <!-- Add project-specific properties -->
+    <PropertyGroup>
+      <NuspecProperties>$(NuspecProperties);OpenTkVersion=$([MSBuild]::Escape('$(OpenTkVersion)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);RepoRoot=$([MSBuild]::Escape('$(MSBuildThisFileDirectory)../'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);LinuxBinariesRoot=$([MSBuild]::Escape('$(LinuxBinariesRoot)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);WindowsBinariesRoot=$([MSBuild]::Escape('$(OutputPath)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);ReferenceAssemblyPath=$([MSBuild]::Escape('$(IntermediateOutputPath)ref/Mochi.DearImGui.OpenTK.dll'))</NuspecProperties>
+    </PropertyGroup>
+
+    <!-- Validate package properties since our template isn't super flexible. -->
+    <Error Text="'PackageId' does not have a value, which is not supported by the nuspec template.!" Condition="'$(PackageId)' == ''" />
+    <Error Text="'PackageVersion' does not have a value, which is not supported by the nuspec template.!" Condition="'$(PackageVersion)' == ''" />
+    <Error Text="'Authors' does not have a value, which is not supported by the nuspec template.!" Condition="'$(Authors)' == ''" />
+    <Error Text="'Title' has a value, which is not supported by the nuspec template.!" Condition="'$(Title)' != ''" />
+    <Error Text="'Description' does not have a value, which is not supported by the nuspec template.!" Condition="'$(Description)' == ''" />
+    <Error Text="'Copyright' does not have a value, which is not supported by the nuspec template.!" Condition="'$(Copyright)' == ''" />
+    <Error Text="'PackageRequireLicenseAcceptance' does not have a value, which is not supported by the nuspec template.!" Condition="'$(PackageRequireLicenseAcceptance)' == ''" />
+    <Error Text="'PackageLicenseExpression' is not MIT, which is not supported by the nuspec template.!" Condition="'$(PackageLicenseExpression)' != 'MIT'" />
+    <Error Text="'PackageLicenseFile' has a value, which is not supported by the nuspec template.!" Condition="'$(PackageLicenseFile)' != ''" />
+    <Error Text="'PackageLicenseUrl' has a value, which is not supported by the nuspec template.!" Condition="'$(PackageLicenseUrl)' != ''" />
+    <Error Text="'PackageProjectUrl' does not have a value, which is not supported by the nuspec template.!" Condition="'$(PackageProjectUrl)' == ''" />
+    <Error Text="'PackageIcon' has a value, which is not supported by the nuspec template.!" Condition="'$(PackageIcon)' != ''" />
+    <Error Text="'PackageIconUrl' has a value, which is not supported by the nuspec template.!" Condition="'$(PackageIconUrl)' != ''" />
+    <Error Text="'PackageReadmeFile' has a value, which is not supported by the nuspec template.!" Condition="'$(PackageReadmeFile)' != ''" />
+    <Error Text="'PackageTags' has a value, which is not supported by the nuspec template.!" Condition="'$(PackageTags)' != ''" />
+    <Error Text="'PackageReleaseNotes' has a value, which is not supported by the nuspec template.!" Condition="'$(PackageReleaseNotes)' != ''" />
+    <Error Text="'RepositoryUrl' does not have a value, which is not supported by the nuspec template.!" Condition="'$(RepositoryUrl)' == ''" />
+    <Error Text="'RepositoryType' does not have a value, which is not supported by the nuspec template.!" Condition="'$(RepositoryType)' == ''" />
+    <Error Text="'RepositoryBranch' has a value, which is not supported by the nuspec template.!" Condition="'$(RepositoryBranch)' != ''" />
+    <Error Text="'RepositoryCommit' does not have a value, which is not supported by the nuspec template.!" Condition="'$(RepositoryCommit)' == ''" />
+    <Error Text="'PackageType' has a value, which is not supported by the nuspec template.!" Condition="'$(PackageType)' != ''" />
+
+    <PropertyGroup>
+      <NuspecProperties>$(NuspecProperties);PackageId=$([MSBuild]::Escape('$(PackageId)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);PackageVersion=$([MSBuild]::Escape('$(PackageVersion)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);Authors=$([MSBuild]::Escape('$(Authors)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);Description=$([MSBuild]::Escape('$(Description)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);Copyright=$([MSBuild]::Escape('$(Copyright)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);PackageRequireLicenseAcceptance=$([MSBuild]::Escape('$(PackageRequireLicenseAcceptance)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);PackageProjectUrl=$([MSBuild]::Escape('$(PackageProjectUrl)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);RepositoryUrl=$([MSBuild]::Escape('$(RepositoryUrl)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);RepositoryType=$([MSBuild]::Escape('$(RepositoryType)'))</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);RepositoryCommit=$([MSBuild]::Escape('$(RepositoryCommit)'))</NuspecProperties>
+    </PropertyGroup>
+  </Target>
 
 </Project>

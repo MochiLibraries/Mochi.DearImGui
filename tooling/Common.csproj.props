@@ -6,7 +6,39 @@
     <Features>strict</Features>
     <Nullable>enable</Nullable>
     <AnalysisLevel>5.0</AnalysisLevel>
+
+    <!-- Common NuGet Package Properties -->
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/MochiLibraries</PackageProjectUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>David Maas and Contributors</Authors>
+    <Copyright>Copyright David Maas and Contributors</Copyright>
+    <Product>Mochi.DearImGui</Product>
+
+    <Description>Automatically generated C# bindings for Dear ImGui.</Description>
+
+    <!-- Projects should not be packable or publishable by default -->
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+
+    <!-- Ignore warnings about stable packages referencing pre-release ones. -->
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
+
+    <!-- Emit modern symbol packages -->
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <IncludeSymbols>true</IncludeSymbols>
+
+    <!-- Embed untracked sources in the PDB -->
+    <EmbedUntrackedSources Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</EmbedUntrackedSources>
   </PropertyGroup>
+  <ItemGroup>
+    <!-- Enable Source Link -->
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+
+    <!-- Package the license file -->
+    <None Include="$(MSBuildThisFileDirectory)../LICENSE.txt" Pack="true" PackagePath="" Visible="false" />
+  </ItemGroup>
   <!-- ================================================================================================================
   Configure NuGet package restore sources
   ================================================================================================================= -->

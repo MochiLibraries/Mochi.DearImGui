@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- ==============================================================================================================
+  This package is a placeholder for a future Mochi.DearImGui package that will contain nothing but a common reference
+  assembly and require the developer to explicitly reference the appropriate RID-specific Mochi.DearImGui package.
+  =============================================================================================================== -->
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+
+    <!-- ==============================================================================================================
+    Package Info
+    =============================================================================================================== -->
+    <IsPackable>true</IsPackable>
+    <PackageId>Mochi.DearImGui</PackageId>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeSymbols>false</IncludeSymbols>
+    
+    <!-- Ignore warnings about not providing any assemblies -->
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mochi.DearImGui\Mochi.DearImGui.csproj" />
+  </ItemGroup>
+</Project>

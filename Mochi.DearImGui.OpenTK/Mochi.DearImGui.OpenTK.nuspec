@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>$PackageId$</id>
+    <version>$PackageVersion$</version>
+    <authors>$Authors$</authors>
+    <requireLicenseAcceptance>$PackageRequireLicenseAcceptance$</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>$PackageProjectUrl$</projectUrl>
+    <description>$Description$</description>
+    <copyright>$Copyright$</copyright>
+    <repository type="$RepositoryType$" url="$RepositoryUrl$" commit="$RepositoryCommit$" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <!-- Mochi.DearImGui is intentionally omitted here to allow the consumers to use the appropriate RID-specific package. -->
+        <dependency id="OpenTK.Graphics" version="$OpenTkVersion$" exclude="Build,Analyzers" />
+        <dependency id="OpenTK.Windowing.Desktop" version="$OpenTkVersion$" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="$RepoRoot$LICENSE.txt" target="LICENSE.txt" />
+    <file src="$LinuxBinariesRoot$Mochi.DearImGui.OpenTK.dll" target="runtimes/linux-x64/lib/net6.0/Mochi.DearImGui.OpenTK.dll" />
+    <file src="$LinuxBinariesRoot$Mochi.DearImGui.OpenTK.pdb" target="runtimes/linux-x64/lib/net6.0/Mochi.DearImGui.OpenTK.pdb" />
+    <file src="$WindowsBinariesRoot$Mochi.DearImGui.OpenTK.dll" target="runtimes/win-x64/lib/net6.0/Mochi.DearImGui.OpenTK.dll" />
+    <file src="$WindowsBinariesRoot$Mochi.DearImGui.OpenTK.pdb" target="runtimes/win-x64/lib/net6.0/Mochi.DearImGui.OpenTK.pdb" />
+    <file src="$ReferenceAssemblyPath$" target="ref/net6.0/Mochi.DearImGui.OpenTK.dll" />
+  </files>
+</package>
