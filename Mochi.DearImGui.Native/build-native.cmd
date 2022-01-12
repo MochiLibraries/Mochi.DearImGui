@@ -17,7 +17,9 @@ if not exist %BUILD_FOLDER% (
 )
 
 :: (Re)generate the Visual Studio solution and build in all configurations
-cmake -G "Visual Studio 16 2019" -S . -B %BUILD_FOLDER% || exit /B 1
+:: We don't specify a generator specifically so that CMake will default to the latest installed verison of Visual Studio
+:: https://github.com/Kitware/CMake/blob/0c038689be424ca71a6699a993adde3bcaa15b6c/Source/cmake.cxx#L2213-L2214
+cmake -S . -B %BUILD_FOLDER% || exit /B 1
 echo ==============================================================================
 echo Building Mochi.DearImGui.Native %PLATFORM_RID% debug build...
 echo ==============================================================================
