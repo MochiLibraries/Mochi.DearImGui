@@ -1,0 +1,395 @@
+name: Mochi.DearImGui
+on:
+  push:
+    # This prevents tag pushes from triggering this workflow
+    branches: ['*']
+  pull_request:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version"
+        default: ""
+      will_publish_packages:
+        description: "Publish packages?"
+        default: "false"
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+  ContinuousIntegrationBuild: true
+  # This URL will be added to the restore sources if it isn't the official NuGet.org
+  # (This is mainly intended to allow using the NuGet.org test servers to test CI in forks.)
+  CiNuGetApiUrl: ${{secrets.NUGET_API_URL}}
+jobs:
+  # =====================================================================================================================================================================
+  # Build Mochi.DearImGui
+  # =====================================================================================================================================================================
+  build-mochi-dearimgui:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows x64
+            os: windows-latest
+            rid: win-x64
+            generate-command: ./generate.cmd
+          - name: Linux x64
+            os: ubuntu-18.04
+            rid: linux-x64
+            generate-command: ./generate.sh
+    name: Mochi.DearImGui ${{matrix.name}}
+    runs-on: ${{matrix.os}}
+    steps:
+      # ----------------------------------------------------------------------- Checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      # ----------------------------------------------------------------------- Setup .NET
+      - name: Setup .NET
+        if: matrix.platform.skip-tool-install != true
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      # ----------------------------------------------------------------------- Setup Python
+      - name: Setup Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      # ----------------------------------------------------------------------- Configure build
+      - name: Configure build
+        run: python .github/workflows/configure-build.py
+        env:
+          github_event_name: ${{github.event_name}}
+          github_ref: ${{github.ref}}
+          github_run_number: ${{github.run_number}}
+          release_version: ${{github.event.release.tag_name}}
+          workflow_dispatch_version: ${{github.event.inputs.version}}
+          workflow_dispatch_will_publish_packages: ${{github.event.inputs.will_publish_packages}}
+
+      # ----------------------------------------------------------------------- Generate Mochi.DearImGui
+      - name: Restore Mochi.DearImGui.Generator
+        run: dotnet restore Mochi.DearImGui.Generator
+
+      - name: Build Mochi.DearImGui.Generator
+        run: dotnet build Mochi.DearImGui.Generator --configuration Release
+
+      - name: Generate Mochi.DearImGui
+        run: ${{matrix.generate-command}}
+
+      # ----------------------------------------------------------------------- Build Mochi.DearImGui
+      - name: Restore Mochi.DearImGui.${{matrix.rid}}
+        # This is a workaround for the fact that the NuGet package name of Mochi.DearImGui.Native changes depending on the configuration.
+        # Ideally we'd just manually specify the dependency but NuGet makes that really annoying to do. See https://github.com/NuGet/Home/issues/8133
+        env:
+          Configuration: Release
+        run: dotnet restore Mochi.DearImGui --runtime ${{matrix.rid}}
+
+      - name: Build Mochi.DearImGui.${{matrix.rid}}
+        run: dotnet build Mochi.DearImGui --no-restore --configuration Release /p:RuntimeIdentifier=${{matrix.rid}}
+
+      # ----------------------------------------------------------------------- Pack Mochi.DearImGui
+      - name: Pack Mochi.DearImGui.${{matrix.rid}}
+        run: dotnet pack Mochi.DearImGui --no-build --configuration Release /p:RuntimeIdentifier=${{matrix.rid}}
+
+      # ----------------------------------------------------------------------- Pack Mochi.DearImGui.Native variants
+      - name: Restore Mochi.DearImGui.Native
+        run: dotnet restore Mochi.DearImGui.Native --runtime ${{matrix.rid}}
+
+      - name: Pack Mochi.DearImGui.Native.${{matrix.rid}}-debug
+        run: dotnet pack Mochi.DearImGui.Native --no-build --configuration Debug /p:RuntimeIdentifier=${{matrix.rid}}
+      - name: Pack Mochi.DearImGui.Native.${{matrix.rid}}
+        run: dotnet pack Mochi.DearImGui.Native --no-build --configuration Release /p:RuntimeIdentifier=${{matrix.rid}}
+
+      # ----------------------------------------------------------------------- Pack Mochi.DearImGui.Ref
+      # (This package is currently just a dummy package which references Mochi.DearImGui.win-x64. Eventually it will be a least common denominator reference-only package.)
+      - name: Restore Mochi.DearImGui.Ref
+        if: matrix.rid == 'win-x64'
+        run: dotnet restore Mochi.DearImGui.Ref --runtime ${{matrix.rid}}
+
+      - name: Pack Mochi.DearImGui.Ref
+        if: matrix.rid == 'win-x64'
+        run: dotnet pack Mochi.DearImGui.Ref --no-build --configuration Release /p:RuntimeIdentifier=${{matrix.rid}}
+
+      # ----------------------------------------------------------------------- Build Mochi.DearImGui.OpenTK
+      # (This is a multi-arch package so packing happens later in a separate job.)
+      - name: Restore Mochi.DearImGui.OpenTK
+        run: dotnet restore Mochi.DearImGui.OpenTK --runtime ${{matrix.rid}}
+
+      - name: Build Mochi.DearImGui.OpenTK
+        run: dotnet build Mochi.DearImGui --no-restore --configuration Release /p:RuntimeIdentifier=${{matrix.rid}}
+
+      # ----------------------------------------------------------------------- Build the sample as a smoke test
+      # We do this last so it can't indirectly affect the build process of any packages
+      - name: Build Mochi.DearImGui.Sample (Debug)
+        run: dotnet build Mochi.DearImGui.Sample --configuration Debug
+      - name: Test Mochi.DearImGui.Sample (Release)
+        run: dotnet build Mochi.DearImGui.Sample --configuration Release
+
+      # ----------------------------------------------------------------------- Upload artifacts
+      # All of these steps ignore failure so that we get what artifacts are available when things are broken
+      - name: Collect native binaries
+        if: always()
+        run: tar -cvzf Mochi.DearImGui.Native-${{matrix.rid}}.tar.gz bin/Mochi.DearImGui.Native
+      - name: Upload native binaries
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mochi.DearImGui.Native-${{matrix.rid}}
+          path: Mochi.DearImGui.Native-${{matrix.rid}}.tar.gz
+          if-no-files-found: error
+
+      - name: Collect NuGet packages
+        if: always()
+        run: tar -cvzf Mochi.DearImGui-packages-${{matrix.rid}}.tar.gz packages
+      - name: Upload NuGet packages
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Packages
+          path: Mochi.DearImGui-packages-${{matrix.rid}}.tar.gz
+          if-no-files-found: error
+
+      - name: Collect generated output
+        if: always()
+        #TODO: We should use the Biohazrd file writes log for this
+        run: tar -cvzf Mochi.DearImGui-${{matrix.rid}}-generated.tar.gz Mochi.DearImGui/#Generated Mochi.DearImGui.Native/*.gen.*
+      - name: Upload generated output
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mochi.DearImGui-${{matrix.rid}}-generated
+          path: Mochi.DearImGui-${{matrix.rid}}-generated.tar.gz
+          if-no-files-found: error
+      
+      - name: Collect Mochi.DearImGui.OpenTK binaries
+        if: always()
+        run: tar -cvzf Mochi.DearImGui.OpenTK-${{matrix.rid}}.tar.gz bin/Release-AnyCPU/Mochi.DearImGui.OpenTK/Mochi.DearImGui.OpenTK.* obj/Mochi.DearImGui.OpenTK/Release-AnyCPU/ref/*
+      - name: Upload Mochi.DearImGui.OpenTK binaries
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mochi.DearImGui.OpenTK
+          path: Mochi.DearImGui.OpenTK-${{matrix.rid}}.tar.gz
+          if-no-files-found: error
+
+  # =====================================================================================================================================================================
+  # Pack Multiplatform Packages
+  # =====================================================================================================================================================================
+  pack-multiplatform-packages:
+    name: Pack Mochi.DearImGui.OpenTK
+    runs-on: ubuntu-latest
+    needs: build-mochi-dearimgui
+    steps:
+      # ----------------------------------------------------------------------- Checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # ----------------------------------------------------------------------- Setup .NET
+      - name: Setup .NET
+        if: matrix.platform.skip-tool-install != true
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      # ----------------------------------------------------------------------- Setup Python
+      - name: Setup Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      # ----------------------------------------------------------------------- Configure build
+      - name: Configure build
+        run: python .github/workflows/configure-build.py
+        env:
+          github_event_name: ${{github.event_name}}
+          github_ref: ${{github.ref}}
+          github_run_number: ${{github.run_number}}
+          release_version: ${{github.event.release.tag_name}}
+          workflow_dispatch_version: ${{github.event.inputs.version}}
+          workflow_dispatch_will_publish_packages: ${{github.event.inputs.will_publish_packages}}
+      
+      # ----------------------------------------------------------------------- Download built binaries
+      - name: Download built binaries
+        uses: actions/download-artifact@v2
+        with:
+          name: Mochi.DearImGui.OpenTK
+      - name: Extract built binaries
+        run: |
+          tar --keep-old-files -xvf Mochi.DearImGui.OpenTK-win-x64.tar.gz
+          mkdir Mochi.DearImGui.OpenTK-linux-x64
+          tar --keep-old-files -xvf Mochi.DearImGui.OpenTK-linux-x64.tar.gz --directory=Mochi.DearImGui.OpenTK-linux-x64
+
+      # ----------------------------------------------------------------------- Pack Mochi.DearImGui.OpenTK
+      - name: Restore Mochi.DearImGui.OpenTK
+        run: dotnet restore Mochi.DearImGui.OpenTK
+      
+      - name: Pack Mochi.DearImGui.OpenTK
+        run: dotnet pack Mochi.DearImGui.OpenTK --no-build --configuration Release /p:LinuxBinariesRoot=${{github.workspace}}/Mochi.DearImGui.OpenTK-linux-x64/bin/Release-AnyCPU/Mochi.DearImGui.OpenTK/
+
+      # ----------------------------------------------------------------------- Upload artifacts
+      - name: Collect NuGet packages
+        if: always()
+        run: tar -cvzf Mochi.DearImGui-packages-multiplatform.tar.gz packages
+      - name: Upload NuGet packages
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Packages
+          path: Mochi.DearImGui-packages-multiplatform.tar.gz
+          if-no-files-found: error
+
+  # =====================================================================================================================================================================
+  # Publish NuGet Packages to GitHub
+  # =====================================================================================================================================================================
+  publish-packages-github:
+    name: Publish to GitHub
+    runs-on: ubuntu-latest
+    needs: [build-mochi-dearimgui, pack-multiplatform-packages]
+    # Pushes always publish CI packages (configure-build.py will add the branch name to the version string for branches besides main)
+    # Published releases always publish packages
+    # A manual workflow only publishes packages if explicitly enabled
+    if: github.event_name == 'push' || github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && github.event.inputs.will_publish_packages == 'true')
+    steps:
+      # ----------------------------------------------------------------------- Setup .NET
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      # ----------------------------------------------------------------------- Download built packages
+      - name: Download built packages
+        uses: actions/download-artifact@v2
+        with:
+          name: Packages
+      - name: Extract built packages
+        run: for archive in Mochi.DearImGui-packages-*.tar.gz; do tar --keep-old-files -xvf "$archive"; done
+
+      # ----------------------------------------------------------------------- Push to GitHub Packages
+      - name: Push to GitHub Packages
+        run: dotnet nuget push "packages/*.nupkg" --skip-duplicate --no-symbols true --api-key ${{secrets.GITHUB_TOKEN}} --source https://nuget.pkg.github.com/${{github.repository_owner}}
+        env:
+          # This is a workaround for https://github.com/NuGet/Home/issues/9775
+          DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER: 0
+
+  # =====================================================================================================================================================================
+  # Publish NuGet Packages to NuGet.org
+  # =====================================================================================================================================================================
+  publish-packages-nuget-org:
+    name: Publish to NuGet.org
+    runs-on: ubuntu-latest
+    needs: [build-mochi-dearimgui, pack-multiplatform-packages]
+    environment: NuGet.org
+    # Release builds always publish packages to NuGet.org
+    # Workflow dispatch builds will only publish packages if enabled and an explicit version number is given
+    # Make sure this logic matches configure-build.py to ensure we don't accidentally depend on sibling CI pre-release packages
+    if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && github.event.inputs.will_publish_packages == 'true' && github.event.inputs.version != '')
+    steps:
+      # ----------------------------------------------------------------------- Setup .NET
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      # ----------------------------------------------------------------------- Download built packages
+      - name: Download built packages
+        uses: actions/download-artifact@v2
+        with:
+          name: Packages
+      - name: Extract built packages
+        run: for archive in Mochi.DearImGui-packages-*.tar.gz; do tar --keep-old-files -xvf "$archive"; done
+
+      # ----------------------------------------------------------------------- Push to NuGet.org
+      - name: Push to NuGet.org
+        run: dotnet nuget push "packages/*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source ${{secrets.NUGET_API_URL}}
+        env:
+          # This is a workaround for https://github.com/NuGet/Home/issues/9775
+          DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER: 0
+
+  # =====================================================================================================================================================================
+  # Publish Release Assets
+  # =====================================================================================================================================================================
+  publish-release-assets:
+    name: Publish Release Assets
+    runs-on: ubuntu-latest
+    needs: [build-mochi-dearimgui, pack-multiplatform-packages]
+    if: github.event_name == 'release'
+    steps:
+      # ----------------------------------------------------------------------- Download all artifacts
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+
+      # ----------------------------------------------------------------------- Upload release assets
+      - name: Upload release assets
+        uses: actions/github-script@v4
+        with:
+          user-agent: actions/github-script for ${{github.repository}}
+          script: |
+            const fs = require('fs').promises;
+            const path = require('path');
+            const uploadUrl = context.payload.release.upload_url;
+
+            if (!uploadUrl) {
+              throw "Missing release asset upload URL!";
+            }
+
+            async function uploadAssets(directoryPath) {
+              for (let filePath of await fs.readdir(directoryPath)) {
+                filePath = path.join(directoryPath, filePath);
+                const stats = await fs.stat(filePath);
+
+                if (stats.isDirectory()) {
+                  console.log(`Entering '${filePath}'`);
+                  await uploadAssets(filePath);
+                  continue;
+                }
+
+                console.log(`Uploading '${filePath}'`);
+                await github.repos.uploadReleaseAsset({
+                  url: uploadUrl,
+                  headers: {
+                    'content-type': 'application/octet-stream',
+                    'content-length': stats.size
+                  },
+                  name: path.basename(filePath),
+                  data: await fs.readFile(filePath)
+                });
+              }
+            }
+
+            await uploadAssets('.');
+
+  # =====================================================================================================================================================================
+  # Send CI Failure Notification
+  # =====================================================================================================================================================================
+  send-ci-failure-notification:
+    name: Send CI Failure Notification
+    needs: [build-mochi-dearimgui, pack-multiplatform-packages, publish-packages-github, publish-packages-nuget-org, publish-release-assets]
+    if: failure() && github.event_name != 'pull_request'
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      # ----------------------------------------------------------------------- Checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # ----------------------------------------------------------------------- Setup Python
+      - name: Setup Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      # ----------------------------------------------------------------------- Send CI Failure Notification
+      - name: Send Notification
+        run: python .github/workflows/send-ci-failure-notification.py
+        env:
+          webhook_url: ${{secrets.TEAMS_WEBHOOK_URL}}
+          github_organization: ${{github.repository_owner}}
+          github_repo: ${{github.repository}}
+          github_workflow_name: ${{github.workflow}}
+          github_run_number: ${{github.run_id}}
