@@ -27,7 +27,7 @@ unsafe partial class PlatformBackend
         }
 
         internal static ViewportData* Allocate()
-            => (ViewportData*)ImGui.MemAlloc((ulong)sizeof(ViewportData));
+            => (ViewportData*)ImGui.MemAlloc((nuint)sizeof(ViewportData));
 
         internal static void Free(ViewportData* viewportData)
         {

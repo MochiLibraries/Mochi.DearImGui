@@ -5,5 +5,5 @@ namespace Mochi.DearImGui;
 partial class ImGui
 {
     public unsafe static void CHECKVERSION()
-        => DebugCheckVersionAndDataLayout(IMGUI_VERSION, (ulong)sizeof(ImGuiIO), (ulong)sizeof(ImGuiStyle), (ulong)sizeof(Vector2), (ulong)sizeof(Vector4), (ulong)sizeof(ImDrawVert), sizeof(ushort));
+        => DebugCheckVersionAndDataLayout(IMGUI_VERSION, (uint)sizeof(ImGuiIO), (uint)sizeof(ImGuiStyle), (uint)sizeof(Vector2), (uint)sizeof(Vector4), (uint)sizeof(ImDrawVert), sizeof(ushort));
 }

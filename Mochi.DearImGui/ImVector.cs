@@ -152,7 +152,7 @@ namespace Mochi.DearImGui
             if (new_capacity <= Capacity)
             { return; }
 
-            T* new_data = (T*)ImGui.MemAlloc((ulong)(new_capacity * sizeof(T)));
+            T* new_data = (T*)ImGui.MemAlloc((nuint)(new_capacity * sizeof(T)));
 
             if (Data != null)
             {

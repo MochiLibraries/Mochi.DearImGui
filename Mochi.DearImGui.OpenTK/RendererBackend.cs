@@ -80,7 +80,7 @@ public unsafe sealed class RendererBackend : IDisposable
         {
             string name = GetType().FullName ?? nameof(RendererBackend);
             int nameByteCount = Encoding.UTF8.GetByteCount(name) + 1;
-            byte* nameP = (byte*)ImGui.MemAlloc((ulong)nameByteCount);
+            byte* nameP = (byte*)ImGui.MemAlloc((nuint)nameByteCount);
             io->BackendRendererName = nameP;
             Span<byte> nameSpan = new(nameP, nameByteCount);
             int encodedByteCount = Encoding.UTF8.GetBytes(name.AsSpan().Slice(0, nameSpan.Length - 1), nameSpan);

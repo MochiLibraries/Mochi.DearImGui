@@ -118,7 +118,6 @@ library = new AddBaseVTableAliasTransformation().Transform(library);
 library = new ConstOverloadRenameTransformation().Transform(library);
 library = new MakeEverythingPublicTransformation().Transform(library);
 library = new ImGuiCSharpTypeReductionTransformation().Transform(library);
-library = new CSharpBuiltinTypeTransformation().Transform(library);
 library = new MiscFixesTransformation().Transform(library);
 library = new LiftAnonymousRecordFieldsTransformation().Transform(library);
 library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
