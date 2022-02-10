@@ -1,6 +1,6 @@
 ﻿// Renderer backend for OpenTK
 // Based on imgui_impl_opengl3.cpp
-// https://github.com/ocornut/imgui/blob/704ab1114aa54858b690711554cf3312fbbcc3fc/backends/imgui_impl_opengl3.cpp
+// https://github.com/ocornut/imgui/blob/1ee252772ae9c0a971d06257bb5c89f628fa696a/backends/imgui_impl_opengl3.cpp
 
 // Implemented features:
 //  [x] Renderer: User texture binding. Use 'GLuint' OpenGL texture identifier as void*/ImTextureID. Read the FAQ about ImTextureID!
@@ -418,7 +418,7 @@ public unsafe sealed class RendererBackend : IDisposable
             if (HasClipOrigin)
             {
                 if ((ClipOrigin)GL.GetInteger(GetPName.ClipOrigin) == ClipOrigin.UpperLeft)
-                { clipOriginLowerLeft = false; }     
+                { clipOriginLowerLeft = false; }
             }
 
             // Setup viewport, orthographic projection matrix

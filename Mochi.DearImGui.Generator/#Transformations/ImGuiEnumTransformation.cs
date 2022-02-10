@@ -69,8 +69,17 @@ namespace Mochi.DearImGui.Generator
 
                 foreach (TranslatedEnumConstant value in declaration.Values)
                 {
-                    if (value.Name.StartsWith(name))
-                    { newValues.Add(value with { Name = value.Name.Substring(name.Length) }); }
+                    if (value.Name.Length > name.Length && value.Name.StartsWith(name))
+                    {
+                        string newName = value.Name.Substring(name.Length);
+
+                        // If the new name starts with a digit (such is the case of ImGuiKey_0) then add an underscore prefix so it's a legal identifier.
+                        char firstChar = newName[0];
+                        if (firstChar >= '0' && firstChar <= '9')
+                        { newName = $"_{newName}"; }
+
+                        newValues.Add(value with { Name = newName });
+                    }
                     else
                     { newValues.Add(value); }
                 }

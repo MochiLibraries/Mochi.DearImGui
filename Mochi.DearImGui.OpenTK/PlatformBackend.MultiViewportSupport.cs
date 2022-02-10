@@ -111,6 +111,7 @@ unsafe partial class PlatformBackend
         // Install GLFW callbacks for secondary viewports
         GlfwNative.glfwSetWindowFocusCallback(viewportData->Window, &WindowFocusCallback);
         GlfwNative.glfwSetCursorEnterCallback(viewportData->Window, &CursorEnterCallback);
+        GlfwNative.glfwSetCursorPosCallback(viewportData->Window, &CursorPosCallback);
         GlfwNative.glfwSetMouseButtonCallback(viewportData->Window, &MouseButtonCallback);
         GlfwNative.glfwSetScrollCallback(viewportData->Window, &ScrollCallback);
         GlfwNative.glfwSetKeyCallback(viewportData->Window, &KeyCallback);

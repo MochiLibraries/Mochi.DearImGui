@@ -46,6 +46,29 @@ namespace Mochi.DearImGui.Generator
             if (declaration.File != ImGuiInternalFile)
             { return declaration; }
 
+            string MakeDiagnosticMessage<T>(T type)
+            {
+                string friendlyName = declaration.Name;
+
+                for (int i = context.Parents.Length - 1; i >= 0; i--)
+                {
+                    TranslatedDeclaration parent = context.Parents[i];
+                    friendlyName = $"{parent.Name}.{friendlyName}";
+
+                    if (i == 0 && parent.Namespace is not null)
+                    { friendlyName = $"{parent.Namespace}.{friendlyName}"; }
+                }
+
+                return $"Field '{friendlyName}' was removed since it references '{type}', which is currently unsupported.";
+            }
+
+            // Special case: This field is missed with the logic below because it uses a typedef
+            if (declaration.Name == "ActiveIdUsingKeyInputMask" && context.ParentDeclaration?.Name == "ImGuiContext")
+            {
+                MiscDiagnostics.Add(Severity.Warning, MakeDiagnosticMessage(declaration.Type));
+                return null;
+            }
+
             ClangTypeReference? clangType;
 
             switch (declaration.Type)
@@ -63,17 +86,7 @@ namespace Mochi.DearImGui.Generator
 
             if (clangType is not null)
             {
-                string friendlyName = declaration.Name;
-                for (int i = context.Parents.Length - 1; i >= 0; i--)
-                {
-                    TranslatedDeclaration parent = context.Parents[i];
-                    friendlyName = $"{parent.Name}.{friendlyName}";
-
-                    if (i == 0 && parent.Namespace is not null)
-                    { friendlyName = $"{parent.Namespace}.{friendlyName}"; }
-                }
-
-                MiscDiagnostics.Add(Severity.Warning, $"Field '{friendlyName}' was removed since it references '{clangType}', which is currently unsupported.");
+                MiscDiagnostics.Add(Severity.Warning, MakeDiagnosticMessage(clangType));
                 return null;
             }
             else
@@ -114,10 +127,10 @@ namespace Mochi.DearImGui.Generator
                         return null;
                 }
             }
-            // imgui_internal has a handful of templated functions, which are not easily supported by Biohazrd.
+            // imgui_internal has a handful of templated types and functions, which are not easily supported by Biohazrd.
             // A few of these actually appear on the internal API surface, so we might want to translate them eventually.
             // I didn't manually translate them as I might decide to use them to experiment with Biohazrd's template support eventually.
-            // Plus these internal APIs shoul generally not be used anyways, so it's not really worth putting a ton of effort into them.
+            // Plus these internal APIs should generally not be used anyways, so it's not really worth putting a ton of effort into them.
             else if (declaration.Declaration is ClassTemplateDecl)
             {
                 switch (declaration.Name)

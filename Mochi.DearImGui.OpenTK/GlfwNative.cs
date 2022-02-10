@@ -74,6 +74,9 @@ internal unsafe sealed class GlfwNative
     public static extern delegate* unmanaged[Cdecl]<Window*, int, void> glfwSetCursorEnterCallback(Window* window, delegate* unmanaged[Cdecl]<Window*, int, void> callback);
 
     [DllImport(LibraryName)]
+    public static extern delegate* unmanaged[Cdecl]<Window*, double, double, void> glfwSetCursorPosCallback(Window* window, delegate* unmanaged[Cdecl]<Window*, double, double, void> callback);
+
+    [DllImport(LibraryName)]
     public static extern delegate* unmanaged[Cdecl]<Window*, MouseButton, InputAction, KeyModifiers, void> glfwSetMouseButtonCallback(Window* window, delegate* unmanaged[Cdecl]<Window*, MouseButton, InputAction, KeyModifiers, void> callback);
 
     [DllImport(LibraryName)]

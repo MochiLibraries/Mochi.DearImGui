@@ -1,13 +1,14 @@
 ﻿// Platform backend for OpenTK
 // Based on imgui_impl_glfw.cpp
-// https://github.com/ocornut/imgui/blob/704ab1114aa54858b690711554cf3312fbbcc3fc/backends/imgui_impl_glfw.cpp
+// https://github.com/ocornut/imgui/blob/1ee252772ae9c0a971d06257bb5c89f628fa696a/backends/imgui_impl_glfw.cpp
 
 // Implemented features:
 //  [x] Platform: Clipboard support.
+//  [X] Platform: Keyboard support. Since 1.87 we are using the io.AddKeyEvent() function. Pass ImGuiKey values to all key functions e.g. ImGui::IsKeyPressed(ImGuiKey_Space). [Legacy GLFW_KEY_* values will also be supported unless IMGUI_DISABLE_OBSOLETE_KEYIO is set]
 //  [x] Platform: Gamepad support. Enable with 'io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad'.
 //  [x] Platform: Mouse cursor shape and visibility. Disable with 'io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange' (note: the resizing cursors requires GLFW 3.4+).
 //  [x] Platform: Keyboard arrays indexed using GLFW_KEY_* codes, e.g. ImGui::IsKeyPressed(GLFW_KEY_SPACE).
-//  [ ] Platform: Multi-viewport support (multiple windows). Enable with 'io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable'.
+//  [x] Platform: Multi-viewport support (multiple windows). Enable with 'io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable'.
 
 // Issues:
 //  [ ] Platform: Multi-viewport support: ParentViewportID not honored, and so io.ConfigViewportsNoDefaultParent has no effect (minor).
@@ -15,7 +16,6 @@
 using OpenTK.Windowing.Desktop;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 using System;
-using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -33,14 +33,15 @@ public unsafe sealed partial class PlatformBackend : IDisposable
     private readonly Window* Window;
     private double Time;
     private Window* MouseWindow;
-    private readonly bool[] MouseJustPressed = new bool[(int)ImGuiMouseButton.COUNT];
     private readonly Cursor*[] MouseCursors;
-    private readonly Window*[] KeyOwnerWindows = new Window*[512];
+    private Vector2 LastValidMousePos;
+    private readonly Window*[] KeyOwnerWindows = new Window*[(int)Keys.LastKey];
     private readonly bool InstalledCallbacks;
     private bool WantUpdateMonitors;
 
     // Chain GLFW callbacks: our callbacks will call the user's previously installed callbacks, if any.
     private readonly delegate* unmanaged[Cdecl]<Window*, int, void> PrevUserCallbackWindowFocus;
+    private readonly delegate* unmanaged[Cdecl]<Window*, double, double, void> PrevUserCallbackCursorPos;
     private readonly delegate* unmanaged[Cdecl]<Window*, int, void> PrevUserCallbackCursorEnter;
     private readonly delegate* unmanaged[Cdecl]<Window*, MouseButton, InputAction, KeyModifiers, void> PrevUserCallbackMousebutton;
     private readonly delegate* unmanaged[Cdecl]<Window*, double, double, void> PrevUserCallbackScroll;
@@ -60,10 +61,6 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         { throw new InvalidOperationException("A platform backend has already been initialized for the current Dear ImGui context!"); }
 
         PlatformIo = ImGui.GetPlatformIO();
-
-        // These are hard-coded in the native backend, assert that they're correct right
-        Debug.Assert(KeyOwnerWindows.Length == Io->KeysDown.Length);
-        Debug.Assert(MouseJustPressed.Length == Io->MouseDown.Length);
 
         // Unlike the native bindings we have an object associated with each context so we generally don't use the BackendPlatformUserData and instead enforce
         // a 1:1 relationship between backend instances and Dear ImGui contexts. However we still use a GC handle in BackendPlatformUserData for our platform callbacks.
@@ -96,30 +93,6 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         Window = window;
         Time = 0.0;
         WantUpdateMonitors = true;
-
-        // Keyboard mapping. Dear ImGui will use those indices to peek into the io.KeysDown[] array.
-        Io->KeyMap[(int)ImGuiKey.Tab] = (int)Keys.Tab;
-        Io->KeyMap[(int)ImGuiKey.LeftArrow] = (int)Keys.Left;
-        Io->KeyMap[(int)ImGuiKey.RightArrow] = (int)Keys.Right;
-        Io->KeyMap[(int)ImGuiKey.UpArrow] = (int)Keys.Up;
-        Io->KeyMap[(int)ImGuiKey.DownArrow] = (int)Keys.Down;
-        Io->KeyMap[(int)ImGuiKey.PageUp] = (int)Keys.PageUp;
-        Io->KeyMap[(int)ImGuiKey.PageDown] = (int)Keys.PageDown;
-        Io->KeyMap[(int)ImGuiKey.Home] = (int)Keys.Home;
-        Io->KeyMap[(int)ImGuiKey.End] = (int)Keys.End;
-        Io->KeyMap[(int)ImGuiKey.Insert] = (int)Keys.Insert;
-        Io->KeyMap[(int)ImGuiKey.Delete] = (int)Keys.Delete;
-        Io->KeyMap[(int)ImGuiKey.Backspace] = (int)Keys.Backspace;
-        Io->KeyMap[(int)ImGuiKey.Space] = (int)Keys.Space;
-        Io->KeyMap[(int)ImGuiKey.Enter] = (int)Keys.Enter;
-        Io->KeyMap[(int)ImGuiKey.Escape] = (int)Keys.Escape;
-        Io->KeyMap[(int)ImGuiKey.KeyPadEnter] = (int)Keys.KeyPadEnter;
-        Io->KeyMap[(int)ImGuiKey.A] = (int)Keys.A;
-        Io->KeyMap[(int)ImGuiKey.C] = (int)Keys.C;
-        Io->KeyMap[(int)ImGuiKey.V] = (int)Keys.V;
-        Io->KeyMap[(int)ImGuiKey.X] = (int)Keys.X;
-        Io->KeyMap[(int)ImGuiKey.Y] = (int)Keys.Y;
-        Io->KeyMap[(int)ImGuiKey.Z] = (int)Keys.Z;
 
         // Clipboard callbacks
         Io->SetClipboardTextFn = &SetClipboardText;
@@ -160,9 +133,12 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         // Chain GLFW callbacks: our callbacks will call the user's previously installed callbacks, if any.
         if (installCallbacks)
         {
+            // ImGui_ImplGlfw_InstallCallbacks
+            // (Unlike the native backend we don't expose the ability to do this later to discourage weird usage patterns.)
             InstalledCallbacks = true;
             PrevUserCallbackWindowFocus = GlfwNative.glfwSetWindowFocusCallback(window, &WindowFocusCallback);
             PrevUserCallbackCursorEnter = GlfwNative.glfwSetCursorEnterCallback(window, &CursorEnterCallback);
+            PrevUserCallbackCursorPos = GlfwNative.glfwSetCursorPosCallback(window, &CursorPosCallback);
             PrevUserCallbackMousebutton = GlfwNative.glfwSetMouseButtonCallback(window, &MouseButtonCallback);
             PrevUserCallbackScroll = GlfwNative.glfwSetScrollCallback(window, &ScrollCallback);
             PrevUserCallbackKey = GlfwNative.glfwSetKeyCallback(window, &KeyCallback);
@@ -228,71 +204,59 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         Io->DeltaTime = Time > 0.0 ? (float)(currentTime - Time) : 1f / 60f;
         Time = currentTime;
 
-        // ImGui_ImplGlfw_UpdateMousePosAndButtons
-        UpdateMousePositionAndButtons();
-        void UpdateMousePositionAndButtons()
+        // ImGui_ImplGlfw_UpdateMouseData
+        UpdateMouseData();
+        void UpdateMouseData()
         {
             ImGuiIO* io = Io;
 
+            uint mouseViewportId = 0;
             Vector2 previousMousePosition = io->MousePos;
-            io->MousePos = new(-float.MaxValue, -float.MaxValue);
-            io->MouseHoveredViewport = 0;
-
-            // Update mouse buttons
-            // (if a mouse press event came, always pass it as "mouse held this frame", so we don't miss click-release events that are shorter than 1 frame)
-            for (int i = 0; i < io->MouseDown.Length; i++)
-            {
-                io->MouseDown[i] = MouseJustPressed[i] || GLFW.GetMouseButton(Window, (MouseButton)i) != InputAction.Release;
-                MouseJustPressed[i] = false;
-            }
 
             for (int i = 0; i < PlatformIo->Viewports.Size; i++)
             {
                 ImGuiViewport* viewport = PlatformIo->Viewports[i];
                 Window* viewportWindow = (Window*)viewport->PlatformHandle;
 
-                bool focused = OperatingSystem.IsBrowser() || GLFW.GetWindowAttrib(viewportWindow, WindowAttributeGetBool.Focused);
-                Window* mouseWindow = MouseWindow == viewportWindow || focused ? viewportWindow : null;
+                bool isWindowFocused = OperatingSystem.IsBrowser() || GLFW.GetWindowAttrib(viewportWindow, WindowAttributeGetBool.Focused);
 
-                // Update mouse buttons
-                if (focused)
+                if (isWindowFocused)
                 {
-                    for (int j = 0; j < io->MouseDown.Length; j++)
-                    { io->MouseDown[j] |= GLFW.GetMouseButton(viewportWindow, (MouseButton)j) != InputAction.Release; }
-                }
-
-                // Set OS mouse position from Dear ImGui if requested (rarely used, only when ImGuiConfigFlags_NavEnableSetMousePos is enabled by user)
-                // (When multi-viewports are enabled, all Dear ImGui positions are same as OS positions)
-                if (io->WantSetMousePos && focused)
-                {
-                    Vector2 newMousePosition = previousMousePosition - viewport->Pos;
-                    GLFW.SetCursorPos(viewportWindow, (double)newMousePosition.X, (double)newMousePosition.Y);
-                }
-
-                // Set Dear ImGui mouse position from OS position
-                if (mouseWindow != null)
-                {
-                    GLFW.GetCursorPos(mouseWindow, out double mouseX, out double mouseY);
-                    if (io->ConfigFlags.HasFlag(ImGuiConfigFlags.ViewportsEnable))
+                    // (Optional) Set OS mouse position from Dear ImGui if requested (rarely used, only when ImGuiConfigFlags_NavEnableSetMousePos is enabled by user)
+                    // When multi-viewports are enabled, all Dear ImGui positions are same as OS positions.
+                    if (io->WantSetMousePos)
                     {
-                        // Multi-viewport mode: mouse position in OS absolute coordinates (io.MousePos is (0,0) when the mouse is on the upper-left of the primary monitor)
-                        GLFW.GetWindowPos(viewportWindow, out int windowX, out int windowY);
-                        io->MousePos = new((float)mouseX + windowX, (float)mouseY + windowY);
+                        Vector2 newMousePosition = previousMousePosition - viewport->Pos;
+                        GLFW.SetCursorPos(viewportWindow, (double)newMousePosition.X, (double)newMousePosition.Y);
                     }
-                    else
+
+                    // (Optional) Fallback to provide mouse position when focused (ImGui_ImplGlfw_CursorPosCallback already provides this when hovered or captured)
+                    if (MouseWindow is null)
                     {
-                        // Single viewport mode: mouse position in client window coordinates (io.MousePos is (0,0) when the mouse is on the upper-left corner of the app window)
-                        io->MousePos = new((float)mouseX, (float)mouseY);
+                        GLFW.GetCursorPos(viewportWindow, out double mouseX, out double mouseY);
+                        if (io->ConfigFlags.HasFlag(ImGuiConfigFlags.ViewportsEnable))
+                        {
+                            // Single viewport mode: mouse position in client window coordinates (io.MousePos is (0,0) when the mouse is on the upper-left corner of the app window)
+                            // Multi-viewport mode: mouse position in OS absolute coordinates (io.MousePos is (0,0) when the mouse is on the upper-left of the primary monitor)
+                            GLFW.GetWindowPos(viewportWindow, out int windowX, out int windowY);
+                            mouseX += windowX;
+                            mouseY += windowY;
+                        }
+
+                        LastValidMousePos = new((float)mouseX, (float)mouseY);
+                        io->AddMousePosEvent((float)mouseX, (float)mouseY);
                     }
                 }
 
-                // (Optional) When using multiple viewports: set io.MouseHoveredViewport to the viewport the OS mouse cursor is hovering.
-                // Important: this information is not easy to provide and many high-level windowing library won't be able to provide it correctly, because
-                // - This is _ignoring_ viewports with the ImGuiViewportFlags_NoInputs flag (pass-through windows).
-                // - This is _regardless_ of whether another viewport is focused or being dragged from.
-                // If ImGuiBackendFlags_HasMouseHoveredViewport is not set by the backend, imgui will ignore this field and infer the information by relying on the
-                // rectangles and last focused time of every viewports it knows about. It will be unaware of other windows that may be sitting between or over your windows.
-                // [GLFW] FIXME: This is currently only correct on Win32. See what we do below with the WM_NCHITTEST, missing an equivalent for other systems.
+                // (Optional) When using multiple viewports: call io.AddMouseViewportEvent() with the viewport the OS mouse cursor is hovering.
+                // If ImGuiBackendFlags_HasMouseHoveredViewport is not set by the backend, Dear imGui will ignore this field and infer the information using its flawed heuristic.
+                // - [X] GLFW >= 3.3 backend ON WINDOWS ONLY does correctly ignore viewports with the _NoInputs flag.
+                // - [!] GLFW <= 3.2 backend CANNOT correctly ignore viewports with the _NoInputs flag, and CANNOT reported Hovered Viewport because of mouse capture.
+                //       Some backend are not able to handle that correctly. If a backend report an hovered viewport that has the _NoInputs flag (e.g. when dragging a window
+                //       for docking, the viewport has the _NoInputs flag in order to allow us to find the viewport under), then Dear ImGui is forced to ignore the value reported
+                //       by the backend, and use its flawed heuristic to guess the viewport behind.
+                // - [X] GLFW backend correctly reports this regardless of another viewport behind focused and dragged from (we need this to find a useful drag and drop target).
+                // FIXME: This is currently only correct on Win32. See what we do below with the WM_NCHITTEST, missing an equivalent for other systems.
                 // See https://github.com/glfw/glfw/issues/1236 if you want to help in making this a GLFW feature.
 #if false // The hack for this on the platform backend side is more trouble than it's worth. Let's just wait for GLFW 3.4.
                 if (OperatingSystem.IsWindows())
@@ -302,10 +266,15 @@ public unsafe sealed partial class PlatformBackend : IDisposable
                     GLFW.SetWindowAttrib(viewportWindow, WindowAttribute.MousePassthrough, windowNoInput);
 #endif
                     if (!windowNoInput && GLFW.GetWindowAttrib(viewportWindow, WindowAttributeGetBool.Hovered))
-                    { io->MouseHoveredViewport = viewport->ID; }
+                    { mouseViewportId = viewport->ID; }
                 }
+#else
+                // We cannot use bd->MouseWindow maintained from CursorEnter/Leave callbacks, because it is locked to the window capturing mouse.
 #endif
             }
+
+            if (io->BackendFlags.HasFlag(ImGuiBackendFlags.HasMouseHoveredViewport))
+            { io->AddMouseViewportEvent(mouseViewportId); }
         }
 
         // ImGui_ImplGlfw_UpdateMouseCursor
@@ -344,50 +313,54 @@ public unsafe sealed partial class PlatformBackend : IDisposable
             if (!Io->ConfigFlags.HasFlag(ImGuiConfigFlags.NavEnableGamepad))
             { return; }
 
+            Io->BackendFlags &= ~ImGuiBackendFlags.HasGamepad;
+
             // Update gamepad inputs
-            float* axes = GLFW.GetJoystickAxesRaw(0, out int axisCount);
-            JoystickInputAction* buttons = GLFW.GetJoystickButtonsRaw(0, out int buttonCount);
+            // (This is the GLFW_HAS_GAMEPAD_API == true case since OpenTK supports it.)
+            const int GLFW_JOYSTICK_1 = 0;
+            if (!GLFW.GetGamepadState(GLFW_JOYSTICK_1, out GamepadState gamepad))
+            { return; }
 
-            void MapButton(ImGuiNavInput input, int buttonNumber)
+            byte* gamepadButtons = gamepad.Buttons;
+            float* gamepadAxes = gamepad.Axes;
+
+            void MapButton(ImGuiKey key, GamepadButton button)
+                => Io->AddKeyEvent(key, gamepadButtons[(int)button] != 0);
+
+            void MapAnalog(ImGuiKey key, GamepadAxis axis, float v0, float v1)
             {
-                if (buttonNumber < buttonCount && buttons[buttonNumber] == JoystickInputAction.Press)
-                { Io->NavInputs[(int)input] = 1f; }
-            }
-
-            void MapAnalog(ImGuiNavInput input, int axisNumber, float v0, float v1)
-            {
-                float v = axisCount > axisNumber ? axes[axisNumber] : v0;
-
+                float v = gamepadAxes[(int)axis];
                 v = (v - v0) / (v1 - v0);
-
-                if (v > 1f)
-                { v = 1f; }
-
-                if (Io->NavInputs[(int)input] < v)
-                { Io->NavInputs[(int)input] = v; }
+                float vSaturated = v < 0f ? 0f : v > 1f ? 1f : v;
+                Io->AddKeyAnalogEvent(key, v > 0.1f, vSaturated);
             }
 
-            MapButton(ImGuiNavInput.Activate, 0); // Cross / A
-            MapButton(ImGuiNavInput.Cancel, 1); // Circle / B
-            MapButton(ImGuiNavInput.Menu, 2); // Square / X
-            MapButton(ImGuiNavInput.Input, 3); // Triangle / Y
-            MapButton(ImGuiNavInput.DpadLeft, 13); // D-Pad Left
-            MapButton(ImGuiNavInput.DpadRight, 11); // D-Pad Right
-            MapButton(ImGuiNavInput.DpadUp, 10); // D-Pad Up
-            MapButton(ImGuiNavInput.DpadDown, 12); // D-Pad Down
-            MapButton(ImGuiNavInput.FocusPrev, 4); // L1 / LB
-            MapButton(ImGuiNavInput.FocusNext, 5); // R1 / RB
-            MapButton(ImGuiNavInput.TweakSlow, 4); // L1 / LB
-            MapButton(ImGuiNavInput.TweakFast, 5); // R1 / RB
-            MapAnalog(ImGuiNavInput.LStickLeft, 0, -0.3f, -0.9f);
-            MapAnalog(ImGuiNavInput.LStickRight, 0, +0.3f, +0.9f);
-            MapAnalog(ImGuiNavInput.LStickUp, 1, +0.3f, +0.9f);
-            MapAnalog(ImGuiNavInput.LStickDown, 1, -0.3f, -0.9f);
+            Io->BackendFlags |= ImGuiBackendFlags.HasGamepad;
 
-            if (axisCount > 0 && buttonCount > 0)
-            { Io->BackendFlags |= ImGuiBackendFlags.HasGamepad; }
-            else
-            { Io->BackendFlags &= ~ImGuiBackendFlags.HasGamepad; }
+            MapButton(ImGuiKey.GamepadStart, GamepadButton.Start);
+            MapButton(ImGuiKey.GamepadBack, GamepadButton.Back);
+            MapButton(ImGuiKey.GamepadFaceDown, GamepadButton.A); // Xbox A, PS Cross
+            MapButton(ImGuiKey.GamepadFaceRight, GamepadButton.B); // Xbox B, PS Circle
+            MapButton(ImGuiKey.GamepadFaceLeft, GamepadButton.X); // Xbox X, PS Square
+            MapButton(ImGuiKey.GamepadFaceUp, GamepadButton.Y); // Xbox Y, PS Triangle
+            MapButton(ImGuiKey.GamepadDpadLeft, GamepadButton.DPadLeft);
+            MapButton(ImGuiKey.GamepadDpadRight, GamepadButton.DPadRight);
+            MapButton(ImGuiKey.GamepadDpadUp, GamepadButton.DPadUp);
+            MapButton(ImGuiKey.GamepadDpadDown, GamepadButton.DPadDown);
+            MapButton(ImGuiKey.GamepadL1, GamepadButton.LeftBumper);
+            MapButton(ImGuiKey.GamepadR1, GamepadButton.RightBumper);
+            MapAnalog(ImGuiKey.GamepadL2, GamepadAxis.LeftTrigger, -0.75f, +1.0f);
+            MapAnalog(ImGuiKey.GamepadR2, GamepadAxis.RightTrigger, -0.75f, +1.0f);
+            MapButton(ImGuiKey.GamepadL3, GamepadButton.LeftThumb);
+            MapButton(ImGuiKey.GamepadR3, GamepadButton.RightThumb);
+            MapAnalog(ImGuiKey.GamepadLStickLeft, GamepadAxis.LeftX, -0.25f, -1.0f);
+            MapAnalog(ImGuiKey.GamepadLStickRight, GamepadAxis.LeftX, +0.25f, +1.0f);
+            MapAnalog(ImGuiKey.GamepadLStickUp, GamepadAxis.LeftY, -0.25f, -1.0f);
+            MapAnalog(ImGuiKey.GamepadLStickDown, GamepadAxis.LeftY, +0.25f, +1.0f);
+            MapAnalog(ImGuiKey.GamepadRStickLeft, GamepadAxis.RightX, -0.25f, -1.0f);
+            MapAnalog(ImGuiKey.GamepadRStickRight, GamepadAxis.RightX, +0.25f, +1.0f);
+            MapAnalog(ImGuiKey.GamepadRStickUp, GamepadAxis.RightY, -0.25f, -1.0f);
+            MapAnalog(ImGuiKey.GamepadRStickDown, GamepadAxis.RightY, +0.25f, +1.0f);
         }
     }
 
@@ -436,6 +409,15 @@ public unsafe sealed partial class PlatformBackend : IDisposable
     // - When calling Init with 'install_callbacks=true': GLFW callbacks will be installed for you. They will call user's previously installed callbacks, if any.
     // - When calling Init with 'install_callbacks=false': GLFW callbacks won't be installed. You will need to call those function yourself from your own GLFW callbacks.
 
+    // ImGui_ImplGlfw_UpdateKeyModifiers
+    private static void UpdateKeyModifiers(ImGuiIO* io, KeyModifiers modifiers)
+    {
+        io->AddKeyEvent(ImGuiKey.ModCtrl, modifiers.HasFlag(KeyModifiers.Control));
+        io->AddKeyEvent(ImGuiKey.ModShift, modifiers.HasFlag(KeyModifiers.Shift));
+        io->AddKeyEvent(ImGuiKey.ModAlt, modifiers.HasFlag(KeyModifiers.Alt));
+        io->AddKeyEvent(ImGuiKey.ModSuper, modifiers.HasFlag(KeyModifiers.Super));
+    }
+
     //ImGui_ImplGlfw_MouseButtonCallback
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     public static void MouseButtonCallback(Window* window, MouseButton button, InputAction action, KeyModifiers modifiers)
@@ -444,10 +426,13 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         if (backend.PrevUserCallbackMousebutton is not null && window == backend.Window)
         { backend.PrevUserCallbackMousebutton(window, button, action, modifiers); }
 
-        if (action == InputAction.Press && button >= 0 && (int)button < backend.MouseJustPressed.Length)
-        { backend.MouseJustPressed[(int)button] = true; }
+        UpdateKeyModifiers(backend.Io, modifiers);
+
+        if (button >= 0 && (int)button < (int)ImGuiMouseButton.COUNT)
+        { backend.Io->AddMouseButtonEvent((int)button, action == InputAction.Press); }
     }
 
+    // ImGui_ImplGlfw_ScrollCallback
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     public static void ScrollCallback(Window* window, double xOffset, double yOffset)
     {
@@ -455,10 +440,10 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         if (backend.PrevUserCallbackScroll is not null && window == backend.Window)
         { backend.PrevUserCallbackScroll(window, xOffset, yOffset); }
 
-        backend.Io->MouseWheelH += (float)xOffset;
-        backend.Io->MouseWheel += (float)yOffset;
+        backend.Io->AddMouseWheelEvent((float)xOffset, (float)yOffset);
     }
 
+    // ImGui_ImplGlfw_KeyCallback
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     public static void KeyCallback(Window* window, Keys key, int scancode, InputAction action, KeyModifiers modifiers)
         => KeyCallbackManaged(window, key, scancode, action, modifiers);
@@ -469,31 +454,167 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         if (backend.PrevUserCallbackKey is not null && window == backend.Window)
         { backend.PrevUserCallbackKey(window, key, scancode, action, modifiers); }
 
+        if (action != InputAction.Press && action != InputAction.Release)
+        { return; }
+
         ImGuiIO* io = backend.Io;
+        UpdateKeyModifiers(io, modifiers);
+
         if (key >= 0 && (int)key < backend.KeyOwnerWindows.Length)
+        { backend.KeyOwnerWindows[(int)key] = action is InputAction.Press ? window : null; }
+
+        key = TranslateUntranslatedKey(key, scancode);
+        // ImGui_ImplGlfw_TranslateUntranslatedKey
+        static Keys TranslateUntranslatedKey(Keys key, int scancode)
         {
-            if (action == InputAction.Press)
+            if (OperatingSystem.IsBrowser())
+            { return key; }
+
+            if (key >= Keys.KeyPad0 && key <= Keys.KeyPadEqual)
+            { return key; }
+
+            byte* _keyName = GLFW.GetKeyNameRaw(key, scancode);
+            if (_keyName is not null && _keyName[0] != 0 && _keyName[1] == 0)
             {
-                io->KeysDown[(int)key] = true;
-                backend.KeyOwnerWindows[(int)key] = window;
+                char keyName = (char)_keyName[0];
+                return keyName switch
+                {
+                    >= '0' and <= '9' => Keys.D0 + (keyName - '0'),
+                    >= 'A' and <= 'Z' => Keys.A + (keyName - 'A'),
+                    '`' => Keys.GraveAccent,
+                    '-' => Keys.Minus,
+                    '=' => Keys.Equal,
+                    '[' => Keys.LeftBracket,
+                    ']' => Keys.RightBracket,
+                    '\\' => Keys.Backslash,
+                    ',' => Keys.Comma,
+                    ';' => Keys.Semicolon,
+                    '\'' => Keys.Apostrophe,
+                    '.' => Keys.Period,
+                    '/' => Keys.Slash,
+                    _ => key
+                };
             }
-            else if (action == InputAction.Release)
-            {
-                io->KeysDown[(int)key] = false;
-                backend.KeyOwnerWindows[(int)key] = null;
-            }
+            else
+            { return key; }
         }
 
-        // Modifiers are not reliable across systems
-        io->KeyCtrl = io->KeysDown[(int)Keys.LeftControl] || io->KeysDown[(int)Keys.RightControl];
-        io->KeyShift = io->KeysDown[(int)Keys.LeftShift] || io->KeysDown[(int)Keys.RightShift];
-        io->KeyAlt = io->KeysDown[(int)Keys.LeftAlt] || io->KeysDown[(int)Keys.RightAlt];
-        if (OperatingSystem.IsWindows())
-        { io->KeySuper = false; }
-        else
-        { io->KeySuper = io->KeysDown[(int)Keys.LeftSuper] || io->KeysDown[(int)Keys.RightSuper]; }
+        // ImGui_ImplGlfw_KeyToImGuiKey
+        ImGuiKey imGuiKey = key switch
+        {
+            Keys.Tab => ImGuiKey.Tab,
+            Keys.Left => ImGuiKey.LeftArrow,
+            Keys.Right => ImGuiKey.RightArrow,
+            Keys.Up => ImGuiKey.UpArrow,
+            Keys.Down => ImGuiKey.DownArrow,
+            Keys.PageUp => ImGuiKey.PageUp,
+            Keys.PageDown => ImGuiKey.PageDown,
+            Keys.Home => ImGuiKey.Home,
+            Keys.End => ImGuiKey.End,
+            Keys.Insert => ImGuiKey.Insert,
+            Keys.Delete => ImGuiKey.Delete,
+            Keys.Backspace => ImGuiKey.Backspace,
+            Keys.Space => ImGuiKey.Space,
+            Keys.Enter => ImGuiKey.Enter,
+            Keys.Escape => ImGuiKey.Escape,
+            Keys.Apostrophe => ImGuiKey.Apostrophe,
+            Keys.Comma => ImGuiKey.Comma,
+            Keys.Minus => ImGuiKey.Minus,
+            Keys.Period => ImGuiKey.Period,
+            Keys.Slash => ImGuiKey.Slash,
+            Keys.Semicolon => ImGuiKey.Semicolon,
+            Keys.Equal => ImGuiKey.Equal,
+            Keys.LeftBracket => ImGuiKey.LeftBracket,
+            Keys.Backslash => ImGuiKey.Backslash,
+            Keys.RightBracket => ImGuiKey.RightBracket,
+            Keys.GraveAccent => ImGuiKey.GraveAccent,
+            Keys.CapsLock => ImGuiKey.CapsLock,
+            Keys.ScrollLock => ImGuiKey.ScrollLock,
+            Keys.NumLock => ImGuiKey.NumLock,
+            Keys.PrintScreen => ImGuiKey.PrintScreen,
+            Keys.Pause => ImGuiKey.Pause,
+            Keys.KeyPad0 => ImGuiKey.Keypad0,
+            Keys.KeyPad1 => ImGuiKey.Keypad1,
+            Keys.KeyPad2 => ImGuiKey.Keypad2,
+            Keys.KeyPad3 => ImGuiKey.Keypad3,
+            Keys.KeyPad4 => ImGuiKey.Keypad4,
+            Keys.KeyPad5 => ImGuiKey.Keypad5,
+            Keys.KeyPad6 => ImGuiKey.Keypad6,
+            Keys.KeyPad7 => ImGuiKey.Keypad7,
+            Keys.KeyPad8 => ImGuiKey.Keypad8,
+            Keys.KeyPad9 => ImGuiKey.Keypad9,
+            Keys.KeyPadDecimal => ImGuiKey.KeypadDecimal,
+            Keys.KeyPadDivide => ImGuiKey.KeypadDivide,
+            Keys.KeyPadMultiply => ImGuiKey.KeypadMultiply,
+            Keys.KeyPadSubtract => ImGuiKey.KeypadSubtract,
+            Keys.KeyPadAdd => ImGuiKey.KeypadAdd,
+            Keys.KeyPadEnter => ImGuiKey.KeypadEnter,
+            Keys.KeyPadEqual => ImGuiKey.KeypadEqual,
+            Keys.LeftShift => ImGuiKey.LeftShift,
+            Keys.LeftControl => ImGuiKey.LeftCtrl,
+            Keys.LeftAlt => ImGuiKey.LeftAlt,
+            Keys.LeftSuper => ImGuiKey.LeftSuper,
+            Keys.RightShift => ImGuiKey.RightShift,
+            Keys.RightControl => ImGuiKey.RightCtrl,
+            Keys.RightAlt => ImGuiKey.RightAlt,
+            Keys.RightSuper => ImGuiKey.RightSuper,
+            Keys.Menu => ImGuiKey.Menu,
+            Keys.D0 => ImGuiKey._0,
+            Keys.D1 => ImGuiKey._1,
+            Keys.D2 => ImGuiKey._2,
+            Keys.D3 => ImGuiKey._3,
+            Keys.D4 => ImGuiKey._4,
+            Keys.D5 => ImGuiKey._5,
+            Keys.D6 => ImGuiKey._6,
+            Keys.D7 => ImGuiKey._7,
+            Keys.D8 => ImGuiKey._8,
+            Keys.D9 => ImGuiKey._9,
+            Keys.A => ImGuiKey.A,
+            Keys.B => ImGuiKey.B,
+            Keys.C => ImGuiKey.C,
+            Keys.D => ImGuiKey.D,
+            Keys.E => ImGuiKey.E,
+            Keys.F => ImGuiKey.F,
+            Keys.G => ImGuiKey.G,
+            Keys.H => ImGuiKey.H,
+            Keys.I => ImGuiKey.I,
+            Keys.J => ImGuiKey.J,
+            Keys.K => ImGuiKey.K,
+            Keys.L => ImGuiKey.L,
+            Keys.M => ImGuiKey.M,
+            Keys.N => ImGuiKey.N,
+            Keys.O => ImGuiKey.O,
+            Keys.P => ImGuiKey.P,
+            Keys.Q => ImGuiKey.Q,
+            Keys.R => ImGuiKey.R,
+            Keys.S => ImGuiKey.S,
+            Keys.T => ImGuiKey.T,
+            Keys.U => ImGuiKey.U,
+            Keys.V => ImGuiKey.V,
+            Keys.W => ImGuiKey.W,
+            Keys.X => ImGuiKey.X,
+            Keys.Y => ImGuiKey.Y,
+            Keys.Z => ImGuiKey.Z,
+            Keys.F1 => ImGuiKey.F1,
+            Keys.F2 => ImGuiKey.F2,
+            Keys.F3 => ImGuiKey.F3,
+            Keys.F4 => ImGuiKey.F4,
+            Keys.F5 => ImGuiKey.F5,
+            Keys.F6 => ImGuiKey.F6,
+            Keys.F7 => ImGuiKey.F7,
+            Keys.F8 => ImGuiKey.F8,
+            Keys.F9 => ImGuiKey.F9,
+            Keys.F10 => ImGuiKey.F10,
+            Keys.F11 => ImGuiKey.F11,
+            Keys.F12 => ImGuiKey.F12,
+            _ => ImGuiKey.None
+        };
+
+        io->AddKeyEvent(imGuiKey, action == InputAction.Press);
+        io->SetKeyEventNativeData(imGuiKey, (int)key, scancode); // To support legacy indexing (<1.87 user code)
     }
 
+    // ImGui_ImplGlfw_WindowFocusCallback
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     public static void WindowFocusCallback(Window* window, int focused)
     {
@@ -504,6 +625,28 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         backend.Io->AddFocusEvent(focused != 0);
     }
 
+    // ImGui_ImplGlfw_CursorPosCallback
+    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+    public static void CursorPosCallback(Window* window, double x, double y)
+    {
+        PlatformBackend backend = GetPlatformBackend();
+        if (backend.PrevUserCallbackCursorPos is not null && window == backend.Window)
+        { backend.PrevUserCallbackCursorPos(window, x, y); }
+
+        if (backend.Io->ConfigFlags.HasFlag(ImGuiConfigFlags.ViewportsEnable))
+        {
+            GLFW.GetWindowPos(window, out int windowX, out int windowY);
+            x += windowX;
+            y += windowY;
+        }
+
+        backend.Io->AddMousePosEvent((float)x, (float)y);
+        backend.LastValidMousePos = new((float)x, (float)y);
+    }
+
+    // ImGui_ImplGlfw_CursorEnterCallback
+    // Workaround: X11 seems to send spurious Leave/Enter events which would make us lose our position,
+    // so we back it up and restore on Leave/Enter (see https://github.com/ocornut/imgui/issues/4984)
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     public static void CursorEnterCallback(Window* window, int entered)
     {
@@ -512,11 +655,19 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         { backend.PrevUserCallbackCursorEnter(window, entered); }
 
         if (entered != 0)
-        { backend.MouseWindow = window; }
+        {
+            backend.MouseWindow = window;
+            backend.Io->AddMousePosEvent(backend.LastValidMousePos.X, backend.LastValidMousePos.Y);
+        }
         else if (backend.MouseWindow == window)
-        { backend.MouseWindow = null; }
+        {
+            backend.LastValidMousePos = backend.Io->MousePos;
+            backend.MouseWindow = null;
+            backend.Io->AddMousePosEvent(-float.MaxValue, -float.MaxValue);
+        }
     }
 
+    // ImGui_ImplGlfw_CharCallback
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     public static void CharCallback(Window* window, uint c)
     {
@@ -527,6 +678,7 @@ public unsafe sealed partial class PlatformBackend : IDisposable
         backend.Io->AddInputCharacter(c);
     }
 
+    // ImGui_ImplGlfw_MonitorCallback
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     public static void MonitorCallback(Monitor* monitor, ConnectedState state)
     {
@@ -547,8 +699,11 @@ public unsafe sealed partial class PlatformBackend : IDisposable
 
         if (InstalledCallbacks)
         {
+            // ImGui_ImplGlfw_RestoreCallbacks
+            // (Unlike the native backend we don't expose the ability to do this later to discourage weird usage patterns.)
             GlfwNative.glfwSetWindowFocusCallback(Window, PrevUserCallbackWindowFocus);
             GlfwNative.glfwSetCursorEnterCallback(Window, PrevUserCallbackCursorEnter);
+            GlfwNative.glfwSetCursorPosCallback(Window, PrevUserCallbackCursorPos);
             GlfwNative.glfwSetMouseButtonCallback(Window, PrevUserCallbackMousebutton);
             GlfwNative.glfwSetScrollCallback(Window, PrevUserCallbackScroll);
             GlfwNative.glfwSetKeyCallback(Window, PrevUserCallbackKey);
