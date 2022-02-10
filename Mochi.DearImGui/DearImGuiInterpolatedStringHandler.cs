@@ -151,7 +151,9 @@ public ref struct DearImGuiInterpolatedStringHandler
         { UsedLength--; }
 
         Buffer[UsedLength] = 0;
-        return Buffer.Slice(0, UsedLength);
+        // The +1 here is to include the null terminator. This might seem a bit odd since it's not really part of the string, but if we don't do this then fixing this span when it's
+        // empty will result in a null pointer.
+        return Buffer.Slice(0, UsedLength + 1);
     }
 
     public override string ToString()
