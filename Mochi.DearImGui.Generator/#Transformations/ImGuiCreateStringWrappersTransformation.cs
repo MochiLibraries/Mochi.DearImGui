@@ -1,8 +1,7 @@
 ﻿using Biohazrd;
 using Biohazrd.CSharp;
+using Biohazrd.CSharp.Trampolines;
 using Biohazrd.Transformation;
-using ClangSharp;
-using System.Collections.Immutable;
 
 namespace Mochi.DearImGui.Generator
 {
@@ -24,6 +23,9 @@ namespace Mochi.DearImGui.Generator
                 // There is a UTF16 equivalent of this function, so it doesn't make sense to generate a wrapper
                 case "AddInputCharactersUTF8":
                     return true;
+                // This function returns a pointer into the buffer you provide it so it has special usage
+                case "CalcWordWrapPositionA":
+                    return true;
                 default:
                     return false;
             }
@@ -38,48 +40,46 @@ namespace Mochi.DearImGui.Generator
             if (ShouldOptOut(declaration))
             { return declaration; }
 
-            // Check if this function has a string parameter
-            ImmutableArray<int>.Builder? stringParameters = null;
-            bool firstParameterHasEnd = false;
+            // Get the primary trampoline
+            if (declaration.TryGetPrimaryTrampoline() is not Trampoline targetTrampoline)
+            { return declaration; }
 
-            for (int i = 0; i < declaration.Parameters.Length; i++)
+            // Build a string trampoline if needed
+            TrampolineBuilder builder = new(targetTrampoline, useAsTemplate: true);
+
+            // Iterate through the parameter adapters on the trampoline and see if any can be adapted to a string helper
+            ImGuiStringAdapter? lastStringAdapter = null;
+            foreach (Adapter adapter in targetTrampoline.Adapters)
             {
-                TranslatedParameter parameter = declaration.Parameters[i];
+                // Skip parameters which don't accept input
+                if (!adapter.AcceptsInput)
+                { continue; }
 
-                // If the parameter is a `byte*`, it's a string parameter
-                if (parameter.Type is PointerTypeReference { Inner: CSharpBuiltinTypeReference cSharpPointee } && cSharpPointee == CSharpBuiltinType.Byte)
+                // If the parameter is a `const byte*`, we treat it as a string parameter (exceptions are opted out above)
+                if (adapter.InputType is PointerTypeReference { Inner: CSharpBuiltinTypeReference cSharpPointee, InnerIsConst: true } && cSharpPointee == CSharpBuiltinType.Byte)
                 {
-                    // If the parameter was not const, skip it
-                    //TODO: C#10: This mess could be improved by the new pattern matching enhancements
-                    if (parameter.Original is not TranslatedParameter { Type: ClangTypeReference { ClangType: { CanonicalType: PointerType { PointeeType: { IsLocalConstQualified: true } } } } })
-                    { continue; }
-
-                    if (stringParameters is null)
-                    { stringParameters = ImmutableArray.CreateBuilder<int>(initialCapacity: 1); }
-
-                    // If this parameter ends with `_end` and the previous parameter was the first string, we treat this as a string end parameter
-                    if (stringParameters.Count == 1 && stringParameters[0] == (i - 1) && parameter.Name.EndsWith("_end"))
+                    //TODO: If we modified this to be lookahead instead of lookbehind, we could avoid having the weird mutable property on ImGuiStringAdapter.
+                    // If this parameter ends with `_end` and the previous parameter was a string, we treat this as a string end parameter
+                    if (lastStringAdapter is not null && adapter.Name.EndsWith("_end"))
                     {
-                        firstParameterHasEnd = true;
-                        continue;
+                        builder.AdaptParameter(adapter, new ImGuiStringEndAdapter(lastStringAdapter, adapter));
+                        lastStringAdapter = null;
                     }
-
-                    stringParameters.Add(i);
+                    else
+                    {
+                        lastStringAdapter = new ImGuiStringAdapter(adapter);
+                        builder.AdaptParameter(adapter, lastStringAdapter);
+                    }
                 }
+                else
+                { lastStringAdapter = null; }
             }
 
             // Add a string helper overload if appropriate
-            TransformationResult result = declaration;
+            if (builder.HasAdapters)
+            { return declaration.WithSecondaryTrampoline(builder.Create()); }
 
-            if (stringParameters is not null)
-            {
-                result = result.Add(new ImGuiStringFunctionWrapperDeclaration(declaration, stringParameters.MoveToImmutableSafe())
-                {
-                    ParameterFollowingFirstIsStringEnd = firstParameterHasEnd
-                });
-            }
-
-            return result;
+            return declaration; 
         }
     }
 }

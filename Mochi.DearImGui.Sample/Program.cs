@@ -108,8 +108,6 @@ internal unsafe sealed class SampleWindow : NativeWindow
     {
         ImGuiIO* io = ImGui.GetIO();
 
-        Vector2 defaultButtonSize = new(0f, 0f);
-
         // Our state
         bool showDemoWindow = true;
         bool showAnotherWindow = false;
@@ -154,7 +152,7 @@ internal unsafe sealed class SampleWindow : NativeWindow
                 ImGui.ColorEdit3("clear color", &clearColor);
 
                 // Buttons return true when clicked (most widgets return true when edited/activated)
-                if (ImGui.Button("Button", &defaultButtonSize)) //BIOQUIRK: Default vector argument, inconvienient reference passing
+                if (ImGui.Button("Button", default)) //BIOQUIRK: Default vector argument
                 { counter++; }
                 ImGui.SameLine();
                 ImGui.Text($"counter = {counter}");
@@ -168,7 +166,7 @@ internal unsafe sealed class SampleWindow : NativeWindow
             {
                 ImGui.Begin("Another Window", &showAnotherWindow); // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
                 ImGui.Text("Hello from another window!");
-                if (ImGui.Button("Close Me", &defaultButtonSize)) //BIOQUIRK: Default vector argument, inconvienient reference passing
+                if (ImGui.Button("Close Me", default)) //BIOQUIRK: Default vector argument
                 { showAnotherWindow = false; }
                 ImGui.End();
             }
