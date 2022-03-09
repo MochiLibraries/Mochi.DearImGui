@@ -120,7 +120,6 @@ library = new MakeEverythingPublicTransformation().Transform(library);
 library = new ImGuiCSharpTypeReductionTransformation().Transform(library);
 library = new MiscFixesTransformation().Transform(library);
 library = new LiftAnonymousRecordFieldsTransformation().Transform(library);
-library = new WrapNonBlittableTypesWhereNecessaryTransformation().Transform(library);
 library = new AddTrampolineMethodOptionsTransformation(MethodImplOptions.AggressiveInlining).Transform(library);
 library = new ImGuiInternalFixupTransformation().Transform(library);
 library = new MochiDearImGuiNamespaceTransformation().Transform(library);
@@ -129,8 +128,12 @@ library = new MoveLooseDeclarationsIntoTypesTransformation
 (
     (c, d) => d.Namespace == "Mochi.DearImGui" ? "ImGui" : d.Namespace == "Mochi.DearImGui.Internal" ? "ImGuiInternal" : "Globals"
 ).Transform(library);
-library = new ImGuiCreateStringWrappersTransformation().Transform(library);
 library = new AutoNameUnnamedParametersTransformation().Transform(library);
+library = new CreateTrampolinesTransformation()
+{
+    TargetRuntime = TargetRuntime.Net6
+}.Transform(library);
+library = new ImGuiCreateStringWrappersTransformation().Transform(library);
 library = new StripUnreferencedLazyDeclarationsTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
 library = new OrganizeOutputFilesByNamespaceTransformation("Mochi.DearImGui").Transform(library); // Relies on MochiDearImGuiNamespaceTransformation, MoveLooseDeclarationsIntoTypesTransformation
@@ -173,7 +176,11 @@ Console.WriteLine("Emitting translation...");
 Console.WriteLine("==============================================================================");
 ImmutableArray<TranslationDiagnostic> generationDiagnostics = CSharpLibraryGenerator.Generate
 (
-    CSharpGenerationOptions.Default,
+    CSharpGenerationOptions.Default with
+    {
+        TargetRuntime = TargetRuntime.Net6,
+        InfrastructureTypesNamespace = "Mochi.DearImGui.Infrastructure",
+    },
     outputSession,
     library
 );
