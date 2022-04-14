@@ -29,6 +29,6 @@ internal sealed class ImGuiStringEndAdapter : Adapter
         writer.WriteIdentifier(Sibling.TemporaryPointerName);
         writer.Write(" + ");
         writer.WriteIdentifier(Sibling.TemporarySpanName);
-        writer.Write(".Length");
+        writer.Write(".Length - 1");
     }
 }
