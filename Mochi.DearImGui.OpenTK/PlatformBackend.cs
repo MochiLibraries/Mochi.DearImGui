@@ -481,6 +481,7 @@ public unsafe sealed partial class PlatformBackend : IDisposable
                 {
                     >= '0' and <= '9' => Keys.D0 + (keyName - '0'),
                     >= 'A' and <= 'Z' => Keys.A + (keyName - 'A'),
+                    >= 'a' and <= 'z' => Keys.A + (keyName - 'a'),
                     '`' => Keys.GraveAccent,
                     '-' => Keys.Minus,
                     '=' => Keys.Equal,
