@@ -135,6 +135,7 @@ library = new CreateTrampolinesTransformation()
 }.Transform(library);
 library = new ImGuiCreateStringWrappersTransformation().Transform(library);
 library = new StripUnreferencedLazyDeclarationsTransformation().Transform(library);
+library = new ImGuiKeyIssueWorkaroundTransformation().Transform(library);
 library = new DeduplicateNamesTransformation().Transform(library);
 library = new OrganizeOutputFilesByNamespaceTransformation("Mochi.DearImGui").Transform(library); // Relies on MochiDearImGuiNamespaceTransformation, MoveLooseDeclarationsIntoTypesTransformation
 library = new ImVersionConstantsTransformation(library, constantEvaluator).Transform(library);

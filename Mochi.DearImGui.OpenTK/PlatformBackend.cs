@@ -412,10 +412,10 @@ public unsafe sealed partial class PlatformBackend : IDisposable
     // ImGui_ImplGlfw_UpdateKeyModifiers
     private static void UpdateKeyModifiers(ImGuiIO* io, KeyModifiers modifiers)
     {
-        io->AddKeyEvent(ImGuiKey.ModCtrl, modifiers.HasFlag(KeyModifiers.Control));
-        io->AddKeyEvent(ImGuiKey.ModShift, modifiers.HasFlag(KeyModifiers.Shift));
-        io->AddKeyEvent(ImGuiKey.ModAlt, modifiers.HasFlag(KeyModifiers.Alt));
-        io->AddKeyEvent(ImGuiKey.ModSuper, modifiers.HasFlag(KeyModifiers.Super));
+        io->AddKeyEvent(ImGuiKey.ImGuiMod_Ctrl, modifiers.HasFlag(KeyModifiers.Control));
+        io->AddKeyEvent(ImGuiKey.ImGuiMod_Shift, modifiers.HasFlag(KeyModifiers.Shift));
+        io->AddKeyEvent(ImGuiKey.ImGuiMod_Alt, modifiers.HasFlag(KeyModifiers.Alt));
+        io->AddKeyEvent(ImGuiKey.ImGuiMod_Super, modifiers.HasFlag(KeyModifiers.Super));
     }
 
     //ImGui_ImplGlfw_MouseButtonCallback
