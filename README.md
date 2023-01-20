@@ -1,7 +1,7 @@
 # Dear ImGui-flavored Mochi
 
 [![MIT Licensed](https://img.shields.io/github/license/mochilibraries/mochi.dearimgui?style=flat-square)](LICENSE.txt)
-[![CI Status](https://img.shields.io/github/workflow/status/mochilibraries/mochi.dearimgui/Mochi.DearImGui/main?style=flat-square&label=CI)](https://github.com/MochiLibraries/Mochi.DearImGui/actions?query=workflow%3AMochi.DearImGui+branch%3Amain)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/mochilibraries/mochi.dearimgui/Mochi.DearImGui.yml?branch=main&style=flat-square&label=CI)](https://github.com/MochiLibraries/Mochi.DearImGui/actions?query=workflow%3AMochi.DearImGui+branch%3Amain)
 [![NuGet Version](https://img.shields.io/nuget/v/Mochi.DearImGui?style=flat-square)](https://www.nuget.org/packages/Mochi.DearImGui/)
 [![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=flat-square)](https://github.com/sponsors/PathogenDavid)
 
